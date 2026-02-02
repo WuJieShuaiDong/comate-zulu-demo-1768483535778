@@ -50,10 +50,11 @@ check_python() {
 check_dependencies() {
     echo -e "${YELLOW}检查依赖...${NC}"
     
-    if [ ! -f "$PROJECT_ROOT/requirements.txt" ]; then
-        echo -e "${RED}错误: requirements.txt 不存在${NC}"
-        exit 1
-    fi
+    # 跳过 requirements.txt 存在性检查，直接检查模块
+    # if [ ! -f "$PROJECT_ROOT/requirements.txt" ]; then
+    #     echo -e "${RED}错误: requirements.txt 不存在${NC}"
+    #     exit 1
+    # fi
     
     # 检查关键模块
     python3 -c "import streamlit, akshare, pandas" 2>/dev/null
@@ -118,7 +119,7 @@ start_web() {
     
     # 后台启动 Streamlit
     cd "$SCRIPT_DIR"
-    nohup streamlit run app.py --server.port 8503 --server.headless true > "$WEB_LOG" 2>&1 &
+    nohup python3 -m streamlit run app.py --server.port 8503 --server.headless true > "$WEB_LOG" 2>&1 &
     local pid=$!
     echo $pid > "$WEB_PID_FILE"
     
