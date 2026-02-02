@@ -18,6 +18,7 @@ import logging
 import json
 import os
 from collections import defaultdict
+from notification import notifier  # 导入通知模块
 
 # 热点追踪数据文件
 DATA_DIR = "data"
@@ -261,6 +262,20 @@ class HotspotTracker:
         """更新今日热点记录"""
         if 'daily_sectors' not in self.history:
             self.history['daily_sectors'] = {}
+        
+        # 检查是否有新热点出现（对比上次记录）
+        old_sectors = self.history['daily_sectors'].get(self.today, [])
+        old_names = {s['name'] for s in old_sectors if s['cycle'] in ['LAUNCH', 'SURGE']}
+        
+        new_names = {s['name'] for s in top_sectors if s['cycle'] in ['LAUNCH', 'SURGE']}
+        
+        # 如果发现了之前没出现过的新热点
+        new_hotspots = new_names - old_names
+        if new_hotspots:
+            # 筛选出具体信息发送通知
+            notify_list = [s for s in top_sectors if s['name'] in new_hotspots]
+            if notify_list:
+                notifier.notify_hotspot_change(notify_list)
         
         self.history['daily_sectors'][self.today] = top_sectors
         

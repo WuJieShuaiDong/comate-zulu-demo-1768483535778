@@ -10,6 +10,7 @@ import json
 import time
 import requests
 from demon_stock_gene import DemonStockGene
+from notification import notifier  # 导入通知模块
 
 # 导入热点追踪器
 try:
@@ -19,7 +20,40 @@ except ImportError:
     HOTSPOT_AVAILABLE = False
 
 # --- 页面配置 ---
-st.set_page_config(page_title="高阶量化交易系统", layout="wide", page_icon="🚀")
+st.set_page_config(page_title="高阶量化交易系统", layout="wide", page_icon="🚀", initial_sidebar_state="expanded")
+
+# --- 移动端适配样式 ---
+st.markdown("""
+<style>
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+        .stMetric {
+            background-color: #f0f2f6;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .main .block-container {
+            padding-top: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        h1 { font-size: 1.8rem !important; }
+        h2 { font-size: 1.5rem !important; }
+        h3 { font-size: 1.3rem !important; }
+    }
+    
+    /* 卡片式布局 */
+    .metric-card {
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 10px;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # --- 访问认证 (外网部署时启用) ---
 # 设置为 True 启用密码保护，False 关闭
@@ -57,6 +91,20 @@ mode = st.sidebar.radio("选择功能模块", [
     "🔥 进阶波段策略 (回测)",
     "?? 基础趋势回测 (双均线)"
 ])
+
+# --- 侧边栏：实时通知配置 ---
+with st.sidebar.expander("🔔 实时通知配置"):
+    notify_enable = st.checkbox("启用消息推送", value=notifier.enabled)
+    notify_platform = st.selectbox("推送平台", ["dingtalk", "wecom"], 
+                                 index=0 if notifier.platform=="dingtalk" else 1,
+                                 format_func=lambda x: "钉钉机器人" if x=="dingtalk" else "企业微信机器人")
+    notify_webhook = st.text_input("Webhook 地址", value=notifier.webhook_url, type="password")
+    
+    if st.button("💾 保存并测试通知"):
+        if notifier.save_config(notify_enable, notify_platform, notify_webhook):
+            st.success("配置已保存，测试消息发送成功！")
+        else:
+            st.error("配置保存成功，但发送测试消息失败，请检查 Webhook 地址")
 
 # --- 侧边栏：高级数据校准 ---
 with st.sidebar.expander("🛠️ 账户数据校准 (高级)"):
@@ -341,30 +389,62 @@ if mode == "🤖 自动化实盘监控 (AutoBot)":
             # 读取最新日志中的情绪状态
             # 这里简单直接显示
             
-            kpi1, kpi2, kpi3, kpi4 = st.columns(4)
-            kpi1.metric("总资产 (元)", f"{total_assets:,.2f}")
-            kpi2.metric("可用现金 (元)", f"{cash:,.2f}")
-            kpi3.metric("初始本金 (元)", f"{initial_capital:,.2f}")
-            kpi4.metric("持仓市值 (元)", f"{current_market_value:,.2f}")
+            # 使用 CSS Grid 布局 (手动实现响应式)
+            st.markdown("##### 💰 核心资产")
+            
+            # 第一行：资产概览
+            c1, c2, c3, c4 = st.columns(4)
+            with c1: st.metric("总资产 (元)", f"{total_assets:,.2f}")
+            with c2: st.metric("可用现金 (元)", f"{cash:,.2f}")
+            with c3: st.metric("初始本金 (元)", f"{initial_capital:,.2f}")
+            with c4: st.metric("持仓市值 (元)", f"{current_market_value:,.2f}")
             
             st.markdown("---")
+            st.markdown("##### 📈 盈亏分析")
             
-            pnl1, pnl2, pnl3, pnl4 = st.columns(4)
-            pnl1.metric("累计总盈亏", f"{total_pnl:+,.2f}", delta=f"{total_pnl_pct:+.2f}%")
-            pnl2.metric("今日盈亏", f"{daily_pnl:+,.2f}", delta=f"{daily_pnl_pct:+.2f}%")
-            pnl3.metric("持仓浮动盈亏", f"{total_float_pnl:+,.2f}", help="当前持仓股票的账面盈亏总和")
-            pnl4.metric("已实现盈亏 (估)", f"{realized_pnl:+,.2f}", help="历史交易产生的盈亏")
+            # 第二行：盈亏分析
+            p1, p2, p3, p4 = st.columns(4)
+            with p1: st.metric("累计总盈亏", f"{total_pnl:+,.2f}", delta=f"{total_pnl_pct:+.2f}%")
+            with p2: st.metric("今日盈亏", f"{daily_pnl:+,.2f}", delta=f"{daily_pnl_pct:+.2f}%")
+            with p3: st.metric("持仓浮动盈亏", f"{total_float_pnl:+,.2f}", help="当前持仓股票的账面盈亏总和")
+            with p4: st.metric("已实现盈亏 (估)", f"{realized_pnl:+,.2f}", help="历史交易产生的盈亏")
 
             nav_history = acc.get('nav_history', [])
             if nav_history:
-                st.caption("📈 账户净值成长曲线")
+                st.markdown("#### 📈 账户净值成长曲线")
                 hist_df = pd.DataFrame(nav_history)
+                
+                # 确保日期格式正确
+                if 'date' in hist_df.columns:
+                    hist_df['date'] = pd.to_datetime(hist_df['date'])
+                
+                # 添加当前点
                 current_point = pd.DataFrame([{
-                    "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), 
+                    "date": datetime.datetime.now(), 
                     "total_value": total_assets
                 }])
                 chart_df = pd.concat([hist_df, current_point], ignore_index=True)
-                st.line_chart(chart_df.set_index('date')['total_value'])
+                
+                # 使用 Plotly 绘制专业图表
+                fig = go.Figure()
+                fig.add_trace(go.Scatter(
+                    x=chart_df['date'], 
+                    y=chart_df['total_value'],
+                    mode='lines+markers',
+                    name='总资产',
+                    line=dict(color='#ff4b4b', width=2),
+                    marker=dict(size=6)
+                ))
+                
+                fig.update_layout(
+                    margin=dict(l=20, r=20, t=30, b=20),
+                    height=350,
+                    hovermode="x unified",
+                    yaxis=dict(tickformat=",.0f", title="资产 (元)"),
+                    xaxis=dict(tickformat="%m-%d"),
+                    showlegend=False
+                )
+                st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
             st.subheader("💼 持仓详情")
             if pos_data:

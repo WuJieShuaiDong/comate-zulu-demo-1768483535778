@@ -9,6 +9,7 @@ from abc import ABC, abstractmethod
 import random
 import requests
 from data_provider import get_stock_history_safe
+from notification import notifier  # 导入通知模块
 
 try:
     from market_sentiment import get_market_sentiment, get_main_sectors
@@ -268,6 +269,8 @@ class VirtualTrader(BaseTrader):
             self._positions[symbol]['shares'] = new_shares
             self._positions[symbol]['cost'] = new_cost
             self.log_trade("BUY", symbol, name, price, shares, reason)
+            # 发送通知
+            notifier.notify_trade("买入", symbol, name, price, shares, reason)
             self.sync_assets()
             return True
         else:
@@ -283,6 +286,8 @@ class VirtualTrader(BaseTrader):
             name = self._positions[symbol]['name']
             del self._positions[symbol]
             self.log_trade("SELL", symbol, name, price, shares, reason)
+            # 发送通知
+            notifier.notify_trade("卖出", symbol, name, price, shares, reason)
             self.sync_assets()
             return True
         return False
@@ -698,6 +703,9 @@ def run_bot():
             
     logging.info(f"=== 自动交易机器人启动 (当前模式: {current_mode}) ===")
     
+    # 状态缓存
+    last_sentiment = None
+    
     while True:
         try:
             now = datetime.datetime.now()
@@ -712,6 +720,11 @@ def run_bot():
                 sentiment_result = check_market_sentiment_enhanced(money_tracker)
                 sentiment = sentiment_result['sentiment']
                 score = sentiment_result['score']
+                
+                # 检测情绪突变并通知
+                if last_sentiment is not None and sentiment != last_sentiment:
+                    notifier.notify_sentiment_change(last_sentiment, sentiment, score)
+                last_sentiment = sentiment
                 
                 logging.info(f"📊 市场情绪: {sentiment} (评分: {score:.1f}/100)")
                 
