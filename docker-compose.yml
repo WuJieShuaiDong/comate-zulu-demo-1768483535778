@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  quant-system:
+    # 使用当前目录下的 Dockerfile 构建
+    build: .
+    container_name: quant-trader
+    # 总是自动重启（崩溃或服务器重启后自动恢复）
+    restart: always
+    # 端口映射: 服务器8503 -> 容器8503
+    ports:
+      - "8503:8503"
+    # 数据挂载：把容器里的数据保存到服务器本地，防止丢失
+    volumes:
+      - ./quant_trading/data:/app/data
+      - ./quant_trading/logs:/app/logs
+      # 如果想修改代码后直接生效，可以取消下面这行的注释
+      # - ./quant_trading:/app
+    # 环境变量
+    environment:
+      - TZ=Asia/Shanghai
+      - PYTHONUNBUFFERED=1
+
+    # 资源限制（防止占满服务器资源）
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G

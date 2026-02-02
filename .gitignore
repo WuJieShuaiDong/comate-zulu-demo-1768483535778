@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+logs-*/
+
+# 数据文件（敏感）
+quant_trading/data/*.json
+quant_trading/data/*.csv
+quant_trading/data/*.pid
+quant_trading/data/*.db
+
+# 但保留示例文件
+!quant_trading/data/.gitkeep
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+.comate/
+
+# Streamlit缓存
+.streamlit/
+
+# 进程ID文件
+*.pid
+.bot.pid
+.app.pid

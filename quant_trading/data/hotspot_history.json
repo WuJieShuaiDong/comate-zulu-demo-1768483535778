@@ -207,18 +207,18 @@
     "2026-02-02": [
       {
         "name": "酿酒行业",
-        "change_pct": 2.179375,
-        "strength": 60.896875,
+        "change_pct": 1.295,
+        "strength": 56.475,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
         "leader_pct": 0,
-        "cycle": "SURGE"
+        "cycle": "NORMAL"
       },
       {
         "name": "发电设备",
-        "change_pct": 0.53271186440678,
-        "strength": 52.6635593220339,
+        "change_pct": 0.33864406779661,
+        "strength": 51.69322033898305,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -227,8 +227,8 @@
       },
       {
         "name": "陶瓷行业",
-        "change_pct": 0.508,
-        "strength": 52.54,
+        "change_pct": 0.034,
+        "strength": 50.17,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -237,28 +237,8 @@
       },
       {
         "name": "电器行业",
-        "change_pct": 0.18037037037037,
-        "strength": 50.90185185185185,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "船舶制造",
-        "change_pct": 0.16571428571429,
-        "strength": 50.82857142857145,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "飞机制造",
-        "change_pct": 0.08,
-        "strength": 50.4,
+        "change_pct": 0.017592592592593,
+        "strength": 50.08796296296296,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -267,43 +247,63 @@
       },
       {
         "name": "公路桥梁",
-        "change_pct": 0.063888888888889,
-        "strength": 50.31944444444444,
+        "change_pct": -0.020555555555556,
+        "strength": 49.89722222222222,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
         "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "金融行业",
-        "change_pct": 0.06,
-        "strength": 50.3,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "电力行业",
-        "change_pct": 0.040166666666667,
-        "strength": 50.200833333333335,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
+        "cycle": "DECAY"
       },
       {
         "name": "环保行业",
-        "change_pct": 0.032,
-        "strength": 50.16,
+        "change_pct": -0.0284,
+        "strength": 49.858,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
         "leader_pct": 0,
-        "cycle": "NORMAL"
+        "cycle": "DECAY"
+      },
+      {
+        "name": "电力行业",
+        "change_pct": -0.073833333333333,
+        "strength": 49.630833333333335,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "DECAY"
+      },
+      {
+        "name": "传媒娱乐",
+        "change_pct": -0.093888888888889,
+        "strength": 49.53055555555555,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "DECAY"
+      },
+      {
+        "name": "纺织行业",
+        "change_pct": -0.097058823529412,
+        "strength": 49.51470588235294,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "DECAY"
+      },
+      {
+        "name": "船舶制造",
+        "change_pct": -0.11428571428571,
+        "strength": 49.42857142857145,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "DECAY"
       }
     ]
   },
