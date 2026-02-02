@@ -1,1 +1,82 @@
-nohup: streamlit: No such file or directory
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8503
+  Network URL: http://172.21.216.126:8503
+  External URL: http://111.108.111.133:8503
+
+  For better performance, install the Watchdog module:
+
+  $ xcode-select --install
+  $ pip install watchdog
+            
+2026-02-02 16:07:22,495 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 16:07:22,908 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 16:07:22.910 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 16:07:22,992 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 16:07:22,994 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 16:07:22,994 - WARNING - 未找到合适的热点板块
+2026-02-02 17:05:21,664 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 17:05:22,017 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:22.021 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 17:05:22,104 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:22,106 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 17:05:22,107 - WARNING - 未找到合适的热点板块
+2026-02-02 17:05:30,637 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 17:05:30,848 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:30.851 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 17:05:30,972 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:30,974 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 17:05:30,974 - WARNING - 未找到合适的热点板块
+2026-02-02 17:05:31,030 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 17:05:31,225 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:31.227 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 17:05:31,354 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:31,356 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 17:05:31,356 - WARNING - 未找到合适的热点板块
+2026-02-02 17:05:31,553 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 17:05:31,764 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:31.766 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 17:05:31,833 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:31,834 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 17:05:31,834 - WARNING - 未找到合适的热点板块
+2026-02-02 17:05:31,886 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 17:05:32,087 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:32.088 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 17:05:32,203 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:05:32,204 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 17:05:32,204 - WARNING - 未找到合适的热点板块
+2026-02-02 17:23:41,478 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 17:23:41,763 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:23:41.765 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 17:23:41,912 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 17:23:41,914 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电器行业
+2026-02-02 17:23:41,914 - WARNING - 未找到合适的热点板块

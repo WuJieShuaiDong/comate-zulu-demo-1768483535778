@@ -207,8 +207,8 @@
     "2026-02-02": [
       {
         "name": "酿酒行业",
-        "change_pct": 1.295,
-        "strength": 56.475,
+        "change_pct": 1.4246875,
+        "strength": 57.1234375,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -217,28 +217,8 @@
       },
       {
         "name": "发电设备",
-        "change_pct": 0.33864406779661,
-        "strength": 51.69322033898305,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "陶瓷行业",
-        "change_pct": 0.034,
-        "strength": 50.17,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "电器行业",
-        "change_pct": 0.017592592592593,
-        "strength": 50.08796296296296,
+        "change_pct": 0.22033898305085,
+        "strength": 51.10169491525425,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -247,8 +227,8 @@
       },
       {
         "name": "公路桥梁",
-        "change_pct": -0.020555555555556,
-        "strength": 49.89722222222222,
+        "change_pct": -0.041111111111111,
+        "strength": 49.794444444444444,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -257,8 +237,18 @@
       },
       {
         "name": "环保行业",
-        "change_pct": -0.0284,
-        "strength": 49.858,
+        "change_pct": -0.0864,
+        "strength": 49.568,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "DECAY"
+      },
+      {
+        "name": "电器行业",
+        "change_pct": -0.12148148148148,
+        "strength": 49.3925925925926,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -267,8 +257,8 @@
       },
       {
         "name": "电力行业",
-        "change_pct": -0.073833333333333,
-        "strength": 49.630833333333335,
+        "change_pct": -0.124,
+        "strength": 49.38,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -276,9 +266,9 @@
         "cycle": "DECAY"
       },
       {
-        "name": "传媒娱乐",
-        "change_pct": -0.093888888888889,
-        "strength": 49.53055555555555,
+        "name": "供水供气",
+        "change_pct": -0.1512,
+        "strength": 49.244,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -287,8 +277,18 @@
       },
       {
         "name": "纺织行业",
-        "change_pct": -0.097058823529412,
-        "strength": 49.51470588235294,
+        "change_pct": -0.16176470588235,
+        "strength": 49.19117647058825,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "DECAY"
+      },
+      {
+        "name": "商业百货",
+        "change_pct": -0.17878048780488,
+        "strength": 49.1060975609756,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -297,8 +297,8 @@
       },
       {
         "name": "船舶制造",
-        "change_pct": -0.11428571428571,
-        "strength": 49.42857142857145,
+        "change_pct": -0.18,
+        "strength": 49.1,
         "up_count": 0,
         "down_count": 0,
         "leader": "",

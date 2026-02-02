@@ -1043,3 +1043,4 @@ For `use_container_width=True`, use `width='stretch'`. For `use_container_width=
 2026-02-02 13:53:35,613 - INFO - ✅ 获取板块排名成功(新浪): 30 个
 2026-02-02 13:53:35,615 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 环保行业, 电力行业
 2026-02-02 13:53:35,615 - WARNING - 未找到合适的热点板块
+  Stopping...
