@@ -8,27 +8,28 @@ WORKDIR /app
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# 安装系统依赖 (编译依赖和常用工具)
+# 安装系统依赖
 RUN apt-get update && apt-get install -y \
     gcc \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# 复制依赖文件并安装
+# 复制依赖文件并安装 (使用清华源加速)
 COPY quant_trading/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 复制项目代码
-# 注意：我们只复制代码，数据目录将在运行时通过挂载卷映射
+# 注意：我们不再复制 data 目录，防止构建报错
+# data 目录将在运行时通过 docker-compose 自动挂载
 COPY quant_trading/ .
 
-# 创建数据目录（确保目录存在）
+# 手动创建数据和日志目录
 RUN mkdir -p data logs
 
-# 声明数据卷（告诉 Docker 这些目录需要持久化）
+# 声明数据卷
 VOLUME ["/app/data", "/app/logs"]
 
-# 暴露前端端口
+# 暴露端口
 EXPOSE 8503
 
 # 创建启动脚本
