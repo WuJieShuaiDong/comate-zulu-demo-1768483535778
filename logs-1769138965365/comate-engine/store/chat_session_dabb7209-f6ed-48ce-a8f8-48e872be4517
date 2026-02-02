@@ -1,0 +1,1059 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "dabb7209-f6ed-48ce-a8f8-48e872be4517",
+  "messages": [
+    {
+      "id": "4334448",
+      "role": "user",
+      "status": "success",
+      "content": "TmsAccountBalanceCmbServiceImpl.importFromCitiJob、CitiTransactionsServiceImpl.autovSynCitiCamt052请你帮我分析下同时执行这两个任务有无问题",
+      "payload": {
+        "query": "TmsAccountBalanceCmbServiceImpl.importFromCitiJob、CitiTransactionsServiceImpl.autovSynCitiCamt052请你帮我分析下同时执行这两个任务有无问题",
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "agentId": 1,
+          "mcpServers": [],
+          "subAgentList": [
+            {
+              "mcpServers": [],
+              "name": "Zulu"
+            }
+          ]
+        },
+        "model": {
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 734504,
+        "sessionId": 9280416
+      }
+    },
+    {
+      "id": "28ca3583-5bea-476f-8b87-5ea98c78352b",
+      "userMessageId": "4334448",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "9b8fcfd7-af99-44aa-bf0f-ab27822a38ae",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要分析这两个任务的同时执行是否存在问题。首先让我搜索相关的Java文件来了解这两个方法的实现细节。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "8963a9c6-4430-4dca-a840-765acd53cb6d",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "TmsAccountBalanceCmbServiceImpl"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 94,
+                "endLine": 96
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "@Service\npublic class TmsAccountBalanceCmbServiceImpl implements TmsAccountBalanceCmbService {\n    // 招行的接口\n",
+                "start_line": 94,
+                "end_line": 96,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "TmsAccountBalanceCmbServiceImpl",
+                "file_pattern": "**/*.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "@Service\npublic class TmsAccountBalanceCmbServiceImpl implements TmsAccountBalanceCmbService {\n    // 招行的接口\n",
+                  "start_line": 94,
+                  "end_line": 96,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "TmsAccountBalanceCmbServiceImpl",
+            "file_pattern": "**/*.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "ddb0cb50-53e7-462d-8b7b-5f744948388a",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先查看这两个方法的完整实现来分析它们的同时执行是否存在问题。让我读取TmsAccountBalanceCmbServiceImpl文件。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "1edd11cc-cd3b-4cf6-904d-7622d1bd631c",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "displayResult": {
+            "lineCount": 1000,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+              "startLine": 1,
+              "endLine": 1000
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "package com.baidu.tms.cmb.service.impl;\n\nimport com.alibaba.fastjson.JSONArray;\nimport com.alibaba.fastjson.JSONObject;\nimport com.baidu.ce.common.MsgSendServiceAPI;\nimport com.baidu.p2p.commons.api.MessageSendApi;\nimport com.baidu.p2p.commons.api.domain.MessageSendBuilder;\nimport com.baidu.p2p.commons.constants.BizConstants;\nimport com.baidu.p2p.core.jdbc.pk.SequenceFactory;\nimport com.baidu.p2p.core.jdbc.pk.SequenceGenerator;\nimport com.baidu.p2p.core.poi.excel.utils.ExcelKit;\nimport com.baidu.p2p.core.utils.DateTool;\nimport com.baidu.p2p.core.utils.DateUtils;\nimport com.baidu.p2p.core.utils.StringUtils;\nimport com.baidu.p2p.core.utils.UtilType;\nimport com.baidu.p2p.core.utils.NewThreadPoolExecutorUtil;\nimport com.baidu.p2p.core.utils.lock.ILock;\nimport com.baidu.p2p.core.utils.lock.RedisLock;\nimport com.baidu.p2p.fnd.api.FndFlexValueApi;\nimport com.baidu.p2p.fnd.dao.FndLookupValueDAO;\nimport com.baidu.p2p.fnd.domain.FndFlexValue;\nimport com.baidu.p2p.fnd.domain.FndLookupValue;\nimport com.baidu.p2p.fnd.service.FndFlexValueService;\nimport com.baidu.p2p.system.domain.BaseDomain;\nimport com.baidu.p2p.system.i18n.LangEnv;\nimport com.baidu.tms.account.domain.AccountBalance;\nimport com.baidu.tms.account.service.AccountService;\nimport com.baidu.tms.account.util.AccountConstans;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.service.AbcAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.BankBocHkAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.BankCommonAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.BocAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.BocomhkAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.CcbAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.CebAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.CibAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.CiticAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.CmbcAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.IcbcAccountBalanceJobService;\nimport com.baidu.tms.cmb.service.TmsAccountBalanceCmbService;\nimport com.baidu.tms.commons.utils.HttpClientUtil;\nimport com.baidu.tms.persistent.account.dao.TmsAccountDAO;\nimport com.baidu.tms.persistent.account.domain.TmsAccount;\nimport com.baidu.tms.persistent.account.domain.TmsAccountExample;\nimport com.baidu.tms.persistent.cmb.dao.PmcPayCommonBankSetDAO;\nimport com.baidu.tms.persistent.cmb.dao.TmsAccountBalanceCmbDAO;\nimport com.baidu.tms.persistent.cmb.domain.PmcPayCommonBankSet;\nimport com.baidu.tms.persistent.cmb.domain.PmcPayCommonBankSetExample;\nimport com.baidu.tms.persistent.cmb.domain.TmsAccountBalanceCmb;\nimport com.baidu.tms.persistent.cmb.domain.TmsAccountBalanceCmbExample;\nimport com.baidu.tms.quartz.service.QuartzControlService;\nimport com.baidu.tms.trx.common.AbcConstants;\nimport com.baidu.tms.trx.common.BocConstants;\nimport com.baidu.tms.trx.common.BocomhkConstants;\nimport com.baidu.tms.trx.common.CcbConstants;\nimport com.baidu.tms.trx.common.CebConstants;\nimport com.baidu.tms.trx.common.CibConstants;\nimport com.baidu.tms.trx.common.CiticConstants;\nimport com.baidu.tms.trx.common.CmbcConstants;\nimport com.baidu.tms.trx.common.IcbcConstants;\nimport lombok.extern.slf4j.Slf4j;\nimport org.apache.commons.collections.CollectionUtils;\nimport org.apache.commons.collections4.MapUtils;\nimport org.dom4j.Document;\nimport org.dom4j.DocumentHelper;\nimport org.dom4j.Element;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.beans.factory.annotation.Qualifier;\nimport org.springframework.beans.factory.annotation.Value;\nimport org.springframework.stereotype.Service;\nimport org.springframework.web.multipart.MultipartFile;\n\nimport java.io.IOException;\nimport java.math.BigDecimal;\nimport java.text.DecimalFormat;\nimport java.text.ParseException;\nimport java.text.SimpleDateFormat;\nimport java.util.ArrayList;\nimport java.util.Calendar;\nimport java.util.Date;\nimport java.util.HashMap;\nimport java.util.Iterator;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.function.Function;\nimport java.util.regex.Pattern;\nimport java.util.stream.Collectors;\n\n/**\n * 招行余额管理服务\n */\n@Slf4j\n@Service\npublic class TmsAccountBalanceCmbServiceImpl implements TmsAccountBalanceCmbService {\n    // 招行的接口\n    private static final String CMB_BALANCE_URL = \"NTQADINF\";\n    // 招行历史余额的接口\n    private static final String CMB_HISTORY_BALANCE_URL = \"SDKNTQABINF\";\n    @Autowired\n    public QuartzControlService quartzControlService; //定时任务执行判定服务\n    @Autowired\n    private AccountService accountService;\n    @Value(\"${bank.interface.cmb.host}\")\n    private String url;\n    @Value(\"${bank.interface.cmb.login}\")\n    private String logName;\n    //Hujianfeng 20170427 方便根据accountNo查找account\n    @Autowired\n    private TmsAccountDAO tmsAccountDAO;\n    @Autowired\n    private TmsAccountBalanceCmbDAO tmsAccountBalanceCmbDAO;\n    @Autowired\n    @Qualifier(\"cachedSequenceFactory\")\n    public SequenceFactory sequenceFactory;\n    @Autowired\n    private FndLookupValueDAO fndLookupValueDAO;\n    @Autowired\n    private MessageSendApi messageSendApi;\n    @Autowired\n    private FndFlexValueApi fndFlexValueApi;\n    @Autowired\n    private BocAccountBalanceJobService bocAccountBalanceJobService;\n    @Autowired\n    private CmbcAccountBalanceJobService cmbcAccountBalanceJobService;\n    @Autowired\n    private CcbAccountBalanceJobService ccbAccountBalanceJobService;\n    @Autowired\n    private CibAccountBalanceJobService cibAccountBalanceJobService;\n    @Autowired\n    private AbcAccountBalanceJobService abcAccountBalanceJobService;\n    @Autowired\n    private CebAccountBalanceJobService cebAccountBalanceJobService;\n    @Autowired\n    private CiticAccountBalanceJobService citicAccountBalanceJobService;\n    @Autowired\n    private IcbcAccountBalanceJobService icbcAccountBalanceJobService;\n    @Autowired\n    private BocomhkAccountBalanceJobService bocomhkAccountBalanceJobService;\n    @Autowired\n    private BankBocHkAccountBalanceJobService bankBocHkAccountBalanceJobService;\n    @Autowired\n    private BankCommonAccountBalanceJobService bankCommonAccountBalanceJobService;\n    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n    @Autowired\n    private MsgSendServiceAPI msgSendServiceAPI;\n    @Autowired\n    private FndFlexValueService fndFlexValueService;\n    @Autowired\n    private PmcPayCommonBankSetDAO pmcPayCommonBankSetDAO;\n\n    /**\n     * 获取招行账户联机余额和前一天日终余额 （调用2.7 批量查询余额）\n     */\n    public void getCMBAccountBalances() {\n        ILock lck = new RedisLock(org.apache.commons.lang3.StringUtils.join(\n                BizConstants.LockName.CMB_ACCOUNT_BALANCES_JOB_LCK, DateUtils.getDate()),\n                5000L, 120000L);\n        try {\n            lck.acquirLock();\n            List<String> bankList = new ArrayList<>(8);\n            bankList.add(AccountConstans.ACCOUNT_BANK_BOC);\n            bankList.add(AccountConstans.ACCOUNT_BANK_CCB);\n            bankList.add(AccountConstans.ACCOUNT_BANK_CMB);\n            Date date = new Date();\n            // 中行余额\n            getBocAccountTodayBalance(DateUtils.getCurrentDateOfZero());\n            // 建行\n            getCcbAccountTodayBalance(DateUtils.getCurrentDateOfZero());\n            // 民生银行\n            getCmbcAccountTodayBalance(DateUtils.getCurrentDateOfZero());\n            // 兴业银行\n            getCibAccountTodayBalance(DateUtils.getCurrentDateOfZero());\n            // 查询有效账户列表\n            List<TmsAccount> accountList = accountService.getEffectiveAccoutOFBank(AccountConstans.ACCOUNT_BANK_CMB);\n            // 获取余额  保存余额\n            accountList.forEach(account -> {\n                try {\n                    saveCMBAccountBalance(getCBMAccountBalance(account));\n                } catch (Exception e) {\n                    log.error(e.getMessage(), e);\n                }\n            });\n            // 邮件提醒\n            this.balanceNowErrorAndMail(date, bankList, null);\n        } catch (Exception e) {\n            log.error(\"余额查询异常\", e);\n        } finally {\n            lck.releaseLock();\n        }\n\n    }\n\n    @Override\n    public void getCMBAccountHistoryBalance() {\n        ILock lck = new RedisLock(org.apache.commons.lang3.StringUtils.join(\n                BizConstants.LockName.CMB_ACCOUNT_HISTORY_BALANCES_JOB_LCK, DateUtils.getDate()),\n                60000L, 120000L);\n        try {\n            lck.acquirLock();\n            List<String> bankList = new ArrayList<>(8);\n            bankList.add(AccountConstans.ACCOUNT_BANK_BOC);\n            bankList.add(AccountConstans.ACCOUNT_BANK_CCB);\n            bankList.add(AccountConstans.ACCOUNT_BANK_CMB);\n            Date date = new Date();\n            // 中行余额\n            getBocAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 建行\n            getCcbAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 民生银行\n            getCmbcAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 兴业银行\n            getCibAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 农业银行\n            getAbcAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 光大银行\n            getCebAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 中信银行\n            getCiticAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 工商银行\n            getIcbcAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 交银香港\n            getBocomhkAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n\n            // 中银香港\n            getBochkAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n\n            // 通用银行\n            getBankCommonAccountHistoryBalance(DateUtils.getYesterdayOfZero());\n            // 招行余额\n            getCMBAccountHistoryBalance(DateUtils.getYesterdayOfZero(),DateUtils.getYesterdayOfZero());\n            // 邮件提醒\n            this.balanceOldErrorAndMail(date, bankList, null);\n        } catch (Exception e) {\n            log.error(\"历史余额查询异常\", e);\n        } finally {\n            lck.releaseLock();\n        }\n    }\n\n    @Override\n    public void balanceNowErrorAndMail(Date beforeDate, List<String> bankList, String type) {\n        try {\n            // 正常 且 启用银企直连账户\n            List<TmsAccount> openAccount = accountService.getOpenAccountOFBank(null, type);\n            if (CollectionUtils.isEmpty(openAccount)) {\n                log.info(\"balanceNowErrorAndMail 没有状态为正常启动银企直联的银行账户\");\n                return;\n            }\n            if (CollectionUtils.isNotEmpty(bankList)) {\n                openAccount = openAccount.stream()\n                        .filter(t -> bankList.contains(t.getBank())).collect(Collectors.toList());\n                if (CollectionUtils.isEmpty(openAccount)) {\n                    log.info(\"balanceNowErrorAndMail 银行下没有状态为正常启动银企直联的银行账户\");\n                    return;\n                }\n            }\n\n            Map<Long, TmsAccount> accountMap = openAccount.stream()\n                    .collect(Collectors.toMap(TmsAccount::getAcAccountId, Function.identity(), (k1, k2) -> k1));\n            // 余额处理查询账户\n            List<Long> accountIds = openAccount.stream().map(TmsAccount::getAcAccountId).collect(Collectors.toList());\n            // 全部余额数据\n            TmsAccountBalanceCmbExample example = new TmsAccountBalanceCmbExample();\n            TmsAccountBalanceCmbExample.Criteria criteria = example.createCriteria();\n            criteria.andAcAccountIdIn(accountIds);\n            criteria.andBalanceDateEqualTo(DateUtils.getCurrentDateOfZero());\n            // 今日余额\n            List<TmsAccountBalanceCmb> nowBalanceList = tmsAccountBalanceCmbDAO.selectByExample(example);\n            if (CollectionUtils.isNotEmpty(nowBalanceList)) {\n                for (TmsAccountBalanceCmb item : nowBalanceList) {\n                    if (item.getLastUpdateDate().after(beforeDate)) {\n                        accountMap.remove(item.getAcAccountId());\n                    }\n                }\n            }\n            if (MapUtils.isNotEmpty(accountMap)) {\n                String date = DateUtils.formatDate(beforeDate, \"yyyy-MM-dd\");\n                // 拉取失败账户\n                List<String> accountNoList = accountMap.values().stream()\n                        .map(TmsAccount::getAccountNo).collect(Collectors.toList());\n                String title = \"今日存在账户余额拉取异常账户\";\n                StringBuilder content = new StringBuilder();\n                content.append(\"<br/><b>详细信息：</b><br/> 日期\");\n                content.append(date);\n                content.append(\" 如下账户余额拉取失败: \");\n                for (String account : accountNoList) {\n                    content.append(\"<div>\");\n                    content.append(account);\n                    content.append(\"</div>\");\n                }\n                String sendTo = this.getEmailReceiver();\n                msgSendServiceAPI.sendMessageHtml(title, content.toString(), sendTo);\n            }\n        } catch (Exception e) {\n            log.error(\"余额邮件发送异常 \", e);\n        }\n    }\n\n    @Override\n    public void balanceOldErrorAndMail(Date beforeDate, List<String> bankList, String type) {\n        try {\n            // 正常 且 启用银企直连账户\n            List<TmsAccount> openAccount = accountService.getOpenAccountOFBank(null, type);\n            if (CollectionUtils.isEmpty(openAccount)) {\n                log.info(\"balanceOldErrorAndMail 没有状态为正常启动银企直联的银行账户\");\n                return;\n            }\n            if (CollectionUtils.isNotEmpty(bankList)) {\n                openAccount = openAccount.stream()\n                        .filter(t -> bankList.contains(t.getBank())).collect(Collectors.toList());\n                if (CollectionUtils.isEmpty(openAccount)) {\n                    log.info(\"balanceNowErrorAndMail 银行下没有状态为正常启动银企直联的银行账户\");\n                    return;\n                }\n            }\n\n            // 余额处理查询账户\n            List<Long> accountIds = openAccount.stream().map(TmsAccount::getAcAccountId).collect(Collectors.toList());\n            // 全部余额数据\n            TmsAccountBalanceCmbExample example = new TmsAccountBalanceCmbExample();\n            TmsAccountBalanceCmbExample.Criteria criteria = example.createCriteria();\n            criteria.andAcAccountIdIn(accountIds);\n            criteria.andBalanceDateEqualTo(DateUtils.getCurrentDateOfZero());\n\n            // 昨日余额\n            TmsAccountBalanceCmbExample exampleOld = new TmsAccountBalanceCmbExample();\n            exampleOld.createCriteria().andBalanceDateEqualTo(DateUtils.getYesterdayOfZero()).andAcAccountIdIn(accountIds);\n            List<TmsAccountBalanceCmb> oldBalanceList = tmsAccountBalanceCmbDAO.selectByExample(exampleOld);\n            if (CollectionUtils.isNotEmpty(oldBalanceList)) {\n                String date = DateUtils.formatDate(oldBalanceList.get(0).getBalanceDate(), \"yyyy-MM-dd\");\n                // 拉取失败账户\n                List<String> accountNoList = oldBalanceList.stream()\n                        .filter(t -> t.getLastUpdateDate().before(beforeDate))\n                        .map(TmsAccountBalanceCmb::getAccountNo).collect(Collectors.toList());\n                if (CollectionUtils.isNotEmpty(accountNoList)) {\n                    String title = \"昨日存在账户余额拉取异常账户\";\n                    StringBuilder content = new StringBuilder();\n                    content.append(\"<br/><b>详细信息：</b><br/> 日期\");\n                    content.append(date);\n                    content.append(\" 如下账户余额拉取失败: \");\n                    for (String account : accountNoList) {\n                        content.append(\"<div>\");\n                        content.append(account);\n                        content.append(\"</div>\");\n                    }\n                    String sendTo = this.getEmailReceiver();\n                    msgSendServiceAPI.sendMessageHtml(title, content.toString(), sendTo);\n                }\n            }\n        } catch (Exception e) {\n            log.error(\"余额邮件发送异常 \", e);\n        }\n    }\n\n    /**\n     * 获取招行历日终余额 （调用 2.4 查询账户历史余额）\n     *\n     * @param start 开始日期  左闭区间\n     * @param end   结束日期     右开区间\n     */\n    @Override\n    public void getCMBAccountHistoryBalance(Date start, final Date end) {\n        // 查询有效账户列表\n        List<TmsAccount> accountList = accountService.getEffectiveAccoutOFBank(AccountConstans.ACCOUNT_BANK_CMB);\n        // 获取余额  保存余额\n        while (start.compareTo(end) <= 0) {\n            // 遍历账号 处理流水\n            for (int i = 0; i < accountList.size(); i++) {\n                try {\n                    saveCMBAccountBalance(getCBMAccountHistoryBalanceInterface(accountList.get(i), start));\n                } catch (Exception e) {\n                    log.error(e.getMessage(), e);\n                }\n            }\n            start = DateUtils.addDays(start, 1);\n        }\n\n    }\n\n    @Override\n    public void getBocAccountTodayBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList =\n                accountService.getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_BOC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                bocAccountBalanceJobService.selectBocBalance(accountList, date, BocConstants.BalanceNow.trncod);\n        saveCMBAccountBalance(balance);\n\n        // 全球账户余额\n        List<TmsAccount> accountListAbroad =\n                accountService.getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_BOC, AccountConstans.TMS_ACCT_TYPE_ABROAD);\n        List<TmsAccountBalanceCmb> balanceAbroad =\n                bocAccountBalanceJobService.selectBocBalance(accountListAbroad, date, BocConstants.AbroadBalanceNow.trncod);\n        saveCMBAccountBalance(balanceAbroad);\n    }\n\n    @Override\n    public void getBocAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList =\n                accountService.getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_BOC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                bocAccountBalanceJobService.selectBocBalance(accountList, date, BocConstants.BalanceOld.trncod);\n        saveCMBAccountBalance(balance);\n\n        // 全球账户余额\n        List<TmsAccount> accountListAbroad =\n                accountService.getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_BOC, AccountConstans.TMS_ACCT_TYPE_ABROAD);\n        List<TmsAccountBalanceCmb> balanceAbroad =\n                bocAccountBalanceJobService.selectBocBalance(accountListAbroad, date, BocConstants.AbroadBalanceOld.trncod);\n        saveCMBAccountBalance(balanceAbroad);\n    }\n\n    @Override\n    public void getCmbcAccountTodayBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CMBC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                cmbcAccountBalanceJobService.selectCmbcBalance(accountList, date, CmbcConstants.BalanceNow.TRN_CODE);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getCmbcAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CMBC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                cmbcAccountBalanceJobService.selectCmbcBalance(accountList, date, CmbcConstants.BalanceOld.TRN_CODE);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getCibAccountTodayBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CIB, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                cibAccountBalanceJobService.selectCibBalance(accountList, date, CibConstants.BalanceNow.TRN_CODE);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getCibAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CIB, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                cibAccountBalanceJobService.selectCibBalance(accountList, date, CibConstants.BalanceOld.TRN_CODE);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getAbcAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_ABC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                abcAccountBalanceJobService.selectAbcBalance(accountList, date,\n                        AbcConstants.AbcTranscodeEnum.BALANCE_OLD);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getCebAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CEB, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                cebAccountBalanceJobService.selectCebBalance(accountList, date,\n                        CebConstants.CebTranscodeEnum.BALANCE_OLD);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getCiticAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CITIC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                citicAccountBalanceJobService.selectCiticBalance(accountList, date,\n                        CiticConstants.CiticTranscodeEnum.BALANCE_OLD);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getIcbcAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_ICBC, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                icbcAccountBalanceJobService.selectIcbcBalance(accountList, date,\n                        IcbcConstants.IcbcTranscodeEnum.BALANCE_OLD);\n        saveCMBAccountBalance(balance);\n    }\n\n    /**\n     * 查询工行历史余额\n     * @param date\n     */\n    @Override\n    public void getBocomhkAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_BOCOMHK, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                bocomhkAccountBalanceJobService.selectBocomhkBalance(accountList, date,\n                        BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n        saveCMBAccountBalance(balance);\n    }\n\n    /**\n     * 查询中银香港历史余额\n     * @param date\n     */\n    @Override\n    public void getBochkAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList = accountService\n                .getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_BOCHK, AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                bankBocHkAccountBalanceJobService.selectBankBocHkBalance(accountList, date,\n                        BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n        saveCMBAccountBalance(balance);\n    }\n\n    /**\n     * 查询通用银行历史余额\n     * @param date\n     */\n    @Override\n    public void getBankCommonAccountHistoryBalance(Date date) {\n        PmcPayCommonBankSetExample example = new PmcPayCommonBankSetExample();\n        example.createCriteria().andTransferFlagEqualTo(\"Y\");\n        List<PmcPayCommonBankSet> bankCommonList = pmcPayCommonBankSetDAO.selectByExample(example);\n        for(PmcPayCommonBankSet bankCommon : bankCommonList){\n            // 国内账户余额\n            List<TmsAccount> accountList = accountService\n                    .getOpenAccountOFBank(bankCommon.getBankCode(), AccountConstans.TMS_ACCT_TYPE_HOME);\n            List<TmsAccountBalanceCmb> balance =\n                    bankCommonAccountBalanceJobService.selectBankCommonBalance(accountList, date,\n                            BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        }\n    }\n\n    /**\n     * 手动补偿接口，中行账户+指定日期同步历史余额\n     */\n    public void getBocBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_BOC);\n        account.setAttribute1(\"Y\");\n        account.setAccountNo(acctNum);\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, \"yyyyMMdd\"))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 国内历史\n            account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n            List<TmsAccount> accountList = accountService.findList(account);\n            List<TmsAccountBalanceCmb> balance =\n                    bocAccountBalanceJobService.selectBocBalance(accountList, etydat, BocConstants.BalanceOld.trncod);\n            saveCMBAccountBalance(balance);\n            // 海外历史\n            account.setType(AccountConstans.TMS_ACCT_TYPE_ABROAD);\n            List<TmsAccount> accountAbroadList = accountService.findList(account);\n            List<TmsAccountBalanceCmb> balanceAbroad =\n                    bocAccountBalanceJobService.selectBocBalance(accountAbroadList, etydat,\n                            BocConstants.AbroadBalanceOld.trncod);\n            saveCMBAccountBalance(balanceAbroad);\n        } else {\n            // 今日\n            account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n            List<TmsAccount> accountList = accountService.findList(account);\n            List<TmsAccountBalanceCmb> balance =\n                    bocAccountBalanceJobService.selectBocBalance(accountList, etydat, BocConstants.BalanceNow.trncod);\n            saveCMBAccountBalance(balance);\n\n            // 海外历史\n            account.setType(AccountConstans.TMS_ACCT_TYPE_ABROAD);\n            List<TmsAccount> accountAbroadList = accountService.findList(account);\n            List<TmsAccountBalanceCmb> balanceAbroad =\n                    bocAccountBalanceJobService.selectBocBalance(accountAbroadList, etydat,\n                            BocConstants.AbroadBalanceNow.trncod);\n            saveCMBAccountBalance(balanceAbroad);\n        }\n    }\n\n    @Override\n    public void getCcbAccountTodayBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList =\n                accountService.getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CCB,\n                        AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                ccbAccountBalanceJobService.selectCcbBalance(accountList, date, CcbConstants.BalanceNow.TX_CODE);\n        saveCMBAccountBalance(balance);\n    }\n\n    @Override\n    public void getCcbAccountHistoryBalance(Date date) {\n        // 国内账户余额\n        List<TmsAccount> accountList =\n                accountService.getOpenAccountOFBank(AccountConstans.ACCOUNT_BANK_CCB,\n                        AccountConstans.TMS_ACCT_TYPE_HOME);\n        List<TmsAccountBalanceCmb> balance =\n                ccbAccountBalanceJobService.selectCcbBalance(accountList, date, CcbConstants.BalanceOld.TX_CODE);\n        saveCMBAccountBalance(balance);\n    }\n\n    /**\n     * 手动补偿接口，建行账户+指定日期 同步余额\n     */\n    @Override\n    public void getCcbBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_CCB);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CcbConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, \"yyyyMMdd\")).before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance =\n                    ccbAccountBalanceJobService.selectCcbBalance(accountList, etydat, CcbConstants.BalanceOld.TX_CODE);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日\n            List<TmsAccountBalanceCmb> balance =\n                    ccbAccountBalanceJobService.selectCcbBalance(accountList, etydat, CcbConstants.BalanceNow.TX_CODE);\n            saveCMBAccountBalance(balance);\n\n        }\n    }\n\n    /**\n     * 手动补偿接口，民生银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getCmbcBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_CMBC);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CmbcConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN_YYYYMMDD))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = cmbcAccountBalanceJobService\n                    .selectCmbcBalance(accountList, etydat, CmbcConstants.BalanceOld.TRN_CODE);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日\n            List<TmsAccountBalanceCmb> balance = cmbcAccountBalanceJobService\n                    .selectCmbcBalance(accountList, etydat, CmbcConstants.BalanceNow.TRN_CODE);\n            saveCMBAccountBalance(balance);\n\n        }\n    }\n\n    /**\n     * 手动补偿接口，民生银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getCibBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_CIB);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CibConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getCibBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = cibAccountBalanceJobService\n                    .selectCibBalance(accountList, etydat, CibConstants.BalanceOld.TRN_CODE);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日\n            List<TmsAccountBalanceCmb> balance = cibAccountBalanceJobService\n                    .selectCibBalance(accountList, etydat, CibConstants.BalanceNow.TRN_CODE);\n            saveCMBAccountBalance(balance);\n\n        }\n    }\n\n    /**\n     * 手动补偿接口，农业银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getAbcBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_ABC);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CibConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getAbcBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = abcAccountBalanceJobService\n                    .selectAbcBalance(accountList, etydat, AbcConstants.AbcTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日 todo 未开发\n            log.info(\"getAbcBalanceByAccount 手动补偿接口 未开今日余额\");\n        }\n    }\n\n    /**\n     * 手动补偿接口，光大银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getCebBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_CEB);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CibConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getCebBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = cebAccountBalanceJobService\n                    .selectCebBalance(accountList, etydat, CebConstants.CebTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日 todo 未开发\n            log.info(\"getCebBalanceByAccount 手动补偿接口 未开今日余额\");\n        }\n    }\n\n    /**\n     * 手动补偿接口，中信银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getCiticBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_CITIC);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CibConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getCebBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = citicAccountBalanceJobService\n                    .selectCiticBalance(accountList, etydat, CiticConstants.CiticTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日 todo 未开发\n            log.info(\"getCiticBalanceByAccount 手动补偿接口 未开今日余额\");\n        }\n    }\n\n    /**\n     * 手动补偿接口，工商银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getIcbcBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_ICBC);\n        account.setAttribute1(\"Y\");\n        account.setType(AccountConstans.TMS_ACCT_TYPE_HOME);\n        account.setAccountNo(acctNum);\n        account.setCurrency(CibConstants.CNY);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getIcbcBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = icbcAccountBalanceJobService\n                    .selectIcbcBalance(accountList, etydat, IcbcConstants.IcbcTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日\n            List<TmsAccountBalanceCmb> balance = icbcAccountBalanceJobService\n                    .selectIcbcBalance(accountList, etydat, IcbcConstants.IcbcTranscodeEnum.BALANCE_NOW);\n            saveCMBAccountBalance(balance);\n        }\n    }\n\n    /**\n     * 手动补偿接口，交银香港银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getBocomhkBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_BOCOMHK);\n        account.setAttribute1(\"Y\");\n        account.setAccountNo(acctNum);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getBocomhkBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = bocomhkAccountBalanceJobService\n                    .selectBocomhkBalance(accountList, etydat, BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        } else {\n            // 今日 todo 未开发\n            log.info(\"getBocomhkBalanceByAccount 手动补偿接口 未开今日余额\");\n            List<TmsAccountBalanceCmb> balance = bocomhkAccountBalanceJobService\n                    .selectBocomhkBalance(accountList, etydat, BocomhkConstants.BocomhkTranscodeEnum.BALANCE_NOW);\n            saveCMBAccountBalance(balance);\n        }\n    }\n\n    /**\n     * 手动补偿接口，中银香港银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getBochkBalanceByAccount(Date etydat, String acctNum) {\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_BOCHK);\n        account.setAttribute1(\"Y\");\n        account.setAccountNo(acctNum);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"getBochkBalanceByAccount 手动补偿接口 账户集为空\");\n            return;\n        }\n        if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                .before(DateUtils.getCurrentDateOfZero())) {\n            // 历史\n            List<TmsAccountBalanceCmb> balance = bankBocHkAccountBalanceJobService\n                    .selectBankBocHkBalance(accountList, etydat, BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        } else {\n            log.info(\"getBochkBalanceByAccount 手动补偿接口 未开今日余额\");\n            List<TmsAccountBalanceCmb> balance = bankBocHkAccountBalanceJobService\n                    .selectBankBocHkBalance(accountList, etydat, BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n            saveCMBAccountBalance(balance);\n        }\n    }\n\n    /**\n     * 手动补偿接口，遍历 通用银行账户+指定日期 同步余额\n     */\n    @Override\n    public void getBankCommonBalanceByAccount(Date etydat, String acctNum) {\n        PmcPayCommonBankSetExample bankExample = new PmcPayCommonBankSetExample();\n        bankExample.createCriteria().andTransferFlagEqualTo(\"Y\");\n        List<PmcPayCommonBankSet> bankCommonList = pmcPayCommonBankSetDAO.selectByExample(bankExample);\n        for (PmcPayCommonBankSet bank : bankCommonList) {\n            TmsAccount account = new TmsAccount();\n            account.setBank(bank.getBankCode());\n            account.setAttribute1(\"Y\");\n            account.setAccountNo(acctNum);\n            List<TmsAccount> accountList = accountService.findList(account);\n            if (CollectionUtils.isEmpty(accountList)) {\n                log.info(\"getBankCommonBalanceByAccount 手动补偿接口 账户集为空\");\n                continue;\n            }\n\n            List<TmsAccount> bankAcctList = accountList.stream()\n                    .filter(t -> bank.getBankCode().equals(t.getBank()))\n                    .collect(Collectors.toList());\n            if (org.springframework.util.CollectionUtils.isEmpty(bankAcctList)){\n                log.info(\"bankCode:{} 没有对应的账户,不拉取流水\", bank.getBankCode());\n                continue;\n            }\n            if (DateUtils.parseDate(DateUtils.formatDate(etydat, DateTool.DAY_PARTTEN))\n                    .before(DateUtils.getCurrentDateOfZero())) {\n                // 历史\n                List<TmsAccountBalanceCmb> balance = bankCommonAccountBalanceJobService\n                        .selectBankCommonBalance(bankAcctList, etydat,\n                                BocomhkConstants.BocomhkTranscodeEnum.BALANCE_OLD);\n                saveCMBAccountBalance(balance);\n            } else {\n                // 今日 todo 未开发\n                log.info(\"getBankCommonBalanceByAccount 手动补偿接口 未开今日余额\");\n            }\n        }\n    }\n\n    /**\n     * 手动补偿接口，按招行账户+指定日期同步历史余额\n     * @param etydat\n     * @param acctNum\n     */\n    @Override\n    public void getCmbHisBalanceByAccount(Date etydat, String acctNum) {\n        // 1.找到指定账户\n        TmsAccount account = new TmsAccount();\n        account.setBank(AccountConstans.ACCOUNT_BANK_CMB);\n        account.setAttribute1(\"Y\");\n        account.setAccountNo(acctNum);\n        List<TmsAccount> accountList = accountService.findList(account);\n\n        // 2.同步\n        for (int i = 0; i < accountList.size(); i++) {\n            try {\n                saveCMBAccountBalance(getCBMAccountHistoryBalanceInterface(accountList.get(i), etydat));\n            } catch (Exception e) {\n                log.error(\"手动补偿拉取招行余额异常:\" + e.getMessage(), e);\n            }\n        }\n\n    }\n\n    /**\n     * 手动补偿接口，按招行账户+指定日期同步历史余额\n     *\n     * @param etydat\n     * @param acctNum\n     */\n    @Override\n    public void getBankHisBalanceByAccount(Date etydat, String acctNum) {\n        // 1.找到指定账户\n        TmsAccount account = new TmsAccount();\n        account.setAttribute1(\"Y\");\n        account.setAccountNo(acctNum);\n        List<TmsAccount> accountList = accountService.findList(account);\n        if (CollectionUtils.isEmpty(accountList)) {\n            log.info(\"未找到指定的账户, accountNo{}\", acctNum);\n            return;\n        }\n        PmcPayCommonBankSetExample bankCommonExample = new PmcPayCommonBankSetExample();\n        bankCommonExample.createCriteria().andTransferFlagEqualTo(\"Y\");\n        List<PmcPayCommonBankSet> bankCommonList = pmcPayCommonBankSetDAO.selectByExample(bankCommonExample);\n        List<String> bankCodeList = bankCommonList.stream()\n                .map(PmcPayCommonBankSet::getBankCode)\n                .collect(Collectors.toList());\n        // 2.根据账户银行类型进行更新\n        TmsAccount acct = accountList.get(0);\n        switch (acct.getBank()) {\n            case AccountConstans.ACCOUNT_BANK_CMB:\n                getCmbHisBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_BOC:\n                getBocBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_ABC:\n                getAbcBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_CEB:\n                getCebBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_CITIC:\n                getCiticBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_ICBC:\n                getIcbcBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_BOCOMHK:\n                getBocomhkBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_CCB:\n                getCcbBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_CMBC:\n                getCmbcBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_CIB:\n                getCibBalanceByAccount(etydat, acctNum);\n                break;\n            case AccountConstans.ACCOUNT_BANK_BOCHK:\n                getBochkBalanceByAccount(etydat, acctNum);\n                break;\n            default:\n                // 遍历通用银行\n                if (bankCodeList.contains(acct.getBank())) {",
+                "line_count": 1749,
+                "start_line": 1,
+                "end_line": 1000
+              }
+            }
+          },
+          "params": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "1f7ca35b-ca83-495c-bd0b-0f305a6cb8cc",
+          "type": "TEXT",
+          "status": "success",
+          "content": "现在让我搜索CitiTransactionsServiceImpl文件来了解第二个方法。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "a53807af-ccfd-4fd3-9620-0195e62c5067",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "CitiTransactionsServiceImpl"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java",
+                "startLine": 22,
+                "endLine": 24
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java",
+                "startLine": 31,
+                "endLine": 33
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "@Rollback\npublic class CitiTransactionsServiceImplTest extends AbstractContextServiceTests {\n\n",
+                "start_line": 22,
+                "end_line": 24,
+                "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java"
+              },
+              {
+                "match": "@Slf4j\npublic class CitiTransactionsServiceImpl implements CitiTransactionsService {\n\n",
+                "start_line": 31,
+                "end_line": 33,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "CitiTransactionsServiceImpl",
+                "file_pattern": "**/*.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "@Rollback\npublic class CitiTransactionsServiceImplTest extends AbstractContextServiceTests {\n\n",
+                  "start_line": 22,
+                  "end_line": 24,
+                  "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java"
+                },
+                {
+                  "match": "@Slf4j\npublic class CitiTransactionsServiceImpl implements CitiTransactionsService {\n\n",
+                  "start_line": 31,
+                  "end_line": 33,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "CitiTransactionsServiceImpl",
+            "file_pattern": "**/*.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "9dbfd7e7-75e4-42dd-b3c9-77522afe9458",
+          "type": "TEXT",
+          "status": "success",
+          "content": "现在让我读取CitiTransactionsServiceImpl文件来了解autovSynCitiCamt052方法的实现。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "9a031b3a-418d-4a83-90e6-2196bd5af481",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+          },
+          "displayResult": {
+            "lineCount": 137,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java",
+              "startLine": 1,
+              "endLine": 137
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "package com.baidu.tms.cmb.service.impl;\n\nimport java.util.Date;\nimport java.util.List;\n\nimport org.apache.commons.collections.CollectionUtils;\nimport org.apache.commons.lang3.StringUtils;\nimport org.apache.commons.lang3.exception.ExceptionUtils;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Service;\n\nimport com.baidu.p2p.commons.constants.BizConstants;\nimport com.baidu.p2p.core.utils.DateUtils;\nimport com.baidu.p2p.core.utils.lock.ILock;\nimport com.baidu.p2p.core.utils.lock.RedisLock;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.common.CitiTransactionDTO;\nimport com.baidu.tms.cmb.service.CitiTransactionsService;\nimport com.baidu.tms.persistent.transaction.dao.TmsTransactionsCmbDAO;\nimport com.baidu.tms.persistent.transaction.domain.TmsTransactionsCmb;\nimport com.baidu.tms.persistent.transaction.domain.TmsTransactionsCmbExample;\nimport com.google.common.collect.Lists;\n\nimport lombok.extern.slf4j.Slf4j;\n\n/**\n * @author: sunxiaoning\n * @date: 2020/12/23\n */\n@Service\n@Slf4j\npublic class CitiTransactionsServiceImpl implements CitiTransactionsService {\n\n    public static String SYS_AUTO = \"SYS_AUTO\";\n    public static String B041 = \"B041\";\n\n    @Autowired\n    private TmsTransactionsCmbDAO tmsTransactionsCmbDAO;\n\n    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n\n    @Override\n    public void autovSynCitiCamt052() {\n        log.info(\"autovSynCitiCamt052 拉取花旗银行日间流水调度进行中...\");\n        ILock lck = new RedisLock(StringUtils.join(BizConstants.LockName.IMPORT_FROM_CITI_JOB_LCK, DateUtils.getDate()),\n                5000L, 300000L);\n        try {\n            lck.acquirLock();\n            StringBuilder errorMsg = new StringBuilder(\"\");\n            citiAnalyzeStmt.runProgram(errorMsg, Boolean.TRUE);\n            log.info(\"同步花期银行流水结束，errorMsg:{}\", errorMsg.toString());\n        } catch (Exception e) {\n            log.error(\"autovSynCitiCamt052 解析花期日间对账单发生异常\", e);\n        } finally {\n            lck.releaseLock();\n        }\n    }\n\n    @Override\n    public Boolean handleCitiTransacitons(List<CitiTransactionDTO> writeBackDTOS) {\n        Boolean handleFlag = Boolean.TRUE;\n        if (CollectionUtils.isEmpty(writeBackDTOS)) {\n            return handleFlag;\n        }\n        // 1.对list进行遍历获取流水\n        List<TmsTransactionsCmb> transList = Lists.newArrayList();\n\n        Date curDate = new Date();\n        for (CitiTransactionDTO dto : writeBackDTOS) {\n            try {\n                TmsTransactionsCmb cmbTrx = new TmsTransactionsCmb();\n                cmbTrx.setAcctNum(dto.getAccountNumber());\n                cmbTrx.setCurrencyType(dto.getEntryCurrency());\n                String etydat = dto.getBookingDate().replace(\"-\", \"\");\n                cmbTrx.setEtydat(etydat);\n                cmbTrx.setVltdat(etydat);\n                String timeStr = StringUtils.isNotBlank(dto.getMsgCreateDate()) ?\n                        dto.getMsgCreateDate().substring(11, 19).replace(\":\", \"\") : \"100000\";\n                cmbTrx.setEtytim(timeStr);\n                cmbTrx.setTrscod(dto.getBankTransactionCode());\n\n                String naryur = dto.getRemittanceInfo();\n                if (StringUtils.isNotBlank(naryur)) {\n                    naryur = naryur.length() > 200 ? naryur.substring(0, 199) : naryur;\n                }\n                cmbTrx.setNaryur(naryur);\n\n                if (\"C\".equals(dto.getEntryCreditDebitIndicator())) {\n                    cmbTrx.setTrsamtc(dto.getEntryAmount());\n                    cmbTrx.setTrsamt(dto.getEntryAmount());\n                } else {\n                    cmbTrx.setTrsamtd(dto.getEntryAmount());\n                    cmbTrx.setTrsamt(dto.getEntryAmount().negate());\n                }\n\n                cmbTrx.setAmtcdr(dto.getEntryCreditDebitIndicator());\n                cmbTrx.setRefnbr(dto.getTransactionSvcReference());\n                cmbTrx.setYurref(dto.getTransactionEndToEndId());\n                cmbTrx.setBusnar(dto.getBankTransactionName());\n                cmbTrx.setRpynam(dto.getPartyName());\n                cmbTrx.setRpyacc(dto.getPartyAccount());\n                cmbTrx.setRpybnk(dto.getPartyBankName());\n                cmbTrx.setBankCode(B041);\n\n                cmbTrx.setCreationDate(curDate);\n                cmbTrx.setLastUpdateDate(curDate);\n                cmbTrx.setCreatedBy(SYS_AUTO);\n                cmbTrx.setLastUpdatedBy(SYS_AUTO);\n\n                // 花期账单不是主动指定日期，而是被动接收，所以日期范围不确定，暂时直接查数据库\n                TmsTransactionsCmbExample cmbTrxExample = new TmsTransactionsCmbExample();\n                TmsTransactionsCmbExample.Criteria validateCriteria = cmbTrxExample.createCriteria();\n                validateCriteria.andAcctNumEqualTo(cmbTrx.getAcctNum());\n                validateCriteria.andEtydatEqualTo(cmbTrx.getEtydat());\n                validateCriteria.andRefnbrEqualTo(cmbTrx.getRefnbr());\n                if (tmsTransactionsCmbDAO.countByExample(cmbTrxExample) == 0) {\n                    transList.add(cmbTrx);\n                } else {\n                    log.info(\"解析到花旗流水已存在,AcctNum:{},Etydat:{},Refnbr:{}\",\n                            cmbTrx.getAcctNum(), cmbTrx.getEtydat(), cmbTrx.getRefnbr());\n                }\n            } catch (Exception e) {\n                log.info(\"handleCitiTransacitons:{}\", ExceptionUtils.getStackTrace(e));\n                handleFlag = Boolean.FALSE;\n            }\n        }\n\n        if (CollectionUtils.isNotEmpty(transList)) {\n            tmsTransactionsCmbDAO.insertList(transList);\n            log.info(\"插入花旗流水数据:{}条\", transList.size());\n        }\n        return handleFlag;\n    }\n\n}\n",
+                "line_count": 137,
+                "start_line": 1,
+                "end_line": 137
+              }
+            }
+          },
+          "params": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "84210b27-aa1d-43a3-b61a-abb31952edc9",
+          "type": "TEXT",
+          "status": "success",
+          "content": "现在我需要搜索importFromCitiJob方法的具体实现，让我在TmsAccountBalanceCmbServiceImpl中查找这个方法。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "d04454c2-61eb-4135-854f-ecb17df24892",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "importFromCitiJob"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1176,
+                "endLine": 1178
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1179,
+                "endLine": 1181
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1182,
+                "endLine": 1185
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1197,
+                "endLine": 1199
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "    @Override\n    public void importFromCitiJob() {\n        NewThreadPoolExecutorUtil.execute(\n",
+                "start_line": 1176,
+                "end_line": 1178,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "                () -> importFromCitiJobByPool(),\n                \"task-importFromCitiJobByPool\");\n    }\n",
+                "start_line": 1179,
+                "end_line": 1181,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "\n    public void importFromCitiJobByPool() {\n        log.info(\"importFromCitiJob 拉取花旗银行日终流水调度进行中...\");\n\n",
+                "start_line": 1182,
+                "end_line": 1185,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "                errorMap = importFromCiti();\n                log.info(\"importFromCitiJob 拉取花旗银行日终流水结束，errorMsg:{}\", errorMap);\n                if (errorMap == null || (errorMap != null && ((ArrayList) errorMap.get(\"detail\")).size() == 0)) {\n",
+                "start_line": 1197,
+                "end_line": 1199,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "importFromCitiJob",
+                "file_pattern": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "    @Override\n    public void importFromCitiJob() {\n        NewThreadPoolExecutorUtil.execute(\n",
+                  "start_line": 1176,
+                  "end_line": 1178,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "                () -> importFromCitiJobByPool(),\n                \"task-importFromCitiJobByPool\");\n    }\n",
+                  "start_line": 1179,
+                  "end_line": 1181,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "\n    public void importFromCitiJobByPool() {\n        log.info(\"importFromCitiJob 拉取花旗银行日终流水调度进行中...\");\n\n",
+                  "start_line": 1182,
+                  "end_line": 1185,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "                errorMap = importFromCiti();\n                log.info(\"importFromCitiJob 拉取花旗银行日终流水结束，errorMsg:{}\", errorMap);\n                if (errorMap == null || (errorMap != null && ((ArrayList) errorMap.get(\"detail\")).size() == 0)) {\n",
+                  "start_line": 1197,
+                  "end_line": 1199,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "importFromCitiJob",
+            "file_pattern": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "0d523e06-6c02-44b6-a2f8-443b5dcae787",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要查看importFromCitiJob方法的完整实现，特别是importFromCitiJobByPool方法的完整代码。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "e2e6cd30-0f1a-41ca-a244-133c8223495c",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "displayResult": {
+            "lineCount": 81,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+              "startLine": 1170,
+              "endLine": 1250
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "start_line": "1170",
+                "end_line": "1250"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "        return null;\n    }\n\n    /**\n     * 由花旗银行的账单导入余额 定时任务\n     */\n    @Override\n    public void importFromCitiJob() {\n        NewThreadPoolExecutorUtil.execute(\n                () -> importFromCitiJobByPool(),\n                \"task-importFromCitiJobByPool\");\n    }\n\n    public void importFromCitiJobByPool() {\n        log.info(\"importFromCitiJob 拉取花旗银行日终流水调度进行中...\");\n\n        // 校验当前服务器是否可以执行定时任务\n//        if (!quartzControlService.verifyMachineEffect()) {\n//            return;\n//        }\n        ILock lck = new RedisLock(org.apache.commons.lang3.StringUtils.join(\n                BizConstants.LockName.IMPORT_FROM_CITI_JOB_LCK, DateUtils.getDate()),\n                5000L, 120000L);\n        try {\n            lck.acquirLock();\n            Map errorMap = null;\n            try {\n                errorMap = importFromCiti();\n                log.info(\"importFromCitiJob 拉取花旗银行日终流水结束，errorMsg:{}\", errorMap);\n                if (errorMap == null || (errorMap != null && ((ArrayList) errorMap.get(\"detail\")).size() == 0)) {\n                    // 如果没错误，则不发邮件\n                    // 同时，复制昨日账单余额\n                    invokeCopyYesterDayCitiBal();\n                    return;\n                }\n            } catch (Exception e) {\n                errorMap = new HashMap();\n                errorMap.put(\"summary\", e.getMessage());\n                // errorMap.put(\"detail\", e.getStackTrace()[0]);\n                e.printStackTrace();\n            }\n            // 如果有错误消息，则返回错误消息。\n            sendEmail(errorMap);\n        } catch (Exception e) {\n            e.printStackTrace();\n        } finally {\n            lck.releaseLock();\n        }\n\n    }\n\n    @Override\n    public void invokeCopyYesterDayCitiBal() {\n        Map copyMap = null;\n        try {\n            copyMap = copyYesterDayCitiBal();\n            if (copyMap == null || (copyMap != null && ((ArrayList) copyMap.get(\"detail\")).size() == 0)) {\n                // 如果没产生复制，则直接返回，不发送邮件\n                return;\n            }\n        } catch (Exception e) {\n            copyMap = new HashMap();\n            copyMap.put(\"summary\", e.getMessage());\n            // errorMap.put(\"detail\", e.getStackTrace()[0]);\n            e.printStackTrace();\n        }\n        // 如果产生复制，则发送复制消息。\n        sendEmail(copyMap);\n    }\n\n    @Override\n    public void copyYesterDayCitiBalJob() {\n        // 校验当前服务器是否可以执行定时任务\n//        if (!quartzControlService.verifyMachineEffect()) {\n//            return;\n//        }\n        ILock lck = new RedisLock(org.apache.commons.lang3.StringUtils.join(BizConstants.LockName.TRANSACTION_JOB_LCK,\n                DateUtils.getDate()), 60000L, 3600000L);\n        try {\n            lck.acquirLock();\n            Map copyMap = null;",
+                "line_count": 1749,
+                "start_line": 1170,
+                "end_line": 1250
+              }
+            }
+          },
+          "params": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+            "start_line": "1170",
+            "end_line": "1250"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "da6eef15-41a1-43b7-919c-b2e3cf2112b5",
+          "type": "TEXT",
+          "status": "success",
+          "content": "现在让我查看importFromCiti方法的实现，以了解具体的业务逻辑。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "5a7a472e-48b3-47c0-a999-18b69e863ea3",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "importFromCiti"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1176,
+                "endLine": 1178
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1179,
+                "endLine": 1181
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1182,
+                "endLine": 1185
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1196,
+                "endLine": 1199
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 1349,
+                "endLine": 1351
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "    @Override\n    public void importFromCitiJob() {\n        NewThreadPoolExecutorUtil.execute(\n",
+                "start_line": 1176,
+                "end_line": 1178,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "                () -> importFromCitiJobByPool(),\n                \"task-importFromCitiJobByPool\");\n    }\n",
+                "start_line": 1179,
+                "end_line": 1181,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "\n    public void importFromCitiJobByPool() {\n        log.info(\"importFromCitiJob 拉取花旗银行日终流水调度进行中...\");\n\n",
+                "start_line": 1182,
+                "end_line": 1185,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "            try {\n                errorMap = importFromCiti();\n                log.info(\"importFromCitiJob 拉取花旗银行日终流水结束，errorMsg:{}\", errorMap);\n                if (errorMap == null || (errorMap != null && ((ArrayList) errorMap.get(\"detail\")).size() == 0)) {\n",
+                "start_line": 1196,
+                "end_line": 1199,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "    @Override\n    public Map importFromCiti() {\n        StringBuilder errorMsg = new StringBuilder(\"\");\n",
+                "start_line": 1349,
+                "end_line": 1351,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "importFromCiti",
+                "file_pattern": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "    @Override\n    public void importFromCitiJob() {\n        NewThreadPoolExecutorUtil.execute(\n",
+                  "start_line": 1176,
+                  "end_line": 1178,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "                () -> importFromCitiJobByPool(),\n                \"task-importFromCitiJobByPool\");\n    }\n",
+                  "start_line": 1179,
+                  "end_line": 1181,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "\n    public void importFromCitiJobByPool() {\n        log.info(\"importFromCitiJob 拉取花旗银行日终流水调度进行中...\");\n\n",
+                  "start_line": 1182,
+                  "end_line": 1185,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "            try {\n                errorMap = importFromCiti();\n                log.info(\"importFromCitiJob 拉取花旗银行日终流水结束，errorMsg:{}\", errorMap);\n                if (errorMap == null || (errorMap != null && ((ArrayList) errorMap.get(\"detail\")).size() == 0)) {\n",
+                  "start_line": 1196,
+                  "end_line": 1199,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "    @Override\n    public Map importFromCiti() {\n        StringBuilder errorMsg = new StringBuilder(\"\");\n",
+                  "start_line": 1349,
+                  "end_line": 1351,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "importFromCiti",
+            "file_pattern": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "6b77e239-6ce8-4ecf-8496-f0ded6674ad4",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要查看importFromCiti方法的完整实现来了解其业务逻辑。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "8b18ef16-ee32-4041-8a97-6a0be83a3f9c",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "displayResult": {
+            "lineCount": 102,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+              "startLine": 1349,
+              "endLine": 1450
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "start_line": "1349",
+                "end_line": "1450"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "    @Override\n    public Map importFromCiti() {\n        StringBuilder errorMsg = new StringBuilder(\"\");\n        Map errorMap = new HashMap();\n        ArrayList<String> errorList = new ArrayList<String>();\n        errorMap.put(\"detail\", errorList);\n\n        List<Map<String, String>> balanceMaps = citiAnalyzeStmt.runProgram(errorMsg, Boolean.FALSE);\n        if (balanceMaps != null && balanceMaps.size() > 0) {\n            for (Map<String, String> balanceMap : balanceMaps) {\n                TmsAccountBalanceCmb tmsAccountBalanceCmb = validateBalanceMap(balanceMap, errorList);\n                if (tmsAccountBalanceCmb != null) {\n                    if (tmsAccountBalanceCmb.getBalanceCmbId() != null) {\n                        tmsAccountBalanceCmbDAO.updateByPrimaryKey(tmsAccountBalanceCmb);\n                    } else {\n                        this.setBalanceCmbId(tmsAccountBalanceCmb);\n                        tmsAccountBalanceCmbDAO.insert(tmsAccountBalanceCmb);\n                    }\n                }\n            }\n            errorMap.put(\"summary\",\n                    \"本次花旗账单导入成功\" + (balanceMaps.size() - errorList.size() + \"条；失败\" + errorList.size() + \"条\"));\n        } else {\n            if (!\"\".equals(errorMsg.toString())) {\n                errorMap.put(\"summary\", \"本次花旗账单没有数据导入.\");\n                errorList.add(errorMsg.toString());\n            }\n        }\n        return errorMap;\n    }\n\n    @Override\n    public void sendEmail(Map emailBody) {\n        String title = null;\n        StringBuilder content = null;\n        String emailToLookupType = \"TMS_CITI_CLBD_WARN\";\n\n        if (emailBody != null) {\n            title = \"花旗账户余额消息：\" + emailBody.get(\"summary\").toString();\n            content = new StringBuilder(\"<br/><b>详细信息：</b><br/>\");\n            if (emailBody.get(\"detail\") != null) {\n                ArrayList lines = (ArrayList) emailBody.get(\"detail\");\n                if (lines.size() > 0) {\n                    for (Object line : lines) {\n                        content.append(line.toString() + \"<br/>\");\n                    }\n                }\n            }\n        } else {\n            title = \"花旗余额导入运行完成\";\n            content = new StringBuilder(\"<br/><b>本次导入无错误。</b><br/>\");\n            emailToLookupType = \"TMS_CITI_CLBD_NORMAL\";\n        }\n\n        StringBuffer emailAllTo = new StringBuffer();\n        FndLookupValue entity = new FndLookupValue();\n        entity.setLookupType(emailToLookupType);\n        entity.setLanguage(\"ZHS\");\n        entity.setEnableFlag(\"Y\");\n        entity.setStartDate(new Date());\n        entity.setEndDate(new Date());\n        List<FndLookupValue> recipients = fndLookupValueDAO.selectByCondition(entity);\n\n        if (recipients != null && recipients.size() > 0) {\n            for (int i = 0; i < recipients.size(); i++) {\n                emailAllTo.append(recipients.get(i).getLookupCode());\n                if (i < recipients.size() - 1) {\n                    emailAllTo.append(\";\");\n                }\n            }\n        }\n        MessageSendBuilder messageSendBuilder =\n                MessageSendBuilder.getInstance().buildTo(emailAllTo.toString());\n        messageSendApi.sendEmail(messageSendBuilder, title, content.toString());\n    }\n\n    /**\n     * 获取余额拉取异常时，邮件通知人\n     */\n    private String getEmailReceiver() {\n        FndFlexValue fndFlexValue = new FndFlexValue();\n        fndFlexValue.setFlexValueSetName(BizConstants.FndFlexSet.TRANSACTIONS_DISPATCH_ERROR_MAIL);\n        fndFlexValue.setLanguage(LangEnv.getLang());\n        fndFlexValue.setEnableFlag(\"Y\");\n        List<FndFlexValue> dtoList = fndFlexValueService.selectValueByCondition(fndFlexValue, null).getList();\n        if (!org.springframework.util.CollectionUtils.isEmpty(dtoList)) {\n            StringBuilder sendTo = new StringBuilder();\n            for (FndFlexValue item : dtoList) {\n                sendTo.append(item.getFlexValue()).append(\",\");\n            }\n            return sendTo.toString();\n        }\n        return null;\n    }\n\n    /**\n     * 返回一个通过验证的余额对象\n     *\n     * @param balanceMap\n     * @param errorList  不能传入null，因为它是在已有的对象上add\n     * @return\n     */",
+                "line_count": 1749,
+                "start_line": 1349,
+                "end_line": 1450
+              }
+            }
+          },
+          "params": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+            "start_line": "1349",
+            "end_line": "1450"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "db38ab80-d5b9-45ce-b177-c47a3c449190",
+          "type": "TEXT",
+          "status": "success",
+          "content": "让我继续查看validateBalanceMap方法以了解完整的业务逻辑。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "71e9e87e-260a-4579-b365-28ecee731d48",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+          },
+          "displayResult": {
+            "lineCount": 101,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+              "startLine": 1450,
+              "endLine": 1550
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "start_line": "1450",
+                "end_line": "1550"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "     */\n    private TmsAccountBalanceCmb validateBalanceMap(Map<String, String> balanceMap, ArrayList<String> errorList) {\n        StringBuilder validateMsg = new StringBuilder(\"\");\n        TmsAccountBalanceCmb tmsAccountBalanceCmb = null;\n        // 1.校验账号 不为空\n        String accountNo = balanceMap.get(\"accountNo\");\n        if (accountNo == null || \"\".equals(accountNo.trim())) {\n            validateMsg.append(\"账号不可为空；\");\n        } else {\n            accountNo = accountNo.trim().replaceAll(\"\\\\u00A0\", \"\");\n        }\n        // 2.校验币种 不为空\n        String currency = balanceMap.get(\"currency\");\n        if (currency == null || \"\".equals(currency.trim())) {\n            validateMsg.append(\"币种不可为空；\");\n        }\n        // 3.校验日期 不为空 并且不能为未来日期\n        String balanceDateStr = balanceMap.get(\"balanceDate\");\n        Date today = null;\n        Date balanceDate = null;\n        if (balanceDateStr != null) {\n            try {\n                today = new SimpleDateFormat(UtilType.YYYY_MM_DD)\n                        .parse(new SimpleDateFormat(UtilType.YYYY_MM_DD).format(new Date()));\n                balanceDate = new SimpleDateFormat(UtilType.YYYY_MM_DD).parse(balanceDateStr);\n                if (today.getTime() < balanceDate.getTime()) {\n                    validateMsg.append(\"导入日期为未来日期：\" + balanceDateStr + \"；\");\n                }\n            } catch (ParseException e) {\n                validateMsg.append(\"余额日期格式无效（\" + UtilType.YYYY_MM_DD + \"）\" + balanceDateStr + \"；\");\n            }\n        } else {\n            validateMsg.append(\"余额日期不能为空\");\n        }\n        // 4.校验两位小数\n        BigDecimal onlineBalance = null;\n        String onlineBalanceStr = balanceMap.get(\"onlineBalance\");\n        Pattern pattern = Pattern.compile(\"^([0-9]+(.[0-9]{1,2})?)$\");\n        if (!pattern.matcher(onlineBalanceStr).matches()) {\n            validateMsg.append(\"余额需保留两位小数：\" + onlineBalanceStr);\n        } else {\n            onlineBalance = new BigDecimal(onlineBalanceStr);\n        }\n\n        // 5.验证帐号有效性。根据accountNo查找出accountId\n        TmsAccountExample acctExample = new TmsAccountExample();\n        acctExample.createCriteria().andAccountNoEqualTo(accountNo);\n        // 相同accountNo可能因为不同币种而有多条记录\n        List<TmsAccount> acctList = tmsAccountDAO.selectByExample(acctExample);\n        TmsAccount tmsAccount = null;\n        if (acctList != null && acctList.size() > 0) {\n            // 5.1 在相同账号的集合里，寻找币种一致的账户\n            for (TmsAccount act : acctList) {\n                if (act.getCurrency().equals(currency)) {\n                    tmsAccount = act;\n                    break;\n                }\n            }\n            // 未找到币种一致的账户\n            if (tmsAccount == null) {\n                validateMsg.append(\"导入币种和银行账号对应的币种不一致：\" + currency + \"；\");\n            }\n        } else {\n            validateMsg.append(\"账号不存在：\" + accountNo + \"；\");\n            errorList.add(\"账号\" + accountNo + \"验证失败:\" + validateMsg.toString());\n            return null;\n        }\n\n        if (\"\".equals(validateMsg.toString())) {\n            tmsAccountBalanceCmb = new TmsAccountBalanceCmb();\n            tmsAccountBalanceCmb.setAcAccountId(tmsAccount == null ? null : tmsAccount.getAcAccountId());\n            tmsAccountBalanceCmb.setAccountNo(accountNo);\n            tmsAccountBalanceCmb.setBalanceDate(balanceDate);\n            tmsAccountBalanceCmb.setOnlineBalance(onlineBalance);\n            tmsAccountBalanceCmb.setCurrency(currency);\n\n            // 有则更新，无则新增\n            TmsAccountBalanceCmbExample tmsAccountBalanceCmbExample = new TmsAccountBalanceCmbExample();\n            tmsAccountBalanceCmbExample.createCriteria()\n                    .andAccountNoEqualTo(tmsAccountBalanceCmb.getAccountNo())\n                    .andAcAccountIdEqualTo(tmsAccountBalanceCmb.getAcAccountId())\n                    .andBalanceDateEqualTo(tmsAccountBalanceCmb.getBalanceDate())\n                    .andCurrencyEqualTo(tmsAccountBalanceCmb.getCurrency());\n            List<TmsAccountBalanceCmb> balanceCmbTmeps =\n                    tmsAccountBalanceCmbDAO.selectByExample(tmsAccountBalanceCmbExample);\n            if (balanceCmbTmeps.size() > 1) {\n                errorList.add(\"存在重复的余额记录：账号\" + tmsAccountBalanceCmb.getAccountNo() + \" 日期\" + new SimpleDateFormat(\n                        \"yyyy-MM-dd\").format(tmsAccountBalanceCmb.getBalanceDate()) + \" 币种\" + tmsAccountBalanceCmb\n                        .getCurrency() + \" ；\");\n                tmsAccountBalanceCmb = null;\n            } else if (balanceCmbTmeps.size() == 1) {\n                tmsAccountBalanceCmb.setBalanceCmbId(balanceCmbTmeps.get(0).getBalanceCmbId());\n            }\n\n        } else {\n            errorList.add(\"账号\" + accountNo + \"验证失败:\" + validateMsg.toString());\n        }\n        return tmsAccountBalanceCmb;\n    }\n\n    /**",
+                "line_count": 1749,
+                "start_line": 1450,
+                "end_line": 1550
+              }
+            }
+          },
+          "params": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+            "start_line": "1450",
+            "end_line": "1550"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "6840915d-b539-4ea8-86a9-3ffff1d0d814",
+          "type": "TEXT",
+          "status": "success",
+          "content": "现在让我查看CitiAnalyzeStmt类的runProgram方法，因为两个任务都调用了这个方法，这是分析并发问题的关键。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "4595ae62-9198-4b2f-8172-519bf1eb91ab",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "CitiAnalyzeStmt"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java",
+                "startLine": 12,
+                "endLine": 14
+              },
+              {
+                "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java",
+                "startLine": 28,
+                "endLine": 30
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java",
+                "startLine": 15,
+                "endLine": 17
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java",
+                "startLine": 40,
+                "endLine": 42
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 28,
+                "endLine": 30
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java",
+                "startLine": 144,
+                "endLine": 146
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java",
+                "startLine": 32,
+                "endLine": 34
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java",
+                "startLine": 73,
+                "endLine": 75
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "import com.baidu.p2p.test.core.AbstractContextServiceTests;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.common.CitiTransactionDTO;\n",
+                "start_line": 12,
+                "end_line": 14,
+                "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java"
+              },
+              {
+                "match": "    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n\n",
+                "start_line": 28,
+                "end_line": 30,
+                "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java"
+              },
+              {
+                "match": "import com.baidu.p2p.core.utils.lock.RedisLock;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.common.CitiTransactionDTO;\n",
+                "start_line": 15,
+                "end_line": 17,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+              },
+              {
+                "match": "    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n\n",
+                "start_line": 40,
+                "end_line": 42,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+              },
+              {
+                "match": "import com.baidu.tms.account.util.AccountConstans;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.service.AbcAccountBalanceJobService;\n",
+                "start_line": 28,
+                "end_line": 30,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n    @Autowired\n",
+                "start_line": 144,
+                "end_line": 146,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+              },
+              {
+                "match": "@Slf4j\npublic class CitiAnalyzeStmt {\n    private static final String SEPARATOR = File.separator;\n",
+                "start_line": 32,
+                "end_line": 34,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+              },
+              {
+                "match": "\n    public CitiAnalyzeStmt() {\n\n",
+                "start_line": 73,
+                "end_line": 75,
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "CitiAnalyzeStmt",
+                "file_pattern": "**/*.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "import com.baidu.p2p.test.core.AbstractContextServiceTests;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.common.CitiTransactionDTO;\n",
+                  "start_line": 12,
+                  "end_line": 14,
+                  "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java"
+                },
+                {
+                  "match": "    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n\n",
+                  "start_line": 28,
+                  "end_line": 30,
+                  "path": "tms-web/src/test/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImplTest.java"
+                },
+                {
+                  "match": "import com.baidu.p2p.core.utils.lock.RedisLock;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.common.CitiTransactionDTO;\n",
+                  "start_line": 15,
+                  "end_line": 17,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+                },
+                {
+                  "match": "    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n\n",
+                  "start_line": 40,
+                  "end_line": 42,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/CitiTransactionsServiceImpl.java"
+                },
+                {
+                  "match": "import com.baidu.tms.account.util.AccountConstans;\nimport com.baidu.tms.cmb.citi.CitiAnalyzeStmt;\nimport com.baidu.tms.cmb.service.AbcAccountBalanceJobService;\n",
+                  "start_line": 28,
+                  "end_line": 30,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "    @Autowired\n    private CitiAnalyzeStmt citiAnalyzeStmt;\n    @Autowired\n",
+                  "start_line": 144,
+                  "end_line": 146,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/service/impl/TmsAccountBalanceCmbServiceImpl.java"
+                },
+                {
+                  "match": "@Slf4j\npublic class CitiAnalyzeStmt {\n    private static final String SEPARATOR = File.separator;\n",
+                  "start_line": 32,
+                  "end_line": 34,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+                },
+                {
+                  "match": "\n    public CitiAnalyzeStmt() {\n\n",
+                  "start_line": 73,
+                  "end_line": 75,
+                  "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "CitiAnalyzeStmt",
+            "file_pattern": "**/*.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "d2ad2015-24c5-4389-ad77-e342c4f3023e",
+          "type": "TEXT",
+          "status": "success",
+          "content": "现在让我查看CitiAnalyzeStmt类的runProgram方法实现，这是两个任务共享的核心组件。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "2a76deb2-3213-4107-b4d7-86a9c711d10b",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+          },
+          "displayResult": {
+            "lineCount": 635,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java",
+              "startLine": 1,
+              "endLine": 635
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "package com.baidu.tms.cmb.citi;\n\nimport com.alibaba.fastjson.JSON;\nimport com.baidu.ce.common.MsgSendServiceAPI;\nimport com.baidu.p2p.core.j2ee.context.Config;\nimport com.baidu.tms.cmb.common.CitiTransactionDTO;\nimport com.baidu.tms.cmb.service.CitiTransactionsService;\nimport com.baidu.tms.cmb.util.XepiException;\nimport com.baidu.tms.cmb.util.openpgp.BasedLargeFileProcessor;\nimport com.baidu.tms.cmb.util.parse.AckParser;\nimport com.baidu.tms.cmb.util.sftp.SftpController;\nimport com.google.common.collect.Lists;\nimport com.jcraft.jsch.JSchException;\nimport lombok.extern.slf4j.Slf4j;\nimport oracle.dbtools.common.util.Passwords;\nimport org.apache.commons.collections.CollectionUtils;\nimport org.apache.commons.lang3.exception.ExceptionUtils;\nimport org.bouncycastle.jce.provider.BouncyCastleProvider;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.beans.factory.annotation.Value;\nimport org.springframework.stereotype.Service;\n\nimport java.io.File;\nimport java.security.Provider;\nimport java.security.Security;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n@Service\n@Slf4j\npublic class CitiAnalyzeStmt {\n    private static final String SEPARATOR = File.separator;\n    private static final int NORMAL = 0;\n    private static final int WARNING = 1;\n    private static final int ERROR = 2;\n    // private static final String SEPARATOR = \"/\";\n    private static final String eodFilePrefix = \"camt053_\"; // 日终对账单文件名前缀\n     private final String itdFilePrefix = \"camt052_\"; // 日间对账单文件名前缀\n    private static final String decryptSurfix = \".decrypt\"; // 解密后的文件后缀名，使用完成后会删除\n    // 请求输出格式化相关\n    private static final int fileNameLength = 50;\n    private static final int resultLength = 10;\n    private File configFile = null;\n    private String gateDnloadPath; // 网关服务器下载目录\n    private String gateDnDumpPath; // 网关服务器下载转移目录\n    private String erpDnloadPath; // 文件下载后存放的本地目录\n    private int gatePort = 22; // 文件网关服务器SFTP端口\n    private String gateUserName; // 文件网关服务器SFTP用户名\n    private String gateUserPassword; // 文件网关服务器SFTP用户密码\n    // 文档网关服务器相关对象\n    private SftpController sftp;\n    private int sftpTimeOut = 5000; // 连接网关服务器时的超时时间 单位：毫秒\n    private String gateHost; // 网关服务器的IP地址或HOST\n    // private int gatePort = 2223; // 测试服务器SFTP端口\n    // private String gateUserName = \"test\"; // 测试SFTP用户名\n    // private String gateUserPassword = \"test\"; // 测试用户密码\n    // 待解析处理的对账单文件列表\n    private String[] stmtFiles;\n    private int reqStatus;\n    private String reqMessage;\n\n\n    @Autowired\n    private CitiTransactionsService citiTransactionsService;\n\n    @Autowired\n    private MsgSendServiceAPI msgSendServiceAPI;\n\n    @Value(\"${tms.ce.common.mailReceiver}\")\n    private String commonMailReceivers;\n\n    public CitiAnalyzeStmt() {\n\n    }\n\n    /**\n     * 日间、日终对账单处理\n     * @param errorMsg\n     * @param isDaytime 是否是日间对账单\n     * @return\n     */\n    public List<Map<String, String>> runProgram(StringBuilder errorMsg, Boolean isDaytime) {\n        log.info(\"================程序开始================\");\n        setReqStatus(NORMAL, \"\");\n\n        // 准备一个要返回的list。list中每个元素都是一个map，map中存放一个账户的余额。\n        List<Map<String, String>> balanceList = null;\n\n        // 1.获取路径等相关参数和设置\n        if (reqStatus != ERROR) {\n            try {\n                log.info(\"1.获取路径等相关参数和设置\");\n                // 配置信息修改为从配置文件读取\n                getFileConfigInfo();\n                log.info(\"\\t成功获取配置信息\");\n            } catch (XepiException xe) {\n                setReqStatus(ERROR, \"获取配置信息失败，\" + xe.getErrorMsg());\n            } catch (Exception e) {\n                log.info(\"获取配置信息时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                setReqStatus(ERROR, \"获取配置信息时发生未知错误：\" + e.getMessage());\n            }\n        }\n\n        // 2.校验对账单文件的路径是否正确，若失败则将并发请求状态置为错误\n        // 校验完成后会自动去掉结尾的路径分隔符\n        if (reqStatus != ERROR) {\n            try {\n                log.info(\"2.校验本地文件路径是否正确\");\n                log.info(\"\\tERP端文件下载路径：\" + erpDnloadPath);\n                validateLocalPath();\n                log.info(\"\\t校验成功\");\n            } catch (XepiException xe) {\n                setReqStatus(ERROR, \"ERP文件路径校验失败，\" + xe.getErrorMsg());\n            } catch (Exception e) {\n                log.info(\"ERP文件路径校验时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                setReqStatus(ERROR, \"ERP文件路径校验时发生未知错误：\" + e.getMessage());\n            }\n        }\n        // 3.建立从ERP到文件网关服务器的SFTP连接，若无法连接则并将请求置为错误，记录错误信息到日志中\n        if (reqStatus != ERROR) {\n            try {\n                log.info(\"3.连接文档网关服务器\");\n                log.info(\"\\t文件网关服务器地址：\" + gateHost);\n                sftp = new SftpController();\n                sftp.createSession(gateHost, gateUserName, gateUserPassword, gatePort, sftpTimeOut);\n                log.info(\"\\t成功建立连接\");\n            } catch (JSchException je) {\n                setReqStatus(ERROR, \"连接文件网关服务器失败，\" + je.getMessage());\n            } catch (Exception e) {\n                log.info(\"连接文件网关服务器时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                setReqStatus(ERROR, \"连接文件网关服务器时发生未知错误：\" + e.getMessage());\n            }\n        }\n\n        // 4.若成功建立SFTP连接，则校验网关服务器的路径是否正确，若失败则将并发请求状态置为错误\n        // 校验完成后会自动去掉结尾的路径分隔符\n        if (reqStatus != ERROR) {\n            try {\n                log.info(\"4.校验网关服务器文件路径是否正确\");\n                log.info(\"\\t网关服务器下载路径：\" + gateDnloadPath);\n                log.info(\"\\t网关服务器下载完成路径：\" + gateDnDumpPath);\n                validateRemotePath();\n                log.info(\"\\t校验成功\");\n            } catch (XepiException xe) {\n                setReqStatus(ERROR, \"文件网关服务器路径校验失败，\" + xe.getMessage());\n            } catch (Exception e) {\n                log.info(\"文件网关服务器路径校验时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                setReqStatus(ERROR, \"文件网关服务器路径校验时发生未知错误：\" + e.getMessage());\n            }\n        }\n        // 5.从网关服务器下载对账单文件至ERP服务器\n        if (reqStatus != ERROR) {\n            try {\n                log.info(\"5.从网关服务器下载对账单文件\");\n                getStmtFromGate(isDaytime);\n            } catch (XepiException xe) {\n                setReqStatus(ERROR, \"下载对账单文件失败，\" + xe.getMessage());\n            } catch (Exception e) {\n                log.info(\"下载对账单文件时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                setReqStatus(ERROR, \"下载对账单文件时发生未知错误：\" + e.getMessage());\n            }\n        }\n        // 6.关闭SFTP连接，避免后续处理耗时导致异常（至此位置，下载文件已完成，后续无需使用SFTP连接）\n        if (reqStatus != ERROR) {\n            if (sftp != null) {\n                try {\n                    log.info(\"6.关闭SFTP连接\");\n                    sftp.closeSession();\n                    log.info(\"\\t关闭成功\");\n                } catch (Exception e) {\n                    log.info(\"关闭SFTP连接时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                    setReqStatus(WARNING, \"关闭SFTP连接时发生未知错误：\" + e.getMessage());\n                }\n            }\n        }\n        // 7.处理从网关服务器下载下来的对账单文件\n        // 若下载目录下存在之前未处理的文件，一并处理之\n        if (reqStatus != ERROR) {\n            try {\n                log.info(\"7.处理对账单文件\");\n                balanceList = processStmtFile(isDaytime);\n            } catch (XepiException xe) {\n                setReqStatus(ERROR, \"处理对账单文件失败，\" + xe.getMessage());\n            } catch (Exception e) {\n                log.info(\"处理对账单文件时发生未知错误:{}\", ExceptionUtils.getStackTrace(e));\n                setReqStatus(ERROR, \"处理对账单文件时发生未知错误:\" + e.getMessage());\n            }\n        }\n\n        if (reqStatus == ERROR) {\n            msgSendServiceAPI.sendMessage(\"TMS处理花旗对账单异常提醒\", reqMessage, commonMailReceivers);\n        }\n\n        // 9.程序结束，设置请求返回状态和消息\n        log.info(\"================程序结束================\");\n        errorMsg.append(reqMessage);\n        return balanceList;\n    }\n\n    /**\n     * 获取基础配置信息.\n     * <p>\n     * 从 configFile 指定的配置文件中读取设置信息\n     * </p>\n     *\n     * @return 无\n     *\n     * @throws XepiException 校验失败或者发生未知异常时抛出\n     */\n    private void getFileConfigInfo() throws XepiException {\n\n        String gateUserNameEncrypt = null;\n        String gateUserPassEncrypt = null;\n        try {\n            log.info(\"\\t开始读取配置信息\");\n            gateDnloadPath = Config.get(\"CITI_GATE_DNLOAD_PATH\");\n            gateDnDumpPath = Config.get(\"CITI_GATE_DNDUMP_PATH\");\n            erpDnloadPath = Config.get(\"TMS_DNLOAD_PATH\");\n            String timeout = Config.get(\"SFTP_TIMEOUT\");\n            if (timeout == null) {\n                sftpTimeOut = 5000;\n            } else {\n                sftpTimeOut = Integer.valueOf(timeout);\n            }\n            gateHost = Config.get(\"CITI_GATE_HOST\");\n            String port = Config.get(\"CITI_GATE_PORT\");\n            if (port == null) {\n                gatePort = 22;\n            } else {\n                gatePort = Integer.valueOf(gatePort);\n            }\n            gateUserNameEncrypt = Config.get(\"CITI_GATE_USER_NAME\");\n            gateUserPassEncrypt = Config.get(\"CITI_GATE_USER_PASSWORD\");\n        } catch (Exception e) {\n            log.info(e.getMessage());\n            throw new XepiException(\"读取配置信息发生错误，请查看日志\" + e.getMessage());\n        }\n        try {\n            gateUserName = Passwords.comingIn(gateUserNameEncrypt);\n            gateUserPassword = Passwords.comingIn(gateUserPassEncrypt);\n            // logger.info(\"gateUserNameEncrypt:\" + gateUserNameEncrypt + \" gateUserName:\" + gateUserName);\n        } catch (Exception e) {\n            log.info(e.getMessage());\n            log.info(\"gateUserNameEncrypt:\" + gateUserNameEncrypt + \" gateUserName:\" + gateUserName);\n            throw new XepiException(\"解密网关服务器用户名和密码出错\" + e.getMessage());\n        }\n    }\n\n    /**\n     * 校验ERP本地端文件存储路径是否正常.\n     *\n     * @return 无\n     *\n     * @throws XepiException 校验失败或者发生未知异常时抛出\n     */\n    private void validateLocalPath() throws XepiException {\n        File filePath;\n        if (erpDnloadPath != null) {\n            filePath = new File(erpDnloadPath);\n            if (!filePath.exists() || !filePath.isDirectory()) {\n                throw new XepiException(\"TMS端对账单文件下载路径必须为已存在的目录\");\n            }\n            // 去掉路径结尾的路径分隔符\n            if (erpDnloadPath.endsWith(SEPARATOR)) {\n                erpDnloadPath = erpDnloadPath.substring(0, erpDnloadPath.length() - 1);\n            }\n        } else {\n            throw new XepiException(\"必须指定TMS端对账单文件下载路径\");\n        }\n    }\n\n    /**\n     * 校验网关服务器端文件存储路径是否正常.\n     *\n     * @return 无\n     *\n     * @throws XepiException 校验失败或者发生未知异常时抛出\n     */\n    private void validateRemotePath() throws XepiException {\n        String[] list;\n        // 网关服务器 DOWNLOAD 目录\n        if (gateDnloadPath != null) {\n            try {\n                list = sftp.ls(gateDnloadPath);\n            } catch (Exception e) {\n                throw new XepiException(\"文件网关服务器文件下载路径访问错误，请检查设置\");\n            }\n            // 去掉路径结尾的路径分隔符\n            if (gateDnloadPath.endsWith(SEPARATOR)) {\n                gateDnloadPath = gateDnloadPath.substring(0, gateDnloadPath.length() - 1);\n            }\n        } else {\n            throw new XepiException(\"必须指定文件网关服务器指令文件下载路径\");\n        }\n        // 网关服务器 DOWNLOAD DUMP 目录\n        if (gateDnDumpPath != null) {\n            try {\n                list = sftp.ls(gateDnDumpPath);\n            } catch (Exception e) {\n                throw new XepiException(\"文件网关服务器文件下载转移路径访问错误，请检查设置\");\n            }\n            // 去掉路径结尾的路径分隔符\n            if (gateDnDumpPath.endsWith(SEPARATOR)) {\n                gateDnDumpPath = gateDnDumpPath.substring(0, gateDnDumpPath.length() - 1);\n            }\n        } else {\n            throw new XepiException(\"必须指定文件网关服务器指令文件下载转移路径\");\n        }\n    }\n\n    /**\n     * 从网关服务器下载对账单文件.\n     *\n     * @return 无\n     *\n     * @throws XepiException 校验失败或者发生未知异常时抛出\n     */\n    private void getStmtFromGate(Boolean isDaytime) throws XepiException {\n        String[] files;\n        try {\n            log.info(\"\\t获取网关服务器目录文件列表.....\");\n            files = sftp.ls(gateDnloadPath);\n        } catch (Exception e) {\n            log.info(\"获取网关服务器目录文件列表时出现错误：\" + e.getMessage());\n            throw new XepiException(\"获取网关服务器目录文件列表时错误，请查看日志获取详细信息\");\n        }\n        if (files != null) {\n            if (files.length > 0) {\n                log.info(\"\\t开始下载文件.....\");\n                log.info(\"\\t\\t\" + rpad(\"对账单文件名\", fileNameLength - 7, \" \"));\n                log.info(\"\\t\" + rpad(\"下载结果\", resultLength - 4, \" \"));\n                log.info(\"\\t\" + rpad(\"移动结果\", resultLength - 4, \" \"));\n                int successCount = 0;\n                int errorCount = 0;\n                int warningCount = 0;\n                String source;\n                String destination;\n                String dumpDest;\n                int getStatus = 0; // 0 表示成功， 1 表示失败\n                for (int i = 0; i < files.length; i++) {\n                    if (files[i] != null) {\n                        source = gateDnloadPath + SEPARATOR + files[i]; // Tips\n                        // 网关服务器的分隔符可能跟本地不一致\n                        destination = erpDnloadPath + SEPARATOR + files[i];\n                        dumpDest = gateDnDumpPath + SEPARATOR + files[i];\n                        getStatus = 0;\n                        // 只抓取文件名为指定前缀的指令文件\n                        if (files[i].startsWith(eodFilePrefix) || (isDaytime && files[i].startsWith(itdFilePrefix))) {\n                            // 从文件网关服务器下载对账单文件\n                            if (getStatus == 0) {\n                                try {\n                                    log.info(\"\\t\\t\" + rpad(files[i], fileNameLength, \" \"));\n                                    sftp.get(source, destination);\n                                    log.info(\"\\t\" + rpad(\"成功\", resultLength - 2, \" \"));\n                                } catch (Exception e) {\n                                    errorCount += 1;\n                                    getStatus = 1;\n                                    log.info(\"\\t\" + rpad(\"失败\", resultLength - 2, \" \"));\n                                    log.info(\"文件 \" + source + \" 下载失败：\" + e.getMessage());\n                                    setReqStatus(WARNING, \"存在从网关服务器下载失败的文件，\" + e.getMessage());\n                                }\n                            }\n                            // 下载成功后，将网关服务器的文件移动到指定目录\n                            if (getStatus == 0) {\n                                try {\n                                    log.info(\n                                            \"\\t\" + rpad(\"开始移动：\" + source + \"->\" + dumpDest, resultLength - 2, \" \"));\n                                    sftp.mv(source, dumpDest);\n                                    successCount += 1;\n                                    log.info(\"\\t\" + rpad(\"移动成功\", resultLength - 2, \" \"));\n                                } catch (Exception e) {\n                                    warningCount += 1;\n                                    log.info(\"文件 \" + source + \" 移动失败：\" + e.getMessage());\n                                    setReqStatus(WARNING,\n                                            \"存在在网关服务器转移失败的文件，\" + \"文件 \" + source + \" 移动失败：\" + e.getMessage());\n                                }\n                            }\n                        }\n                    }\n                }\n                log.info(\"\\t累计 成功 \" + String.valueOf(successCount) + \" 警告（仅移动失败） \"\n                        + String.valueOf(warningCount) + \" 失败 \" + String.valueOf(errorCount));\n                log.info(\"\\t结束下载文件.....\");\n            }\n        }\n    }\n\n    /**\n     * 处理本地目录中下载完成的对账单文件.\n     * <p>\n     * 处理步骤：<br>\n     * 1.先处理日间对账单文件<br>\n     * a)解密文件，在同一目录下生成后缀为 .decrypt 的同名文件<br>\n     * b)解析解密后的文件，读取XML数据<br>\n     * c)将读取的数据传给返写接口，处理并返写至数据库<br>\n     * d)删除原文件和解密后的文件<br>\n     * 2.按照步骤1的顺序再处理日终对账单文件<br>\n     * 以上任何步骤处理时若发生错误或校验失败，则将出错的文件保留在原目录下，不做任何处理，并在请求输出中体现，提醒相关人员。\n     * </p>\n     *\n     * @param isDaytime 是否是日间对账单\n     *\n     * @return 无\n     *\n     * @throws XepiException 校验失败或者发生未知异常时抛出\n     */\n    private List<Map<String, String>> processStmtFile(Boolean isDaytime) throws XepiException {\n        log.info(\"---打印安全组件顺序---\");\n        try {\n            for (int i = 0; i < Security.getProviders().length; i++) {\n                Provider p = Security.getProviders()[i];\n                log.info(\"打印安全组件顺序:[\" + (i + 1) + \"] \" + p.getName() + \" - \" + p.getClass().getName());\n            }\n        } catch (Exception e) {\n            log.info(\"获取安全组件顺序时发生错误：\" + e.getMessage());\n        }\n        // 准备好要返回的数据\n        List<Map<String, String>> balanceList = new ArrayList<>();\n        // 若在下载文件时，未初始化该数组，则将下载目录下的所有文件全部处理\n        log.info(\"\\t获取本地下载目录下的文件列表.....\");\n        try {\n            stmtFiles = sftp.lls(erpDnloadPath);\n            log.info(\"获取本地文件列表:{}\", JSON.toJSONString(stmtFiles));\n        } catch (Exception e) {\n            log.info(\"获取本地下载目录下的文件列表时发生错误：\" + e.getMessage());\n            throw new XepiException(\"获取本地下载目录下的文件列表时错误，请查看日志获取更多信息\");\n        }\n        if (stmtFiles != null) {\n            if (stmtFiles.length > 0) {\n                log.info(\"\\t开始处理文件.....\");\n                log.info(\"\\t\\t\" + rpad(\"文件名\", fileNameLength - 3, \" \"));\n                log.info(\"\\t\" + rpad(\"解密结果\", resultLength - 4, \" \"));\n                log.info(\"\\t\" + rpad(\"解析结果\", resultLength - 4, \" \"));\n                log.info(\"\\t\" + rpad(\"返写结果\", resultLength - 4, \" \"));\n                log.info(\"\\t\" + rpad(\"删除结果\", resultLength - 4, \" \"));\n\n                String encryptFile;\n                String decryptFile;\n                int processStatus = 0;\n                AckParser parser = new AckParser();\n                String[] prefixList = {eodFilePrefix};\n                if (isDaytime) {\n                    // TODO 暂时保留日间+日终，上线需要删除日终，日间和日终任务分别执行\n                    prefixList = new String[] {itdFilePrefix};\n                }\n                int successCount = 0;\n                int warningCount = 0;\n                int errorCount = 0;\n\n                for (String prefix : prefixList) {\n                    // 先处理日间对账单\n                    // 再处理日终对账单\n                    for (int i = 0; i < stmtFiles.length; i++) {\n                        // TODO 1.为了测试花旗对账单，注掉此行，测试完成需要修改回来 if (stmtFiles[i] != null) {\n                         if (stmtFiles[i] != null && !stmtFiles[i].endsWith(decryptSurfix)) {\n                            if (stmtFiles[i].startsWith(prefix)) {\n\n                                encryptFile = erpDnloadPath + SEPARATOR + stmtFiles[i];\n                                // TODO 2.为了测试花旗对账单，注掉此行，测试完成需要修改回来 decryptFile = encryptFile;\n                                decryptFile = encryptFile + decryptSurfix;\n                                processStatus = 0;\n                                log.info(\"开始处理文件，原始加密文件:{}\", encryptFile);\n\n                                // 解密文件\n                                // TODO 3.为了测试花旗对账单，注掉此行，测试完成需要修改回来（下面if）\n                                if (processStatus == 0) {\n                                    try {\n                                        log.info(\"开始解密文件...\");\n                                        try {\n                                            Security.removeProvider(\"BC\");\n                                        }catch (Exception e) {\n                                            log.error(\"移除BC安全组件失败:{}\" , e.getMessage());\n                                        }\n                                        // Security.addProvider(new BouncyCastleProvider());\n                                        Security.insertProviderAt(new BouncyCastleProvider(), 1);\n                                        // 解密文件\n                                        BasedLargeFileProcessor.decryptAndVerifyCiti(encryptFile, decryptFile);\n                                        log.info(\"解密成功,文件名:{},文件大小:{}\", decryptFile, decryptFile.length());\n                                    } catch (Exception e) {\n                                        errorCount += 1;\n                                        processStatus = 1;\n                                        log.info(\"解密文件异常:{}\", ExceptionUtils.getStackTrace(e));\n                                        setReqStatus(WARNING,\n                                                \"存在解密失败的反馈文件，\" + \"文件 \" + encryptFile + \" 解密失败：\" + e.getMessage());\n                                    }\n                                }\n\n                                // 解析文件\n                                if (processStatus == 0) {\n                                    try {\n                                         if (prefix.equals(itdFilePrefix)) {\n                                             parser.parseItdStmtFile(decryptFile);\n                                         } else if (prefix.equals(eodFilePrefix)) {\n                                             parser.parseEodStmtFile(decryptFile);\n                                         }\n                                        log.info(\"解析文件成功\");\n                                    } catch (Exception e) {\n                                        errorCount += 1;\n                                        processStatus = 1;\n                                        log.info(\"解析文件失败，错误堆栈：{}\", ExceptionUtils.getStackTrace(e));\n                                        setReqStatus(WARNING,\n                                                \"存在解析失败的反馈文件，\" + \"文件 \" + decryptFile + \" 解析失败：\" + e.getMessage());\n                                    }\n                                }\n\n                                // 调用API，处理接收到的数据\n                                if (processStatus == 0) {\n                                    List<CitiTransactionDTO> writeBackDTOS = Lists.newArrayList();\n                                    List<CitiTransactionDTO> balanceDTOS = Lists.newArrayList();\n\n                                    // 处理日间对账单\n                                     if (prefix.equals(itdFilePrefix)) {\n                                         writeBackDTOS = parser.getItdStmtWriteBackMap();\n                                     }\n\n                                    // 处理日终对账单\n                                    if (prefix.equals(eodFilePrefix)) {\n                                        writeBackDTOS = parser.getEodStmtWriteBackMap(balanceDTOS);\n                                    }\n\n                                    // 增加一步处理花旗交易流水号数据\n                                    log.info(\"解析到花旗流水数据:{}\", JSON.toJSONString(writeBackDTOS));\n                                    if (CollectionUtils.isNotEmpty(writeBackDTOS)) {\n                                        citiTransactionsService.handleCitiTransacitons(writeBackDTOS);\n                                    }\n\n                                    if (!isDaytime && CollectionUtils.isNotEmpty(balanceDTOS)) {\n                                        for (CitiTransactionDTO dto : balanceDTOS) {\n                                            log.info(\"------------->账单账户\");\n                                            String accountNo = dto.getAccountNumber();\n                                            String currency = dto.getCLBDCurrency();\n                                            String balanceDate = dto.getCLBDBalanceDate();\n                                            String onlineBalance = dto.getCLBDAmount();\n\n                                            log.info(\"accountNo :\" + accountNo);\n                                            log.info(\"currency :\" + currency);\n                                            log.info(\"balanceDate :\" + balanceDate);\n                                            log.info(\"onlineBalance :\" + onlineBalance);\n\n                                            Map<String, String> balanceMap = new HashMap<>();\n                                            balanceMap.put(\"accountNo\", accountNo);\n                                            balanceMap.put(\"currency\", currency);\n                                            balanceMap.put(\"balanceDate\", balanceDate);\n                                            balanceMap.put(\"onlineBalance\", onlineBalance);\n\n                                            balanceList.add(balanceMap);\n                                        }\n                                    }\n                                }\n\n                                // 完全处理成功，删除本地文件\n                                if (processStatus == 0) {\n                                    try {\n                                        sftp.lrm(encryptFile);\n                                        sftp.lrm(decryptFile);\n                                        successCount += 1;\n                                        log.info(\"移除本地文件成功\");\n                                    } catch (Exception e) {\n                                        warningCount += 1;\n                                        processStatus = 1;\n                                        log.info(\"移除本地文件失败,错误：{}\", ExceptionUtils.getStackTrace(e));\n                                        setReqStatus(WARNING,\n                                                \"存在本地删除失败的反馈文件，\" + \"文件 \" + encryptFile + \" 或 \" + decryptFile + \" 删除失败：\"\n                                                        + e.getMessage());\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n                log.info(\"\\t累计 成功 \" + String.valueOf(successCount) + \" 警告（返写部分成功或仅删除失败） \"\n                        + String.valueOf(warningCount) + \" 失败 \" + String.valueOf(errorCount));\n                log.info(\"\\t结束处理文件.....\");\n            }\n        }\n        return balanceList;\n    }\n\n    /**\n     * 从右端补齐字符串至固定字符长度.\n     *\n     * @param str 需要补齐的字符串\n     * @param len 需要补齐至的字符长度\n     * @param pad 用于填充的字符\n     *\n     * @return 返回补齐后的字符串\n     */\n    public String rpad(String str, int len, String pad) {\n        String padStr = \"\";\n        if (str == null) {\n            return null;\n        }\n        if (pad == null) {\n            pad = \" \";\n        }\n        padStr = str;\n        while (padStr.length() < len) {\n            padStr = padStr + pad;\n        }\n        return padStr;\n    }\n\n    /**\n     * 设置请求返回状态和返回消息.\n     *\n     * @param completionStatus  返回状态\n     * @param completionMessage 返回消息\n     *\n     * @return 无\n     */\n    public void setReqStatus(int completionStatus, String completionMessage) {\n\n        // 成功状态\n        if (completionStatus == NORMAL) {\n            reqStatus = NORMAL;\n            reqMessage = completionMessage;\n        }\n\n        // 警告状态\n        if (completionStatus == WARNING && reqStatus != ERROR) {\n            reqStatus = WARNING;\n            reqMessage = completionMessage;\n        }\n\n        // 错误状态\n        if (completionStatus == ERROR) {\n            reqStatus = ERROR;\n            reqMessage = completionMessage;\n        }\n\n    }\n}\n",
+                "line_count": 635,
+                "start_line": 1,
+                "end_line": 635
+              }
+            }
+          },
+          "params": {
+            "path": "tms-web/src/main/java/com/baidu/tms/cmb/citi/CitiAnalyzeStmt.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": 4335079,
+          "type": "TODO",
+          "content": "\n- [ ] 1. 分析两个任务的业务功能和数据流向\n- [ ] 2. 检查两个任务使用的锁机制和并发控制\n- [ ] 3. 分析共享资源（CitiAnalyzeStmt.runProgram方法）的线程安全性\n- [ ] 4. 评估同时执行可能产生的问题和风险\n- [ ] 5. 提供结论和建议\n",
+          "elements": [
+            {
+              "title": "分析两个任务的业务功能和数据流向",
+              "children": []
+            },
+            {
+              "title": "检查两个任务使用的锁机制和并发控制",
+              "children": []
+            },
+            {
+              "title": "分析共享资源（CitiAnalyzeStmt.runProgram方法）的线程安全性",
+              "children": []
+            },
+            {
+              "title": "评估同时执行可能产生的问题和风险",
+              "children": []
+            },
+            {
+              "title": "提供结论和建议",
+              "children": []
+            }
+          ],
+          "status": "success",
+          "parentMessageId": ""
+        },
+        {
+          "id": "f2981263-4d31-4bc2-9e21-aa1573d16cf6",
+          "type": "TEXT",
+          "status": "success",
+          "content": "\n\n基于对代码的详细分析，我现在可以为您全面分析这两个任务同时执行可能存在的问题：\n\n## 任务功能分析\n\n**TmsAccountBalanceCmbServiceImpl.importFromCitiJob**：\n- 功能：拉取花旗银行日终对账单（camt053文件），处理余额数据\n- 业务：下载、解密、解析日终对账单，更新账户余额表（TmsAccountBalanceCmb）\n- 调用：`citiAnalyzeStmt.runProgram(errorMsg, Boolean.FALSE)`\n\n**CitiTransactionsServiceImpl.autovSynCitiCamt052**：\n- 功能：拉取花旗银行日间对账单（camt052文件），处理交易流水数据  \n- 业务：下载、解密、解析日间对账单，插入交易流水表（TmsTransactionsCmb）\n- 调用：`citiAnalyzeStmt.runProgram(errorMsg, Boolean.TRUE)`\n\n## 关键并发问题分析\n\n### 1. 锁机制冲突\n两个任务使用了**相同的Redis锁**：\n```java\n// importFromCitiJob使用的锁\nILock lck = new RedisLock(StringUtils.join(BizConstants.LockName.IMPORT_FROM_CITI_JOB_LCK, DateUtils.getDate()), ...)\n\n// autovSynCitiCamt052使用的锁  \nILock lck = new RedisLock(StringUtils.join(BizConstants.LockName.IMPORT_FROM_CITI_JOB_LCK, DateUtils.getDate()), ...)\n```\n\n**问题**：两个任务使用完全相同的锁名称，会导致：\n- 一个任务执行时，另一个任务会被阻塞\n- 无法实现真正的并发执行\n\n### 2. 共享资源竞争\n两个任务都依赖**CitiAnalyzeStmt.runProgram**方法，该方法包含：\n\n**共享的静态资源**：\n- SFTP连接配置（gateHost, gatePort, gateUserName等）\n- 文件路径配置（gateDnloadPath, gateDnDumpPath, erpDnloadPath）\n- 加解密相关的安全组件操作\n\n**线程安全问题**：\n- `runProgram`方法中的`reqStatus`和`reqMessage`是实例变量，在多线程环境下会被相互覆盖\n- 安全组件操作（Security.removeProvider/addProvider）在多线程下可能产生冲突\n\n### 3. 文件系统竞争\n两个任务都操作相同的文件目录：\n- 从相同的SFTP服务器目录下载文件\n- 下载到相同的本地目录（erpDnloadPath）\n- 处理完成后删除文件\n\n## 风险评估\n\n**高风险问题**：\n1. **锁冲突**：两个任务无法真正并发执行，一个会阻塞另一个\n2. **状态污染**：一个任务的错误状态可能影响另一个任务\n3. **文件覆盖**：同时下载可能造成文件覆盖或删除冲突\n\n**中等风险问题**：\n1. **SFTP连接冲突**：同时建立SFTP连接可能失败\n2. **安全组件冲突**：加解密操作在多线程下可能异常\n\n## 结论和建议\n\n**结论**：两个任务**不建议同时执行**，存在明显的并发冲突风险。\n\n**建议解决方案**：\n\n1. **修改锁机制**（推荐）：\n   - 为两个任务分配不同的Redis锁名称\n   - 例如：`IMPORT_FROM_CITI_JOB_LCK` 和 `AUTOV_SYN_CITI_CAMT052_LCK`\n\n2. **优化CitiAnalyzeStmt类**：\n   - 将实例变量改为局部变量或线程安全的方式\n   - 避免在方法中修改Security组件状态\n\n3. **任务调度策略**：\n   - 错开执行时间，避免同时运行\n   - 或者在业务逻辑上确保不会同时触发\n\n您希望我帮您实施哪种解决方案？我可以帮您修改相关的锁配置或代码实现。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "TmsAccountBalanceCmbServiceImpl.importFromCitiJob、CitiTransactionsServiceImpl.autovSynCitiCamt052请你帮我分析下同时执行这两个任务有无问题",
+  "ctime": 1760088714558,
+  "utime": 1760088714569,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/"
+}

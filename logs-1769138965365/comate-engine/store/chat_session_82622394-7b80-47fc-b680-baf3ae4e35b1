@@ -1,0 +1,574 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "82622394-7b80-47fc-b680-baf3ae4e35b1",
+  "messages": [
+    {
+      "id": "3284054",
+      "role": "user",
+      "status": "success",
+      "content": "这段代码的使用逻辑帮我解释下",
+      "payload": {
+        "query": "这段代码的使用逻辑帮我解释下",
+        "model": {
+          "modelId": "auto",
+          "requestType": "",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 629902
+      }
+    },
+    {
+      "id": "f53c48ac-6063-403c-a51c-9307ecebe417",
+      "userMessageId": "3284054",
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "41a8bb98-e746-41b4-8825-a0f972fa71e1",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先了解您具体指的是哪段代码？您能否提供文件路径或代码片段，这样我可以更准确地解释其使用逻辑。\n\n为了帮助您，我将先查看项目结构，看看能否找到相关的代码文件。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false
+        },
+        {
+          "id": "fa5928b4-7ff8-4049-9dba-9f278dba5a02",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "list_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core"
+          },
+          "displayResult": {
+            "fileCount": 63
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "list_files",
+              "type": "tool_use",
+              "params": {
+                "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/",
+                "recursive": "true"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "path": "configuration",
+                  "type": "folder"
+                },
+                {
+                  "path": "constants",
+                  "type": "folder"
+                },
+                {
+                  "path": "controller",
+                  "type": "folder"
+                },
+                {
+                  "path": "dto",
+                  "type": "folder"
+                },
+                {
+                  "path": "service",
+                  "type": "folder"
+                },
+                {
+                  "path": "utils",
+                  "type": "folder"
+                },
+                {
+                  "path": "PMCAbcApplication.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl",
+                  "type": "folder"
+                },
+                {
+                  "path": "configuration/PmcRedisConfig.java",
+                  "type": "file"
+                },
+                {
+                  "path": "constants/Constants.java",
+                  "type": "file"
+                },
+                {
+                  "path": "controller/AbcController.java",
+                  "type": "file"
+                },
+                {
+                  "path": "controller/AbcInstructController.java",
+                  "type": "file"
+                },
+                {
+                  "path": "controller/CheckHealthController.java",
+                  "type": "file"
+                },
+                {
+                  "path": "dto/AbcPayInstructDTO.java",
+                  "type": "file"
+                },
+                {
+                  "path": "dto/AbcReceiptResultDTO.java",
+                  "type": "file"
+                },
+                {
+                  "path": "dto/AbcTransactionsDTO.java",
+                  "type": "file"
+                },
+                {
+                  "path": "dto/ResponseBodyDTO.java",
+                  "type": "file"
+                },
+                {
+                  "path": "dto/ResponseHeaderDTO.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/AbcPayInstructService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/AbcReceiptService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/AbcService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/AccountService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/FileService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/JobExecuteService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/MachineService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/OperateByJDBC.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PayChecksApIfaceService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PayChecksFeedbackService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PayChecksFsscIfaceService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PayChecksHisService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PayChecksService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PayChecksWriteBackService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PmcApplatPayFeedbackIfaceService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/PmcTmsPayFeedbackIfaceService.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/AbcFileUtils.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/CommonUtil.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/DateTool.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/JedisUtil.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/MessageBuilder.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/NodeDistributeUtil.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/ReceiptUtils.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/ResponseXmlParser.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/SftpUtil.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/SocketUtils.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/SystemInfoUtil.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/WkContextHolder.java",
+                  "type": "file"
+                },
+                {
+                  "path": "utils/ZipFileUtil.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/AbcPayInstructServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/AbcReceiptServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/AbcServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/AccountServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/FileServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/JobExecuteServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/MachineServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PayChecksApIfaceServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PayChecksFeedbackServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PayChecksFsscIfaceServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PayChecksHisServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PayChecksServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PayChecksWriteBackServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PmcApplatPayFeedbackIfaceServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/PmcTmsPayFeedbackIfaceServiceImpl.java",
+                  "type": "file"
+                },
+                {
+                  "path": "service/impl/SendMailService.java",
+                  "type": "file"
+                }
+              ]
+            }
+          },
+          "params": {
+            "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/",
+            "recursive": "true"
+          }
+        },
+        {
+          "id": "45d9f66e-16c7-483e-8ceb-9eba07d1b729",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我看到项目中有多个代码文件，为了更好地解释您想了解的代码逻辑，我需要更具体的信息。您能否：\n\n1. 指定具体的文件路径（如[`pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java`](pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java)）\n2. 或者提供您感兴趣的代码片段\n3. 或者说明您想了解哪个功能模块的逻辑\n\n例如，您可能想了解：\n- 支付指令(AbcPayInstruct)的处理流程\n- 收据(Receipt)相关的业务逻辑\n- 文件处理(FileUtils)的工具类方法\n- 其他特定功能\n\n请提供更多细节，这样我可以准确定位并解释相关代码的使用逻辑。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false
+        },
+        {
+          "id": "8a5f9b2e-30ad-400f-95ca-94d50a4166e6",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java"
+          },
+          "displayResult": {
+            "lineCount": 891,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java",
+              "startLine": 1,
+              "endLine": 891
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "package com.baidu.pmc.abc.core.service.impl;\n\nimport com.alibaba.fastjson.JSON;\nimport com.baidu.pmc.abc.core.constants.Constants;\nimport com.baidu.pmc.abc.core.dto.AbcPayInstructDTO;\nimport com.baidu.pmc.abc.core.dto.AbcTransactionsDTO;\nimport com.baidu.pmc.abc.core.dto.ResponseBodyDTO;\nimport com.baidu.pmc.abc.core.dto.ResponseHeaderDTO;\nimport com.baidu.pmc.abc.core.service.AbcPayInstructService;\nimport com.baidu.pmc.abc.core.service.AbcService;\nimport com.baidu.pmc.abc.core.service.AccountService;\nimport com.baidu.pmc.abc.core.service.FileService;\nimport com.baidu.pmc.abc.core.service.MachineService;\nimport com.baidu.pmc.abc.core.service.OperateByJDBC;\nimport com.baidu.pmc.abc.core.service.PayChecksHisService;\nimport com.baidu.pmc.abc.core.service.PayChecksService;\nimport com.baidu.pmc.abc.core.service.PayChecksWriteBackService;\nimport com.baidu.pmc.abc.core.utils.DateTool;\nimport com.baidu.pmc.abc.core.utils.MessageBuilder;\nimport com.baidu.pmc.abc.core.utils.NodeDistributeUtil;\nimport com.baidu.pmc.abc.core.utils.ResponseXmlParser;\nimport com.baidu.pmc.abc.core.utils.SocketUtils;\nimport com.baidu.pmc.abc.core.utils.WkContextHolder;\nimport com.baidu.pmc.abc.persistence.dao.AbcPayInstructMapper;\nimport com.baidu.pmc.abc.persistence.dao.BankNumberMapper;\nimport com.baidu.pmc.abc.persistence.domain.AbcPayInstruct;\nimport com.baidu.pmc.abc.persistence.domain.BankNumber;\nimport com.baidu.pmc.common.exception.ServiceException;\nimport com.baidu.pmc.common.utils.DateUtils;\nimport com.baidu.pmc.common.utils.RedisLock;\nimport com.baidu.pmc.pojo.constants.PayNode;\nimport com.baidu.pmc.pojo.constants.PayOperation;\nimport com.baidu.pmc.pojo.constants.PayStatus;\nimport com.baidu.pmc.pojo.dto.cmb.BalanceInfo;\nimport com.baidu.pmc.pojo.dto.cmb.PmcCmbMachineDTO;\nimport com.baidu.pmc.pojo.dto.cmb.TransInfo;\nimport com.baidu.pmc.pojo.model.PmcAccount;\nimport com.baidu.pmc.pojo.model.PmcPayChecks;\nimport com.baidu.pmc.pojo.model.PmcPayChecksAuditHis;\nimport com.baidu.pmc.pojo.model.cmb.PayQO;\nimport com.baidu.pmc.pojo.model.cmb.PmcCmbMachine;\nimport com.baidu.pmc.pojo.qo.cmb.PayInstructQO;\nimport com.google.common.collect.Lists;\nimport lombok.extern.slf4j.Slf4j;\nimport org.apache.commons.collections.CollectionUtils;\nimport org.apache.commons.lang.StringUtils;\nimport org.jdom2.Document;\nimport org.springframework.beans.BeanUtils;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Service;\nimport tk.mybatis.mapper.entity.Example;\n\nimport java.math.BigDecimal;\nimport java.util.ArrayList;\nimport java.util.Date;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.function.Function;\nimport java.util.stream.Collectors;\n\nimport static com.baidu.pmc.pojo.constants.Constants.PmcLookupInfoCode.BANK;\nimport static com.baidu.pmc.pojo.constants.Constants.PmcLookupInfoCode.BD_COMPANY;\nimport static com.baidu.pmc.pojo.constants.Constants.PmcLookupInfoCode.CURRENCY;\n\n\n@Slf4j\n@Service\npublic class AbcServiceImpl implements AbcService {\n\n    @Autowired\n    private AccountService accountService;\n    @Autowired\n    private SendMailService mailService;\n    @Autowired\n    private MachineService machineService;\n    @Autowired\n    private AbcPayInstructMapper abcPayInstructMapper;\n    @Autowired\n    private AbcPayInstructService abcPayInstructService;\n    @Autowired\n    private OperateByJDBC operateByJDBC;\n    @Autowired\n    private PayChecksService payChecksService;\n    @Autowired\n    private PayChecksHisService payChecksHisService;\n    @Autowired\n    private PayChecksWriteBackService payChecksWriteBackService;\n    @Autowired\n    private FileService fileService;\n    @Autowired\n    private BankNumberMapper bankNumberMapper;\n\n    /**\n     * 10 毫秒重试\n     */\n    private static final long REDIS_LOCK_TIMEOUT = 10;\n    /**\n     * 10 分钟超时\n     */\n    private static final int REDIS_LOCK_EXPIRE = 10 * 60;\n\n    @Override\n    public List<BalanceInfo> selectAbcBalance(PayQO payQO) {\n        log.info(\"查询农行当日余额 selectAbcBalance accountNo={}\", payQO.getBankAccount());\n        List<BalanceInfo> result = new ArrayList<>();\n        List<PmcAccount> pmcAccounts = accountService.queryAbcAccount(payQO);\n        if (CollectionUtils.isEmpty(pmcAccounts)) {\n            log.info(\"没有启用中的农行账户\");\n            return null;\n        }\n        Map<String, PmcAccount> map = pmcAccounts.stream()\n                .collect(Collectors.toMap(PmcAccount::getAccountNo, Function.identity(), (k1, k2) -> k1));\n        log.info(\"待查询的农行账户数量 size={}\", pmcAccounts.size());\n\n        if (CollectionUtils.isNotEmpty(pmcAccounts)) {\n            for (PmcAccount pmcAccount : pmcAccounts) {\n                AbcPayInstructDTO dto = new AbcPayInstructDTO();\n                dto.setAccount(pmcAccount.getAccountNo());\n                // 生成请求报文\n                Document document = MessageBuilder.queryBalanceNowMessage(dto);\n                // 发送农业银行前置机\n                String response = this.postABC(document, pmcAccount.getAccountNo(),\n                        WkContextHolder.getTenantId(), null);\n                // 处理农业银行余额响应结果\n                this.abcBalanceDeal(response, map, result);\n            }\n        }\n        return result;\n    }\n\n    /**\n     * 处理农行银行余额响应结果\n     */\n    public void abcBalanceDeal(String response, Map<String, PmcAccount> map, List<BalanceInfo> result) {\n        log.info(\"abcBalanceDeal 处理农行银行响应结果开始\");\n        if (Constants.NO_ENABLED_MACHINE.equals(response) || Constants.BANK_POST_EXCEPTION.equals(response)) {\n            log.error(\"余额查询时 无可用前置机异常 或网络错误\");\n            return;\n        }\n        ResponseHeaderDTO responseHeaderDto =\n                ResponseXmlParser.parseResponseXml(response, Constants.AbcTranscodeEnum.BALANCE_NOW);\n        log.info(\"queryAbcBalance 处理农行银行余额请求结果 resDto={}\", JSON.toJSONString(responseHeaderDto));\n        // 处理成功\n        if (responseHeaderDto != null && Constants.RESPONSE_0.equals(responseHeaderDto.getRespSource())\n                && Constants.RESPONSE_0000.equals(responseHeaderDto.getRespCode())) {\n            ResponseBodyDTO bodyDto = responseHeaderDto.getBodyDto();\n            if (bodyDto != null) {\n                log.info(\"queryAbcBalance 开始处理银行返回的余额数据\");\n                BalanceInfo balanceInfo = new BalanceInfo();\n                balanceInfo.setAvailableBalance(bodyDto.getAvailBal());\n                balanceInfo.setOnlineBalance(bodyDto.getBal());\n                balanceInfo.setCurrency(Constants.CNY);\n                balanceInfo.setAccount(bodyDto.getDbProv() + bodyDto.getDbAcc());\n                balanceInfo.setAnnotation(bodyDto.getDbAccName());\n                balanceInfo.setCurrentDate(new Date());\n                balanceInfo.setCurrencyName(operateByJDBC.translate(CURRENCY, Constants.CNY));\n                balanceInfo.setBank(Constants.BANK_CODE_ABC);\n                balanceInfo.setBankName(operateByJDBC.translate(BANK, Constants.BANK_CODE_ABC));\n                PmcAccount account;\n                if (map != null && (account = map.get(bodyDto.getDbAccName())) != null) {\n                    balanceInfo.setBranchBank(account.getBranchName());\n                    balanceInfo.setBranchBankName(account.getBranchName());\n                }\n                // 银行返回的账户余额才做记录\n                if (StringUtils.isNotBlank(bodyDto.getDbAccName())) {\n                    result.add(balanceInfo);\n                }\n            } else {\n                log.error(\"queryAbcBalance 农行银行余额报文解析发生错误\");\n            }\n        }\n    }\n\n\n    /**\n     * 请求农行前置机\n     *\n     * @param document\n     * @param hashValue\n     * @param tenantId\n     * @return\n     */\n    @Override\n    public String postABC(Document document, String hashValue, Long tenantId, String[] ipArr) {\n        PmcCmbMachineDTO cmbMachineDTO = new PmcCmbMachineDTO();\n        cmbMachineDTO.setTenantId(tenantId);\n        cmbMachineDTO.setStatus(Constants.UP);\n        cmbMachineDTO.setMachineBank(Constants.BANK_CODE_ABC);\n        List<PmcCmbMachine> pmcCmbMachines = machineService.selectMachine(cmbMachineDTO);\n        if (CollectionUtils.isEmpty(pmcCmbMachines)) {\n            log.error(\"无可用前置机 postABC\");\n            // 无可用前置机\n            mailService.sendMachineFailedMail(\"农行无可用前置机\", new ArrayList<>(), \"\");\n            return Constants.NO_ENABLED_MACHINE;\n        }\n        pmcCmbMachines.forEach(detail -> log.info(\"可用前置机：\" + detail.getName() + \" \" + detail.getIp()));\n        log.info(\"租户：\" + tenantId);\n        // 一致性哈希算法 获取分配机器\n        Map<String, PmcCmbMachine> map = pmcCmbMachines.stream()\n                .collect(Collectors.toMap(PmcCmbMachine::getIp, Function.identity(), (k1, k2) -> k1));\n        String[] currentServers = map.keySet().toArray(new String[0]);\n        String server = new NodeDistributeUtil().getServer(hashValue, currentServers);\n        log.info(\"request server : \" + server);\n        PmcCmbMachine machine = map.get(server);\n        log.info(\"请求前置机ip地址: {}\", machine.getIp());\n        String[] ipPort;\n        if (server.split(\"//\").length != 2\n                || (ipPort = server.split(\"//\")[1].split(\":\")).length != 2) {\n            log.error(\"ip = {}, 格式不正确\", server);\n            return Constants.NO_ENABLED_MACHINE;\n        }\n        if (null != ipArr) {\n            ipArr[0] = ipPort[0];\n        }\n        String funNam = document.getRootElement().getChild(\"CCTransCode\").getText();\n        log.info(\"访问农行接口名：\" + funNam);\n        try {\n            // 请求报文\n            String request = MessageBuilder.generateXML(document);\n            log.info(\"请求报文 request={}\", request);\n\n            String response = SocketUtils.sendSocketRequest(ipPort[0], Integer.parseInt(ipPort[1]), request);\n            log.info(\"response :\" + response);\n            return response;\n        } catch (Exception e) {\n            log.error(\"网络出错，请检查网络！\", e);\n        }\n        return Constants.BANK_POST_EXCEPTION;\n    }\n\n    @Override\n    public int abcUnUrgentPay() {\n        RedisLock redisLock = new RedisLock(\"abcUnUrgentPay\");\n        int count = 0;\n        try {\n            if (!redisLock.lock(REDIS_LOCK_TIMEOUT, REDIS_LOCK_EXPIRE)) {\n                log.info(\"===========农业银行支付任务执行中，请稍后再试===========\");\n                throw new ServiceException(\"农业银行支付任务执行中，请稍后再试\");\n            }\n            Example example = new Example(AbcPayInstruct.class);\n            List<String> status = new ArrayList<>();\n            status.add(PayStatus.PAY_ORDER_GEN.name());\n            status.add(PayStatus.ORDER_FAILED.name());\n            example.createCriteria().andIn(\"status\", status)\n                    .andEqualTo(\"funName\", Constants.ABC_PAY);\n            List<AbcPayInstruct> payInstructs = abcPayInstructMapper.selectByExample(example);\n\n            if (CollectionUtils.isEmpty(payInstructs)) {\n                log.info(\"没有待支付的付款指令 abcUnUrgentPay resultSize={}\", 0);\n                return 0;\n            }\n\n            // 指令信息改为发送中\n            payInstructs.forEach(detail -> detail.setStatus(PayStatus.ORDER_SEND.name()));\n            // 批量更新指令 并插入历史记录表\n            this.batchUpdateAbcInstructAndHis(payInstructs);\n\n            // 支付\n            List<AbcPayInstructDTO> dtoList = this.batchPay(payInstructs);\n            count = dtoList.size();\n        } finally {\n            redisLock.unlock();\n        }\n        return count;\n    }\n\n    /**\n     * 批量更新指令数据并插入历史记录\n     */\n    public void batchUpdateAbcInstructAndHis(List<AbcPayInstruct> payInstructs) {\n        if (CollectionUtils.isNotEmpty(payInstructs)) {\n            payInstructs.forEach(\n                    instruct -> this.updateInstructAndHis(instruct, instruct.getStatus(), null, null, null, null,\n                            null));\n        }\n    }\n\n    /**\n     * 更新指令状态\n     */\n    private void updateInstructAndHis(AbcPayInstruct payInstruct, String status, String relCode, String relMsg,\n                                      String detailCode, String detailMsg, String processInstanceNumber) {\n        payInstruct.setStatus(status);\n        payInstruct.setRelCode(relCode);\n        payInstruct.setRelMessage(relMsg);\n        payInstruct.setProcessCode(detailCode);\n        payInstruct.setProcessMessage(detailMsg);\n        payInstruct.setProcessInstanceNumber(processInstanceNumber);\n        log.info(\"updateInstructAndHis payInstruct={}\", JSON.toJSONString(payInstruct));\n        abcPayInstructService.updateOneInstructAndHis(payInstruct);\n    }\n\n    /**\n     * 发起支付\n     */\n    private List<AbcPayInstructDTO> batchPay(List<AbcPayInstruct> payInstructs) {\n        log.info(\"batchPay 发起支付 size={}\", payInstructs.size());\n        List<AbcPayInstructDTO> result = new ArrayList<>(payInstructs.size());\n        Long tenantId = payInstructs.get(0).getTenantId();\n        List<AbcPayInstructDTO> errorInstructList = new ArrayList<>();\n        for (AbcPayInstruct item : payInstructs) {\n            List<AbcPayInstructDTO> dtoList = new ArrayList<>();\n            AbcPayInstructDTO dto = new AbcPayInstructDTO();\n            BeanUtils.copyProperties(item, dto);\n            dtoList.add(dto);\n            // 保证每个批次数据正常处理不影响\n            try {\n                // 组装发送报文\n                Document document = MessageBuilder.queryBankPayMessage(dto);\n                if (StringUtils.isNotBlank(dto.getErrorMessage())) {\n                    log.error(\"报文组装失败 payCheckNum={}\", dto.getPayCheckNum());\n                    // 报文组装失败\n                    errorInstructList.add(dto);\n                    continue;\n                }\n\n                // 发送农业银行前置机\n                String response = null;\n                response = this.postABC(document, dto.getAccount(), tenantId, null);\n                if (Constants.NO_ENABLED_MACHINE.equals(response)) {\n                    log.error(\"付款时 无可用前置机异常, payCheckNum={}\", dto.getPayCheckNum());\n                    this.batchUpdateInstructAndHis(dtoList, PayStatus.ORDER_FAILED.name(),\n                            Constants.NO_ENABLED_MACHINE_MSG, Constants.NO_ENABLED_MACHINE_MSG);\n                    continue;\n                } else if (Constants.BANK_POST_EXCEPTION.equals(response)) {\n                    log.error(\"发起支付请求异常, payCheckNum={}\", dto.getPayCheckNum());\n                    this.batchUpdateInstructAndHis(dtoList, PayStatus.ORDER_UNKNOW.name(),\n                            Constants.REQUEST_ERROR, Constants.REQUEST_ERROR);\n                    // 预警邮件\n                    mailService.sendOrderUnknownMail(dtoList.stream()\n                            .map(AbcPayInstruct::getPayCheckNum).collect(Collectors.toList()));\n                    continue;\n                }\n                // 处理农业银行请求结果\n                this.dealPayResponseResult(response, dtoList);\n                this.batchPayChecksDeal(dtoList);\n                result.add(dto);\n            } catch (Exception e) {\n                log.error(\"batchPay 支付结果处理过程中发生异常\", e);\n                // 暂时发送邮件人工干预处理\n                mailService.sendBankResultDealErrorMail(payInstructs.stream()\n                        .map(AbcPayInstruct::getPayCheckNum).collect(Collectors.toList()));\n            }\n        }\n        // 处理报文组装失败的指令\n        this.batchDocumentFailDeal(errorInstructList);\n        return result;\n    }\n\n    /**\n     * 处理报文组装失败指令\n     */\n    private void batchDocumentFailDeal(List<AbcPayInstructDTO> errorInstruct) {\n        if (CollectionUtils.isEmpty(errorInstruct)) {\n            return;\n        }\n        try {\n            log.info(\"batchDocumentFailDeal 存在报文组装失败的指令\");\n            // 更新指令状态并插入记录\n            this.batchUpdateInstructAndHis(errorInstruct, PayStatus.FAILED.name(),\n                    \"组装报文异常\", \"组装报文异常如异常字符\");\n            // 更新付款单并插入记录\n            for (AbcPayInstructDTO instruct : errorInstruct) {\n                PmcPayChecks payChecks = new PmcPayChecks();\n                payChecks.setPayCheckNum(instruct.getPayCheckNum());\n                payChecks.setStatus(PayStatus.FAILED.name());\n                payChecks.setFailureReasons(\"组装报文异常如异常字符\");\n                this.updatePayChecksAndInsertHis(payChecks);\n                try {\n                    // 反馈业务线\n                    payChecksWriteBackService.writeBack(instruct.getCheckId());\n                } catch (Exception e) {\n                    log.error(\"batchDocumentFailDeal 反馈业务线异常\", e);\n                }\n            }\n            // 发送异常邮件\n            mailService.paymentMessageFailed(errorInstruct.stream()\n                    .map(AbcPayInstructDTO::getPayCheckNum).collect(Collectors.toList()));\n        } catch (Exception e) {\n            log.error(\"batchDocumentFailDeal error\", e);\n        }\n    }\n\n    /**\n     * 响应到农业银行结果，对付款单进行状态变更，并发送指令邮件\n     */\n    private void batchPayChecksDeal(List<AbcPayInstructDTO> resultInstructs) {\n        if (CollectionUtils.isEmpty(resultInstructs)) {\n            return;\n        }\n        log.info(\"batchPayChecksDeal result={}\", JSON.toJSONString(resultInstructs));\n        // 指令不明的需要发送邮件\n        List<AbcPayInstructDTO> orderUnknown = resultInstructs.stream()\n                .filter(t -> PayStatus.ORDER_UNKNOW.name().equals(t.getStatus())).collect(Collectors.toList());\n        if (!CollectionUtils.isEmpty(orderUnknown)) {\n            // 预警邮件\n            mailService.sendOrderUnknownMail(orderUnknown.stream()\n                    .map(AbcPayInstructDTO::getPayCheckNum).collect(Collectors.toList()));\n        }\n\n        // 银行处理中数据\n        List<AbcPayInstructDTO> processing = resultInstructs.stream()\n                .filter(t -> PayStatus.BANK_PROCESSING.name().equals(t.getStatus())).collect(Collectors.toList());\n        if (!CollectionUtils.isEmpty(processing)) {\n            processing.forEach(instruct -> {\n                PmcPayChecks payChecks = new PmcPayChecks();\n                payChecks.setPayCheckNum(instruct.getPayCheckNum());\n                payChecks.setStatus(PayStatus.BANK_PROCESSING.name());\n                this.updatePayChecksAndInsertHis(payChecks);\n            });\n        }\n\n        // 余额不足数据\n        List<AbcPayInstructDTO> failedBalance = resultInstructs.stream()\n                .filter(t -> PayStatus.FAILED_BALANCE.name().equals(t.getStatus())).collect(Collectors.toList());\n        if (!CollectionUtils.isEmpty(failedBalance)) {\n            failedBalance.forEach(instruct -> {\n                PmcPayChecks payChecks = new PmcPayChecks();\n                payChecks.setPayCheckNum(instruct.getPayCheckNum());\n                payChecks.setStatus(PayStatus.FAILED_BALANCE.name());\n                this.updatePayChecksAndInsertHis(payChecks);\n                // 余额不足邮件\n                mailService.sendBalanceNotEnoughMail(instruct.getPayCheckNum(), \"余额不足\");\n            });\n        }\n\n        // 银行处理失败数据\n        List<AbcPayInstructDTO> failed = resultInstructs.stream()\n                .filter(t -> PayStatus.FAILED.name().equals(t.getStatus())).collect(Collectors.toList());\n        if (!CollectionUtils.isEmpty(failed)) {\n            failed.forEach(instruct -> {\n                PmcPayChecks payChecks = new PmcPayChecks();\n                payChecks.setPayCheckNum(instruct.getPayCheckNum());\n                payChecks.setStatus(PayStatus.FAILED.name());\n                this.updatePayChecksAndInsertHis(payChecks);\n                // 反馈业务线\n                payChecksWriteBackService.writeBack(instruct.getCheckId());\n                // 邮件提醒\n                mailService.sendFailedMail(instruct.getPayCheckNum(), payChecks.getFailureReasons());\n            });\n        }\n\n        // 付款成功数据\n        List<AbcPayInstructDTO> payed = resultInstructs.stream()\n                .filter(t -> PayStatus.PAYED.name().equals(t.getStatus())).collect(Collectors.toList());\n        if (!CollectionUtils.isEmpty(payed)) {\n            payed.forEach(instruct -> {\n                PmcPayChecks payChecks = new PmcPayChecks();\n                payChecks.setPayCheckNum(instruct.getPayCheckNum());\n                payChecks.setStatus(PayStatus.PAYED.name());\n                payChecks.setActualPayDate(new Date());\n                this.updatePayChecksAndInsertHis(payChecks);\n                // 反馈业务线\n                payChecksWriteBackService.writeBack(instruct.getCheckId());\n            });\n        }\n    }\n\n    /**\n     * 更新付款单并插入历史记录\n     *\n     * @param payChecks 付款单\n     */\n    @Override\n    public void updatePayChecksAndInsertHis(PmcPayChecks payChecks) {\n        log.info(\"updatePayChecksAndInsertHis 更新付款单并插入历史记录 checkId={}\", payChecks.getCheckId());\n        payChecksService.updateByCheckNum(payChecks);\n        PmcPayChecks pmcPayChecks = payChecksService.selectPayChecksByPayCheckNum(payChecks.getPayCheckNum());\n        // 付款单更新记录\n        PmcPayChecksAuditHis pmcPayChecksAuditHis = new PmcPayChecksAuditHis();\n        BeanUtils.copyProperties(pmcPayChecks, pmcPayChecksAuditHis);\n        pmcPayChecksAuditHis.setPayNode(PayNode.PAY_BANK_INTERFACES.name());\n        pmcPayChecksAuditHis.setLastUpdateBy(Constants.SYSTEM_USER);\n        pmcPayChecksAuditHis.setOperationNote(pmcPayChecks.getFailureReasons());\n        if (StringUtils.equals(PayStatus.PAYED.name(), pmcPayChecks.getStatus())) {\n            pmcPayChecksAuditHis.setPayOperation(PayOperation.EPAYMENT_UPDATE_PAI.name());\n        }\n        if (StringUtils.equals(PayStatus.FAILED.name(), pmcPayChecks.getStatus())) {\n            pmcPayChecksAuditHis.setPayOperation(PayOperation.EPAYMENT_UPDATE_FAILED.name());\n        }\n        if (StringUtils.equals(PayStatus.FAILED_BALANCE.name(), pmcPayChecks.getStatus())) {\n            pmcPayChecksAuditHis.setPayNode(PayNode.PAY_OVERDRAFT_FAIL.name());\n            pmcPayChecksAuditHis.setPayOperation(PayOperation.EPAYMENT_UPDATE_OVERDRAFT_FAILED.name());\n        }\n        if (StringUtils.equals(PayStatus.BANK_PROCESSING.name(), pmcPayChecks.getStatus())) {\n            pmcPayChecksAuditHis.setPayOperation(PayOperation.BANK_PROCESSING.name());\n        }\n        if (StringUtils.equals(PayStatus.REFUND.name(), pmcPayChecks.getStatus())) {\n            pmcPayChecksAuditHis.setPayOperation(PayOperation.EPAYMENT_UPDATE_REFUND.name());\n        }\n        payChecksHisService.savePayChecksHis(pmcPayChecksAuditHis);\n    }\n\n    /**\n     * 处理农业银行支付请求结果\n     */\n    public void dealPayResponseResult(String response, List<AbcPayInstructDTO> successInstruct) {\n        ResponseHeaderDTO responseHeaderDto =\n                ResponseXmlParser.parseResponseXml(response, Constants.AbcTranscodeEnum.BANK_PAY);\n        log.info(\"dealResponseResult 处理农业银行请求结果 resDto={}\", JSON.toJSONString(responseHeaderDto));\n        // 处理成功\n        if (responseHeaderDto != null) {\n            for (AbcPayInstructDTO dto : successInstruct) {\n                String status;\n                if (Constants.RESPONSE_0.equals(responseHeaderDto.getRespSource())) {\n                    status = PayStatus.BANK_PROCESSING.name();\n                } else if (responseHeaderDto.getRespInfo().contains(\"余额不足\")) {\n                    status = PayStatus.FAILED_BALANCE.name();\n                } else {\n                    status = PayStatus.ORDER_UNKNOW.name();\n                }\n                this.updateInstructAndHis(dto, status,\n                        responseHeaderDto.getRespSource(), responseHeaderDto.getRespInfo(),\n                        responseHeaderDto.getRespSource(), responseHeaderDto.getRespInfo(), null);\n            }\n        } else {\n            // 可疑指令\n            this.batchUpdateInstructAndHis(successInstruct, PayStatus.ORDER_UNKNOW.name(), null, null);\n        }\n    }\n\n    /**\n     * 批量更新指令状态\n     */\n    private void batchUpdateInstructAndHis(List<AbcPayInstructDTO> payList,\n                                           String status, String relCode, String relMsg) {\n        payList.forEach(detail ->\n                this.updateInstructAndHis(detail, status, relCode, relMsg, null, null, null));\n    }\n\n    @Override\n    public String abcQueryPayResultJob() {\n        RedisLock redisLock = new RedisLock(\"abcQueryPayResultJob\");\n        try {\n            if (!redisLock.lock(REDIS_LOCK_TIMEOUT, REDIS_LOCK_EXPIRE)) {\n                log.info(\"===========农业银行支付结果查询任务执行中，请稍后再试===========\");\n                throw new ServiceException(\"农业银行支付结果查询任务执行中，请稍后再试\");\n            }\n            Example example = new Example(AbcPayInstruct.class);\n            List<String> status = new ArrayList<>();\n            // 银行处理中\n            status.add(PayStatus.BANK_PROCESSING.name());\n            // 可疑指令\n            status.add(PayStatus.ORDER_UNKNOW.name());\n            example.createCriteria().andIn(\"status\", status);\n            List<AbcPayInstruct> payInstructs = abcPayInstructMapper.selectByExample(example);\n\n            if (CollectionUtils.isEmpty(payInstructs)) {\n                log.info(\"没有待查询的付款指令 abcQueryPayResultJob resultSize={}\", 0);\n                return \"没有待查询的付款指令\";\n            }\n            this.queryPayResult(payInstructs);\n        } finally {\n            redisLock.unlock();\n        }\n        return \"结果查询完成\";\n    }\n\n    @Override\n    public List<AbcPayInstructDTO> queryPayResult(List<AbcPayInstruct> instructs) {\n        List<AbcPayInstructDTO> dtoList = new ArrayList<>();\n\n        for (AbcPayInstruct payInstruct : instructs) {\n            AbcPayInstructDTO dto = new AbcPayInstructDTO();\n            BeanUtils.copyProperties(payInstruct, dto);\n            // 组装支付结果查询报文\n            Document document = MessageBuilder.queryPayStatusMessage(dto);\n\n            // 发送兴业银行前置机\n            String response = this.postABC(document, dto.getAccount(), WkContextHolder.getTenantId(), null);\n            if (Constants.NO_ENABLED_MACHINE.equals(response) || Constants.BANK_POST_EXCEPTION.equals(response)) {\n                log.error(\"付款结果查询时 无可用前置机异常 或网络错误\");\n                continue;\n            }\n            ResponseHeaderDTO resDto = ResponseXmlParser.parseResponseXml(response,\n                    Constants.AbcTranscodeEnum.PAY_STATUS);\n            if (resDto == null) {\n                log.error(\"付款结果查询时 农业银行反馈结果为空\");\n            } else if (!Constants.RESPONSE_0.equals(resDto.getRespSource())) {\n                log.error(\"付款结果查询时 农业银行反馈结果 relCode={}, resMeg={}\",\n                        resDto.getRespCode(), resDto.getRespInfo());\n            } else if (resDto.getBodyDto() == null) {\n                log.error(\"付款结果查询时 农业银行反馈成功，子节点为空\");\n            } else {\n                this.dealBackStatus(dto, resDto);\n            }\n            dtoList.add(dto);\n        }\n        return dtoList;\n    }\n\n    /**\n     * 处理状态反馈的数据结果\n     */\n    @Override\n    public void dealBackStatus(AbcPayInstructDTO dto, ResponseHeaderDTO resDto) {\n        List<AbcPayInstructDTO> successBackDto = new ArrayList<>();\n        ResponseBodyDTO bodyDto = resDto.getBodyDto();\n        log.info(\"dealBackStatus dto={}\", JSON.toJSONString(dto));\n        String status = null;\n\n        switch (bodyDto.getTransSta()) {\n            case Constants.RESPONSE_1:\n            case Constants.RESPONSE_2:\n            case Constants.RESPONSE_3:\n            case Constants.RESPONSE_6:\n            case Constants.RESPONSE_7:\n                status = PayStatus.BANK_PROCESSING.name();\n                break;\n            case Constants.RESPONSE_4:\n                status = PayStatus.PAYED.name();\n                break;\n            case Constants.RESPONSE_5:\n            case Constants.RESPONSE_8:\n                status = PayStatus.FAILED.name();\n                dto.setRelCode(resDto.getRespSource());\n                dto.setRelMessage(resDto.getRespInfo());\n                dto.setProcessCode(bodyDto.getTransSta());\n                dto.setProcessMessage(bodyDto.getRespPrvData());\n                break;\n            case Constants.RESPONSE_9:\n                status = PayStatus.ORDER_UNKNOW.name();\n                break;\n            default:\n                // 将银行返回信息记录给前端\n                status = PayStatus.ORDER_UNKNOW.name();\n                dto.setRelCode(resDto.getRespSource());\n                dto.setRelMessage(resDto.getRespInfo());\n                dto.setProcessCode(bodyDto.getTransSta());\n                dto.setProcessMessage(bodyDto.getRespPrvData());\n                break;\n        }\n        log.info(\"dealBackStatus final status is status={}\", status);\n        if (StringUtils.isNotBlank(status)) {\n            this.updateInstructAndHis(dto, status,\n                    resDto.getRespSource(), resDto.getRespInfo(),\n                    bodyDto.getTransSta(), bodyDto.getRespPrvData(), null);\n            successBackDto.add(dto);\n        }\n        this.batchPayChecksDeal(successBackDto);\n    }\n\n    @Override\n    public List<TransInfo> selectAbcTrans(PayQO payQO) {\n        List<TransInfo> result = new ArrayList<>();\n        PmcAccount account = accountService.queryAbcAccountByAccountNo(payQO.getAccountNumber());\n        if (account == null || payQO.getStartDate() == null || payQO.getEndDate() == null) {\n            return result;\n        }\n\n        AbcPayInstructDTO dto = new AbcPayInstructDTO();\n        dto.setTenantId(account.getTenantId());\n        dto.setAccount(account.getAccountNo());\n\n        dto.setBeginDate(DateUtils.formatDate(payQO.getStartDate(), DateTool.DAY_PARTTEN_YYYYMMDD));\n        dto.setEndDate(DateUtils.formatDate(payQO.getEndDate(), DateTool.DAY_PARTTEN_YYYYMMDD));\n        this.homeTransactionsDeal(dto);\n\n\n        if (CollectionUtils.isNotEmpty(dto.getTransInfoList())) {\n            String company = operateByJDBC.translate(BD_COMPANY, account.getCompanyCode());\n            for (TransInfo trans : dto.getTransInfoList()) {\n                trans.setBankAccount(account.getAccountNo());\n                trans.setCompanyName(company);\n                trans.setCurrencyName(operateByJDBC.translate(CURRENCY, trans.getCurrency()));\n                result.add(trans);\n            }\n        }\n\n        return result;\n    }\n\n    /**\n     * 调起农业银行流水接口并处理退票数据\n     */\n    private void homeTransactionsDeal(AbcPayInstructDTO dto) {\n        try {\n            Document document = MessageBuilder.queryTransactionsMessage(dto);\n\n            // 发送农业银行前置机\n            String[] ipArr = new String[1];\n            String response = this.postABC(document, dto.getAccount(), WkContextHolder.getTenantId(), ipArr);\n            if (Constants.NO_ENABLED_MACHINE.equals(response)) {\n                log.error(\"流水查询时 无可用前置机异常, accountNo={}\", dto.getAccount());\n                return;\n            } else if (Constants.BANK_POST_EXCEPTION.equals(response)) {\n                log.error(\"流水查询请求异常, accountNo={}\", dto.getAccount());\n                return;\n            }\n            ResponseHeaderDTO responseHeaderDto =\n                    ResponseXmlParser.parseResponseXml(response, Constants.AbcTranscodeEnum.TRANSACTIONS);\n            log.info(\"homeTransactionsDeal 处理农业银行请求结果 resDto={}\", JSON.toJSONString(responseHeaderDto));\n            // 处理成功\n            if (responseHeaderDto != null && Constants.RESPONSE_0.equals(responseHeaderDto.getRespSource())) {\n                ResponseBodyDTO bodyDto = responseHeaderDto.getBodyDto();\n                if (bodyDto != null) {\n                    // 处理流水数据\n                    if (StringUtils.isNotBlank(bodyDto.getRecordNum())\n                            && Integer.parseInt(bodyDto.getRecordNum()) > 0) {\n                        List<AbcTransactionsDTO> abcTransList = fileService.fetchTransactionsData(ipArr[0],\n                                bodyDto.getBatchFileName());\n                        this.dealTransData(abcTransList, dto);\n                    }\n                } else {\n                    log.error(\"homeTransactionsDeal 农业银行报文解析发生错误\");\n                }\n            }\n        } catch (Exception e) {\n            log.error(\"homeTransactionsDeal 境内账户流水处理失败\", e);\n        }\n    }\n\n    /**\n     * 处理流水响应结果\n     */\n    @Override\n    public void dealTransData(List<AbcTransactionsDTO> abcTransList, AbcPayInstructDTO dto) {\n\n        log.info(\"homeTransactionsDeal 处理农业银行请求结果 abcTransList={}\", JSON.toJSONString(abcTransList));\n        // 处理成功\n\n        if (CollectionUtils.isNotEmpty(abcTransList)) {\n            log.info(\"homeTransactionsDeal 开始处理银行返回的流水数据\");\n            List<TransInfo> transInfoList = this.transTransactions(abcTransList);\n            if (CollectionUtils.isEmpty(dto.getTransInfoList())) {\n                dto.setTransInfoList(transInfoList);\n            } else {\n                dto.getTransInfoList().addAll(transInfoList);\n            }\n        }\n    }\n\n    /**\n     * 封装流水数据\n     */\n    private List<TransInfo> transTransactions(List<AbcTransactionsDTO> abcTransList) {\n        List<TransInfo> transInfoList = new ArrayList<>();\n        for (AbcTransactionsDTO dto : abcTransList) {\n            try {\n                TransInfo trans = new TransInfo();\n                trans.setDealDay(dto.getEtydat());\n                // 看情况根据timestamp进行替换\n                trans.setDealTime(dto.getEtytim());\n                // 摘要\n                trans.setNaryur(dto.getNaryur());\n                trans.setBalance(dto.getAccountBalance());\n                trans.setSerialNumber(dto.getCustomerRefNo());\n\n                trans.setRemark(dto.getPostscript());\n                // 对方账号\n                trans.setAccountName(dto.getCorrelateAccountName());\n                trans.setAccount(dto.getCorrelateAccountProv() + dto.getCorrelateAccount());\n                trans.setBankName(dto.getCorrelateAccountBank());\n                // trans.setBankNumber();\n                trans.setReferenceNumber(dto.getCustomerRefNo());\n                trans.setCurrency(Constants.CNY);\n\n                if (StringUtils.isNotBlank(dto.getAmt())) {\n                    BigDecimal amt = new BigDecimal(dto.getAmt());\n                    // 借贷\n                    if (BigDecimal.ZERO.compareTo(amt) < 0) {\n                        trans.setLoanMark(Constants.DIRECTION_C);\n                        trans.setLoanMarkName(Constants.DIRECTION_C_NAME);\n                        trans.setCreditAmount(String.valueOf(amt.abs()));\n                    } else {\n                        trans.setLoanMark(Constants.DIRECTION_D);\n                        trans.setLoanMarkName(Constants.DIRECTION_D_NAME);\n                        trans.setDebitAmount(String.valueOf(amt.abs()));\n                    }\n                }\n\n                // 交易日\n                StringBuilder day = null;\n                if (StringUtils.isNotBlank(trans.getDealDay())) {\n                    day = new StringBuilder(trans.getDealDay());\n                    if (day.length() == 8) {\n                        day.insert(4, \"-\");\n                        day.insert(7, \"-\");\n                    }\n                }\n                StringBuilder time = null;\n                if (StringUtils.isNotBlank(trans.getDealTime())) {\n                    time = new StringBuilder(trans.getDealTime());\n                    if (time.length() == 6) {\n                        time.insert(2, \":\");\n                        time.insert(5, \":\");\n                    }\n                }\n                trans.setDealDate(day + \" \" + time);\n                transInfoList.add(trans);\n            } catch (Exception e) {\n                log.error(\"transTransactions 处理流水数据时发生异常\", e);\n            }\n        }\n        return transInfoList;\n    }\n\n    @Override\n    public String abcAnalysisSuspect(PayInstructQO payInstructQO) {\n        AbcPayInstruct abcPayInstruct =\n                abcPayInstructMapper.findByPayCheckNumber(payInstructQO.getReferenceNumber(), null);\n        if (abcPayInstruct == null) {\n            return \"根据付款单号未获取到付款指令\";\n        }\n        abcPayInstruct.setAttribute1(Constants.ENABLED_Y);\n        // 析疑完成先入库\n        abcPayInstructMapper.updateByPrimaryKeySelective(abcPayInstruct);\n        List<AbcPayInstruct> list = new ArrayList<>();\n        list.add(abcPayInstruct);\n        List<AbcPayInstructDTO> dtoList = this.queryPayResult(list);\n        AbcPayInstructDTO dto;\n        if (CollectionUtils.isNotEmpty(dtoList) && (dto = dtoList.get(0)) != null\n                && StringUtils.isNotBlank(dto.getProcessCode())) {\n            String result = \"查询支付结果返回代码:\" + dto.getProcessCode() + \" 返回信息:\";\n            if (org.apache.commons.lang.StringUtils.isNotBlank(dto.getProcessMessage())) {\n                result += dto.getProcessMessage();\n            }\n            return result;\n        }\n        log.error(\"该笔单据未在农业银行查询到付款状态，请联系农业银行确认！\");\n        return \"该笔单据未在农业银行查询到付款状态，请联系农业银行确认！\";\n    }\n\n    @Override\n    public void sycBankNumber() {\n        RedisLock redisLock = new RedisLock(\"sycBankNumber\");\n\n        try {\n            if (!redisLock.lock(REDIS_LOCK_TIMEOUT, REDIS_LOCK_EXPIRE)) {\n                log.info(\"===========农业银行同步银行联行号执行中，请稍后再试===========\");\n                throw new ServiceException(\"农业银行同步银行联行号执行中，请稍后再试\");\n            }\n            log.info(\"sycBankNumber 农行同步联行号同步开始\");\n            Document document = MessageBuilder.queryBankNumberMessage();\n\n            // 发送农业银行前置机\n            String[] ipPort = new String[1];\n            String response = this.postABC(document, \"bankNumber\", WkContextHolder.getTenantId(), ipPort);\n            if (Constants.NO_ENABLED_MACHINE.equals(response)) {\n                log.error(\"同步联行号时 无可用前置机异常\");\n                return;\n            } else if (Constants.BANK_POST_EXCEPTION.equals(response)) {\n                log.error(\"同步联行号查询请求异常\");\n                return;\n            }\n            ResponseHeaderDTO responseHeaderDto =\n                    ResponseXmlParser.parseResponseXml(response, Constants.AbcTranscodeEnum.BANK_NUMBER);\n            log.info(\"sycBankNumber 处理农业银行请求结果 resDto={}\", JSON.toJSONString(responseHeaderDto));\n            // 处理成功\n            if (responseHeaderDto != null && Constants.RESPONSE_0.equals(responseHeaderDto.getRespSource())) {\n                ResponseBodyDTO bodyDto = responseHeaderDto.getBodyDto();\n                if (bodyDto != null) {\n                    // 处理流水数据\n                    if (StringUtils.isNotBlank(bodyDto.getRecordNum())\n                            && Integer.parseInt(bodyDto.getRecordNum()) > 0) {\n                        List<BankNumber> abcTransList = fileService.fetchBankNumberData(ipPort[0],\n                                bodyDto.getBatchFileName());\n                        this.insertBankNumberData(abcTransList);\n                    }\n                } else {\n                    log.error(\"sycBankNumber 农业银行同步联行号报文解析发生错误\");\n                }\n            }\n        } catch (Exception e) {\n            log.error(\"sycBankNumber 同步联行号处理失败\", e);\n        } finally {\n            redisLock.unlock();\n        }\n        log.info(\"sycBankNumber 农行同步联行号同步结束\");\n    }\n\n    /**\n     * 处理流水响应结果\n     */\n    @Override\n    public void insertBankNumberData(List<BankNumber> numberList) {\n\n        // 处理成功\n        if (CollectionUtils.isNotEmpty(numberList)) {\n            log.info(\"insertBankNumberData 开始处理银行返回的联行号数据\");\n            List<List<BankNumber>> insertLists = Lists.partition(numberList, 1000);\n            int count = 0;\n            for (List<BankNumber> list : insertLists) {\n                int temp = bankNumberMapper.batchSaveUpdateByLists(list);\n                count = count + temp;\n            }\n            log.info(\"银行联行号批量插入--本次查询流水成功插入/更新条数：{}\", count);\n        }\n    }\n}\n",
+                "line_count": 891,
+                "start_line": 1,
+                "end_line": 891
+              }
+            }
+          },
+          "params": {
+            "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java"
+          }
+        },
+        {
+          "id": "a84820ca-acb3-4a60-867c-eeca6d93267b",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我来解释[`AbcServiceImpl.java`](pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcServiceImpl.java)的核心业务逻辑和使用流程：\n\n1. **主要功能**：\n- 农业银行(ABC)支付指令处理\n- 账户余额查询\n- 交易流水查询\n- 支付结果查询\n- 银行联行号同步\n\n2. **核心流程**：\n- **支付指令处理** (`abcUnUrgentPay`方法)：\n  - 获取待支付指令(PayStatus.PAY_ORDER_GEN/ORDER_FAILED)\n  - 通过Redis锁防止重复处理\n  - 调用`batchPay`批量发送支付请求\n  - 处理银行响应并更新指令状态\n\n- **余额查询** (`selectAbcBalance`方法)：\n  - 查询可用农行账户\n  - 生成查询报文并发送到银行前置机\n  - 解析响应并返回余额信息\n\n3. **关键组件交互**：\n- 使用`MessageBuilder`构建银行报文\n- 通过`SocketUtils`与银行前置机通信\n- 依赖`AccountService`查询账户信息\n- 使用`RedisLock`保证分布式环境下的操作安全\n\n4. **状态管理**：\n- 支付指令有多种状态(PAYED, FAILED, BANK_PROCESSING等)\n- 每个状态变更都会记录到付款单历史表\n- 异常状态会触发邮件通知\n\n5. **文件处理**：\n- 交易流水和联行号数据通过SFTP获取(`fileService.fetchTransactionsData`)\n- 使用批量插入优化数据库操作\n\n需要我详细解释某个具体流程或方法吗？或者您对哪个业务场景特别感兴趣？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false
+        }
+      ]
+    },
+    {
+      "id": "3284075",
+      "role": "user",
+      "status": "success",
+      "content": "这个分页插件如何使用",
+      "payload": {
+        "query": "这个分页插件如何使用",
+        "model": {
+          "modelId": "auto",
+          "requestType": "",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 629902
+      }
+    },
+    {
+      "id": "f91a8d51-3642-44a3-bce1-9a496cd39306",
+      "userMessageId": "3284075",
+      "role": "assistant",
+      "status": "cancelled",
+      "content": {},
+      "elements": [
+        {
+          "id": "a5069e24-b1f0-4213-a5ca-6e7fdfd10875",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先确认项目中使用的具体分页插件。从项目结构看，这是一个基于Spring Boot的Java项目，常见的分页插件可能是MyBatis的PageHelper或Spring Data JPA的分页功能。\n\n让我先查看相关配置文件，确认使用的分页插件类型：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false
+        },
+        {
+          "id": "1ad9f560-d5ad-4324-9cb0-b3f5c97added",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "pmc-basic-abc/src/main/resources",
+            "regex": "PageHelper|Pagination|Pageable"
+          },
+          "displayResult": {
+            "searchFiles": []
+          },
+          "workflowSnapshot": {
+            "searchFiles": [],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "PageHelper|Pagination|Pageable",
+                "file_pattern": "**/*.xml",
+                "path": "pmc-basic-abc/src/main/resources/"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": []
+            }
+          },
+          "params": {
+            "regex": "PageHelper|Pagination|Pageable",
+            "file_pattern": "**/*.xml",
+            "path": "pmc-basic-abc/src/main/resources/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3284082",
+      "role": "user",
+      "status": "success",
+      "content": "选中的这段代码每行代码的作用你帮我解释下",
+      "payload": {
+        "query": "选中的这段代码每行代码的作用你帮我解释下",
+        "model": {
+          "modelId": "auto",
+          "requestType": "",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 629902
+      }
+    },
+    {
+      "id": "deb365d6-0ec8-49c2-bfc8-b9044c3ef297",
+      "userMessageId": "3284082",
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "4e76a88e-7e1d-40ae-8432-104d13c3864f",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先了解您具体选中了哪段代码？您能否提供代码片段或文件路径？这样我可以准确解释每行代码的作用。\n\n为了帮助您，我将查看项目中可能包含分页逻辑的代码文件。让我先检查核心配置类：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false
+        },
+        {
+          "id": "9b75b376-82a8-4eab-85d0-66317f84b42a",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/persistence/configuration/PageHelperAutoConfiguration.java"
+          },
+          "displayResult": {
+            "lineCount": 57,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-abc/src/main/java/com/baidu/pmc/abc/persistence/configuration/PageHelperAutoConfiguration.java",
+              "startLine": 1,
+              "endLine": 57
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/persistence/configuration/PageHelperAutoConfiguration.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "package com.baidu.pmc.abc.persistence.configuration;\n\nimport com.github.pagehelper.PageInterceptor;\nimport com.github.pagehelper.autoconfigure.PageHelperProperties;\nimport org.apache.ibatis.session.SqlSessionFactory;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.bind.RelaxedPropertyResolver;\nimport org.springframework.context.EnvironmentAware;\nimport org.springframework.core.env.Environment;\n\nimport javax.annotation.PostConstruct;\nimport java.util.Iterator;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\n\n/**\n * Created by gongjiangchuan on 2017/5/25.\n */\npublic class PageHelperAutoConfiguration implements EnvironmentAware {\n\n    @Autowired\n    private List<SqlSessionFactory> sqlSessionFactorys;\n\n    @Autowired\n    private PageHelperProperties pageHelperProperties;\n\n    private RelaxedPropertyResolver resolver;\n\n    public PageHelperAutoConfiguration() {\n\n    }\n\n    public void setEnvironment(Environment environment) {\n        this.resolver = new RelaxedPropertyResolver(environment, \"pagehelper.\");\n    }\n\n    @PostConstruct\n    public void addPageInterceptor() {\n        PageInterceptor interceptor = new PageInterceptor();\n        Properties properties = this.pageHelperProperties.getProperties();\n        Map subProperties = this.resolver.getSubProperties(\"\");\n        Iterator var4 = subProperties.keySet().iterator();\n\n        while (var4.hasNext()) {\n            String key = (String) var4.next();\n            if (!properties.containsKey(key)) {\n                properties.setProperty(key, this.resolver.getProperty(key));\n            }\n        }\n\n        interceptor.setProperties(properties);\n        for (SqlSessionFactory sqlSessionFactory : sqlSessionFactorys) {\n            sqlSessionFactory.getConfiguration().addInterceptor(interceptor);\n        }\n    }\n}",
+                "line_count": 57,
+                "start_line": 1,
+                "end_line": 57
+              }
+            }
+          },
+          "params": {
+            "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/persistence/configuration/PageHelperAutoConfiguration.java"
+          }
+        },
+        {
+          "id": "8c2510cf-13f9-43ff-9584-cf16381dda05",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我来逐行解释这段PageHelper自动配置代码的作用：\n\n1. **类定义**：\n```java\npublic class PageHelperAutoConfiguration implements EnvironmentAware\n```\n- 这是一个Spring配置类，实现了`EnvironmentAware`接口以获取环境变量\n\n2. **依赖注入**：\n```java\n@Autowired\nprivate List<SqlSessionFactory> sqlSessionFactorys;\n```\n- 注入项目中所有的MyBatis SqlSessionFactory\n\n3. **配置属性**：\n```java\n@Autowired\nprivate PageHelperProperties pageHelperProperties;\n```\n- 注入PageHelper的配置属性\n\n4. **环境变量处理**：\n```java\nprivate RelaxedPropertyResolver resolver;\npublic void setEnvironment(Environment environment) {\n    this.resolver = new RelaxedPropertyResolver(environment, \"pagehelper.\");\n}\n```\n- 获取以`pagehelper.`开头的配置项\n\n5. **初始化方法**：\n```java\n@PostConstruct\npublic void addPageInterceptor() {\n```\n- 在Bean初始化后执行，添加分页拦截器\n\n6. **拦截器创建**：\n```java\nPageInterceptor interceptor = new PageInterceptor();\nProperties properties = this.pageHelperProperties.getProperties();\n```\n- 创建PageHelper分页拦截器实例\n- 获取默认配置属性\n\n7. **配置合并**：\n```java\nMap subProperties = this.resolver.getSubProperties(\"\");\nIterator var4 = subProperties.keySet().iterator();\nwhile (var4.hasNext()) {\n    String key = (String) var4.next();\n    if (!properties.containsKey(key)) {\n        properties.setProperty(key, this.resolver.getProperty(key));\n    }\n}\n```\n- 合并application.properties中的自定义配置到PageHelper配置\n\n8. **拦截器设置**：\n```java\ninterceptor.setProperties(properties);\n```\n- 将最终配置设置给拦截器\n\n9. **拦截器注册**：\n```java\nfor (SqlSessionFactory sqlSessionFactory : sqlSessionFactorys) {\n    sqlSessionFactory.getConfiguration().addInterceptor(interceptor);\n}\n```\n- 将分页拦截器添加到所有SqlSessionFactory中\n\n这个配置类的主要作用是自动配置PageHelper分页插件，使其在MyBatis查询时自动处理分页逻辑。\n\n需要我进一步解释如何在代码中使用这个分页功能吗？或者您想了解具体的分页配置参数？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false
+        }
+      ]
+    }
+  ],
+  "title": "这段代码的使用逻辑帮我解释下",
+  "ctime": 1756432718224,
+  "utime": 1756432797182,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

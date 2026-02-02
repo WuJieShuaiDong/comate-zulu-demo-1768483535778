@@ -1,0 +1,36 @@
+[2026-01-21 14:23:22.171] [INFO] McpManager 开始初始化
+[2026-01-21 14:23:22.172] [INFO] 初始化 MCP 配置聚合器：
+ global=/Users/xiaoliu/.comate/mcp.json
+ project=/Users/xiaoliu/baidu/bpit-proc-apps/pmc/.comate/mcp.json
+ local=/Users/xiaoliu/baidu/bpit-proc-apps/pmc/.comate/mcp.local.json
+[2026-01-21 14:23:22.173] [INFO] 等待 mediator 初始化
+[2026-01-21 14:23:22.416] [INFO] 已清理旧日志文件: mcp-2026-01-13.log
+[2026-01-21 14:23:22.418] [INFO] 已清理旧日志文件: mcp-2026-01-15.log
+[2026-01-21 14:23:22.419] [INFO] 已清理旧日志文件: mcp-2026-01-16.log
+[2026-01-21 14:23:22.430] [INFO] 等待 webview 初始化
+[2026-01-21 14:23:22.430] [INFO] 开始初始化 MCP Servers
+[2026-01-21 14:23:22.431] [INFO] MCP Servers 初始化完成
+[2026-01-21 14:23:22.438] [INFO] 推送 MCP 变动 (调用者: initializeMcpServers)
+[2026-01-21 14:23:22.439] [INFO] 推送 MCP Config 变动
+[2026-01-21 20:11:03.632] [INFO] McpManager 开始初始化
+[2026-01-21 20:11:03.632] [INFO] 初始化 MCP 配置聚合器：
+ global=/Users/xiaoliu/.comate/mcp.json
+ project=/Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778/.comate/mcp.json
+ local=/Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778/.comate/mcp.local.json
+[2026-01-21 20:11:03.633] [INFO] 等待 mediator 初始化
+[2026-01-21 20:11:04.057] [INFO] 等待 webview 初始化
+[2026-01-21 20:11:04.057] [INFO] 开始初始化 MCP Servers
+[2026-01-21 20:11:04.058] [INFO] MCP Servers 初始化完成
+[2026-01-21 20:11:04.061] [INFO] 推送 MCP Config 变动
+[2026-01-21 20:11:04.061] [INFO] 推送 MCP 变动 (调用者: initializeMcpServers)
+[2026-01-21 20:11:04.661] [INFO] McpManager 开始初始化
+[2026-01-21 20:11:04.661] [INFO] 初始化 MCP 配置聚合器：
+ global=/Users/xiaoliu/.comate/mcp.json
+ project=/.comate/mcp.json
+ local=/.comate/mcp.local.json
+[2026-01-21 20:11:04.662] [INFO] 等待 mediator 初始化
+[2026-01-21 20:11:04.759] [INFO] 等待 webview 初始化
+[2026-01-21 20:11:04.759] [INFO] 开始初始化 MCP Servers
+[2026-01-21 20:11:04.759] [INFO] MCP Servers 初始化完成
+[2026-01-21 20:11:04.761] [INFO] 推送 MCP Config 变动
+[2026-01-21 20:11:04.762] [INFO] 推送 MCP 变动 (调用者: initializeMcpServers)

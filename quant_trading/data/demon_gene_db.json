@@ -1,0 +1,132 @@
+{
+  "300750": {
+    "name": "宁德时代",
+    "gene_score": 88,
+    "max_continuous_board": 6,
+    "last_board_date": "2026-01-15",
+    "monthly_max_gain": 85.3,
+    "avg_amplitude": 12.5,
+    "zt_count_6m": 8,
+    "update_time": "2026-01-27"
+  },
+  "002594": {
+    "name": "比亚迪",
+    "gene_score": 82,
+    "max_continuous_board": 5,
+    "last_board_date": "2026-01-17",
+    "monthly_max_gain": 72.8,
+    "avg_amplitude": 11.2,
+    "zt_count_6m": 7,
+    "update_time": "2026-01-27"
+  },
+  "603501": {
+    "name": "韦尔股份",
+    "gene_score": 79,
+    "max_continuous_board": 4,
+    "last_board_date": "2026-01-13",
+    "monthly_max_gain": 68.5,
+    "avg_amplitude": 10.8,
+    "zt_count_6m": 6,
+    "update_time": "2026-01-27"
+  },
+  "600519": {
+    "name": "贵州茅台",
+    "gene_score": 75,
+    "max_continuous_board": 3,
+    "last_board_date": "2026-01-20",
+    "monthly_max_gain": 45.5,
+    "avg_amplitude": 8.5,
+    "zt_count_6m": 4,
+    "update_time": "2026-01-27"
+  },
+  "000858": {
+    "name": "五粮液",
+    "gene_score": 73,
+    "max_continuous_board": 3,
+    "last_board_date": "2026-01-16",
+    "monthly_max_gain": 48.9,
+    "avg_amplitude": 8.7,
+    "zt_count_6m": 4,
+    "update_time": "2026-01-27"
+  },
+  "601318": {
+    "name": "中国平安",
+    "gene_score": 71,
+    "max_continuous_board": 4,
+    "last_board_date": "2026-01-19",
+    "monthly_max_gain": 55.8,
+    "avg_amplitude": 8.9,
+    "zt_count_6m": 4,
+    "update_time": "2026-01-27"
+  },
+  "600036": {
+    "name": "招商银行",
+    "gene_score": 68,
+    "max_continuous_board": 3,
+    "last_board_date": "2026-01-18",
+    "monthly_max_gain": 52.1,
+    "avg_amplitude": 9.2,
+    "zt_count_6m": 5,
+    "update_time": "2026-01-27"
+  },
+  "600276": {
+    "name": "恒瑞医药",
+    "gene_score": 66,
+    "max_continuous_board": 3,
+    "last_board_date": "2026-01-14",
+    "monthly_max_gain": 42.3,
+    "avg_amplitude": 7.9,
+    "zt_count_6m": 3,
+    "update_time": "2026-01-27"
+  },
+  "000001": {
+    "name": "平安银行",
+    "gene_score": 62,
+    "max_continuous_board": 2,
+    "last_board_date": "2026-01-22",
+    "monthly_max_gain": 38.2,
+    "avg_amplitude": 7.8,
+    "zt_count_6m": 3,
+    "update_time": "2026-01-27"
+  },
+  "600900": {
+    "name": "长江电力",
+    "gene_score": 58,
+    "max_continuous_board": 2,
+    "last_board_date": "2026-01-21",
+    "monthly_max_gain": 35.6,
+    "avg_amplitude": 6.5,
+    "zt_count_6m": 2,
+    "update_time": "2026-01-27"
+  },
+  "603633": {
+    "name": "徕木股份",
+    "gene_score": 85,
+    "max_continuous_board": 5,
+    "last_board_date": "2026-01-25",
+    "monthly_max_gain": 78.5,
+    "avg_amplitude": 11.8,
+    "zt_count_6m": 7,
+    "update_time": "2026-01-30"
+  },
+  "300438": {
+    "name": "鹏辉能源",
+    "gene_score": 76,
+    "max_continuous_board": 4,
+    "last_board_date": "2026-01-23",
+    "monthly_max_gain": 62.3,
+    "avg_amplitude": 10.2,
+    "zt_count_6m": 5,
+    "update_time": "2026-01-30"
+  },
+  "301391": {
+    "name": "卡莱特",
+    "gene_score": 72,
+    "max_continuous_board": 3,
+    "last_board_date": "2026-01-24",
+    "monthly_max_gain": 55.8,
+    "avg_amplitude": 9.5,
+    "zt_count_6m": 4,
+    "update_time": "2026-01-30"
+  }
+}

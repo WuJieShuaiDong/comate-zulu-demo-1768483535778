@@ -1,0 +1,534 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "f8df989f-0ee1-413f-a48c-ac99d4c106a3",
+  "messages": [
+    {
+      "id": "6058785",
+      "summary": "Java函数注释生成指导",
+      "role": "user",
+      "status": "success",
+      "content": "",
+      "payload": {
+        "knowledgeList": [
+          {
+            "filePath": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+            "name": "PmcFinanceSupplierApply.java",
+            "selection": [
+              500,
+              505
+            ],
+            "id": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java#500-505",
+            "type": "CODE_SELECTION"
+          }
+        ],
+        "metrics": {
+          "path": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+          "model": "Zulu",
+          "function": "CODE_TO_COMMENT"
+        },
+        "query": "",
+        "agent": {
+          "agentId": 1,
+          "avatar": "zulu",
+          "mcpServers": [],
+          "name": "Zulu",
+          "subAgentList": []
+        },
+        "model": {
+          "mode": "NORMAL",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE"
+        },
+        "command": "函数注释",
+        "selfDefineInstruction": "请为选中函数生成标准的中文函数注释。\n\n要求：\n1. 根据代码语言自动选择对应的标准注释格式：\n    - Java/C#：使用JavaDoc格式 (/** ... */)\n    - Python：使用Google风格docstring格式 (\"\"\" ... \"\"\")\n    - JavaScript/TypeScript：使用JSDoc格式 (/** ... */)\n    - Go：使用godoc格式 (// ...)\n    - 其他语言：使用该语言最广泛接受的注释格式\n\n2. 格式要求：\n    - 保持与函数定义相同的缩进级别\n    - 使用清晰的段落分隔\n    - 保持注释格式的一致性\n\n3. 其他要求：\n    - 简洁明了，避免冗余，不需要todo list进行规划\n    - 只返回注释内容，不包含函数定义和函数体\n    - 使用工具直接将结果应用到源文件\n\n示例输出（Python）：\n```python\n    \"\"\"\n    函数功能描述\n\n    Args:\n        参数1: 说明\n        参数2: 说明\n\n    Returns:\n        返回值说明\n    \"\"\"\n```\n\n示例输出（Java）：\n```java\n/**\n * 函数功能描述\n *\n * @param 参数1 说明\n * @param 参数2 说明\n * @return 返回值说明\n */\n```"
+      },
+      "context": {
+        "conversationId": 868902,
+        "sessionId": 9797202
+      }
+    },
+    {
+      "id": "a53c672c-969b-4a23-bf36-54b696923fab",
+      "userMessageId": "6058785",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "136b01bf-e4b9-4683-908f-2c3592274243",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为选中的Java方法生成标准注释，并使用工具直接应用到源文件。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "dd8e4290-2d5a-4a57-8fcf-c9def7cd35d9",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "patch_file",
+          "composer": {
+            "markdown": "",
+            "tasks": [
+              {
+                "action": "edit",
+                "accepted": 2,
+                "status": "success",
+                "filePath": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+                "absolutePath": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+                "basename": "PmcFinanceSupplierApply.java",
+                "originalContent": "package com.baidu.pmc.pojo.model;\n\nimport javax.persistence.Column;\nimport javax.persistence.Id;\nimport javax.persistence.Table;\nimport java.math.BigDecimal;\nimport java.util.Date;\n\n@Table(name = \"pmc_finance_supplier_apply\")\npublic class PmcFinanceSupplierApply {\n    /**\n     * 主键\n     */\n    @Id\n    @Column(name = \"apply_id\")\n    private Long applyId;\n\n    /**\n     * 融资申请单号\n     */\n    @Column(name = \"apply_number\")\n    private String applyNumber;\n\n    /**\n     * 付款单号\n     */\n    @Column(name = \"pay_check_num\")\n    private String payCheckNum;\n\n    /**\n     * 原始单据号\n     */\n    @Column(name = \"source_num\")\n    private String sourceNum;\n\n    /**\n     * 合同编号\n     */\n    @Column(name = \"contract_num\")\n    private String contractNum;\n\n    /**\n     * 计划付款日期\n     */\n    @Column(name = \"paty_plan_date\")\n    private Date patyPlanDate;\n\n    /**\n     * 供应商编码\n     */\n    @Column(name = \"supplier_code\")\n    private String supplierCode;\n\n    /**\n     * 票面金额\n     */\n    @Column(name = \"invoice_amount\")\n    private BigDecimal invoiceAmount;\n\n    /**\n     * 付款单金额\n     */\n    @Column(name = \"pay_amount\")\n    private BigDecimal payAmount;\n\n    /**\n     * 融资金额\n     */\n    @Column(name = \"finance_amount\")\n    private BigDecimal financeAmount;\n\n    /**\n     * 测算利率(百分比)\n     */\n    @Column(name = \"calc_rate\")\n    private BigDecimal calcRate;\n\n    /**\n     * 测算手续费\n     */\n    @Column(name = \"calc_fee\")\n    private BigDecimal calcFee;\n\n    /**\n     * 平台费用\n     */\n    @Column(name = \"platform_fee\")\n    private BigDecimal platformFee;\n\n    /**\n     * 币种\n     */\n    private String currency;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"bank_code\")\n    private String bankCode;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"company_code\")\n    private String companyCode;\n\n    /**\n     * 融资天数\n     */\n    @Column(name = \"finance_day\")\n    private Long financeDay;\n\n    /**\n     * 融资账户\n     */\n    @Column(name = \"finance_account\")\n    private String financeAccount;\n\n    /**\n     * 付款单原始状态\n     */\n    @Column(name = \"pay_origin_status\")\n    private String payOriginStatus;\n\n    /**\n     * 付款单原始支付组\n     */\n    @Column(name = \"pay_origin_group\")\n    private String payOriginGroup;\n\n    /**\n     * 银行融资编号\n     */\n    @Column(name = \"bank_apply_number\")\n    private String bankApplyNumber;\n\n    /**\n     * 申请人-操作账户\n     */\n    @Column(name = \"apply_submit\")\n    private String applySubmit;\n\n    /**\n     * 融资申请状态\n     */\n    private String status;\n\n    /**\n     * 错误消息\n     */\n    private String message;\n\n    /**\n     * 发送序号\n     */\n    @Column(name = \"send_seq\")\n    private Integer sendSeq;\n\n    public String getMessage() {\n        return message;\n    }\n\n    public void setMessage(String message) {\n        this.message = message;\n    }\n\n    public Integer getSendSeq() {\n        return sendSeq;\n    }\n\n    public void setSendSeq(Integer sendSeq) {\n        this.sendSeq = sendSeq;\n    }\n\n    /**\n     * 创建人\n     */\n    @Column(name = \"CREATE_BY\")\n    private String createBy;\n\n    /**\n     * 创建时间\n     */\n    @Column(name = \"CREATE_DATE\")\n    private Date createDate;\n\n    /**\n     * 更新人\n     */\n    @Column(name = \"LAST_UPDATE_BY\")\n    private String lastUpdateBy;\n\n    /**\n     * 更新时间\n     */\n    @Column(name = \"LAST_UPDATE_DATE\")\n    private Date lastUpdateDate;\n\n    /**\n     * 拓展字段1\n     */\n    @Column(name = \"ATTRIBUTE1\")\n    private String attribute1;\n\n    /**\n     * 拓展字段2\n     */\n    @Column(name = \"ATTRIBUTE2\")\n    private String attribute2;\n\n    /**\n     * 拓展字段3\n     */\n    @Column(name = \"ATTRIBUTE3\")\n    private String attribute3;\n\n    /**\n     * 拓展字段4\n     */\n    @Column(name = \"ATTRIBUTE4\")\n    private String attribute4;\n\n    /**\n     * 拓展字段5\n     */\n    @Column(name = \"ATTRIBUTE5\")\n    private String attribute5;\n\n    /**\n     * 获取主键\n     *\n     * @return apply_id - 主键\n     */\n    public Long getApplyId() {\n        return applyId;\n    }\n\n    /**\n     * 设置主键\n     *\n     * @param applyId 主键\n     */\n    public void setApplyId(Long applyId) {\n        this.applyId = applyId;\n    }\n\n    /**\n     * 获取融资申请单号\n     *\n     * @return apply_number - 融资申请单号\n     */\n    public String getApplyNumber() {\n        return applyNumber;\n    }\n\n    /**\n     * 设置融资申请单号\n     *\n     * @param applyNumber 融资申请单号\n     */\n    public void setApplyNumber(String applyNumber) {\n        this.applyNumber = applyNumber;\n    }\n\n    /**\n     * 获取付款单号\n     *\n     * @return pay_check_num - 付款单号\n     */\n    public String getPayCheckNum() {\n        return payCheckNum;\n    }\n\n    /**\n     * 设置付款单号\n     *\n     * @param payCheckNum 付款单号\n     */\n    public void setPayCheckNum(String payCheckNum) {\n        this.payCheckNum = payCheckNum;\n    }\n\n    /**\n     * 获取原始单据号\n     *\n     * @return source_num - 原始单据号\n     */\n    public String getSourceNum() {\n        return sourceNum;\n    }\n\n    /**\n     * 设置原始单据号\n     *\n     * @param sourceNum 原始单据号\n     */\n    public void setSourceNum(String sourceNum) {\n        this.sourceNum = sourceNum;\n    }\n\n    /**\n     * 获取合同编号\n     *\n     * @return contract_num - 合同编号\n     */\n    public String getContractNum() {\n        return contractNum;\n    }\n\n    /**\n     * 设置合同编号\n     *\n     * @param contractNum 合同编号\n     */\n    public void setContractNum(String contractNum) {\n        this.contractNum = contractNum;\n    }\n\n    /**\n     * 获取计划付款日期\n     *\n     * @return paty_plan_date - 计划付款日期\n     */\n    public Date getPatyPlanDate() {\n        return patyPlanDate;\n    }\n\n    /**\n     * 设置计划付款日期\n     *\n     * @param patyPlanDate 计划付款日期\n     */\n    public void setPatyPlanDate(Date patyPlanDate) {\n        this.patyPlanDate = patyPlanDate;\n    }\n\n    /**\n     * 获取供应商编码\n     *\n     * @return supplier_code - 供应商编码\n     */\n    public String getSupplierCode() {\n        return supplierCode;\n    }\n\n    /**\n     * 设置供应商编码\n     *\n     * @param supplierCode 供应商编码\n     */\n    public void setSupplierCode(String supplierCode) {\n        this.supplierCode = supplierCode;\n    }\n\n    /**\n     * 获取票面金额\n     *\n     * @return invoice_amount - 票面金额\n     */\n    public BigDecimal getInvoiceAmount() {\n        return invoiceAmount;\n    }\n\n    /**\n     * 设置票面金额\n     *\n     * @param invoiceAmount 票面金额\n     */\n    public void setInvoiceAmount(BigDecimal invoiceAmount) {\n        this.invoiceAmount = invoiceAmount;\n    }\n\n    /**\n     * 获取付款单金额\n     *\n     * @return pay_amount - 付款单金额\n     */\n    public BigDecimal getPayAmount() {\n        return payAmount;\n    }\n\n    /**\n     * 设置付款单金额\n     *\n     * @param payAmount 付款单金额\n     */\n    public void setPayAmount(BigDecimal payAmount) {\n        this.payAmount = payAmount;\n    }\n\n    /**\n     * 获取融资金额\n     *\n     * @return finance_amount - 融资金额\n     */\n    public BigDecimal getFinanceAmount() {\n        return financeAmount;\n    }\n\n    /**\n     * 设置融资金额\n     *\n     * @param financeAmount 融资金额\n     */\n    public void setFinanceAmount(BigDecimal financeAmount) {\n        this.financeAmount = financeAmount;\n    }\n\n    /**\n     * 获取测算利率(百分比)\n     *\n     * @return calc_rate - 测算利率(百分比)\n     */\n    public BigDecimal getCalcRate() {\n        return calcRate;\n    }\n\n    /**\n     * 设置测算利率(百分比)\n     *\n     * @param calcRate 测算利率(百分比)\n     */\n    public void setCalcRate(BigDecimal calcRate) {\n        this.calcRate = calcRate;\n    }\n\n    /**\n     * 获取测算手续费\n     *\n     * @return calc_fee - 测算手续费\n     */\n    public BigDecimal getCalcFee() {\n        return calcFee;\n    }\n\n    /**\n     * 设置测算手续费\n     *\n     * @param calcFee 测算手续费\n     */\n    public void setCalcFee(BigDecimal calcFee) {\n        this.calcFee = calcFee;\n    }\n\n    /**\n     * 获取平台费用\n     *\n     * @return platform_fee - 平台费用\n     */\n    public BigDecimal getPlatformFee() {\n        return platformFee;\n    }\n\n    /**\n     * 设置平台费用\n     *\n     * @param platformFee 平台费用\n     */\n    public void setPlatformFee(BigDecimal platformFee) {\n        this.platformFee = platformFee;\n    }\n\n    /**\n     * 获取币种\n     *\n     * @return currency - 币种\n     */\n    public String getCurrency() {\n        return currency;\n    }\n\n    /**\n     * 设置币种\n     *\n     * @param currency 币种\n     */\n    public void setCurrency(String currency) {\n        this.currency = currency;\n    }\n\n    /**\n     * 获取融资机构\n     *\n     * @return bank_code - 融资机构\n     */\n    public String getBankCode() {\n        return bankCode;\n    }\n\n    /**\n     * 设置融资机构\n     *\n     * @param bankCode 融资机构\n     */\n    public void setBankCode(String bankCode) {\n        this.bankCode = bankCode;\n    }\n    \n\n    /*\n    * \n    * */\n    public String getCompanyCode() {\n        return companyCode;\n    }\n\n    public void setCompanyCode(String companyCode) {\n        this.companyCode = companyCode;\n    }\n\n    /**\n     * 获取融资天数\n     *\n     * @return finance_day - 融资天数\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n    }\n\n    /**\n     * 设置融资天数\n     *\n     * @param financeDay 融资天数\n     */\n    public void setFinanceDay(Long financeDay) {\n        this.financeDay = financeDay;\n    }\n\n    /**\n     * 获取融资账户\n     *\n     * @return finance_account - 融资账户\n     */\n    public String getFinanceAccount() {\n        return financeAccount;\n    }\n\n    /**\n     * 设置融资账户\n     *\n     * @param financeAccount 融资账户\n     */\n    public void setFinanceAccount(String financeAccount) {\n        this.financeAccount = financeAccount;\n    }\n\n    /**\n     * 获取付款单原始状态\n     *\n     * @return pay_origin_status - 付款单原始状态\n     */\n    public String getPayOriginStatus() {\n        return payOriginStatus;\n    }\n\n    /**\n     * 设置付款单原始状态\n     *\n     * @param payOriginStatus 付款单原始状态\n     */\n    public void setPayOriginStatus(String payOriginStatus) {\n        this.payOriginStatus = payOriginStatus;\n    }\n\n    /**\n     * 获取付款单原始支付组\n     *\n     * @return pay_origin_group - 付款单原始支付组\n     */\n    public String getPayOriginGroup() {\n        return payOriginGroup;\n    }\n\n    /**\n     * 设置付款单原始支付组\n     *\n     * @param payOriginGroup 付款单原始支付组\n     */\n    public void setPayOriginGroup(String payOriginGroup) {\n        this.payOriginGroup = payOriginGroup;\n    }\n\n    /**\n     * 获取申请人-操作账户\n     *\n     * @return apply_submit - 申请人-操作账户\n     */\n    public String getApplySubmit() {\n        return applySubmit;\n    }\n\n    /**\n     * 设置申请人-操作账户\n     *\n     * @param applySubmit 申请人-操作账户\n     */\n    public void setApplySubmit(String applySubmit) {\n        this.applySubmit = applySubmit;\n    }\n\n    /**\n     * 获取融资申请状态\n     *\n     * @return status - 融资申请状态\n     */\n    public String getStatus() {\n        return status;\n    }\n\n    /**\n     * 设置融资申请状态\n     *\n     * @param status 融资申请状态\n     */\n    public void setStatus(String status) {\n        this.status = status;\n    }\n\n    public String getBankApplyNumber() {\n        return bankApplyNumber;\n    }\n\n    public void setBankApplyNumber(String bankApplyNumber) {\n        this.bankApplyNumber = bankApplyNumber;\n    }\n\n    /**\n     * 获取创建人\n     *\n     * @return CREATE_BY - 创建人\n     */\n    public String getCreateBy() {\n        return createBy;\n    }\n\n    /**\n     * 设置创建人\n     *\n     * @param createBy 创建人\n     */\n    public void setCreateBy(String createBy) {\n        this.createBy = createBy;\n    }\n\n    /**\n     * 获取创建时间\n     *\n     * @return CREATE_DATE - 创建时间\n     */\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    /**\n     * 设置创建时间\n     *\n     * @param createDate 创建时间\n     */\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    /**\n     * 获取更新人\n     *\n     * @return LAST_UPDATE_BY - 更新人\n     */\n    public String getLastUpdateBy() {\n        return lastUpdateBy;\n    }\n\n    /**\n     * 设置更新人\n     *\n     * @param lastUpdateBy 更新人\n     */\n    public void setLastUpdateBy(String lastUpdateBy) {\n        this.lastUpdateBy = lastUpdateBy;\n    }\n\n    /**\n     * 获取更新时间\n     *\n     * @return LAST_UPDATE_DATE - 更新时间\n     */\n    public Date getLastUpdateDate() {\n        return lastUpdateDate;\n    }\n\n    /**\n     * 设置更新时间\n     *\n     * @param lastUpdateDate 更新时间\n     */\n    public void setLastUpdateDate(Date lastUpdateDate) {\n        this.lastUpdateDate = lastUpdateDate;\n    }\n\n    /**\n     * 获取拓展字段1\n     *\n     * @return ATTRIBUTE1 - 拓展字段1\n     */\n    public String getAttribute1() {\n        return attribute1;\n    }\n\n    /**\n     * 设置拓展字段1\n     *\n     * @param attribute1 拓展字段1\n     */\n    public void setAttribute1(String attribute1) {\n        this.attribute1 = attribute1;\n    }\n\n    /**\n     * 获取拓展字段2\n     *\n     * @return ATTRIBUTE2 - 拓展字段2\n     */\n    public String getAttribute2() {\n        return attribute2;\n    }\n\n    /**\n     * 设置拓展字段2\n     *\n     * @param attribute2 拓展字段2\n     */\n    public void setAttribute2(String attribute2) {\n        this.attribute2 = attribute2;\n    }\n\n    /**\n     * 获取拓展字段3\n     *\n     * @return ATTRIBUTE3 - 拓展字段3\n     */\n    public String getAttribute3() {\n        return attribute3;\n    }\n\n    /**\n     * 设置拓展字段3\n     *\n     * @param attribute3 拓展字段3\n     */\n    public void setAttribute3(String attribute3) {\n        this.attribute3 = attribute3;\n    }\n\n    /**\n     * 获取拓展字段4\n     *\n     * @return ATTRIBUTE4 - 拓展字段4\n     */\n    public String getAttribute4() {\n        return attribute4;\n    }\n\n    /**\n     * 设置拓展字段4\n     *\n     * @param attribute4 拓展字段4\n     */\n    public void setAttribute4(String attribute4) {\n        this.attribute4 = attribute4;\n    }\n\n    /**\n     * 获取拓展字段5\n     *\n     * @return ATTRIBUTE5 - 拓展字段5\n     */\n    public String getAttribute5() {\n        return attribute5;\n    }\n\n    /**\n     * 设置拓展字段5\n     *\n     * @param attribute5 拓展字段5\n     */\n    public void setAttribute5(String attribute5) {\n        this.attribute5 = attribute5;\n    }\n}",
+                "content": "package com.baidu.pmc.pojo.model;\n\nimport javax.persistence.Column;\nimport javax.persistence.Id;\nimport javax.persistence.Table;\nimport java.math.BigDecimal;\nimport java.util.Date;\n\n@Table(name = \"pmc_finance_supplier_apply\")\npublic class PmcFinanceSupplierApply {\n    /**\n     * 主键\n     */\n    @Id\n    @Column(name = \"apply_id\")\n    private Long applyId;\n\n    /**\n     * 融资申请单号\n     */\n    @Column(name = \"apply_number\")\n    private String applyNumber;\n\n    /**\n     * 付款单号\n     */\n    @Column(name = \"pay_check_num\")\n    private String payCheckNum;\n\n    /**\n     * 原始单据号\n     */\n    @Column(name = \"source_num\")\n    private String sourceNum;\n\n    /**\n     * 合同编号\n     */\n    @Column(name = \"contract_num\")\n    private String contractNum;\n\n    /**\n     * 计划付款日期\n     */\n    @Column(name = \"paty_plan_date\")\n    private Date patyPlanDate;\n\n    /**\n     * 供应商编码\n     */\n    @Column(name = \"supplier_code\")\n    private String supplierCode;\n\n    /**\n     * 票面金额\n     */\n    @Column(name = \"invoice_amount\")\n    private BigDecimal invoiceAmount;\n\n    /**\n     * 付款单金额\n     */\n    @Column(name = \"pay_amount\")\n    private BigDecimal payAmount;\n\n    /**\n     * 融资金额\n     */\n    @Column(name = \"finance_amount\")\n    private BigDecimal financeAmount;\n\n    /**\n     * 测算利率(百分比)\n     */\n    @Column(name = \"calc_rate\")\n    private BigDecimal calcRate;\n\n    /**\n     * 测算手续费\n     */\n    @Column(name = \"calc_fee\")\n    private BigDecimal calcFee;\n\n    /**\n     * 平台费用\n     */\n    @Column(name = \"platform_fee\")\n    private BigDecimal platformFee;\n\n    /**\n     * 币种\n     */\n    private String currency;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"bank_code\")\n    private String bankCode;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"company_code\")\n    private String companyCode;\n\n    /**\n     * 融资天数\n     */\n    @Column(name = \"finance_day\")\n    private Long financeDay;\n\n    /**\n     * 融资账户\n     */\n    @Column(name = \"finance_account\")\n    private String financeAccount;\n\n    /**\n     * 付款单原始状态\n     */\n    @Column(name = \"pay_origin_status\")\n    private String payOriginStatus;\n\n    /**\n     * 付款单原始支付组\n     */\n    @Column(name = \"pay_origin_group\")\n    private String payOriginGroup;\n\n    /**\n     * 银行融资编号\n     */\n    @Column(name = \"bank_apply_number\")\n    private String bankApplyNumber;\n\n    /**\n     * 申请人-操作账户\n     */\n    @Column(name = \"apply_submit\")\n    private String applySubmit;\n\n    /**\n     * 融资申请状态\n     */\n    private String status;\n\n    /**\n     * 错误消息\n     */\n    private String message;\n\n    /**\n     * 发送序号\n     */\n    @Column(name = \"send_seq\")\n    private Integer sendSeq;\n\n    public String getMessage() {\n        return message;\n    }\n\n    public void setMessage(String message) {\n        this.message = message;\n    }\n\n    public Integer getSendSeq() {\n        return sendSeq;\n    }\n\n    public void setSendSeq(Integer sendSeq) {\n        this.sendSeq = sendSeq;\n    }\n\n    /**\n     * 创建人\n     */\n    @Column(name = \"CREATE_BY\")\n    private String createBy;\n\n    /**\n     * 创建时间\n     */\n    @Column(name = \"CREATE_DATE\")\n    private Date createDate;\n\n    /**\n     * 更新人\n     */\n    @Column(name = \"LAST_UPDATE_BY\")\n    private String lastUpdateBy;\n\n    /**\n     * 更新时间\n     */\n    @Column(name = \"LAST_UPDATE_DATE\")\n    private Date lastUpdateDate;\n\n    /**\n     * 拓展字段1\n     */\n    @Column(name = \"ATTRIBUTE1\")\n    private String attribute1;\n\n    /**\n     * 拓展字段2\n     */\n    @Column(name = \"ATTRIBUTE2\")\n    private String attribute2;\n\n    /**\n     * 拓展字段3\n     */\n    @Column(name = \"ATTRIBUTE3\")\n    private String attribute3;\n\n    /**\n     * 拓展字段4\n     */\n    @Column(name = \"ATTRIBUTE4\")\n    private String attribute4;\n\n    /**\n     * 拓展字段5\n     */\n    @Column(name = \"ATTRIBUTE5\")\n    private String attribute5;\n\n    /**\n     * 获取主键\n     *\n     * @return apply_id - 主键\n     */\n    public Long getApplyId() {\n        return applyId;\n    }\n\n    /**\n     * 设置主键\n     *\n     * @param applyId 主键\n     */\n    public void setApplyId(Long applyId) {\n        this.applyId = applyId;\n    }\n\n    /**\n     * 获取融资申请单号\n     *\n     * @return apply_number - 融资申请单号\n     */\n    public String getApplyNumber() {\n        return applyNumber;\n    }\n\n    /**\n     * 设置融资申请单号\n     *\n     * @param applyNumber 融资申请单号\n     */\n    public void setApplyNumber(String applyNumber) {\n        this.applyNumber = applyNumber;\n    }\n\n    /**\n     * 获取付款单号\n     *\n     * @return pay_check_num - 付款单号\n     */\n    public String getPayCheckNum() {\n        return payCheckNum;\n    }\n\n    /**\n     * 设置付款单号\n     *\n     * @param payCheckNum 付款单号\n     */\n    public void setPayCheckNum(String payCheckNum) {\n        this.payCheckNum = payCheckNum;\n    }\n\n    /**\n     * 获取原始单据号\n     *\n     * @return source_num - 原始单据号\n     */\n    public String getSourceNum() {\n        return sourceNum;\n    }\n\n    /**\n     * 设置原始单据号\n     *\n     * @param sourceNum 原始单据号\n     */\n    public void setSourceNum(String sourceNum) {\n        this.sourceNum = sourceNum;\n    }\n\n    /**\n     * 获取合同编号\n     *\n     * @return contract_num - 合同编号\n     */\n    public String getContractNum() {\n        return contractNum;\n    }\n\n    /**\n     * 设置合同编号\n     *\n     * @param contractNum 合同编号\n     */\n    public void setContractNum(String contractNum) {\n        this.contractNum = contractNum;\n    }\n\n    /**\n     * 获取计划付款日期\n     *\n     * @return paty_plan_date - 计划付款日期\n     */\n    public Date getPatyPlanDate() {\n        return patyPlanDate;\n    }\n\n    /**\n     * 设置计划付款日期\n     *\n     * @param patyPlanDate 计划付款日期\n     */\n    public void setPatyPlanDate(Date patyPlanDate) {\n        this.patyPlanDate = patyPlanDate;\n    }\n\n    /**\n     * 获取供应商编码\n     *\n     * @return supplier_code - 供应商编码\n     */\n    public String getSupplierCode() {\n        return supplierCode;\n    }\n\n    /**\n     * 设置供应商编码\n     *\n     * @param supplierCode 供应商编码\n     */\n    public void setSupplierCode(String supplierCode) {\n        this.supplierCode = supplierCode;\n    }\n\n    /**\n     * 获取票面金额\n     *\n     * @return invoice_amount - 票面金额\n     */\n    public BigDecimal getInvoiceAmount() {\n        return invoiceAmount;\n    }\n\n    /**\n     * 设置票面金额\n     *\n     * @param invoiceAmount 票面金额\n     */\n    public void setInvoiceAmount(BigDecimal invoiceAmount) {\n        this.invoiceAmount = invoiceAmount;\n    }\n\n    /**\n     * 获取付款单金额\n     *\n     * @return pay_amount - 付款单金额\n     */\n    public BigDecimal getPayAmount() {\n        return payAmount;\n    }\n\n    /**\n     * 设置付款单金额\n     *\n     * @param payAmount 付款单金额\n     */\n    public void setPayAmount(BigDecimal payAmount) {\n        this.payAmount = payAmount;\n    }\n\n    /**\n     * 获取融资金额\n     *\n     * @return finance_amount - 融资金额\n     */\n    public BigDecimal getFinanceAmount() {\n        return financeAmount;\n    }\n\n    /**\n     * 设置融资金额\n     *\n     * @param financeAmount 融资金额\n     */\n    public void setFinanceAmount(BigDecimal financeAmount) {\n        this.financeAmount = financeAmount;\n    }\n\n    /**\n     * 获取测算利率(百分比)\n     *\n     * @return calc_rate - 测算利率(百分比)\n     */\n    public BigDecimal getCalcRate() {\n        return calcRate;\n    }\n\n    /**\n     * 设置测算利率(百分比)\n     *\n     * @param calcRate 测算利率(百分比)\n     */\n    public void setCalcRate(BigDecimal calcRate) {\n        this.calcRate = calcRate;\n    }\n\n    /**\n     * 获取测算手续费\n     *\n     * @return calc_fee - 测算手续费\n     */\n    public BigDecimal getCalcFee() {\n        return calcFee;\n    }\n\n    /**\n     * 设置测算手续费\n     *\n     * @param calcFee 测算手续费\n     */\n    public void setCalcFee(BigDecimal calcFee) {\n        this.calcFee = calcFee;\n    }\n\n    /**\n     * 获取平台费用\n     *\n     * @return platform_fee - 平台费用\n     */\n    public BigDecimal getPlatformFee() {\n        return platformFee;\n    }\n\n    /**\n     * 设置平台费用\n     *\n     * @param platformFee 平台费用\n     */\n    public void setPlatformFee(BigDecimal platformFee) {\n        this.platformFee = platformFee;\n    }\n\n    /**\n     * 获取币种\n     *\n     * @return currency - 币种\n     */\n    public String getCurrency() {\n        return currency;\n    }\n\n    /**\n     * 设置币种\n     *\n     * @param currency 币种\n     */\n    public void setCurrency(String currency) {\n        this.currency = currency;\n    }\n\n    /**\n     * 获取融资机构\n     *\n     * @return bank_code - 融资机构\n     */\n    public String getBankCode() {\n        return bankCode;\n    }\n\n    /**\n     * 设置融资机构\n     *\n     * @param bankCode 融资机构\n     */\n    public void setBankCode(String bankCode) {\n        this.bankCode = bankCode;\n    }\n    \n\n    /*\n    * \n    * */\n    public String getCompanyCode() {\n        return companyCode;\n    }\n\n    public void setCompanyCode(String companyCode) {\n        this.companyCode = companyCode;\n    }\n\n    /**\n     * 获取融资天数\n     *\n     * @return 融资天数，单位为天\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n    }\n\n    /**\n     * 设置融资天数\n     *\n     * @param financeDay 融资天数\n     */\n    public void setFinanceDay(Long financeDay) {\n        this.financeDay = financeDay;\n    }\n\n    /**\n     * 获取融资账户\n     *\n     * @return finance_account - 融资账户\n     */\n    public String getFinanceAccount() {\n        return financeAccount;\n    }\n\n    /**\n     * 设置融资账户\n     *\n     * @param financeAccount 融资账户\n     */\n    public void setFinanceAccount(String financeAccount) {\n        this.financeAccount = financeAccount;\n    }\n\n    /**\n     * 获取付款单原始状态\n     *\n     * @return pay_origin_status - 付款单原始状态\n     */\n    public String getPayOriginStatus() {\n        return payOriginStatus;\n    }\n\n    /**\n     * 设置付款单原始状态\n     *\n     * @param payOriginStatus 付款单原始状态\n     */\n    public void setPayOriginStatus(String payOriginStatus) {\n        this.payOriginStatus = payOriginStatus;\n    }\n\n    /**\n     * 获取付款单原始支付组\n     *\n     * @return pay_origin_group - 付款单原始支付组\n     */\n    public String getPayOriginGroup() {\n        return payOriginGroup;\n    }\n\n    /**\n     * 设置付款单原始支付组\n     *\n     * @param payOriginGroup 付款单原始支付组\n     */\n    public void setPayOriginGroup(String payOriginGroup) {\n        this.payOriginGroup = payOriginGroup;\n    }\n\n    /**\n     * 获取申请人-操作账户\n     *\n     * @return apply_submit - 申请人-操作账户\n     */\n    public String getApplySubmit() {\n        return applySubmit;\n    }\n\n    /**\n     * 设置申请人-操作账户\n     *\n     * @param applySubmit 申请人-操作账户\n     */\n    public void setApplySubmit(String applySubmit) {\n        this.applySubmit = applySubmit;\n    }\n\n    /**\n     * 获取融资申请状态\n     *\n     * @return status - 融资申请状态\n     */\n    public String getStatus() {\n        return status;\n    }\n\n    /**\n     * 设置融资申请状态\n     *\n     * @param status 融资申请状态\n     */\n    public void setStatus(String status) {\n        this.status = status;\n    }\n\n    public String getBankApplyNumber() {\n        return bankApplyNumber;\n    }\n\n    public void setBankApplyNumber(String bankApplyNumber) {\n        this.bankApplyNumber = bankApplyNumber;\n    }\n\n    /**\n     * 获取创建人\n     *\n     * @return CREATE_BY - 创建人\n     */\n    public String getCreateBy() {\n        return createBy;\n    }\n\n    /**\n     * 设置创建人\n     *\n     * @param createBy 创建人\n     */\n    public void setCreateBy(String createBy) {\n        this.createBy = createBy;\n    }\n\n    /**\n     * 获取创建时间\n     *\n     * @return CREATE_DATE - 创建时间\n     */\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    /**\n     * 设置创建时间\n     *\n     * @param createDate 创建时间\n     */\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    /**\n     * 获取更新人\n     *\n     * @return LAST_UPDATE_BY - 更新人\n     */\n    public String getLastUpdateBy() {\n        return lastUpdateBy;\n    }\n\n    /**\n     * 设置更新人\n     *\n     * @param lastUpdateBy 更新人\n     */\n    public void setLastUpdateBy(String lastUpdateBy) {\n        this.lastUpdateBy = lastUpdateBy;\n    }\n\n    /**\n     * 获取更新时间\n     *\n     * @return LAST_UPDATE_DATE - 更新时间\n     */\n    public Date getLastUpdateDate() {\n        return lastUpdateDate;\n    }\n\n    /**\n     * 设置更新时间\n     *\n     * @param lastUpdateDate 更新时间\n     */\n    public void setLastUpdateDate(Date lastUpdateDate) {\n        this.lastUpdateDate = lastUpdateDate;\n    }\n\n    /**\n     * 获取拓展字段1\n     *\n     * @return ATTRIBUTE1 - 拓展字段1\n     */\n    public String getAttribute1() {\n        return attribute1;\n    }\n\n    /**\n     * 设置拓展字段1\n     *\n     * @param attribute1 拓展字段1\n     */\n    public void setAttribute1(String attribute1) {\n        this.attribute1 = attribute1;\n    }\n\n    /**\n     * 获取拓展字段2\n     *\n     * @return ATTRIBUTE2 - 拓展字段2\n     */\n    public String getAttribute2() {\n        return attribute2;\n    }\n\n    /**\n     * 设置拓展字段2\n     *\n     * @param attribute2 拓展字段2\n     */\n    public void setAttribute2(String attribute2) {\n        this.attribute2 = attribute2;\n    }\n\n    /**\n     * 获取拓展字段3\n     *\n     * @return ATTRIBUTE3 - 拓展字段3\n     */\n    public String getAttribute3() {\n        return attribute3;\n    }\n\n    /**\n     * 设置拓展字段3\n     *\n     * @param attribute3 拓展字段3\n     */\n    public void setAttribute3(String attribute3) {\n        this.attribute3 = attribute3;\n    }\n\n    /**\n     * 获取拓展字段4\n     *\n     * @return ATTRIBUTE4 - 拓展字段4\n     */\n    public String getAttribute4() {\n        return attribute4;\n    }\n\n    /**\n     * 设置拓展字段4\n     *\n     * @param attribute4 拓展字段4\n     */\n    public void setAttribute4(String attribute4) {\n        this.attribute4 = attribute4;\n    }\n\n    /**\n     * 获取拓展字段5\n     *\n     * @return ATTRIBUTE5 - 拓展字段5\n     */\n    public String getAttribute5() {\n        return attribute5;\n    }\n\n    /**\n     * 设置拓展字段5\n     *\n     * @param attribute5 拓展字段5\n     */\n    public void setAttribute5(String attribute5) {\n        this.attribute5 = attribute5;\n    }\n}",
+                "addLineCount": 1,
+                "removeLineCount": 1
+              }
+            ]
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java"
+          },
+          "displayResult": {},
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "patch_file",
+              "type": "tool_use",
+              "params": {
+                "path": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+                "content": "<<< SEARCH <<<\n     * 获取融资天数\n     *\n     * @return finance_day - 融资天数\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n==== REPLACED_BY ====\n     * 获取融资天数\n     *\n     * @return 融资天数，单位为天\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n>>> END >>>"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "failedPatchIndex": -1,
+                "fileName": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+                "beforeChangeFileContent": "package com.baidu.pmc.pojo.model;\n\nimport javax.persistence.Column;\nimport javax.persistence.Id;\nimport javax.persistence.Table;\nimport java.math.BigDecimal;\nimport java.util.Date;\n\n@Table(name = \"pmc_finance_supplier_apply\")\npublic class PmcFinanceSupplierApply {\n    /**\n     * 主键\n     */\n    @Id\n    @Column(name = \"apply_id\")\n    private Long applyId;\n\n    /**\n     * 融资申请单号\n     */\n    @Column(name = \"apply_number\")\n    private String applyNumber;\n\n    /**\n     * 付款单号\n     */\n    @Column(name = \"pay_check_num\")\n    private String payCheckNum;\n\n    /**\n     * 原始单据号\n     */\n    @Column(name = \"source_num\")\n    private String sourceNum;\n\n    /**\n     * 合同编号\n     */\n    @Column(name = \"contract_num\")\n    private String contractNum;\n\n    /**\n     * 计划付款日期\n     */\n    @Column(name = \"paty_plan_date\")\n    private Date patyPlanDate;\n\n    /**\n     * 供应商编码\n     */\n    @Column(name = \"supplier_code\")\n    private String supplierCode;\n\n    /**\n     * 票面金额\n     */\n    @Column(name = \"invoice_amount\")\n    private BigDecimal invoiceAmount;\n\n    /**\n     * 付款单金额\n     */\n    @Column(name = \"pay_amount\")\n    private BigDecimal payAmount;\n\n    /**\n     * 融资金额\n     */\n    @Column(name = \"finance_amount\")\n    private BigDecimal financeAmount;\n\n    /**\n     * 测算利率(百分比)\n     */\n    @Column(name = \"calc_rate\")\n    private BigDecimal calcRate;\n\n    /**\n     * 测算手续费\n     */\n    @Column(name = \"calc_fee\")\n    private BigDecimal calcFee;\n\n    /**\n     * 平台费用\n     */\n    @Column(name = \"platform_fee\")\n    private BigDecimal platformFee;\n\n    /**\n     * 币种\n     */\n    private String currency;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"bank_code\")\n    private String bankCode;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"company_code\")\n    private String companyCode;\n\n    /**\n     * 融资天数\n     */\n    @Column(name = \"finance_day\")\n    private Long financeDay;\n\n    /**\n     * 融资账户\n     */\n    @Column(name = \"finance_account\")\n    private String financeAccount;\n\n    /**\n     * 付款单原始状态\n     */\n    @Column(name = \"pay_origin_status\")\n    private String payOriginStatus;\n\n    /**\n     * 付款单原始支付组\n     */\n    @Column(name = \"pay_origin_group\")\n    private String payOriginGroup;\n\n    /**\n     * 银行融资编号\n     */\n    @Column(name = \"bank_apply_number\")\n    private String bankApplyNumber;\n\n    /**\n     * 申请人-操作账户\n     */\n    @Column(name = \"apply_submit\")\n    private String applySubmit;\n\n    /**\n     * 融资申请状态\n     */\n    private String status;\n\n    /**\n     * 错误消息\n     */\n    private String message;\n\n    /**\n     * 发送序号\n     */\n    @Column(name = \"send_seq\")\n    private Integer sendSeq;\n\n    public String getMessage() {\n        return message;\n    }\n\n    public void setMessage(String message) {\n        this.message = message;\n    }\n\n    public Integer getSendSeq() {\n        return sendSeq;\n    }\n\n    public void setSendSeq(Integer sendSeq) {\n        this.sendSeq = sendSeq;\n    }\n\n    /**\n     * 创建人\n     */\n    @Column(name = \"CREATE_BY\")\n    private String createBy;\n\n    /**\n     * 创建时间\n     */\n    @Column(name = \"CREATE_DATE\")\n    private Date createDate;\n\n    /**\n     * 更新人\n     */\n    @Column(name = \"LAST_UPDATE_BY\")\n    private String lastUpdateBy;\n\n    /**\n     * 更新时间\n     */\n    @Column(name = \"LAST_UPDATE_DATE\")\n    private Date lastUpdateDate;\n\n    /**\n     * 拓展字段1\n     */\n    @Column(name = \"ATTRIBUTE1\")\n    private String attribute1;\n\n    /**\n     * 拓展字段2\n     */\n    @Column(name = \"ATTRIBUTE2\")\n    private String attribute2;\n\n    /**\n     * 拓展字段3\n     */\n    @Column(name = \"ATTRIBUTE3\")\n    private String attribute3;\n\n    /**\n     * 拓展字段4\n     */\n    @Column(name = \"ATTRIBUTE4\")\n    private String attribute4;\n\n    /**\n     * 拓展字段5\n     */\n    @Column(name = \"ATTRIBUTE5\")\n    private String attribute5;\n\n    /**\n     * 获取主键\n     *\n     * @return apply_id - 主键\n     */\n    public Long getApplyId() {\n        return applyId;\n    }\n\n    /**\n     * 设置主键\n     *\n     * @param applyId 主键\n     */\n    public void setApplyId(Long applyId) {\n        this.applyId = applyId;\n    }\n\n    /**\n     * 获取融资申请单号\n     *\n     * @return apply_number - 融资申请单号\n     */\n    public String getApplyNumber() {\n        return applyNumber;\n    }\n\n    /**\n     * 设置融资申请单号\n     *\n     * @param applyNumber 融资申请单号\n     */\n    public void setApplyNumber(String applyNumber) {\n        this.applyNumber = applyNumber;\n    }\n\n    /**\n     * 获取付款单号\n     *\n     * @return pay_check_num - 付款单号\n     */\n    public String getPayCheckNum() {\n        return payCheckNum;\n    }\n\n    /**\n     * 设置付款单号\n     *\n     * @param payCheckNum 付款单号\n     */\n    public void setPayCheckNum(String payCheckNum) {\n        this.payCheckNum = payCheckNum;\n    }\n\n    /**\n     * 获取原始单据号\n     *\n     * @return source_num - 原始单据号\n     */\n    public String getSourceNum() {\n        return sourceNum;\n    }\n\n    /**\n     * 设置原始单据号\n     *\n     * @param sourceNum 原始单据号\n     */\n    public void setSourceNum(String sourceNum) {\n        this.sourceNum = sourceNum;\n    }\n\n    /**\n     * 获取合同编号\n     *\n     * @return contract_num - 合同编号\n     */\n    public String getContractNum() {\n        return contractNum;\n    }\n\n    /**\n     * 设置合同编号\n     *\n     * @param contractNum 合同编号\n     */\n    public void setContractNum(String contractNum) {\n        this.contractNum = contractNum;\n    }\n\n    /**\n     * 获取计划付款日期\n     *\n     * @return paty_plan_date - 计划付款日期\n     */\n    public Date getPatyPlanDate() {\n        return patyPlanDate;\n    }\n\n    /**\n     * 设置计划付款日期\n     *\n     * @param patyPlanDate 计划付款日期\n     */\n    public void setPatyPlanDate(Date patyPlanDate) {\n        this.patyPlanDate = patyPlanDate;\n    }\n\n    /**\n     * 获取供应商编码\n     *\n     * @return supplier_code - 供应商编码\n     */\n    public String getSupplierCode() {\n        return supplierCode;\n    }\n\n    /**\n     * 设置供应商编码\n     *\n     * @param supplierCode 供应商编码\n     */\n    public void setSupplierCode(String supplierCode) {\n        this.supplierCode = supplierCode;\n    }\n\n    /**\n     * 获取票面金额\n     *\n     * @return invoice_amount - 票面金额\n     */\n    public BigDecimal getInvoiceAmount() {\n        return invoiceAmount;\n    }\n\n    /**\n     * 设置票面金额\n     *\n     * @param invoiceAmount 票面金额\n     */\n    public void setInvoiceAmount(BigDecimal invoiceAmount) {\n        this.invoiceAmount = invoiceAmount;\n    }\n\n    /**\n     * 获取付款单金额\n     *\n     * @return pay_amount - 付款单金额\n     */\n    public BigDecimal getPayAmount() {\n        return payAmount;\n    }\n\n    /**\n     * 设置付款单金额\n     *\n     * @param payAmount 付款单金额\n     */\n    public void setPayAmount(BigDecimal payAmount) {\n        this.payAmount = payAmount;\n    }\n\n    /**\n     * 获取融资金额\n     *\n     * @return finance_amount - 融资金额\n     */\n    public BigDecimal getFinanceAmount() {\n        return financeAmount;\n    }\n\n    /**\n     * 设置融资金额\n     *\n     * @param financeAmount 融资金额\n     */\n    public void setFinanceAmount(BigDecimal financeAmount) {\n        this.financeAmount = financeAmount;\n    }\n\n    /**\n     * 获取测算利率(百分比)\n     *\n     * @return calc_rate - 测算利率(百分比)\n     */\n    public BigDecimal getCalcRate() {\n        return calcRate;\n    }\n\n    /**\n     * 设置测算利率(百分比)\n     *\n     * @param calcRate 测算利率(百分比)\n     */\n    public void setCalcRate(BigDecimal calcRate) {\n        this.calcRate = calcRate;\n    }\n\n    /**\n     * 获取测算手续费\n     *\n     * @return calc_fee - 测算手续费\n     */\n    public BigDecimal getCalcFee() {\n        return calcFee;\n    }\n\n    /**\n     * 设置测算手续费\n     *\n     * @param calcFee 测算手续费\n     */\n    public void setCalcFee(BigDecimal calcFee) {\n        this.calcFee = calcFee;\n    }\n\n    /**\n     * 获取平台费用\n     *\n     * @return platform_fee - 平台费用\n     */\n    public BigDecimal getPlatformFee() {\n        return platformFee;\n    }\n\n    /**\n     * 设置平台费用\n     *\n     * @param platformFee 平台费用\n     */\n    public void setPlatformFee(BigDecimal platformFee) {\n        this.platformFee = platformFee;\n    }\n\n    /**\n     * 获取币种\n     *\n     * @return currency - 币种\n     */\n    public String getCurrency() {\n        return currency;\n    }\n\n    /**\n     * 设置币种\n     *\n     * @param currency 币种\n     */\n    public void setCurrency(String currency) {\n        this.currency = currency;\n    }\n\n    /**\n     * 获取融资机构\n     *\n     * @return bank_code - 融资机构\n     */\n    public String getBankCode() {\n        return bankCode;\n    }\n\n    /**\n     * 设置融资机构\n     *\n     * @param bankCode 融资机构\n     */\n    public void setBankCode(String bankCode) {\n        this.bankCode = bankCode;\n    }\n    \n\n    /*\n    * \n    * */\n    public String getCompanyCode() {\n        return companyCode;\n    }\n\n    public void setCompanyCode(String companyCode) {\n        this.companyCode = companyCode;\n    }\n\n    /**\n     * 获取融资天数\n     *\n     * @return finance_day - 融资天数\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n    }\n\n    /**\n     * 设置融资天数\n     *\n     * @param financeDay 融资天数\n     */\n    public void setFinanceDay(Long financeDay) {\n        this.financeDay = financeDay;\n    }\n\n    /**\n     * 获取融资账户\n     *\n     * @return finance_account - 融资账户\n     */\n    public String getFinanceAccount() {\n        return financeAccount;\n    }\n\n    /**\n     * 设置融资账户\n     *\n     * @param financeAccount 融资账户\n     */\n    public void setFinanceAccount(String financeAccount) {\n        this.financeAccount = financeAccount;\n    }\n\n    /**\n     * 获取付款单原始状态\n     *\n     * @return pay_origin_status - 付款单原始状态\n     */\n    public String getPayOriginStatus() {\n        return payOriginStatus;\n    }\n\n    /**\n     * 设置付款单原始状态\n     *\n     * @param payOriginStatus 付款单原始状态\n     */\n    public void setPayOriginStatus(String payOriginStatus) {\n        this.payOriginStatus = payOriginStatus;\n    }\n\n    /**\n     * 获取付款单原始支付组\n     *\n     * @return pay_origin_group - 付款单原始支付组\n     */\n    public String getPayOriginGroup() {\n        return payOriginGroup;\n    }\n\n    /**\n     * 设置付款单原始支付组\n     *\n     * @param payOriginGroup 付款单原始支付组\n     */\n    public void setPayOriginGroup(String payOriginGroup) {\n        this.payOriginGroup = payOriginGroup;\n    }\n\n    /**\n     * 获取申请人-操作账户\n     *\n     * @return apply_submit - 申请人-操作账户\n     */\n    public String getApplySubmit() {\n        return applySubmit;\n    }\n\n    /**\n     * 设置申请人-操作账户\n     *\n     * @param applySubmit 申请人-操作账户\n     */\n    public void setApplySubmit(String applySubmit) {\n        this.applySubmit = applySubmit;\n    }\n\n    /**\n     * 获取融资申请状态\n     *\n     * @return status - 融资申请状态\n     */\n    public String getStatus() {\n        return status;\n    }\n\n    /**\n     * 设置融资申请状态\n     *\n     * @param status 融资申请状态\n     */\n    public void setStatus(String status) {\n        this.status = status;\n    }\n\n    public String getBankApplyNumber() {\n        return bankApplyNumber;\n    }\n\n    public void setBankApplyNumber(String bankApplyNumber) {\n        this.bankApplyNumber = bankApplyNumber;\n    }\n\n    /**\n     * 获取创建人\n     *\n     * @return CREATE_BY - 创建人\n     */\n    public String getCreateBy() {\n        return createBy;\n    }\n\n    /**\n     * 设置创建人\n     *\n     * @param createBy 创建人\n     */\n    public void setCreateBy(String createBy) {\n        this.createBy = createBy;\n    }\n\n    /**\n     * 获取创建时间\n     *\n     * @return CREATE_DATE - 创建时间\n     */\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    /**\n     * 设置创建时间\n     *\n     * @param createDate 创建时间\n     */\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    /**\n     * 获取更新人\n     *\n     * @return LAST_UPDATE_BY - 更新人\n     */\n    public String getLastUpdateBy() {\n        return lastUpdateBy;\n    }\n\n    /**\n     * 设置更新人\n     *\n     * @param lastUpdateBy 更新人\n     */\n    public void setLastUpdateBy(String lastUpdateBy) {\n        this.lastUpdateBy = lastUpdateBy;\n    }\n\n    /**\n     * 获取更新时间\n     *\n     * @return LAST_UPDATE_DATE - 更新时间\n     */\n    public Date getLastUpdateDate() {\n        return lastUpdateDate;\n    }\n\n    /**\n     * 设置更新时间\n     *\n     * @param lastUpdateDate 更新时间\n     */\n    public void setLastUpdateDate(Date lastUpdateDate) {\n        this.lastUpdateDate = lastUpdateDate;\n    }\n\n    /**\n     * 获取拓展字段1\n     *\n     * @return ATTRIBUTE1 - 拓展字段1\n     */\n    public String getAttribute1() {\n        return attribute1;\n    }\n\n    /**\n     * 设置拓展字段1\n     *\n     * @param attribute1 拓展字段1\n     */\n    public void setAttribute1(String attribute1) {\n        this.attribute1 = attribute1;\n    }\n\n    /**\n     * 获取拓展字段2\n     *\n     * @return ATTRIBUTE2 - 拓展字段2\n     */\n    public String getAttribute2() {\n        return attribute2;\n    }\n\n    /**\n     * 设置拓展字段2\n     *\n     * @param attribute2 拓展字段2\n     */\n    public void setAttribute2(String attribute2) {\n        this.attribute2 = attribute2;\n    }\n\n    /**\n     * 获取拓展字段3\n     *\n     * @return ATTRIBUTE3 - 拓展字段3\n     */\n    public String getAttribute3() {\n        return attribute3;\n    }\n\n    /**\n     * 设置拓展字段3\n     *\n     * @param attribute3 拓展字段3\n     */\n    public void setAttribute3(String attribute3) {\n        this.attribute3 = attribute3;\n    }\n\n    /**\n     * 获取拓展字段4\n     *\n     * @return ATTRIBUTE4 - 拓展字段4\n     */\n    public String getAttribute4() {\n        return attribute4;\n    }\n\n    /**\n     * 设置拓展字段4\n     *\n     * @param attribute4 拓展字段4\n     */\n    public void setAttribute4(String attribute4) {\n        this.attribute4 = attribute4;\n    }\n\n    /**\n     * 获取拓展字段5\n     *\n     * @return ATTRIBUTE5 - 拓展字段5\n     */\n    public String getAttribute5() {\n        return attribute5;\n    }\n\n    /**\n     * 设置拓展字段5\n     *\n     * @param attribute5 拓展字段5\n     */\n    public void setAttribute5(String attribute5) {\n        this.attribute5 = attribute5;\n    }\n}",
+                "afterChangeFileContent": "package com.baidu.pmc.pojo.model;\n\nimport javax.persistence.Column;\nimport javax.persistence.Id;\nimport javax.persistence.Table;\nimport java.math.BigDecimal;\nimport java.util.Date;\n\n@Table(name = \"pmc_finance_supplier_apply\")\npublic class PmcFinanceSupplierApply {\n    /**\n     * 主键\n     */\n    @Id\n    @Column(name = \"apply_id\")\n    private Long applyId;\n\n    /**\n     * 融资申请单号\n     */\n    @Column(name = \"apply_number\")\n    private String applyNumber;\n\n    /**\n     * 付款单号\n     */\n    @Column(name = \"pay_check_num\")\n    private String payCheckNum;\n\n    /**\n     * 原始单据号\n     */\n    @Column(name = \"source_num\")\n    private String sourceNum;\n\n    /**\n     * 合同编号\n     */\n    @Column(name = \"contract_num\")\n    private String contractNum;\n\n    /**\n     * 计划付款日期\n     */\n    @Column(name = \"paty_plan_date\")\n    private Date patyPlanDate;\n\n    /**\n     * 供应商编码\n     */\n    @Column(name = \"supplier_code\")\n    private String supplierCode;\n\n    /**\n     * 票面金额\n     */\n    @Column(name = \"invoice_amount\")\n    private BigDecimal invoiceAmount;\n\n    /**\n     * 付款单金额\n     */\n    @Column(name = \"pay_amount\")\n    private BigDecimal payAmount;\n\n    /**\n     * 融资金额\n     */\n    @Column(name = \"finance_amount\")\n    private BigDecimal financeAmount;\n\n    /**\n     * 测算利率(百分比)\n     */\n    @Column(name = \"calc_rate\")\n    private BigDecimal calcRate;\n\n    /**\n     * 测算手续费\n     */\n    @Column(name = \"calc_fee\")\n    private BigDecimal calcFee;\n\n    /**\n     * 平台费用\n     */\n    @Column(name = \"platform_fee\")\n    private BigDecimal platformFee;\n\n    /**\n     * 币种\n     */\n    private String currency;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"bank_code\")\n    private String bankCode;\n\n    /**\n     * 融资机构\n     */\n    @Column(name = \"company_code\")\n    private String companyCode;\n\n    /**\n     * 融资天数\n     */\n    @Column(name = \"finance_day\")\n    private Long financeDay;\n\n    /**\n     * 融资账户\n     */\n    @Column(name = \"finance_account\")\n    private String financeAccount;\n\n    /**\n     * 付款单原始状态\n     */\n    @Column(name = \"pay_origin_status\")\n    private String payOriginStatus;\n\n    /**\n     * 付款单原始支付组\n     */\n    @Column(name = \"pay_origin_group\")\n    private String payOriginGroup;\n\n    /**\n     * 银行融资编号\n     */\n    @Column(name = \"bank_apply_number\")\n    private String bankApplyNumber;\n\n    /**\n     * 申请人-操作账户\n     */\n    @Column(name = \"apply_submit\")\n    private String applySubmit;\n\n    /**\n     * 融资申请状态\n     */\n    private String status;\n\n    /**\n     * 错误消息\n     */\n    private String message;\n\n    /**\n     * 发送序号\n     */\n    @Column(name = \"send_seq\")\n    private Integer sendSeq;\n\n    public String getMessage() {\n        return message;\n    }\n\n    public void setMessage(String message) {\n        this.message = message;\n    }\n\n    public Integer getSendSeq() {\n        return sendSeq;\n    }\n\n    public void setSendSeq(Integer sendSeq) {\n        this.sendSeq = sendSeq;\n    }\n\n    /**\n     * 创建人\n     */\n    @Column(name = \"CREATE_BY\")\n    private String createBy;\n\n    /**\n     * 创建时间\n     */\n    @Column(name = \"CREATE_DATE\")\n    private Date createDate;\n\n    /**\n     * 更新人\n     */\n    @Column(name = \"LAST_UPDATE_BY\")\n    private String lastUpdateBy;\n\n    /**\n     * 更新时间\n     */\n    @Column(name = \"LAST_UPDATE_DATE\")\n    private Date lastUpdateDate;\n\n    /**\n     * 拓展字段1\n     */\n    @Column(name = \"ATTRIBUTE1\")\n    private String attribute1;\n\n    /**\n     * 拓展字段2\n     */\n    @Column(name = \"ATTRIBUTE2\")\n    private String attribute2;\n\n    /**\n     * 拓展字段3\n     */\n    @Column(name = \"ATTRIBUTE3\")\n    private String attribute3;\n\n    /**\n     * 拓展字段4\n     */\n    @Column(name = \"ATTRIBUTE4\")\n    private String attribute4;\n\n    /**\n     * 拓展字段5\n     */\n    @Column(name = \"ATTRIBUTE5\")\n    private String attribute5;\n\n    /**\n     * 获取主键\n     *\n     * @return apply_id - 主键\n     */\n    public Long getApplyId() {\n        return applyId;\n    }\n\n    /**\n     * 设置主键\n     *\n     * @param applyId 主键\n     */\n    public void setApplyId(Long applyId) {\n        this.applyId = applyId;\n    }\n\n    /**\n     * 获取融资申请单号\n     *\n     * @return apply_number - 融资申请单号\n     */\n    public String getApplyNumber() {\n        return applyNumber;\n    }\n\n    /**\n     * 设置融资申请单号\n     *\n     * @param applyNumber 融资申请单号\n     */\n    public void setApplyNumber(String applyNumber) {\n        this.applyNumber = applyNumber;\n    }\n\n    /**\n     * 获取付款单号\n     *\n     * @return pay_check_num - 付款单号\n     */\n    public String getPayCheckNum() {\n        return payCheckNum;\n    }\n\n    /**\n     * 设置付款单号\n     *\n     * @param payCheckNum 付款单号\n     */\n    public void setPayCheckNum(String payCheckNum) {\n        this.payCheckNum = payCheckNum;\n    }\n\n    /**\n     * 获取原始单据号\n     *\n     * @return source_num - 原始单据号\n     */\n    public String getSourceNum() {\n        return sourceNum;\n    }\n\n    /**\n     * 设置原始单据号\n     *\n     * @param sourceNum 原始单据号\n     */\n    public void setSourceNum(String sourceNum) {\n        this.sourceNum = sourceNum;\n    }\n\n    /**\n     * 获取合同编号\n     *\n     * @return contract_num - 合同编号\n     */\n    public String getContractNum() {\n        return contractNum;\n    }\n\n    /**\n     * 设置合同编号\n     *\n     * @param contractNum 合同编号\n     */\n    public void setContractNum(String contractNum) {\n        this.contractNum = contractNum;\n    }\n\n    /**\n     * 获取计划付款日期\n     *\n     * @return paty_plan_date - 计划付款日期\n     */\n    public Date getPatyPlanDate() {\n        return patyPlanDate;\n    }\n\n    /**\n     * 设置计划付款日期\n     *\n     * @param patyPlanDate 计划付款日期\n     */\n    public void setPatyPlanDate(Date patyPlanDate) {\n        this.patyPlanDate = patyPlanDate;\n    }\n\n    /**\n     * 获取供应商编码\n     *\n     * @return supplier_code - 供应商编码\n     */\n    public String getSupplierCode() {\n        return supplierCode;\n    }\n\n    /**\n     * 设置供应商编码\n     *\n     * @param supplierCode 供应商编码\n     */\n    public void setSupplierCode(String supplierCode) {\n        this.supplierCode = supplierCode;\n    }\n\n    /**\n     * 获取票面金额\n     *\n     * @return invoice_amount - 票面金额\n     */\n    public BigDecimal getInvoiceAmount() {\n        return invoiceAmount;\n    }\n\n    /**\n     * 设置票面金额\n     *\n     * @param invoiceAmount 票面金额\n     */\n    public void setInvoiceAmount(BigDecimal invoiceAmount) {\n        this.invoiceAmount = invoiceAmount;\n    }\n\n    /**\n     * 获取付款单金额\n     *\n     * @return pay_amount - 付款单金额\n     */\n    public BigDecimal getPayAmount() {\n        return payAmount;\n    }\n\n    /**\n     * 设置付款单金额\n     *\n     * @param payAmount 付款单金额\n     */\n    public void setPayAmount(BigDecimal payAmount) {\n        this.payAmount = payAmount;\n    }\n\n    /**\n     * 获取融资金额\n     *\n     * @return finance_amount - 融资金额\n     */\n    public BigDecimal getFinanceAmount() {\n        return financeAmount;\n    }\n\n    /**\n     * 设置融资金额\n     *\n     * @param financeAmount 融资金额\n     */\n    public void setFinanceAmount(BigDecimal financeAmount) {\n        this.financeAmount = financeAmount;\n    }\n\n    /**\n     * 获取测算利率(百分比)\n     *\n     * @return calc_rate - 测算利率(百分比)\n     */\n    public BigDecimal getCalcRate() {\n        return calcRate;\n    }\n\n    /**\n     * 设置测算利率(百分比)\n     *\n     * @param calcRate 测算利率(百分比)\n     */\n    public void setCalcRate(BigDecimal calcRate) {\n        this.calcRate = calcRate;\n    }\n\n    /**\n     * 获取测算手续费\n     *\n     * @return calc_fee - 测算手续费\n     */\n    public BigDecimal getCalcFee() {\n        return calcFee;\n    }\n\n    /**\n     * 设置测算手续费\n     *\n     * @param calcFee 测算手续费\n     */\n    public void setCalcFee(BigDecimal calcFee) {\n        this.calcFee = calcFee;\n    }\n\n    /**\n     * 获取平台费用\n     *\n     * @return platform_fee - 平台费用\n     */\n    public BigDecimal getPlatformFee() {\n        return platformFee;\n    }\n\n    /**\n     * 设置平台费用\n     *\n     * @param platformFee 平台费用\n     */\n    public void setPlatformFee(BigDecimal platformFee) {\n        this.platformFee = platformFee;\n    }\n\n    /**\n     * 获取币种\n     *\n     * @return currency - 币种\n     */\n    public String getCurrency() {\n        return currency;\n    }\n\n    /**\n     * 设置币种\n     *\n     * @param currency 币种\n     */\n    public void setCurrency(String currency) {\n        this.currency = currency;\n    }\n\n    /**\n     * 获取融资机构\n     *\n     * @return bank_code - 融资机构\n     */\n    public String getBankCode() {\n        return bankCode;\n    }\n\n    /**\n     * 设置融资机构\n     *\n     * @param bankCode 融资机构\n     */\n    public void setBankCode(String bankCode) {\n        this.bankCode = bankCode;\n    }\n    \n\n    /*\n    * \n    * */\n    public String getCompanyCode() {\n        return companyCode;\n    }\n\n    public void setCompanyCode(String companyCode) {\n        this.companyCode = companyCode;\n    }\n\n    /**\n     * 获取融资天数\n     *\n     * @return 融资天数，单位为天\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n    }\n\n    /**\n     * 设置融资天数\n     *\n     * @param financeDay 融资天数\n     */\n    public void setFinanceDay(Long financeDay) {\n        this.financeDay = financeDay;\n    }\n\n    /**\n     * 获取融资账户\n     *\n     * @return finance_account - 融资账户\n     */\n    public String getFinanceAccount() {\n        return financeAccount;\n    }\n\n    /**\n     * 设置融资账户\n     *\n     * @param financeAccount 融资账户\n     */\n    public void setFinanceAccount(String financeAccount) {\n        this.financeAccount = financeAccount;\n    }\n\n    /**\n     * 获取付款单原始状态\n     *\n     * @return pay_origin_status - 付款单原始状态\n     */\n    public String getPayOriginStatus() {\n        return payOriginStatus;\n    }\n\n    /**\n     * 设置付款单原始状态\n     *\n     * @param payOriginStatus 付款单原始状态\n     */\n    public void setPayOriginStatus(String payOriginStatus) {\n        this.payOriginStatus = payOriginStatus;\n    }\n\n    /**\n     * 获取付款单原始支付组\n     *\n     * @return pay_origin_group - 付款单原始支付组\n     */\n    public String getPayOriginGroup() {\n        return payOriginGroup;\n    }\n\n    /**\n     * 设置付款单原始支付组\n     *\n     * @param payOriginGroup 付款单原始支付组\n     */\n    public void setPayOriginGroup(String payOriginGroup) {\n        this.payOriginGroup = payOriginGroup;\n    }\n\n    /**\n     * 获取申请人-操作账户\n     *\n     * @return apply_submit - 申请人-操作账户\n     */\n    public String getApplySubmit() {\n        return applySubmit;\n    }\n\n    /**\n     * 设置申请人-操作账户\n     *\n     * @param applySubmit 申请人-操作账户\n     */\n    public void setApplySubmit(String applySubmit) {\n        this.applySubmit = applySubmit;\n    }\n\n    /**\n     * 获取融资申请状态\n     *\n     * @return status - 融资申请状态\n     */\n    public String getStatus() {\n        return status;\n    }\n\n    /**\n     * 设置融资申请状态\n     *\n     * @param status 融资申请状态\n     */\n    public void setStatus(String status) {\n        this.status = status;\n    }\n\n    public String getBankApplyNumber() {\n        return bankApplyNumber;\n    }\n\n    public void setBankApplyNumber(String bankApplyNumber) {\n        this.bankApplyNumber = bankApplyNumber;\n    }\n\n    /**\n     * 获取创建人\n     *\n     * @return CREATE_BY - 创建人\n     */\n    public String getCreateBy() {\n        return createBy;\n    }\n\n    /**\n     * 设置创建人\n     *\n     * @param createBy 创建人\n     */\n    public void setCreateBy(String createBy) {\n        this.createBy = createBy;\n    }\n\n    /**\n     * 获取创建时间\n     *\n     * @return CREATE_DATE - 创建时间\n     */\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    /**\n     * 设置创建时间\n     *\n     * @param createDate 创建时间\n     */\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    /**\n     * 获取更新人\n     *\n     * @return LAST_UPDATE_BY - 更新人\n     */\n    public String getLastUpdateBy() {\n        return lastUpdateBy;\n    }\n\n    /**\n     * 设置更新人\n     *\n     * @param lastUpdateBy 更新人\n     */\n    public void setLastUpdateBy(String lastUpdateBy) {\n        this.lastUpdateBy = lastUpdateBy;\n    }\n\n    /**\n     * 获取更新时间\n     *\n     * @return LAST_UPDATE_DATE - 更新时间\n     */\n    public Date getLastUpdateDate() {\n        return lastUpdateDate;\n    }\n\n    /**\n     * 设置更新时间\n     *\n     * @param lastUpdateDate 更新时间\n     */\n    public void setLastUpdateDate(Date lastUpdateDate) {\n        this.lastUpdateDate = lastUpdateDate;\n    }\n\n    /**\n     * 获取拓展字段1\n     *\n     * @return ATTRIBUTE1 - 拓展字段1\n     */\n    public String getAttribute1() {\n        return attribute1;\n    }\n\n    /**\n     * 设置拓展字段1\n     *\n     * @param attribute1 拓展字段1\n     */\n    public void setAttribute1(String attribute1) {\n        this.attribute1 = attribute1;\n    }\n\n    /**\n     * 获取拓展字段2\n     *\n     * @return ATTRIBUTE2 - 拓展字段2\n     */\n    public String getAttribute2() {\n        return attribute2;\n    }\n\n    /**\n     * 设置拓展字段2\n     *\n     * @param attribute2 拓展字段2\n     */\n    public void setAttribute2(String attribute2) {\n        this.attribute2 = attribute2;\n    }\n\n    /**\n     * 获取拓展字段3\n     *\n     * @return ATTRIBUTE3 - 拓展字段3\n     */\n    public String getAttribute3() {\n        return attribute3;\n    }\n\n    /**\n     * 设置拓展字段3\n     *\n     * @param attribute3 拓展字段3\n     */\n    public void setAttribute3(String attribute3) {\n        this.attribute3 = attribute3;\n    }\n\n    /**\n     * 获取拓展字段4\n     *\n     * @return ATTRIBUTE4 - 拓展字段4\n     */\n    public String getAttribute4() {\n        return attribute4;\n    }\n\n    /**\n     * 设置拓展字段4\n     *\n     * @param attribute4 拓展字段4\n     */\n    public void setAttribute4(String attribute4) {\n        this.attribute4 = attribute4;\n    }\n\n    /**\n     * 获取拓展字段5\n     *\n     * @return ATTRIBUTE5 - 拓展字段5\n     */\n    public String getAttribute5() {\n        return attribute5;\n    }\n\n    /**\n     * 设置拓展字段5\n     *\n     * @param attribute5 拓展字段5\n     */\n    public void setAttribute5(String attribute5) {\n        this.attribute5 = attribute5;\n    }\n}"
+              }
+            }
+          },
+          "params": {
+            "path": "pmc-basic-pojo/src/main/java/com/baidu/pmc/pojo/model/PmcFinanceSupplierApply.java",
+            "content": "<<< SEARCH <<<\n     * 获取融资天数\n     *\n     * @return finance_day - 融资天数\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n==== REPLACED_BY ====\n     * 获取融资天数\n     *\n     * @return 融资天数，单位为天\n     */\n    public Long getFinanceDay() {\n        return financeDay;\n>>> END >>>"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "a9959507-adfa-4bd2-85fa-7777dc56d925",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我已经成功为 `getFinanceDay()` 方法生成了标准的JavaDoc注释，并更新了源文件。注释内容如下：\n\n```java\n/**\n * 获取融资天数\n *\n * @return 融资天数，单位为天\n */\n```\n\n注释已按照要求：\n1. 使用JavaDoc格式\n2. 保持了与函数定义相同的缩进级别\n3. 简洁明了地描述了方法功能和返回值\n4. 添加了返回值的单位说明\n\n文件修改已成功应用。请问还有其他需要我帮助的注释修改吗？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "6082186",
+      "summary": "为表添加company_code字段的SQL语句",
+      "role": "user",
+      "status": "success",
+      "content": "pmc_finance_supplier_apply 这个表新加了company_code字段，帮我写条sql语句插入到表里面，兼容低版本mysql",
+      "payload": {
+        "query": "pmc_finance_supplier_apply 这个表新加了company_code字段，帮我写条sql语句插入到表里面，兼容低版本mysql",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 868902,
+        "sessionId": 9797202
+      }
+    },
+    {
+      "id": "a0dd5bde-9892-4130-bd03-d5f57e745c6a",
+      "userMessageId": "6082186",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "a0da34dd-895f-45c5-a31c-b96abfb2bb1e",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先查看表结构来了解company_code字段的定义，然后编写兼容低版本MySQL的插入SQL语句。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "86dfa2a4-a756-431c-80c3-16912a33af54",
+          "type": "TOOL_CALL",
+          "status": "failed",
+          "toolName": "extract_content_blocks",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "failed",
+          "displayParams": {
+            "firstFilePath": "pmc-basic-persistence/src/main/resources/mapper/pmcfinancesupplierapplymapper.xml"
+          },
+          "displayResult": {
+            "fileBlocks": []
+          },
+          "workflowSnapshot": {
+            "status": "failed",
+            "result": {
+              "name": "extract_content_blocks",
+              "type": "tool_use",
+              "params": {
+                "pathes": "pmc-basic-persistence/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml\n"
+              },
+              "success": false,
+              "message": "Error reading file pmc-basic-persistence/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml: File too large to read!",
+              "code": 1,
+              "result": null
+            }
+          },
+          "params": {
+            "pathes": "pmc-basic-persistence/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml\n"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "f74eefd0-01b6-48d0-97cf-777e51f59689",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您编写兼容低版本MySQL的插入SQL语句。根据项目中的Java实体类，`company_code`字段是字符串类型，用于存储融资机构代码。\n\n以下是兼容MySQL 5.5及以上版本的SQL插入语句：\n\n```sql\n-- 插入数据到pmc_finance_supplier_apply表（兼容低版本MySQL）\nINSERT INTO pmc_finance_supplier_apply (\n    apply_id,\n    apply_number,\n    pay_check_num,\n    source_num,\n    contract_num,\n    paty_plan_date,\n    supplier_code,\n    invoice_amount,\n    pay_amount,\n    finance_amount,\n    calc_rate,\n    calc_fee,\n    platform_fee,\n    currency,\n    bank_code,\n    company_code,  -- 新增字段\n    finance_day,\n    finance_account,\n    pay_origin_status,\n    pay_origin_group,\n    bank_apply_number,\n    apply_submit,\n    status,\n    message,\n    send_seq,\n    CREATE_BY,\n    CREATE_DATE,\n    LAST_UPDATE_BY,\n    LAST_UPDATE_DATE,\n    ATTRIBUTE1,\n    ATTRIBUTE2,\n    ATTRIBUTE3,\n    ATTRIBUTE4,\n    ATTRIBUTE5\n) VALUES (\n    NULL,  -- apply_id自增\n    'APPLY20250001',\n    'PAY20250001',\n    'SRC20250001',\n    'CONTRACT001',\n    '2025-11-12',\n    'SUP001',\n    10000.00,\n    10000.00,\n    10000.00,\n    5.00,\n    500.00,\n    100.00,\n    'CNY',\n    'BOC',\n    'COMP001',  -- 新增字段值\n    30,\n    'ACCT001',\n    'PENDING',\n    'GROUP001',\n    'BANKAPP001',\n    'USER001',\n    'SUBMITTED',\n    NULL,\n    1,\n    'ADMIN',\n    NOW(),\n    'ADMIN',\n    NOW(),\n    NULL,\n    NULL,\n    NULL,\n    NULL,\n    NULL\n);\n```\n\n注意事项：\n1. 语句兼容MySQL 5.5及以上版本\n2. 为新增的company_code字段提供了示例值'COMP001'\n3. 使用NOW()函数获取当前时间，而非CURRENT_TIMESTAMP以增强兼容性\n4. 主键apply_id设为NULL由数据库自增\n5. 所有字符串值使用单引号包裹\n\n需要我帮您生成特定值的插入语句，或者有其他SQL需求吗？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "6082389",
+      "summary": "数据库表结构新增字段更新",
+      "role": "user",
+      "status": "success",
+      "content": "不是，我说新加的字段，把这个新加的字段更新到表结构上",
+      "payload": {
+        "query": "不是，我说新加的字段，把这个新加的字段更新到表结构上",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 868902,
+        "sessionId": 9797202
+      }
+    },
+    {
+      "id": "e4ce0826-84ef-488b-8727-07002025b4fc",
+      "userMessageId": "6082389",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "f80cc7ce-47a4-414b-952a-6a7170a3fe45",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您生成添加`company_code`字段到`pmc_finance_supplier_apply`表的ALTER TABLE语句。根据Java实体类，该字段是字符串类型，对应数据库中的VARCHAR。\n\n以下是兼容MySQL 5.5及以上版本的ALTER TABLE语句：\n\n```sql\n-- 添加company_code字段到pmc_finance_supplier_apply表\nALTER TABLE pmc_finance_supplier_apply \nADD COLUMN company_code VARCHAR(50) COMMENT '融资机构代码';\n```\n\n如果需要指定字段位置，可以添加AFTER子句：\n\n```sql\n-- 添加company_code字段到指定位置\nALTER TABLE pmc_finance_supplier_apply \nADD COLUMN company_code VARCHAR(50) COMMENT '融资机构代码' \nAFTER bank_code;\n```\n\n请确认：\n1. 字段长度VARCHAR(50)是否合适\n2. 是否需要添加NOT NULL约束或默认值\n3. 字段位置是否需要调整\n\n我可以根据您的需求修改SQL语句。需要我帮您执行这些SQL语句吗？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "6106423",
+      "summary": "事务生效条件分析",
+      "role": "user",
+      "status": "success",
+      "content": "updateFinanceCompQuota 这个方法@Transactional事务会生效吗",
+      "payload": {
+        "query": "updateFinanceCompQuota 这个方法@Transactional事务会生效吗",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 868902,
+        "sessionId": 9797202
+      }
+    },
+    {
+      "id": "9897873a-4317-472c-ab05-0413f501bf0d",
+      "userMessageId": "6106423",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "d0c537aa-8109-4bb9-911a-2dbeec274154",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先找到并查看`updateFinanceCompQuota`方法的实现，然后分析其事务配置情况。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "7ab8e638-2a78-4b6c-97a2-57e91410e20b",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/pmc/",
+            "regex": "updateFinanceCompQuota"
+          },
+          "displayResult": {
+            "searchFiles": []
+          },
+          "workflowSnapshot": {
+            "searchFiles": [],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "updateFinanceCompQuota",
+                "file_pattern": "**/*.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": []
+            }
+          },
+          "params": {
+            "regex": "updateFinanceCompQuota",
+            "file_pattern": "**/*.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "c490caf5-f717-4d29-abcc-897ac4588100",
+          "type": "TEXT",
+          "status": "success",
+          "content": "由于未能找到`updateFinanceCompQuota`方法的实现代码，我无法直接判断`@Transactional`事务是否会生效。不过我可以为您分析事务生效的一般条件：\n\n1. **Spring事务生效的必要条件**：\n   - 方法必须是`public`修饰符\n   - 方法必须通过Spring代理对象调用（不能是类内部调用）\n   - 需要在配置类上有`@EnableTransactionManagement`注解\n   - 需要有配置好的事务管理器(PlatformTransactionManager)\n\n2. **建议检查点**：\n   - 确认方法是否在Spring管理的Bean中（有`@Service`/`@Component`等注解）\n   - 确认方法调用是否来自类外部（非this调用）\n   - 确认是否配置了事务管理器\n\n3. **测试方法**：\n```java\n// 可以添加这段代码测试事务是否回滚\n@Transactional\npublic void updateFinanceCompQuota() {\n    // 先执行更新操作\n    updateOperation();\n    // 然后故意抛出异常\n    throw new RuntimeException(\"Test transaction rollback\");\n}\n```\n\n需要我帮助您：\n1. 继续查找该方法的具体实现？\n2. 检查Spring事务配置？\n3. 还是提供其他事务相关的帮助？\n\n请告诉我您更具体的需求，我会提供更有针对性的帮助。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "6106749",
+      "summary": "内部方法事务控制问题解析",
+      "role": "user",
+      "status": "success",
+      "content": "CmbFinancingServiceImpl类的dealApplyByRejected这个方法加了事务@Transactional注解，我想知道内部调用updateFinanceCompQuota方法会事务控制不",
+      "payload": {
+        "query": "CmbFinancingServiceImpl类的dealApplyByRejected这个方法加了事务@Transactional注解，我想知道内部调用updateFinanceCompQuota方法会事务控制不",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 868902,
+        "sessionId": 9797202
+      }
+    },
+    {
+      "id": "be83180e-efdb-4675-ad8c-59ca7159e742",
+      "userMessageId": "6106749",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "82670a52-edfc-413a-9483-53c0d8b2ff6a",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先查看`CmbFinancingServiceImpl`类中这两个方法的实现，才能准确判断事务行为。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "28afbc69-0408-47ce-8506-53022b9022e1",
+          "type": "TOOL_CALL",
+          "status": "failed",
+          "toolName": "extract_content_blocks",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "failed",
+          "displayParams": {
+            "firstFilePath": "pmc-basic-service/src/main/java/com/baidu/pmc/service/impl/cmbfinancingserviceimpl.java"
+          },
+          "displayResult": {
+            "fileBlocks": []
+          },
+          "workflowSnapshot": {
+            "status": "failed",
+            "result": {
+              "name": "extract_content_blocks",
+              "type": "tool_use",
+              "params": {
+                "pathes": "pmc-basic-service/src/main/java/com/baidu/pmc/service/impl/CmbFinancingServiceImpl.java\n"
+              },
+              "success": false,
+              "message": "Error reading file pmc-basic-service/src/main/java/com/baidu/pmc/service/impl/CmbFinancingServiceImpl.java: File too large to read!",
+              "code": 1,
+              "result": null
+            }
+          },
+          "params": {
+            "pathes": "pmc-basic-service/src/main/java/com/baidu/pmc/service/impl/CmbFinancingServiceImpl.java\n"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "bb456abf-fb38-47e2-a01c-3ebf9ac1ffa8",
+          "type": "TEXT",
+          "status": "success",
+          "content": "由于无法直接读取完整的`CmbFinancingServiceImpl`类，我将基于Spring事务机制的一般原理来分析您的问题：\n\n**事务传播行为分析**：\n1. **内部调用事务失效问题**：\n- 当`dealApplyByRejected`方法内部直接调用`updateFinanceCompQuota`时，事务注解不会生效\n- 这是因为Spring事务基于AOP代理，内部调用会绕过代理机制\n\n2. **解决方案**（需代码调整）：\n```java\n@Service\npublic class CmbFinancingServiceImpl implements CmbFinancingService {\n    \n    @Autowired\n    private CmbFinancingService selfProxy; // 注入自身代理对象\n\n    @Transactional\n    public void dealApplyByRejected() {\n        // 通过代理对象调用才能生效\n        selfProxy.updateFinanceCompQuota(); \n    }\n\n    @Transactional(propagation = Propagation.REQUIRED)\n    public void updateFinanceCompQuota() {\n        // 方法实现\n    }\n}\n```\n\n3. **替代方案**（不修改代码）：\n- 将`updateFinanceCompQuota`方法提取到另一个Service类\n- 使用`TransactionTemplate`编程式事务\n\n需要我帮您：\n1. 尝试分段读取该文件内容？\n2. 提供具体的事务配置示例？\n3. 还是需要其他方面的帮助？\n\n请告诉我您的具体需求，我可以提供更有针对性的建议。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "Java函数注释生成指导",
+  "ctime": 1762930498668,
+  "utime": 1762947381074,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

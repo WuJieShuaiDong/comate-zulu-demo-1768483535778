@@ -1,0 +1,244 @@
+2026-01-21 20:10:59.586 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'baiducomate.comate' wants API proposal 'chatReadonlyPromptReference' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'baiducomate.comate' wants API proposal 'inlineEdit' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'baidu.comate' wants API proposal 'chatReadonlyPromptReference' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'baidu.comate' wants API proposal 'inlineEdit' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'ms-vsliveshare.vsliveshare' wants API proposal 'notebookCellExecutionState' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'terminalShellType' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.vscode-python-envs' wants API proposal 'terminalShellType' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.597 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'github.copilot-chat' wants API proposal 'chatReadonlyPromptReference' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.598 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'github.copilot-chat' wants API proposal 'inlineEdit' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.598 [warning] [窗口] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.gather' wants API proposal 'notebookCellExecutionState' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:10:59.847 [info] [窗口] Started local extension host with pid 9745.
+2026-01-21 20:11:00.166 [error] [窗口] Extension 'baiducomate.comate' wants API proposal 'inlineEdit' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2026-01-21 20:11:00.186 [warning] [窗口] [ms-python.python]: 无法注册“python.venvPath”。此属性已注册。
+2026-01-21 20:11:00.229 [info] [窗口] Adjusting encoding based on configured language override to 'utf8' for file:///Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778/quant_trading/app.py.
+2026-01-21 20:11:02.036 [error] [窗口] 没有注册配置 baidu.comate.enableSecurityEnhancement，因此无法写入 用户设置。
+2026-01-21 20:11:02.078 [error] [窗口] 没有注册配置 baidu.comate.smartPaste，因此无法写入 用户设置。
+2026-01-21 20:11:02.079 [error] [窗口] 没有注册配置 baidu.comate.enableSecurityIntelligence，因此无法写入 用户设置。
+2026-01-21 20:11:02.079 [error] [窗口] 没有注册配置 baidu.comate.enableDebugIntelligence，因此无法写入 用户设置。
+2026-01-21 20:11:02.079 [error] [窗口] 没有注册配置 baidu.comate.useImageDiff，因此无法写入 用户设置。
+2026-01-21 20:11:02.802 [info] [窗口] Baidu employee check passed, additional extensions: ["ms-vscode.cpptools",".vscode-pylance","ms-python.vscode-pylance","emeraldwalk.RunOnSave","ms-toolsai.datawrangler","baidu.code-style","baidu.icoding-odp","baidu.comate-easy","baidu.vscode-plugin-lowcode","baidu.gocover","baidu.go-ut","baidu.diaoyan","baidu.qep-eos","baidu.pvcpTestPlugin","baidu.easyswitches","baidu.qep-cube","baidu.san-template-string","baidu.pvcpTestPlugin","baidu.resmon","baidu.GenConfDiff","baidu.vscode-dls","baidu.vscode-fc-extension","baidu.icoding-pdc","baidu.apollo-studio","baidu.smart-ut-vscode-plugin","baidu.dy","baidu.icoding-plugin","baidu.json-fix","baidu.xiaoe","baidu.singularity","baidu.qep-eos-icoding","baidu.smarty-fis-support","baidu.gcase"]
+2026-01-21 20:11:03.014 [info] [窗口] Successfully fetched latest version for ms-python.vscode-pylance from Baidu internal API
+2026-01-21 20:11:03.159 [info] [窗口] [perf] Render performance baseline is 24ms
+2026-01-21 20:11:04.519 [error] [窗口] 出现未知错误。有关详细信息，请参阅日志。
+2026-01-21 20:12:15.961 [info] [窗口] Successfully fetched latest version for ms-python.vscode-pylance from Baidu internal API
+2026-01-22 10:14:44.279 [error] [窗口] Request failed with status code 500: AxiosError: Request failed with status code 500
+	at _0xbd1c3f (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:897909)
+	at IncomingMessage.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:923984)
+	at IncomingMessage.emit (node:events:531:35)
+	at endReadableNT (node:internal/streams/readable:1698:12)
+	at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+	at _0x880dd2.request (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:949861)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async Object.reportTerminalLogLines (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:727456)
+2026-01-22 10:15:53.195 [error] [窗口] [Extension Host] Error in provider enableInlineExplain: RuntimeError: memory access out of bounds
+	at wasm://wasm/000b627a:wasm-function[68]:0xc6ac
+	at wasm://wasm/000b627a:wasm-function[193]:0x1fe04
+	at get endPosition (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6076819)
+	at /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776569
+	at Array.map (<anonymous>)
+	at _0x34e332.generateCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776493)
+	at Proxy.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:3707149)
+	at _0x5d1f3a.getCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6438736)
+	at _0x330d98.provideCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:687512)
+	at Am.provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:132058)
+	at file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161200
+	at Xt.G (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:160040)
+	at Xt.$provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161188)
+	at B4.S (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121130)
+	at B4.Q (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120910)
+	at B4.M (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119961)
+	at B4.L (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119104)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:117901)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:8617)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at MessagePortMain.<anonymous> (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6909)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2026-01-22 10:21:43.141 [error] [窗口] [Extension Host] Error in provider enableInlineExplain: RuntimeError: memory access out of bounds
+	at wasm://wasm/000b627a:wasm-function[68]:0xc6ac
+	at wasm://wasm/000b627a:wasm-function[193]:0x1fe04
+	at get endPosition (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6076819)
+	at /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776569
+	at Array.map (<anonymous>)
+	at _0x34e332.generateCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776493)
+	at Proxy.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:3707149)
+	at _0x5d1f3a.getCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6438736)
+	at _0x330d98.provideCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:687512)
+	at Am.provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:132058)
+	at file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161200
+	at Xt.G (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:160040)
+	at Xt.$provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161188)
+	at B4.S (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121130)
+	at B4.Q (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120910)
+	at B4.M (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119961)
+	at B4.L (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119104)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:117901)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:8617)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at MessagePortMain.<anonymous> (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6909)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2026-01-22 10:23:53.076 [error] [窗口] [Extension Host] Error in provider enableInlineExplain: RuntimeError: memory access out of bounds
+	at wasm://wasm/000b627a:wasm-function[68]:0xc6ac
+	at wasm://wasm/000b627a:wasm-function[193]:0x1fe04
+	at get endPosition (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6076819)
+	at /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776569
+	at Array.map (<anonymous>)
+	at _0x34e332.generateCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776493)
+	at Proxy.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:3707149)
+	at _0x5d1f3a.getCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6438736)
+	at _0x330d98.provideCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:687512)
+	at Am.provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:132058)
+	at file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161200
+	at Xt.G (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:160040)
+	at Xt.$provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161188)
+	at B4.S (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121130)
+	at B4.Q (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120910)
+	at B4.M (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119961)
+	at B4.L (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119104)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:117901)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:8617)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at MessagePortMain.<anonymous> (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6909)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2026-01-22 10:23:53.092 [error] [窗口] [Extension Host] Error in provider enableInlineExplain: RuntimeError: memory access out of bounds
+	at wasm://wasm/000b627a:wasm-function[68]:0xc6ac
+	at wasm://wasm/000b627a:wasm-function[193]:0x1fe04
+	at get endPosition (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6076819)
+	at /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776569
+	at Array.map (<anonymous>)
+	at _0x34e332.generateCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776493)
+	at Proxy.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:3707149)
+	at _0x5d1f3a.getCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6438736)
+	at _0x5d1f3a.provideCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6439301)
+	at Am.provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:132058)
+	at file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161200
+	at Xt.G (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:160040)
+	at Xt.$provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161188)
+	at B4.S (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121130)
+	at B4.Q (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120910)
+	at B4.M (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119961)
+	at B4.L (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119104)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:117901)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:8617)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at MessagePortMain.<anonymous> (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6909)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2026-01-22 10:25:01.705 [error] [窗口] Request failed with status code 500: AxiosError: Request failed with status code 500
+	at _0xbd1c3f (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:897909)
+	at IncomingMessage.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:923984)
+	at IncomingMessage.emit (node:events:531:35)
+	at endReadableNT (node:internal/streams/readable:1698:12)
+	at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+	at _0x880dd2.request (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:949861)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async Object.reportTerminalLogLines (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:727456)
+2026-01-22 10:25:24.397 [error] [窗口] [Extension Host] Error in provider enableInlineExplain: RuntimeError: memory access out of bounds
+	at wasm://wasm/000b627a:wasm-function[68]:0xc6ac
+	at wasm://wasm/000b627a:wasm-function[193]:0x1fe04
+	at get endPosition (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6076819)
+	at /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776569
+	at Array.map (<anonymous>)
+	at _0x34e332.generateCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776493)
+	at Proxy.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:3707149)
+	at _0x5d1f3a.getCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6438736)
+	at _0x5d1f3a.provideCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6439301)
+	at Am.provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:132058)
+	at file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161200
+	at Xt.G (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:160040)
+	at Xt.$provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161188)
+	at B4.S (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121130)
+	at B4.Q (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120910)
+	at B4.M (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119961)
+	at B4.L (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119104)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:117901)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:8617)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at MessagePortMain.<anonymous> (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6909)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2026-01-22 10:30:18.807 [error] [窗口] [Extension Host] Error in provider enableInlineExplain: RuntimeError: memory access out of bounds
+	at wasm://wasm/000b627a:wasm-function[68]:0xc6ac
+	at wasm://wasm/000b627a:wasm-function[193]:0x1fe04
+	at get endPosition (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6076819)
+	at /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776569
+	at Array.map (<anonymous>)
+	at _0x34e332.generateCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:1776493)
+	at Proxy.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:3707149)
+	at _0x5d1f3a.getCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6438736)
+	at _0x5d1f3a.provideCodeLenses (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:6439301)
+	at Am.provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:132058)
+	at file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161200
+	at Xt.G (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:160040)
+	at Xt.$provideCodeLenses (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:161188)
+	at B4.S (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121130)
+	at B4.Q (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120910)
+	at B4.M (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119961)
+	at B4.L (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:119104)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:117901)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at cd.value (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:8617)
+	at I.C (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+	at I.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+	at Eo.fire (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+	at MessagePortMain.<anonymous> (file:///Applications/Comate.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6909)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+2026-01-22 11:47:55.031 [error] [窗口] Request failed with status code 500: AxiosError: Request failed with status code 500
+	at _0xbd1c3f (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:897909)
+	at IncomingMessage.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:923984)
+	at IncomingMessage.emit (node:events:531:35)
+	at endReadableNT (node:internal/streams/readable:1698:12)
+	at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+	at _0x880dd2.request (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:949861)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async Object.reportTerminalLogLines (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:727456)
+2026-01-22 16:14:29.262 [info] [窗口] Successfully fetched latest version for ms-python.vscode-pylance from Baidu internal API
+2026-01-23 11:00:10.413 [error] [窗口] Request failed with status code 500: AxiosError: Request failed with status code 500
+	at _0xbd1c3f (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:897909)
+	at IncomingMessage.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:923984)
+	at IncomingMessage.emit (node:events:531:35)
+	at endReadableNT (node:internal/streams/readable:1698:12)
+	at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+	at _0x880dd2.request (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:949861)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async Object.reportTerminalLogLines (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:727456)
+2026-01-23 11:20:37.775 [error] [窗口] Request failed with status code 500: AxiosError: Request failed with status code 500
+	at _0xbd1c3f (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:897909)
+	at IncomingMessage.<anonymous> (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:923984)
+	at IncomingMessage.emit (node:events:531:35)
+	at endReadableNT (node:internal/streams/readable:1698:12)
+	at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+	at _0x880dd2.request (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:12:949861)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async Object.reportTerminalLogLines (/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/extension.js:1:727456)

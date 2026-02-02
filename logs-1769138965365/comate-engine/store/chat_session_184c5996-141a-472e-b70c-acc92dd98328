@@ -1,0 +1,135 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "184c5996-141a-472e-b70c-acc92dd98328",
+  "messages": [
+    {
+      "id": "bd924c4c-8568-4f80-95be-efe38f0647c4",
+      "summary": "",
+      "role": "user",
+      "status": "success",
+      "content": "",
+      "payload": {
+        "knowledgeList": [
+          {
+            "filePath": "pmc-basic-persistence/src/main/java/com/baidu/pmc/persistence/mapper/apps/impl/AppsCallPkgDaoImpl.java",
+            "name": "AppsCallPkgDaoImpl.java",
+            "selection": [
+              68,
+              98
+            ],
+            "id": "pmc-basic-persistence/src/main/java/com/baidu/pmc/persistence/mapper/apps/impl/AppsCallPkgDaoImpl.java#68-98",
+            "type": "CODE_SELECTION"
+          }
+        ],
+        "metrics": {
+          "path": "pmc-basic-persistence/src/main/java/com/baidu/pmc/persistence/mapper/apps/impl/AppsCallPkgDaoImpl.java",
+          "model": "Ask",
+          "function": "CODE_EXPLAIN"
+        },
+        "query": "",
+        "agent": {
+          "agentId": 8,
+          "avatar": "ask",
+          "mcpServers": [],
+          "name": "Ask",
+          "subAgentList": []
+        },
+        "model": {
+          "mode": "NORMAL",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE"
+        },
+        "command": "代码解释",
+        "selfDefineInstruction": "请解释选中函数"
+      },
+      "context": {}
+    },
+    {
+      "id": "0064a162-6cb4-45f4-93dd-79f15551a2ad",
+      "userMessageId": "bd924c4c-8568-4f80-95be-efe38f0647c4",
+      "agentInfo": {
+        "avatar": "ask",
+        "name": "Ask"
+      },
+      "role": "assistant",
+      "status": "failed",
+      "content": {},
+      "elements": [
+        {
+          "id": "bee69ccb-5d76-4cf9-bed0-9ac75b7ec243",
+          "type": "TEXT",
+          "status": "success",
+          "content": "当前License信息无效，您可以[点击此处](https://comate.baidu.com/user)快速登录。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": true,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "46b0b313-93c0-40aa-b9cd-3fcd76c24db0",
+      "summary": "",
+      "role": "user",
+      "status": "success",
+      "content": "        request.setTdorpaddx(Collections.singletonList(item));\n这行代码是什么",
+      "payload": {
+        "query": "        request.setTdorpaddx(Collections.singletonList(item));\n这行代码是什么",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {}
+    },
+    {
+      "id": "e8287363-b73b-450f-82e8-3384dca28315",
+      "userMessageId": "46b0b313-93c0-40aa-b9cd-3fcd76c24db0",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "failed",
+      "content": {},
+      "elements": [
+        {
+          "id": "c18943c3-df79-4daf-9e26-6ed97e75e600",
+          "type": "TEXT",
+          "status": "success",
+          "content": "当前License信息无效，您可以[点击此处](https://comate.baidu.com/user)快速登录。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": true,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "代码解释",
+  "ctime": 1760514840038,
+  "utime": 1760515497248,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

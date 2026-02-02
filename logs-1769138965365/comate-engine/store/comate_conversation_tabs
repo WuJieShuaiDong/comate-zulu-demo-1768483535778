@@ -1,0 +1,36 @@
+{
+  "/Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778": {
+    "tabs": [
+      {
+        "id": "81ca34a1-6372-4ca2-864c-9cff1b213b6a",
+        "title": "New Task",
+        "conversationId": "81ca34a1-6372-4ca2-864c-9cff1b213b6a",
+        "isTemporary": false,
+        "isSpec": false,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "claude-4.5-sonnet_0edd0e701ff248a5a606603cd895db83",
+          "enableMaxMode": false
+        }
+      }
+    ],
+    "activeTabId": "81ca34a1-6372-4ca2-864c-9cff1b213b6a",
+    "utime": 1769138959742
+  },
+  "/": {
+    "tabs": [
+      {
+        "id": "temp-1768555527649-02kfaco3b",
+        "title": "新对话",
+        "isTemporary": true,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "gemini-3-pro_d6c59ed370894d35abd4b25eacf8bfa2",
+          "enableMaxMode": false
+        }
+      }
+    ],
+    "activeTabId": "temp-1768555527649-02kfaco3b",
+    "utime": 1768555527657
+  }
+}

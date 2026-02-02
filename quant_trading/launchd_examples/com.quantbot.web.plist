@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.quantbot.web</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/streamlit</string>
+        <string>run</string>
+        <string>/Users/YOUR_USERNAME/ComateProjects/comate-zulu-demo-1768483535778/quant_trading/app.py</string>
+        <string>--server.port</string>
+        <string>8503</string>
+        <string>--server.headless</string>
+        <string>true</string>
+    </array>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/YOUR_USERNAME/ComateProjects/comate-zulu-demo-1768483535778/quant_trading</string>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/YOUR_USERNAME/ComateProjects/comate-zulu-demo-1768483535778/quant_trading/data/web.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/YOUR_USERNAME/ComateProjects/comate-zulu-demo-1768483535778/quant_trading/data/web_error.log</string>
+    
+    <!-- 崩溃自动重启 -->
+    <key>KeepAlive</key>
+    <true/>
+    
+    <!-- 开机自动启动 -->
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>

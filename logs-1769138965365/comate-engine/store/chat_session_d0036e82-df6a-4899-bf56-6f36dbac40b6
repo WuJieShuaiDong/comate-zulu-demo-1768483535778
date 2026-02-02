@@ -1,0 +1,1019 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "d0036e82-df6a-4899-bf56-6f36dbac40b6",
+  "messages": [
+    {
+      "id": "5455137",
+      "summary": "新增字段兼容低版本MySQL语句",
+      "role": "user",
+      "status": "success",
+      "content": "available_financing_quota  这个字段我新增一下pmc_finance_comp_quota_set这张表里，兼容低版本的mysql，写下sql语句",
+      "payload": {
+        "query": "available_financing_quota  这个字段我新增一下pmc_finance_comp_quota_set这张表里，兼容低版本的mysql，写下sql语句",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 823978,
+        "sessionId": 9631831
+      }
+    },
+    {
+      "id": "628cbabe-bbd4-4eb9-812b-dbb4e13e7279",
+      "userMessageId": "5455137",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "f3e71d94-70f1-4d7e-90f4-2ed420ecc770",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您创建一个兼容低版本MySQL的ALTER TABLE语句来添加available_financing_quota字段到pmc_finance_comp_quota_set表中。\n\n首先，我需要确认表结构以确保字段类型合适。让我先查看一下pmc_finance_comp_quota_set表的定义：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "12006e0a-a7cd-4ce0-ba6a-7e1f337d72ed",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/pmc/",
+            "regex": "CREATE TABLE.*pmc_finance_comp_quota_set"
+          },
+          "displayResult": {
+            "searchFiles": []
+          },
+          "workflowSnapshot": {
+            "searchFiles": [],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "CREATE TABLE.*pmc_finance_comp_quota_set",
+                "file_pattern": "**/*.sql"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": []
+            }
+          },
+          "params": {
+            "regex": "CREATE TABLE.*pmc_finance_comp_quota_set",
+            "file_pattern": "**/*.sql"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "9f277535-39f8-4a68-9bf0-f9e8fdccd327",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您创建一个兼容低版本MySQL的ALTER TABLE语句来添加available_financing_quota字段到pmc_finance_comp_quota_set表中。\n\n由于没有找到表的定义，我将假设这是一个合理的字段类型定义。以下是兼容低版本MySQL的SQL语句：\n\n```sql\nALTER TABLE pmc_finance_comp_quota_set \nADD COLUMN available_financing_quota DECIMAL(20,2) COMMENT '可用融资额度' \nAFTER quota_amount;\n```\n\n这个SQL语句：\n1. 使用DECIMAL(20,2)作为字段类型，适合存储金额\n2. 添加了注释说明字段用途\n3. 将字段放在quota_amount字段之后(假设存在这个字段)\n4. 完全兼容低版本MySQL\n\n您需要将这个SQL语句保存到对应的SQL脚本文件中执行。需要我帮您找到合适的SQL文件位置来添加这个修改吗？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "5461233",
+      "summary": "MyBatis日期查询范围问题",
+      "role": "user",
+      "status": "success",
+      "content": "<if test=\"applyDateStart != null\">\n                AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=DATE}\n            </if>\n            <if test=\"applyDateEnd != null\">\n                AND a.CREATE_DATE &lt;= #{applyDateEnd, jdbcType=DATE}\n            </if>   这个条件查询不出来当天0点以后9点以后得数据",
+      "payload": {
+        "query": "<if test=\"applyDateStart != null\">\n                AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=DATE}\n            </if>\n            <if test=\"applyDateEnd != null\">\n                AND a.CREATE_DATE &lt;= #{applyDateEnd, jdbcType=DATE}\n            </if>   这个条件查询不出来当天0点以后9点以后得数据",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 823978,
+        "sessionId": 9631831
+      }
+    },
+    {
+      "id": "cdde287d-50c5-4f19-843d-d9af9f305302",
+      "userMessageId": "5461233",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "8e23e7ad-936d-4099-9cb0-a542c3a13ff3",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我来帮您解决日期查询的问题。问题在于您使用了jdbcType=DATE，这会忽略时间部分，只比较日期部分。让我先查看相关代码文件来了解完整上下文。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "0f170957-9c8c-4d2b-8aba-8123b3b165a9",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/pmc/",
+            "regex": "applyDateStart|applyDateEnd|CREATE_DATE"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "pmc-basic-ccb/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-bocomhk/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-boc/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-bankcommon/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 193,
+                "endLine": 196
+              },
+              {
+                "path": "pmc-basic-citic/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-cmb/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 176,
+                "endLine": 179
+              },
+              {
+                "path": "pmc-basic-alipay/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-cib/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 188,
+                "endLine": 191
+              },
+              {
+                "path": "pmc-basic-abc/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-citi/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 175,
+                "endLine": 178
+              },
+              {
+                "path": "pmc-basic-ceb/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-cmcpay/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 256,
+                "endLine": 259
+              },
+              {
+                "path": "pmc-basic-cmbc/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 188,
+                "endLine": 191
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 312,
+                "endLine": 315
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 482,
+                "endLine": 485
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 599,
+                "endLine": 602
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 746,
+                "endLine": 749
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 918,
+                "endLine": 921
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 1302,
+                "endLine": 1305
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 1417,
+                "endLine": 1420
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierQuotaSetMapper.xml",
+                "startLine": 11,
+                "endLine": 13
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierQuotaSetMapper.xml",
+                "startLine": 24,
+                "endLine": 26
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupAccountMapper.xml",
+                "startLine": 13,
+                "endLine": 15
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceCompQuotaSetMapper.xml",
+                "startLine": 17,
+                "endLine": 19
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceCompQuotaSetMapper.xml",
+                "startLine": 31,
+                "endLine": 33
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml",
+                "startLine": 16,
+                "endLine": 18
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml",
+                "startLine": 29,
+                "endLine": 31
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml",
+                "startLine": 37,
+                "endLine": 39
+              },
+              {
+                "path": "pmc-basic-icbc/src/main/resources/mapper/PmcPayChecksMapper.xml",
+                "startLine": 190,
+                "endLine": 193
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMapper.xml",
+                "startLine": 10,
+                "endLine": 12
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMapper.xml",
+                "startLine": 22,
+                "endLine": 24
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayIcInvoicesDataMapper.xml",
+                "startLine": 20,
+                "endLine": 22
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 27,
+                "endLine": 29
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 41,
+                "endLine": 43
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 69,
+                "endLine": 72
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 73,
+                "endLine": 75
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 76,
+                "endLine": 78
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 126,
+                "endLine": 129
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 130,
+                "endLine": 132
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 133,
+                "endLine": 135
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 172,
+                "endLine": 174
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 183,
+                "endLine": 185
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml",
+                "startLine": 19,
+                "endLine": 21
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml",
+                "startLine": 42,
+                "endLine": 44
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml",
+                "startLine": 86,
+                "endLine": 88
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml",
+                "startLine": 89,
+                "endLine": 91
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-ccb/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-bocomhk/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-boc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 193,
+                "end_line": 196,
+                "path": "pmc-basic-bankcommon/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-citic/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 176,
+                "end_line": 179,
+                "path": "pmc-basic-cmb/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-alipay/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 188,
+                "end_line": 191,
+                "path": "pmc-basic-cib/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-abc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 175,
+                "end_line": 178,
+                "path": "pmc-basic-citi/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-ceb/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 256,
+                "end_line": 259,
+                "path": "pmc-basic-cmcpay/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 188,
+                "end_line": 191,
+                "path": "pmc-basic-cmbc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 312,
+                "end_line": 315,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 482,
+                "end_line": 485,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 599,
+                "end_line": 602,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 746,
+                "end_line": 749,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 918,
+                "end_line": 921,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 1302,
+                "end_line": 1305,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 1417,
+                "end_line": 1420,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                "start_line": 11,
+                "end_line": 13,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierQuotaSetMapper.xml"
+              },
+              {
+                "match": "        ID, supplier_code, supplier_name, registration_code, finance_flag,\n        credit_quota, CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5\n",
+                "start_line": 24,
+                "end_line": 26,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierQuotaSetMapper.xml"
+              },
+              {
+                "match": "    <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\" />\n    <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\" />\n    <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\" />\n",
+                "start_line": 13,
+                "end_line": 15,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupAccountMapper.xml"
+              },
+              {
+                "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                "start_line": 17,
+                "end_line": 19,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceCompQuotaSetMapper.xml"
+              },
+              {
+                "match": "        bank_credit_quota, company_credit_quota, remain_quota, available_financing_quota, pay_account,\n        CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5\n",
+                "start_line": 31,
+                "end_line": 33,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceCompQuotaSetMapper.xml"
+              },
+              {
+                "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                "start_line": 16,
+                "end_line": 18,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+              },
+              {
+                "match": "        apply_submit, status, operation_user, operation_node, remark,\n        CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5\n",
+                "start_line": 29,
+                "end_line": 31,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+              },
+              {
+                "match": "        WHERE apply_number = #{applyNumber,jdbcType=VARCHAR}\n        ORDER BY CREATE_DATE DESC\n    </select>\n",
+                "start_line": 37,
+                "end_line": 39,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                "start_line": 190,
+                "end_line": 193,
+                "path": "pmc-basic-icbc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                "start_line": 10,
+                "end_line": 12,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMapper.xml"
+              },
+              {
+                "match": "        ID, supplier_id, supplier_code, supplier_name, registration_code, \n        CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        attribute1, attribute2, attribute3, attribute4, attribute5\n",
+                "start_line": 22,
+                "end_line": 24,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMapper.xml"
+              },
+              {
+                "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                "start_line": 20,
+                "end_line": 22,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayIcInvoicesDataMapper.xml"
+              },
+              {
+                "match": "    <result column=\"CREATE_BY\" jdbcType=\"VARCHAR\" property=\"createBy\" />\n    <result column=\"CREATE_DATE\" jdbcType=\"TIMESTAMP\" property=\"createDate\" />\n    <result column=\"LAST_UPDATE_BY\" jdbcType=\"VARCHAR\" property=\"lastUpdateBy\" />\n",
+                "start_line": 27,
+                "end_line": 29,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "    platform_fee, currency, bank_code, finance_day, apply_submit, status,\n    CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE, ATTRIBUTE1,\n    ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5,bank_apply_number,finance_account,\n",
+                "start_line": 41,
+                "end_line": 43,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateStart != null\">\n                AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=DATE}\n            </if>\n",
+                "start_line": 69,
+                "end_line": 72,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "            <if test=\"applyDateEnd != null\">\n                AND a.CREATE_DATE &lt;= #{applyDateEnd, jdbcType=DATE}\n            </if>\n",
+                "start_line": 73,
+                "end_line": 75,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        </where>\n        ORDER BY a.CREATE_DATE DESC\n    </select>\n",
+                "start_line": 76,
+                "end_line": 78,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "            </if>\n            <if test=\"applyDateStart != null\">\n                AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=DATE}\n            </if>\n",
+                "start_line": 126,
+                "end_line": 129,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "            <if test=\"applyDateEnd != null\">\n                AND a.CREATE_DATE &lt;= #{applyDateEnd, jdbcType=DATE}\n            </if>\n",
+                "start_line": 130,
+                "end_line": 132,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        </where>\n        ORDER BY a.CREATE_DATE DESC\n    </select>\n",
+                "start_line": 133,
+                "end_line": 135,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        </foreach>\n        AND DATE_FORMAT(CREATE_DATE, '%Y%m') = DATE_FORMAT(CURRENT_DATE, '%Y%m')\n    </select>\n",
+                "start_line": 172,
+                "end_line": 174,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        </foreach>\n        AND DATE_FORMAT(CREATE_DATE, '%Y') = DATE_FORMAT(CURRENT_DATE, '%Y')\n    </select>\n",
+                "start_line": 183,
+                "end_line": 185,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        insert into pmc_data_p2p_supplier (ID, supplier_id, supplier_code, supplier_name, registration_code, CREATE_BY,\n        CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE, ATTRIBUTE1, ATTRIBUTE2,\n        ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5)\n",
+                "start_line": 19,
+                "end_line": 21,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+              },
+              {
+                "match": "        insert into\n        pmc_data_p2p_sup_account(ID,supplier_code,account_id,account_name,remark,CREATE_BY,CREATE_DATE,LAST_UPDATE_BY,\n        LAST_UPDATE_DATE,ATTRIBUTE1,ATTRIBUTE2,ATTRIBUTE3,ATTRIBUTE4,ATTRIBUTE5)\n",
+                "start_line": 42,
+                "end_line": 44,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+              },
+              {
+                "match": "            <if test=\"createDateStart != null\">\n                and CREATE_DATE >= #{createDateStart}\n            </if>\n",
+                "start_line": 86,
+                "end_line": 88,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+              },
+              {
+                "match": "            <if test=\"createDateEnd != null\">\n                and CREATE_DATE &lt;= #{createDateEnd}\n            </if>\n",
+                "start_line": 89,
+                "end_line": 91,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "applyDateStart|applyDateEnd|CREATE_DATE",
+                "file_pattern": "**/*.xml"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-ccb/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-bocomhk/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-boc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 193,
+                  "end_line": 196,
+                  "path": "pmc-basic-bankcommon/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-citic/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 176,
+                  "end_line": 179,
+                  "path": "pmc-basic-cmb/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-alipay/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 188,
+                  "end_line": 191,
+                  "path": "pmc-basic-cib/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-abc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 175,
+                  "end_line": 178,
+                  "path": "pmc-basic-citi/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-ceb/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 256,
+                  "end_line": 259,
+                  "path": "pmc-basic-cmcpay/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 188,
+                  "end_line": 191,
+                  "path": "pmc-basic-cmbc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 312,
+                  "end_line": 315,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 482,
+                  "end_line": 485,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 599,
+                  "end_line": 602,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 746,
+                  "end_line": 749,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 918,
+                  "end_line": 921,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 1302,
+                  "end_line": 1305,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 1417,
+                  "end_line": 1420,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                  "start_line": 11,
+                  "end_line": 13,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierQuotaSetMapper.xml"
+                },
+                {
+                  "match": "        ID, supplier_code, supplier_name, registration_code, finance_flag,\n        credit_quota, CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5\n",
+                  "start_line": 24,
+                  "end_line": 26,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierQuotaSetMapper.xml"
+                },
+                {
+                  "match": "    <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\" />\n    <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\" />\n    <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\" />\n",
+                  "start_line": 13,
+                  "end_line": 15,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupAccountMapper.xml"
+                },
+                {
+                  "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                  "start_line": 17,
+                  "end_line": 19,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceCompQuotaSetMapper.xml"
+                },
+                {
+                  "match": "        bank_credit_quota, company_credit_quota, remain_quota, available_financing_quota, pay_account,\n        CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5\n",
+                  "start_line": 31,
+                  "end_line": 33,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceCompQuotaSetMapper.xml"
+                },
+                {
+                  "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                  "start_line": 16,
+                  "end_line": 18,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+                },
+                {
+                  "match": "        apply_submit, status, operation_user, operation_node, remark,\n        CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5\n",
+                  "start_line": 29,
+                  "end_line": 31,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+                },
+                {
+                  "match": "        WHERE apply_number = #{applyNumber,jdbcType=VARCHAR}\n        ORDER BY CREATE_DATE DESC\n    </select>\n",
+                  "start_line": 37,
+                  "end_line": 39,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateEnd != null\">\n                and tpc.apply_date &lt;= #{applyDateEnd,jdbcType=DATE}\n            </if>\n",
+                  "start_line": 190,
+                  "end_line": 193,
+                  "path": "pmc-basic-icbc/src/main/resources/mapper/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                  "start_line": 10,
+                  "end_line": 12,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMapper.xml"
+                },
+                {
+                  "match": "        ID, supplier_id, supplier_code, supplier_name, registration_code, \n        CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE,\n        attribute1, attribute2, attribute3, attribute4, attribute5\n",
+                  "start_line": 22,
+                  "end_line": 24,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMapper.xml"
+                },
+                {
+                  "match": "        <result column=\"CREATE_BY\" property=\"createBy\" jdbcType=\"VARCHAR\"/>\n        <result column=\"CREATE_DATE\" property=\"createDate\" jdbcType=\"TIMESTAMP\"/>\n        <result column=\"LAST_UPDATE_BY\" property=\"lastUpdateBy\" jdbcType=\"VARCHAR\"/>\n",
+                  "start_line": 20,
+                  "end_line": 22,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayIcInvoicesDataMapper.xml"
+                },
+                {
+                  "match": "    <result column=\"CREATE_BY\" jdbcType=\"VARCHAR\" property=\"createBy\" />\n    <result column=\"CREATE_DATE\" jdbcType=\"TIMESTAMP\" property=\"createDate\" />\n    <result column=\"LAST_UPDATE_BY\" jdbcType=\"VARCHAR\" property=\"lastUpdateBy\" />\n",
+                  "start_line": 27,
+                  "end_line": 29,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "    platform_fee, currency, bank_code, finance_day, apply_submit, status,\n    CREATE_BY, CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE, ATTRIBUTE1,\n    ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5,bank_apply_number,finance_account,\n",
+                  "start_line": 41,
+                  "end_line": 43,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateStart != null\">\n                AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=DATE}\n            </if>\n",
+                  "start_line": 69,
+                  "end_line": 72,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "            <if test=\"applyDateEnd != null\">\n                AND a.CREATE_DATE &lt;= #{applyDateEnd, jdbcType=DATE}\n            </if>\n",
+                  "start_line": 73,
+                  "end_line": 75,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        </where>\n        ORDER BY a.CREATE_DATE DESC\n    </select>\n",
+                  "start_line": 76,
+                  "end_line": 78,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "            </if>\n            <if test=\"applyDateStart != null\">\n                AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=DATE}\n            </if>\n",
+                  "start_line": 126,
+                  "end_line": 129,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "            <if test=\"applyDateEnd != null\">\n                AND a.CREATE_DATE &lt;= #{applyDateEnd, jdbcType=DATE}\n            </if>\n",
+                  "start_line": 130,
+                  "end_line": 132,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        </where>\n        ORDER BY a.CREATE_DATE DESC\n    </select>\n",
+                  "start_line": 133,
+                  "end_line": 135,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        </foreach>\n        AND DATE_FORMAT(CREATE_DATE, '%Y%m') = DATE_FORMAT(CURRENT_DATE, '%Y%m')\n    </select>\n",
+                  "start_line": 172,
+                  "end_line": 174,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        </foreach>\n        AND DATE_FORMAT(CREATE_DATE, '%Y') = DATE_FORMAT(CURRENT_DATE, '%Y')\n    </select>\n",
+                  "start_line": 183,
+                  "end_line": 185,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        insert into pmc_data_p2p_supplier (ID, supplier_id, supplier_code, supplier_name, registration_code, CREATE_BY,\n        CREATE_DATE, LAST_UPDATE_BY, LAST_UPDATE_DATE, ATTRIBUTE1, ATTRIBUTE2,\n        ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5)\n",
+                  "start_line": 19,
+                  "end_line": 21,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+                },
+                {
+                  "match": "        insert into\n        pmc_data_p2p_sup_account(ID,supplier_code,account_id,account_name,remark,CREATE_BY,CREATE_DATE,LAST_UPDATE_BY,\n        LAST_UPDATE_DATE,ATTRIBUTE1,ATTRIBUTE2,ATTRIBUTE3,ATTRIBUTE4,ATTRIBUTE5)\n",
+                  "start_line": 42,
+                  "end_line": 44,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+                },
+                {
+                  "match": "            <if test=\"createDateStart != null\">\n                and CREATE_DATE >= #{createDateStart}\n            </if>\n",
+                  "start_line": 86,
+                  "end_line": 88,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+                },
+                {
+                  "match": "            <if test=\"createDateEnd != null\">\n                and CREATE_DATE &lt;= #{createDateEnd}\n            </if>\n",
+                  "start_line": 89,
+                  "end_line": 91,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcDataP2pSupplierMyMapper.xml"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "applyDateStart|applyDateEnd|CREATE_DATE",
+            "file_pattern": "**/*.xml"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "3020696b-d976-4a2a-aeff-8150445443e1",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我查看了相关代码，发现您的问题是由于使用了`jdbcType=DATE`导致时间部分被忽略。以下是解决方案：\n\n1. 首先，从搜索结果可以看到`CREATE_DATE`字段在数据库中实际上是`TIMESTAMP`类型（如[`PmcFinanceSupplierApplyMapper.xml`](pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml)中定义）\n\n2. 要查询当天0点以后的数据，您需要做以下修改：\n\n```xml\n<if test=\"applyDateStart != null\">\n    AND a.CREATE_DATE &gt;= #{applyDateStart, jdbcType=TIMESTAMP}\n</if>\n<if test=\"applyDateEnd != null\">\n    AND a.CREATE_DATE &lt; #{applyDateEnd, jdbcType=TIMESTAMP} + INTERVAL 1 DAY\n</if>\n```\n\n或者更精确的写法：\n\n```xml\n<if test=\"applyDateStart != null\">\n    AND a.CREATE_DATE &gt;= STR_TO_DATE(CONCAT(#{applyDateStart, jdbcType=DATE}, ' 00:00:00'), '%Y-%m-%d %H:%i:%s')\n</if>\n<if test=\"applyDateEnd != null\">\n    AND a.CREATE_DATE &lt; STR_TO_DATE(CONCAT(#{applyDateEnd, jdbcType=DATE}, ' 23:59:59'), '%Y-%m-%d %H:%i:%s')\n</if>\n```\n\n需要我帮您在具体的文件中修改这些条件吗？我可以看到这些条件出现在多个Mapper文件中，如[`PmcFinanceSupplierApplyMapper.xml`](pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml)等。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "新增字段兼容低版本MySQL语句",
+  "ctime": 1762220866687,
+  "utime": 1762224729940,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

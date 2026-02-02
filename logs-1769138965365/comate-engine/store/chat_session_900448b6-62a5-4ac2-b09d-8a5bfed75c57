@@ -1,0 +1,50 @@
+{
+  "source": "TestBotConversation",
+  "sessionUuid": "900448b6-62a5-4ac2-b09d-8a5bfed75c57",
+  "messages": [
+    {
+      "id": "0bb3d965-0408-410f-bfea-13f2a1ed679b",
+      "role": "user",
+      "status": "success",
+      "content": "为当前函数生成单测",
+      "payload": {
+        "agentId": "ut-agent",
+        "params": {
+          "command": "method",
+          "startLine": 10,
+          "endLine": 65,
+          "workDir": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc",
+          "include": "pmc-basic-web/src/main/java/com/baidu/pmc/web/utils/AesUtils.java",
+          "languageVersion": "11",
+          "userName": "liumandong"
+        },
+        "entry": "enhance-generate",
+        "env": {
+          "PATH": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin:/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+          "MAVEN_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "M2_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "JAVA_HOME": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home",
+          "HOME": "/Users/xiaoliu"
+        },
+        "query": "为当前函数生成单测",
+        "action": null,
+        "extra": null
+      }
+    },
+    {
+      "id": "caee1e2c-63df-4014-9ed5-03fbde695fc4",
+      "role": "assistant",
+      "status": "success",
+      "content": "{\"status\":\"success\",\"content\":\"已完成目标被测方法分析。接下来我将针对2个被测方法生成单测用例。\\n\\n\\n\\n\\n\\n\\n环境检查失败\\n\",\"fileListTitle\":\"被测方法列表\",\"loadingMsg\":\"\",\"startIntroduction\":\"好的，已收到任务。我将为`encrypt, decrypt`方法生成单元测试，并对其进行验证、优化，确保生成有效的单测代码，提升代码覆盖。\",\"analysisPanel\":{\"status\":\"success\",\"content\":[\"encrypt\",\"decrypt\"]},\"testbotMapping\":{}}",
+      "composer": {
+        "markdown": "已完成目标被测方法分析。接下来我将针对2个被测方法生成单测用例。\n\n\n\n\n环境检查失败\n",
+        "tasks": []
+      },
+      "elements": []
+    }
+  ],
+  "title": "为当前函数生成单测",
+  "ctime": 1756199363637,
+  "utime": 1756126590594,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

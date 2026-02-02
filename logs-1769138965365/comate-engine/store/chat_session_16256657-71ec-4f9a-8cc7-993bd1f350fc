@@ -1,0 +1,317 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "16256657-71ec-4f9a-8cc7-993bd1f350fc",
+  "messages": [
+    {
+      "id": "3788907",
+      "role": "user",
+      "status": "success",
+      "content": "package com.baidu.p2p.core.utils;\n\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport java.util.concurrent.ArrayBlockingQueue;\nimport java.util.concurrent.ExecutorService;\nimport java.util.concurrent.ThreadPoolExecutor;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.BlockingQueue;\nimport java.util.concurrent.ThreadFactory;\nimport java.util.concurrent.RejectedExecutionHandler;\nimport java.util.concurrent.Future;\nimport java.util.concurrent.Callable;\nimport java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;\n\nimport static java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;\n\n/**\n * 公用的线程池工具类\n * 优化点：\n * 1. 解决线程丢失问题\n * 2. 完善线程关闭机制\n * 3. 添加线程状态打印功能\n * 4. 实现核心与非核心线程分离\n * 5. 添加全局异常日志处理\n *\n * Created by anhuan on 16-8-23.\n * Optimized by [your name] on [date]\n */\npublic class NewThreadPoolExecutorUtil {\n    private static final Logger logger = LoggerFactory.getLogger(ThreadPoolExecutorUtil.class);\n\n    // 默认线程池参数\n    private static final int DEFAULT_CORE_POOL_SIZE = 10;\n    private static final int DEFAULT_MAX_POOL_SIZE = 20;\n    private static final int DEFAULT_QUEUE_SIZE = 1000;\n    private static final long KEEP_ALIVE_TIME = 5;\n    private static final TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.MINUTES;\n\n    // 单例线程池实例\n    private static ThreadPoolExecutor executor;\n    private static final AtomicBoolean isShutdown = new AtomicBoolean(false);\n\n    static {\n        // 初始化默认线程池\n        initDefaultExecutor();\n\n        // 注册JVM关闭钩子，优雅关闭线程池\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"JVM is shutting down, shutting down thread pool gracefully...\");\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n    }\n\n    /**\n     * 初始化默认线程池\n     */\n    private static void initDefaultExecutor() {\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(DEFAULT_QUEUE_SIZE);\n\n        // 使用自定义线程工厂，便于线程命名和追踪\n        ThreadFactory threadFactory = new NamedThreadFactory(\"default-pool-\");\n\n        // 使用自定义拒绝策略，增强日志记录\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        // 核心线程数与最大线程数分离\n        executor = new ThreadPoolExecutor(\n                DEFAULT_CORE_POOL_SIZE,\n                DEFAULT_MAX_POOL_SIZE,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 允许核心线程超时关闭，在负载低时释放资源\n        executor.allowCoreThreadTimeOut(false);\n\n        logger.info(\"Default thread pool initialized. Core size: {}, Max size: {}, Queue capacity: {}\",\n                DEFAULT_CORE_POOL_SIZE, DEFAULT_MAX_POOL_SIZE, DEFAULT_QUEUE_SIZE);\n    }\n\n    /**\n     * 获取默认线程池实例\n     */\n    public static synchronized ExecutorService getExecutorService() {\n        if (isShutdown.get()) {\n            logger.warn(\"Thread pool has been shut down, creating new instance...\");\n            initDefaultExecutor();\n            isShutdown.set(false);\n        }\n        return executor;\n    }\n\n    /**\n     * 创建自定义线程池\n     */\n    public static ThreadPoolExecutor createExecutorService(int corePoolSize, int maxPoolSize, int queueSize) {\n        return createExecutorService(corePoolSize, maxPoolSize, queueSize, \"custom-pool-\");\n    }\n\n    /**\n     * 创建自定义线程池，指定线程名称前缀\n     */\n    public static ThreadPoolExecutor createExecutorService(\n            int corePoolSize, int maxPoolSize, int queueSize, String threadNamePrefix) {\n\n        if (corePoolSize < 0 || maxPoolSize <= 0 || maxPoolSize < corePoolSize || queueSize <= 0) {\n            throw new IllegalArgumentException(\"Invalid thread pool parameters\");\n        }\n\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(queueSize);\n        ThreadFactory threadFactory = new NamedThreadFactory(threadNamePrefix);\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        ThreadPoolExecutor executor = new ThreadPoolExecutor(\n                corePoolSize,\n                maxPoolSize,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 注册关闭钩子\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"Shutting down custom thread pool: {}\", threadNamePrefix);\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n\n        logger.info(\"Custom thread pool created. Core size: {}, Max size: {}, Queue capacity: {}\",\n                corePoolSize, maxPoolSize, queueSize);\n\n        return executor;\n    }\n\n    /**\n     * 优雅关闭线程池\n     */\n    public static void shutdownExecutor(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null || executor.isTerminated()) {\n            return;\n        }\n\n        shutdownAndAwaitTermination(executor, timeout, unit);\n    }\n\n    /**\n     * 优雅关闭线程池并等待终止\n     */\n    private static void shutdownAndAwaitTermination(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null) {\n            return;\n        }\n\n        try {\n            // 首先尝试优雅关闭\n            executor.shutdown();\n\n            // 等待指定时间让任务完成\n            if (!executor.awaitTermination(timeout, unit)) {\n                // 如果超时，强制关闭\n                logger.warn(\"Thread pool did not terminate in time, forcing shutdown...\");\n                executor.shutdownNow();\n\n                // 等待强制关闭完成\n                if (!executor.awaitTermination(timeout, unit)) {\n                    logger.error(\"Thread pool still did not terminate after forced shutdown\");\n                }\n            }\n        } catch (InterruptedException ie) {\n            // 恢复中断状态\n            executor.shutdownNow();\n            Thread.currentThread().interrupt();\n        } finally {\n            isShutdown.set(true);\n        }\n    }\n\n    /**\n     * 打印线程池当前状态\n     */\n    public static void printThreadPoolStatus(ThreadPoolExecutor executor, String poolName) {\n        if (executor == null) {\n            logger.warn(\"ThreadPoolExecutor is null, cannot print status\");\n            return;\n        }\n\n        StringBuilder status = new StringBuilder();\n        status.append(\"ThreadPool [\").append(poolName).append(\"] Status: \")\n                .append(\"CorePoolSize=\").append(executor.getCorePoolSize()).append(\", \")\n                .append(\"PoolSize=\").append(executor.getPoolSize()).append(\", \")\n                .append(\"ActiveCount=\").append(executor.getActiveCount()).append(\", \")\n                .append(\"LargestPoolSize=\").append(executor.getLargestPoolSize()).append(\", \")\n                .append(\"TaskCount=\").append(executor.getTaskCount()).append(\", \")\n                .append(\"CompletedTaskCount=\").append(executor.getCompletedTaskCount()).append(\", \")\n                .append(\"QueueSize=\").append(executor.getQueue().size()).append(\", \")\n                .append(\"QueueRemainingCapacity=\").append(executor.getQueue().remainingCapacity()).append(\", \")\n                .append(\"IsShutdown=\").append(executor.isShutdown()).append(\", \")\n                .append(\"IsTerminating=\").append(executor.isTerminating()).append(\", \")\n                .append(\"IsTerminated=\").append(executor.isTerminated());\n\n        logger.info(status.toString());\n    }\n\n    /**\n     * 打印默认线程池状态\n     */\n    public static void printDefaultThreadPoolStatus() {\n        printThreadPoolStatus(executor, \"DefaultThreadPool\");\n    }\n\n    /**\n     * 提交任务并捕获异常\n     */\n    public static <T> Future<T> submit(ExecutorService executor, Callable<T> task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        return executor.submit(() -> {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n                throw e; // 允许调用者处理异常\n            }\n        });\n    }\n\n    /**\n     * 提交Runnable任务并捕获异常\n     */\n    public static void execute(ExecutorService executor, Runnable task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        executor.execute(() -> {\n            try {\n                task.run();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n            }\n        });\n    }\n\n    /**\n     * 自定义线程工厂，用于命名线程\n     */\n    private static class NamedThreadFactory implements ThreadFactory {\n        private final String prefix;\n        private final AtomicBoolean daemon;\n        private final ThreadGroup group;\n        private final AtomicInteger threadNumber = new AtomicInteger(1);\n\n        public NamedThreadFactory(String prefix) {\n            this(prefix, false);\n        }\n\n        public NamedThreadFactory(String prefix, boolean daemon) {\n            this.prefix = prefix;\n            this.daemon = new AtomicBoolean(daemon);\n            SecurityManager s = System.getSecurityManager();\n            this.group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();\n        }\n\n        @Override\n        public Thread newThread(Runnable r) {\n            // 包装Runnable，添加异常处理\n            Runnable wrappedRunnable = () -> {\n                try {\n                    r.run();\n                } catch (Exception e) {\n                    logger.error(\"Thread \" + Thread.currentThread().getName() + \" execution failed\", e);\n                }\n            };\n\n            Thread t = new Thread(group, wrappedRunnable,\n                    prefix + threadNumber.getAndIncrement(), 0);\n            t.setDaemon(daemon.get());\n            if (t.getPriority() != Thread.NORM_PRIORITY) {\n                t.setPriority(Thread.NORM_PRIORITY);\n            }\n            return t;\n        }\n    }\n\n    /**\n     * 带日志的拒绝策略\n     */\n    private static class LoggingCallerRunsPolicy extends CallerRunsPolicy {\n        @Override\n        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {\n            logger.warn(\"Task rejected. Thread pool is saturated. \" +\n                            \"Active threads: {}, Queue size: {}, Pool size: {}\",\n                    e.getActiveCount(), e.getQueue().size(), e.getPoolSize());\n\n            // 调用者运行策略，减缓提交速度\n            super.rejectedExecution(r, e);\n        }\n    }\n\n    // 防止实例化\n    private NewThreadPoolExecutorUtil() {\n        throw new AssertionError(\"Cannot instantiate ThreadPoolExecutorUtil\");\n    }\n}\n多个业务场景下使用线程池，有无bug,如果有风险给出解决方法",
+      "payload": {
+        "query": "package com.baidu.p2p.core.utils;\n\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport java.util.concurrent.ArrayBlockingQueue;\nimport java.util.concurrent.ExecutorService;\nimport java.util.concurrent.ThreadPoolExecutor;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.BlockingQueue;\nimport java.util.concurrent.ThreadFactory;\nimport java.util.concurrent.RejectedExecutionHandler;\nimport java.util.concurrent.Future;\nimport java.util.concurrent.Callable;\nimport java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;\n\nimport static java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;\n\n/**\n * 公用的线程池工具类\n * 优化点：\n * 1. 解决线程丢失问题\n * 2. 完善线程关闭机制\n * 3. 添加线程状态打印功能\n * 4. 实现核心与非核心线程分离\n * 5. 添加全局异常日志处理\n *\n * Created by anhuan on 16-8-23.\n * Optimized by [your name] on [date]\n */\npublic class NewThreadPoolExecutorUtil {\n    private static final Logger logger = LoggerFactory.getLogger(ThreadPoolExecutorUtil.class);\n\n    // 默认线程池参数\n    private static final int DEFAULT_CORE_POOL_SIZE = 10;\n    private static final int DEFAULT_MAX_POOL_SIZE = 20;\n    private static final int DEFAULT_QUEUE_SIZE = 1000;\n    private static final long KEEP_ALIVE_TIME = 5;\n    private static final TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.MINUTES;\n\n    // 单例线程池实例\n    private static ThreadPoolExecutor executor;\n    private static final AtomicBoolean isShutdown = new AtomicBoolean(false);\n\n    static {\n        // 初始化默认线程池\n        initDefaultExecutor();\n\n        // 注册JVM关闭钩子，优雅关闭线程池\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"JVM is shutting down, shutting down thread pool gracefully...\");\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n    }\n\n    /**\n     * 初始化默认线程池\n     */\n    private static void initDefaultExecutor() {\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(DEFAULT_QUEUE_SIZE);\n\n        // 使用自定义线程工厂，便于线程命名和追踪\n        ThreadFactory threadFactory = new NamedThreadFactory(\"default-pool-\");\n\n        // 使用自定义拒绝策略，增强日志记录\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        // 核心线程数与最大线程数分离\n        executor = new ThreadPoolExecutor(\n                DEFAULT_CORE_POOL_SIZE,\n                DEFAULT_MAX_POOL_SIZE,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 允许核心线程超时关闭，在负载低时释放资源\n        executor.allowCoreThreadTimeOut(false);\n\n        logger.info(\"Default thread pool initialized. Core size: {}, Max size: {}, Queue capacity: {}\",\n                DEFAULT_CORE_POOL_SIZE, DEFAULT_MAX_POOL_SIZE, DEFAULT_QUEUE_SIZE);\n    }\n\n    /**\n     * 获取默认线程池实例\n     */\n    public static synchronized ExecutorService getExecutorService() {\n        if (isShutdown.get()) {\n            logger.warn(\"Thread pool has been shut down, creating new instance...\");\n            initDefaultExecutor();\n            isShutdown.set(false);\n        }\n        return executor;\n    }\n\n    /**\n     * 创建自定义线程池\n     */\n    public static ThreadPoolExecutor createExecutorService(int corePoolSize, int maxPoolSize, int queueSize) {\n        return createExecutorService(corePoolSize, maxPoolSize, queueSize, \"custom-pool-\");\n    }\n\n    /**\n     * 创建自定义线程池，指定线程名称前缀\n     */\n    public static ThreadPoolExecutor createExecutorService(\n            int corePoolSize, int maxPoolSize, int queueSize, String threadNamePrefix) {\n\n        if (corePoolSize < 0 || maxPoolSize <= 0 || maxPoolSize < corePoolSize || queueSize <= 0) {\n            throw new IllegalArgumentException(\"Invalid thread pool parameters\");\n        }\n\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(queueSize);\n        ThreadFactory threadFactory = new NamedThreadFactory(threadNamePrefix);\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        ThreadPoolExecutor executor = new ThreadPoolExecutor(\n                corePoolSize,\n                maxPoolSize,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 注册关闭钩子\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"Shutting down custom thread pool: {}\", threadNamePrefix);\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n\n        logger.info(\"Custom thread pool created. Core size: {}, Max size: {}, Queue capacity: {}\",\n                corePoolSize, maxPoolSize, queueSize);\n\n        return executor;\n    }\n\n    /**\n     * 优雅关闭线程池\n     */\n    public static void shutdownExecutor(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null || executor.isTerminated()) {\n            return;\n        }\n\n        shutdownAndAwaitTermination(executor, timeout, unit);\n    }\n\n    /**\n     * 优雅关闭线程池并等待终止\n     */\n    private static void shutdownAndAwaitTermination(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null) {\n            return;\n        }\n\n        try {\n            // 首先尝试优雅关闭\n            executor.shutdown();\n\n            // 等待指定时间让任务完成\n            if (!executor.awaitTermination(timeout, unit)) {\n                // 如果超时，强制关闭\n                logger.warn(\"Thread pool did not terminate in time, forcing shutdown...\");\n                executor.shutdownNow();\n\n                // 等待强制关闭完成\n                if (!executor.awaitTermination(timeout, unit)) {\n                    logger.error(\"Thread pool still did not terminate after forced shutdown\");\n                }\n            }\n        } catch (InterruptedException ie) {\n            // 恢复中断状态\n            executor.shutdownNow();\n            Thread.currentThread().interrupt();\n        } finally {\n            isShutdown.set(true);\n        }\n    }\n\n    /**\n     * 打印线程池当前状态\n     */\n    public static void printThreadPoolStatus(ThreadPoolExecutor executor, String poolName) {\n        if (executor == null) {\n            logger.warn(\"ThreadPoolExecutor is null, cannot print status\");\n            return;\n        }\n\n        StringBuilder status = new StringBuilder();\n        status.append(\"ThreadPool [\").append(poolName).append(\"] Status: \")\n                .append(\"CorePoolSize=\").append(executor.getCorePoolSize()).append(\", \")\n                .append(\"PoolSize=\").append(executor.getPoolSize()).append(\", \")\n                .append(\"ActiveCount=\").append(executor.getActiveCount()).append(\", \")\n                .append(\"LargestPoolSize=\").append(executor.getLargestPoolSize()).append(\", \")\n                .append(\"TaskCount=\").append(executor.getTaskCount()).append(\", \")\n                .append(\"CompletedTaskCount=\").append(executor.getCompletedTaskCount()).append(\", \")\n                .append(\"QueueSize=\").append(executor.getQueue().size()).append(\", \")\n                .append(\"QueueRemainingCapacity=\").append(executor.getQueue().remainingCapacity()).append(\", \")\n                .append(\"IsShutdown=\").append(executor.isShutdown()).append(\", \")\n                .append(\"IsTerminating=\").append(executor.isTerminating()).append(\", \")\n                .append(\"IsTerminated=\").append(executor.isTerminated());\n\n        logger.info(status.toString());\n    }\n\n    /**\n     * 打印默认线程池状态\n     */\n    public static void printDefaultThreadPoolStatus() {\n        printThreadPoolStatus(executor, \"DefaultThreadPool\");\n    }\n\n    /**\n     * 提交任务并捕获异常\n     */\n    public static <T> Future<T> submit(ExecutorService executor, Callable<T> task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        return executor.submit(() -> {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n                throw e; // 允许调用者处理异常\n            }\n        });\n    }\n\n    /**\n     * 提交Runnable任务并捕获异常\n     */\n    public static void execute(ExecutorService executor, Runnable task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        executor.execute(() -> {\n            try {\n                task.run();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n            }\n        });\n    }\n\n    /**\n     * 自定义线程工厂，用于命名线程\n     */\n    private static class NamedThreadFactory implements ThreadFactory {\n        private final String prefix;\n        private final AtomicBoolean daemon;\n        private final ThreadGroup group;\n        private final AtomicInteger threadNumber = new AtomicInteger(1);\n\n        public NamedThreadFactory(String prefix) {\n            this(prefix, false);\n        }\n\n        public NamedThreadFactory(String prefix, boolean daemon) {\n            this.prefix = prefix;\n            this.daemon = new AtomicBoolean(daemon);\n            SecurityManager s = System.getSecurityManager();\n            this.group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();\n        }\n\n        @Override\n        public Thread newThread(Runnable r) {\n            // 包装Runnable，添加异常处理\n            Runnable wrappedRunnable = () -> {\n                try {\n                    r.run();\n                } catch (Exception e) {\n                    logger.error(\"Thread \" + Thread.currentThread().getName() + \" execution failed\", e);\n                }\n            };\n\n            Thread t = new Thread(group, wrappedRunnable,\n                    prefix + threadNumber.getAndIncrement(), 0);\n            t.setDaemon(daemon.get());\n            if (t.getPriority() != Thread.NORM_PRIORITY) {\n                t.setPriority(Thread.NORM_PRIORITY);\n            }\n            return t;\n        }\n    }\n\n    /**\n     * 带日志的拒绝策略\n     */\n    private static class LoggingCallerRunsPolicy extends CallerRunsPolicy {\n        @Override\n        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {\n            logger.warn(\"Task rejected. Thread pool is saturated. \" +\n                            \"Active threads: {}, Queue size: {}, Pool size: {}\",\n                    e.getActiveCount(), e.getQueue().size(), e.getPoolSize());\n\n            // 调用者运行策略，减缓提交速度\n            super.rejectedExecution(r, e);\n        }\n    }\n\n    // 防止实例化\n    private NewThreadPoolExecutorUtil() {\n        throw new AssertionError(\"Cannot instantiate ThreadPoolExecutorUtil\");\n    }\n}\n多个业务场景下使用线程池，有无bug,如果有风险给出解决方法",
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "agentId": 1,
+          "mcpServers": [],
+          "subAgentList": [
+            {
+              "mcpServers": [],
+              "name": "Zulu"
+            }
+          ]
+        },
+        "model": {
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 685095,
+        "sessionId": 8938808
+      }
+    },
+    {
+      "id": "7e7ad2db-6592-4c93-9646-b7362819fcc8",
+      "userMessageId": "3788907",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "8bbfd572-63ac-4487-b46e-50035f62687d",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将分析这个线程池工具类在不同业务场景下可能存在的风险，并提供改进建议。\n\n### 潜在风险分析：\n\n1. **单例线程池问题**：\n   - 静态单例线程池可能导致资源争用\n   - 当线程池被关闭后重新初始化时，可能导致任务丢失\n\n2. **队列容量风险**：\n   - 固定大小的队列(1000)在高并发场景下可能成为瓶颈\n   - 没有提供动态调整队列大小的机制\n\n3. **线程泄漏风险**：\n   - 虽然有关闭钩子，但没有处理任务超时机制\n   - 长时间运行的任务可能导致线程无法释放\n\n4. **监控不足**：\n   - 缺少JMX监控支持\n   - 没有提供线程池指标导出功能\n\n5. **异常处理**：\n   - 虽然包装了异常处理，但没有区分业务异常和系统异常\n\n### 改进建议：\n\n1. **单例模式改进**：\n```java\npublic static synchronized ExecutorService getExecutorService() {\n    if (executor == null || executor.isShutdown()) {  // 不仅检查shutdown状态\n        logger.warn(\"Thread pool is not available, creating new instance...\");\n        initDefaultExecutor();\n    }\n    return executor;\n}\n```\n\n2. **增加动态配置**：\n```java\n// 添加动态调整方法\npublic static synchronized void adjustPoolSize(int coreSize, int maxSize) {\n    if (executor != null && !executor.isShutdown()) {\n        executor.setCorePoolSize(coreSize);\n        executor.setMaximumPoolSize(maxSize);\n    }\n}\n```\n\n3. **增强监控**：\n```java\n// 添加JMX支持\nprivate static void registerMBean(ThreadPoolExecutor executor) {\n    try {\n        ManagementFactory.getPlatformMBeanServer().registerMBean(\n            new ThreadPoolMXBean(executor),\n            new ObjectName(\"com.baidu.p2p.core.utils:type=ThreadPool\")\n        );\n    } catch (Exception e) {\n        logger.error(\"Failed to register MBean\", e);\n    }\n}\n```\n\n4. **任务超时控制**：\n```java\npublic static <T> Future<T> submitWithTimeout(ExecutorService executor, \n    Callable<T> task, long timeout, TimeUnit unit) {\n    FutureTask<T> future = new FutureTask<>(task);\n    executor.execute(future);\n    \n    try {\n        return future.get(timeout, unit);\n    } catch (TimeoutException e) {\n        future.cancel(true);\n        throw new RuntimeException(\"Task timed out\", e);\n    } catch (Exception e) {\n        throw new RuntimeException(\"Task failed\", e);\n    }\n}\n```\n\n5. **队列改进**：\n```java\n// 使用可监控的阻塞队列\npublic static class MonitoredBlockingQueue<E> extends ArrayBlockingQueue<E> {\n    private final AtomicLong rejectedCount = new AtomicLong(0);\n    \n    public MonitoredBlockingQueue(int capacity) {\n        super(capacity);\n    }\n    \n    @Override\n    public boolean offer(E e) {\n        boolean offered = super.offer(e);\n        if (!offered) {\n            rejectedCount.incrementAndGet();\n        }\n        return offered;\n    }\n    \n    public long getRejectedCount() {\n        return rejectedCount.get();\n    }\n}\n```\n\n### 业务场景建议：\n\n1. **高并发场景**：\n   - 建议使用多个专用线程池而非全局共享\n   - 为不同业务类型创建隔离的线程池\n\n2. **定时任务场景**：\n   - 建议使用ScheduledThreadPoolExecutor替代\n   - 添加任务周期监控\n\n3. **长任务场景**：\n   - 设置合理的任务超时时间\n   - 添加任务进度监控\n\n4. **关键任务场景**：\n   - 实现任务持久化机制\n   - 添加任务重试策略\n\n需要我进一步分析某个具体业务场景下的使用方式吗？或者您希望我对代码进行具体修改？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "3789939",
+      "role": "user",
+      "status": "success",
+      "content": "设置合理的任务超时时间\n添加任务进度监控，这个我要怎么改",
+      "payload": {
+        "query": "设置合理的任务超时时间\n添加任务进度监控，这个我要怎么改",
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "agentId": 1,
+          "mcpServers": [],
+          "subAgentList": [
+            {
+              "mcpServers": [],
+              "name": "Zulu"
+            }
+          ]
+        },
+        "model": {
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 685095,
+        "sessionId": 8938808
+      }
+    },
+    {
+      "id": "529297b6-b31d-4485-8abf-80b12a47d7c9",
+      "userMessageId": "3789939",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "923d8baa-8ba6-4eaf-935f-3df0d0b7649f",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您修改线程池工具类，添加任务超时控制和进度监控功能。以下是具体实现方案：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": 3789939,
+          "type": "TODO",
+          "content": "\n- [ ] 1. 添加任务超时控制机制\n- [ ] 2. 实现任务进度监控接口\n- [ ] 3. 修改线程池工具类集成新功能\n",
+          "elements": [
+            {
+              "title": "添加任务超时控制机制",
+              "children": []
+            },
+            {
+              "title": "实现任务进度监控接口",
+              "children": []
+            },
+            {
+              "title": "修改线程池工具类集成新功能",
+              "children": []
+            }
+          ],
+          "status": "success",
+          "parentMessageId": ""
+        },
+        {
+          "id": "b6f4002a-0af0-4dc1-a210-25e52c4d0986",
+          "type": "TEXT",
+          "status": "success",
+          "content": "\n\n首先，我将添加一个可监控的任务包装器类：\n\n```java\n/**\n * 可监控的任务包装器\n */\npublic class MonitoredTask<T> implements Runnable, Callable<T> {\n    private final Callable<T> task;\n    private volatile int progress;\n    private volatile String status;\n    private volatile long startTime;\n    private volatile long timeout;\n    \n    public MonitoredTask(Callable<T> task, long timeout) {\n        this.task = task;\n        this.timeout = timeout;\n        this.progress = 0;\n        this.status = \"PENDING\";\n    }\n    \n    public void updateProgress(int progress, String status) {\n        this.progress = progress;\n        this.status = status;\n    }\n    \n    public int getProgress() {\n        return progress;\n    }\n    \n    public String getStatus() {\n        return status;\n    }\n    \n    public long getElapsedTime() {\n        return System.currentTimeMillis() - startTime;\n    }\n    \n    public long getRemainingTime() {\n        return timeout - getElapsedTime();\n    }\n    \n    @Override\n    public T call() throws Exception {\n        startTime = System.currentTimeMillis();\n        status = \"RUNNING\";\n        \n        FutureTask<T> future = new FutureTask<>(task);\n        Thread taskThread = new Thread(future);\n        taskThread.start();\n        \n        try {\n            return future.get(timeout, TimeUnit.MILLISECONDS);\n        } catch (TimeoutException e) {\n            future.cancel(true);\n            status = \"TIMEOUT\";\n            throw new TimeoutException(\"Task timed out after \" + timeout + \"ms\");\n        } catch (Exception e) {\n            status = \"FAILED\";\n            throw e;\n        } finally {\n            status = \"COMPLETED\";\n        }\n    }\n    \n    @Override\n    public void run() {\n        try {\n            call();\n        } catch (Exception e) {\n            throw new RuntimeException(e);\n        }\n    }\n}\n```\n\n接下来，我将修改线程池工具类，添加相关方法：\n\n```java\n// 在NewThreadPoolExecutorUtil类中添加以下方法\n\n/**\n * 提交带监控和超时的任务\n */\npublic static <T> MonitoredTask<T> submitMonitoredTask(\n        ExecutorService executor, \n        Callable<T> task,\n        long timeout,\n        TimeUnit unit) {\n    \n    MonitoredTask<T> monitoredTask = new MonitoredTask<>(task, unit.toMillis(timeout));\n    executor.execute(monitoredTask);\n    return monitoredTask;\n}\n\n/**\n * 获取任务监控信息\n */\npublic static <T> String getTaskStatus(MonitoredTask<T> task) {\n    return String.format(\n        \"Status: %s, Progress: %d%%, Elapsed: %dms, Remaining: %dms\",\n        task.getStatus(),\n        task.getProgress(),\n        task.getElapsedTime(),\n        task.getRemainingTime()\n    );\n}\n\n/**\n * 更新任务进度\n */\npublic static <T> void updateTaskProgress(MonitoredTask<T> task, int progress, String status) {\n    task.updateProgress(progress, status);\n}\n```\n\n使用方法示例：\n\n```java\n// 提交带监控的任务\nMonitoredTask<String> task = NewThreadPoolExecutorUtil.submitMonitoredTask(\n    executor,\n    () -> {\n        // 在任务中更新进度\n        for (int i = 0; i <= 100; i++) {\n            Thread.sleep(100);\n            NewThreadPoolExecutorUtil.updateTaskProgress(task, i, \"Processing item \" + i);\n        }\n        return \"Done\";\n    },\n    10, // 10秒超时\n    TimeUnit.SECONDS\n);\n\n// 在其他线程中监控任务状态\nwhile (!task.getStatus().equals(\"COMPLETED\")) {\n    System.out.println(NewThreadPoolExecutorUtil.getTaskStatus(task));\n    Thread.sleep(1000);\n}\n```\n\n这个实现提供了：\n1. 精确的任务超时控制\n2. 实时进度监控\n3. 任务状态跟踪\n4. 剩余时间估算\n\n需要我继续实现其他改进点吗？或者您希望对现有代码进行其他调整？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "3790246",
+      "role": "user",
+      "status": "success",
+      "content": "帮我优化下",
+      "payload": {
+        "query": "帮我优化下",
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "agentId": 1,
+          "mcpServers": [],
+          "subAgentList": [
+            {
+              "mcpServers": [],
+              "name": "Zulu"
+            }
+          ]
+        },
+        "model": {
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "knowledgeList": [
+          {
+            "id": "tms-core/src/main/java/com/baidu/p2p/core/utils/NewThreadPoolExecutorUtil.java#32-32",
+            "type": "CODE_SELECTION",
+            "name": "NewThreadPoolExecutorUtil.java",
+            "selection": [
+              32,
+              32
+            ],
+            "content": "NewThreadPoolExecutorUtil",
+            "filePath": "tms-core/src/main/java/com/baidu/p2p/core/utils/NewThreadPoolExecutorUtil.java"
+          }
+        ]
+      },
+      "context": {
+        "conversationId": 685095,
+        "sessionId": 8938808
+      }
+    },
+    {
+      "id": "71d01059-a915-4f88-a025-e7555b6906bc",
+      "userMessageId": "3790246",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "586de639-3d79-4d93-b5c8-fc4deda7b294",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您优化 `NewThreadPoolExecutorUtil` 类，首先需要查看完整文件内容以便进行针对性优化。请允许我先读取文件内容：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "b04e5b3c-6490-43e9-8fa4-2ee067c8e3d6",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "read_file",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "tms-core/src/main/java/com/baidu/p2p/core/utils/NewThreadPoolExecutorUtil.java"
+          },
+          "displayResult": {
+            "lineCount": 315,
+            "readFile": {
+              "path": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/tms-core/src/main/java/com/baidu/p2p/core/utils/NewThreadPoolExecutorUtil.java",
+              "startLine": 1,
+              "endLine": 315
+            }
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "read_file",
+              "type": "tool_use",
+              "params": {
+                "path": "tms-core/src/main/java/com/baidu/p2p/core/utils/NewThreadPoolExecutorUtil.java"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": {
+                "content": "package com.baidu.p2p.core.utils;\n\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport java.util.concurrent.ArrayBlockingQueue;\nimport java.util.concurrent.ExecutorService;\nimport java.util.concurrent.ThreadPoolExecutor;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.BlockingQueue;\nimport java.util.concurrent.ThreadFactory;\nimport java.util.concurrent.RejectedExecutionHandler;\nimport java.util.concurrent.Future;\nimport java.util.concurrent.Callable;\nimport java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;\n\nimport static java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;\n\n/**\n * 公用的线程池工具类\n * 优化点：\n * 1. 解决线程丢失问题\n * 2. 完善线程关闭机制\n * 3. 添加线程状态打印功能\n * 4. 实现核心与非核心线程分离\n * 5. 添加全局异常日志处理\n *\n * Created by anhuan on 16-8-23.\n * Optimized by [your name] on [date]\n */\npublic class NewThreadPoolExecutorUtil {\n    private static final Logger logger = LoggerFactory.getLogger(ThreadPoolExecutorUtil.class);\n\n    // 默认线程池参数\n    private static final int DEFAULT_CORE_POOL_SIZE = 10;\n    private static final int DEFAULT_MAX_POOL_SIZE = 20;\n    private static final int DEFAULT_QUEUE_SIZE = 1000;\n    private static final long KEEP_ALIVE_TIME = 5;\n    private static final TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.MINUTES;\n\n    // 单例线程池实例\n    private static ThreadPoolExecutor executor;\n    private static final AtomicBoolean isShutdown = new AtomicBoolean(false);\n\n    static {\n        // 初始化默认线程池\n        initDefaultExecutor();\n\n        // 注册JVM关闭钩子，优雅关闭线程池\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"JVM is shutting down, shutting down thread pool gracefully...\");\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n    }\n\n    /**\n     * 初始化默认线程池\n     */\n    private static void initDefaultExecutor() {\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(DEFAULT_QUEUE_SIZE);\n\n        // 使用自定义线程工厂，便于线程命名和追踪\n        ThreadFactory threadFactory = new NamedThreadFactory(\"default-pool-\");\n\n        // 使用自定义拒绝策略，增强日志记录\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        // 核心线程数与最大线程数分离\n        executor = new ThreadPoolExecutor(\n                DEFAULT_CORE_POOL_SIZE,\n                DEFAULT_MAX_POOL_SIZE,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 允许核心线程超时关闭，在负载低时释放资源\n        executor.allowCoreThreadTimeOut(false);\n\n        logger.info(\"Default thread pool initialized. Core size: {}, Max size: {}, Queue capacity: {}\",\n                DEFAULT_CORE_POOL_SIZE, DEFAULT_MAX_POOL_SIZE, DEFAULT_QUEUE_SIZE);\n    }\n\n    /**\n     * 获取默认线程池实例\n     */\n    public static synchronized ExecutorService getExecutorService() {\n        if (executor == null || executor.isShutdown()) {\n            logger.warn(\"Thread pool is not available, creating new instance...\");\n            initDefaultExecutor();\n        }\n        return executor;\n    }\n\n    /**\n     * 创建自定义线程池\n     */\n    public static ThreadPoolExecutor createExecutorService(int corePoolSize, int maxPoolSize, int queueSize) {\n        return createExecutorService(corePoolSize, maxPoolSize, queueSize, \"custom-pool-\");\n    }\n\n    /**\n     * 创建自定义线程池，指定线程名称前缀\n     */\n    public static ThreadPoolExecutor createExecutorService(\n            int corePoolSize, int maxPoolSize, int queueSize, String threadNamePrefix) {\n\n        if (corePoolSize < 0 || maxPoolSize <= 0 || maxPoolSize < corePoolSize || queueSize <= 0) {\n            throw new IllegalArgumentException(\"Invalid thread pool parameters\");\n        }\n\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(queueSize);\n        ThreadFactory threadFactory = new NamedThreadFactory(threadNamePrefix);\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        ThreadPoolExecutor executor = new ThreadPoolExecutor(\n                corePoolSize,\n                maxPoolSize,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 注册关闭钩子\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"Shutting down custom thread pool: {}\", threadNamePrefix);\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n\n        logger.info(\"Custom thread pool created. Core size: {}, Max size: {}, Queue capacity: {}\",\n                corePoolSize, maxPoolSize, queueSize);\n\n        return executor;\n    }\n\n    /**\n     * 优雅关闭线程池\n     */\n    public static void shutdownExecutor(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null || executor.isTerminated()) {\n            return;\n        }\n\n        shutdownAndAwaitTermination(executor, timeout, unit);\n    }\n\n    /**\n     * 优雅关闭线程池并等待终止\n     */\n    private static void shutdownAndAwaitTermination(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null) {\n            return;\n        }\n\n        try {\n            // 首先尝试优雅关闭\n            executor.shutdown();\n\n            // 等待指定时间让任务完成\n            if (!executor.awaitTermination(timeout, unit)) {\n                // 如果超时，强制关闭\n                logger.warn(\"Thread pool did not terminate in time, forcing shutdown...\");\n                executor.shutdownNow();\n\n                // 等待强制关闭完成\n                if (!executor.awaitTermination(timeout, unit)) {\n                    logger.error(\"Thread pool still did not terminate after forced shutdown\");\n                }\n            }\n        } catch (InterruptedException ie) {\n            // 恢复中断状态\n            executor.shutdownNow();\n            Thread.currentThread().interrupt();\n        } finally {\n            isShutdown.set(true);\n        }\n    }\n\n    /**\n     * 打印线程池当前状态\n     */\n    public static void printThreadPoolStatus(ThreadPoolExecutor executor, String poolName) {\n        if (executor == null) {\n            logger.warn(\"ThreadPoolExecutor is null, cannot print status\");\n            return;\n        }\n\n        StringBuilder status = new StringBuilder();\n        status.append(\"ThreadPool [\").append(poolName).append(\"] Status: \")\n                .append(\"CorePoolSize=\").append(executor.getCorePoolSize()).append(\", \")\n                .append(\"PoolSize=\").append(executor.getPoolSize()).append(\", \")\n                .append(\"ActiveCount=\").append(executor.getActiveCount()).append(\", \")\n                .append(\"LargestPoolSize=\").append(executor.getLargestPoolSize()).append(\", \")\n                .append(\"TaskCount=\").append(executor.getTaskCount()).append(\", \")\n                .append(\"CompletedTaskCount=\").append(executor.getCompletedTaskCount()).append(\", \")\n                .append(\"QueueSize=\").append(executor.getQueue().size()).append(\", \")\n                .append(\"QueueRemainingCapacity=\").append(executor.getQueue().remainingCapacity()).append(\", \")\n                .append(\"IsShutdown=\").append(executor.isShutdown()).append(\", \")\n                .append(\"IsTerminating=\").append(executor.isTerminating()).append(\", \")\n                .append(\"IsTerminated=\").append(executor.isTerminated());\n\n        logger.info(status.toString());\n    }\n\n    /**\n     * 打印默认线程池状态\n     */\n    public static void printDefaultThreadPoolStatus() {\n        printThreadPoolStatus(executor, \"DefaultThreadPool\");\n    }\n\n    /**\n     * 提交任务并捕获异常\n     */\n    public static <T> Future<T> submit(ExecutorService executor, Callable<T> task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        return executor.submit(() -> {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n                throw e; // 允许调用者处理异常\n            }\n        });\n    }\n\n    /**\n     * 提交Runnable任务并捕获异常\n     */\n    public static void execute(ExecutorService executor, Runnable task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        executor.execute(() -> {\n            try {\n                task.run();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n            }\n        });\n    }\n\n    /**\n     * 自定义线程工厂，用于命名线程\n     */\n    private static class NamedThreadFactory implements ThreadFactory {\n        private final String prefix;\n        private final AtomicBoolean daemon;\n        private final ThreadGroup group;\n        private final AtomicInteger threadNumber = new AtomicInteger(1);\n\n        public NamedThreadFactory(String prefix) {\n            this(prefix, false);\n        }\n\n        public NamedThreadFactory(String prefix, boolean daemon) {\n            this.prefix = prefix;\n            this.daemon = new AtomicBoolean(daemon);\n            SecurityManager s = System.getSecurityManager();\n            this.group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();\n        }\n\n        @Override\n        public Thread newThread(Runnable r) {\n            // 包装Runnable，添加异常处理\n            Runnable wrappedRunnable = () -> {\n                try {\n                    r.run();\n                } catch (Exception e) {\n                    logger.error(\"Thread \" + Thread.currentThread().getName() + \" execution failed\", e);\n                }\n            };\n\n            Thread t = new Thread(group, wrappedRunnable,\n                    prefix + threadNumber.getAndIncrement(), 0);\n            t.setDaemon(daemon.get());\n            if (t.getPriority() != Thread.NORM_PRIORITY) {\n                t.setPriority(Thread.NORM_PRIORITY);\n            }\n            return t;\n        }\n    }\n\n    /**\n     * 带日志的拒绝策略\n     */\n    private static class LoggingCallerRunsPolicy extends CallerRunsPolicy {\n        @Override\n        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {\n            logger.warn(\"Task rejected. Thread pool is saturated. \" +\n                            \"Active threads: {}, Queue size: {}, Pool size: {}\",\n                    e.getActiveCount(), e.getQueue().size(), e.getPoolSize());\n\n            // 调用者运行策略，减缓提交速度\n            super.rejectedExecution(r, e);\n        }\n    }\n\n    // 防止实例化\n    private NewThreadPoolExecutorUtil() {\n        throw new AssertionError(\"Cannot instantiate ThreadPoolExecutorUtil\");\n    }\n}\n",
+                "line_count": 315,
+                "start_line": 1,
+                "end_line": 315
+              }
+            }
+          },
+          "params": {
+            "path": "tms-core/src/main/java/com/baidu/p2p/core/utils/NewThreadPoolExecutorUtil.java"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "c11b3a40-5bad-4e87-88e0-e320997ef76d",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您优化 `NewThreadPoolExecutorUtil` 类，以下是具体的优化方案和实施步骤：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": 3790264,
+          "type": "TODO",
+          "content": "\n- [ ] 1. 增强线程池配置灵活性\n- [ ] 2. 添加任务监控和超时控制\n- [ ] 3. 改进异常处理和资源管理\n- [ ] 4. 添加JMX监控支持\n",
+          "elements": [
+            {
+              "title": "增强线程池配置灵活性",
+              "children": []
+            },
+            {
+              "title": "添加任务监控和超时控制",
+              "children": []
+            },
+            {
+              "title": "改进异常处理和资源管理",
+              "children": []
+            },
+            {
+              "title": "添加JMX监控支持",
+              "children": []
+            }
+          ],
+          "status": "success",
+          "parentMessageId": ""
+        },
+        {
+          "id": "e65cb6e7-ce06-40e2-b334-b68b53272a5d",
+          "type": "TEXT",
+          "status": "success",
+          "content": "\n\n首先，我将添加任务监控和超时控制功能：\n\n```java\n// 在NewThreadPoolExecutorUtil类中添加以下代码\n\n/**\n * 带监控信息的任务包装器\n */\npublic static class MonitoredTask<T> implements Callable<T> {\n    private final Callable<T> task;\n    private volatile String status = \"PENDING\";\n    private volatile int progress;\n    private volatile long startTime;\n    private final long timeoutMillis;\n    \n    public MonitoredTask(Callable<T> task, long timeout, TimeUnit unit) {\n        this.task = task;\n        this.timeoutMillis = unit.toMillis(timeout);\n    }\n    \n    public void updateProgress(int progress, String status) {\n        this.progress = progress;\n        this.status = status;\n    }\n    \n    public String getStatus() {\n        return status;\n    }\n    \n    public int getProgress() {\n        return progress;\n    }\n    \n    public long getElapsedTime() {\n        return System.currentTimeMillis() - startTime;\n    }\n    \n    @Override\n    public T call() throws Exception {\n        startTime = System.currentTimeMillis();\n        status = \"RUNNING\";\n        \n        FutureTask<T> future = new FutureTask<>(task);\n        Thread taskThread = new Thread(future);\n        taskThread.start();\n        \n        try {\n            return future.get(timeoutMillis, TimeUnit.MILLISECONDS);\n        } catch (TimeoutException e) {\n            future.cancel(true);\n            status = \"TIMEOUT\";\n            throw new TimeoutException(\"Task timed out after \" + timeoutMillis + \"ms\");\n        } finally {\n            if (!\"TIMEOUT\".equals(status)) {\n                status = \"COMPLETED\";\n            }\n        }\n    }\n}\n\n/**\n * 提交带监控的任务\n */\npublic static <T> MonitoredTask<T> submitMonitoredTask(\n        ExecutorService executor, \n        Callable<T> task,\n        long timeout,\n        TimeUnit unit) {\n    \n    MonitoredTask<T> monitoredTask = new MonitoredTask<>(task, timeout, unit);\n    executor.execute(() -> {\n        try {\n            monitoredTask.call();\n        } catch (Exception e) {\n            logger.error(\"Monitored task execution failed\", e);\n        }\n    });\n    return monitoredTask;\n}\n```\n\n接下来，我将添加JMX监控支持：\n\n```java\n// 在类中添加JMX相关代码\npublic interface ThreadPoolMXBean {\n    int getCorePoolSize();\n    int getMaximumPoolSize();\n    int getActiveCount();\n    long getTaskCount();\n    String getStatus();\n}\n\nprivate static class ThreadPoolMonitor implements ThreadPoolMXBean {\n    private final ThreadPoolExecutor executor;\n    \n    public ThreadPoolMonitor(ThreadPoolExecutor executor) {\n        this.executor = executor;\n    }\n    \n    @Override public int getCorePoolSize() { return executor.getCorePoolSize(); }\n    @Override public int getMaximumPoolSize() { return executor.getMaximumPoolSize(); }\n    @Override public int getActiveCount() { return executor.getActiveCount(); }\n    @Override public long getTaskCount() { return executor.getTaskCount(); }\n    @Override public String getStatus() { \n        return executor.isShutdown() ? \"SHUTDOWN\" : \"RUNNING\";\n    }\n}\n\nprivate static void registerMBean(ThreadPoolExecutor executor) {\n    try {\n        ManagementFactory.getPlatformMBeanServer().registerMBean(\n            new ThreadPoolMonitor(executor),\n            new ObjectName(\"com.baidu.p2p.core.utils:type=ThreadPool\")\n        );\n    } catch (Exception e) {\n        logger.error(\"Failed to register MBean\", e);\n    }\n}\n\n// 在initDefaultExecutor方法末尾添加\nregisterMBean(executor);\n```\n\n最后，我将改进线程池配置灵活性：\n\n```java\n// 添加动态配置方法\npublic static synchronized void adjustThreadPool(\n    int corePoolSize, \n    int maxPoolSize, \n    long keepAliveTime, \n    TimeUnit unit) {\n    \n    if (executor != null && !executor.isShutdown()) {\n        executor.setCorePoolSize(corePoolSize);\n        executor.setMaximumPoolSize(maxPoolSize);\n        executor.setKeepAliveTime(keepAliveTime, unit);\n        logger.info(\"Thread pool adjusted: core={}, max={}, keepAlive={}{}\",\n            corePoolSize, maxPoolSize, keepAliveTime, unit);\n    }\n}\n```\n\n这些优化提供了：\n1. 任务级监控和超时控制\n2. JMX管理接口\n3. 运行时动态配置\n4. 更完善的异常处理\n\n需要我继续实现其他优化点吗？或者您希望我对特定部分进行更详细的修改？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "package com.baidu.p2p.core.utils;\n\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport java.util.concurrent.ArrayBlockingQueue;\nimport java.util.concurrent.ExecutorService;\nimport java.util.concurrent.ThreadPoolExecutor;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.BlockingQueue;\nimport java.util.concurrent.ThreadFactory;\nimport java.util.concurrent.RejectedExecutionHandler;\nimport java.util.concurrent.Future;\nimport java.util.concurrent.Callable;\nimport java.util.concurrent.atomic.AtomicBoolean;\nimport java.util.concurrent.atomic.AtomicInteger;\n\nimport static java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;\n\n/**\n * 公用的线程池工具类\n * 优化点：\n * 1. 解决线程丢失问题\n * 2. 完善线程关闭机制\n * 3. 添加线程状态打印功能\n * 4. 实现核心与非核心线程分离\n * 5. 添加全局异常日志处理\n *\n * Created by anhuan on 16-8-23.\n * Optimized by [your name] on [date]\n */\npublic class NewThreadPoolExecutorUtil {\n    private static final Logger logger = LoggerFactory.getLogger(ThreadPoolExecutorUtil.class);\n\n    // 默认线程池参数\n    private static final int DEFAULT_CORE_POOL_SIZE = 10;\n    private static final int DEFAULT_MAX_POOL_SIZE = 20;\n    private static final int DEFAULT_QUEUE_SIZE = 1000;\n    private static final long KEEP_ALIVE_TIME = 5;\n    private static final TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.MINUTES;\n\n    // 单例线程池实例\n    private static ThreadPoolExecutor executor;\n    private static final AtomicBoolean isShutdown = new AtomicBoolean(false);\n\n    static {\n        // 初始化默认线程池\n        initDefaultExecutor();\n\n        // 注册JVM关闭钩子，优雅关闭线程池\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"JVM is shutting down, shutting down thread pool gracefully...\");\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n    }\n\n    /**\n     * 初始化默认线程池\n     */\n    private static void initDefaultExecutor() {\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(DEFAULT_QUEUE_SIZE);\n\n        // 使用自定义线程工厂，便于线程命名和追踪\n        ThreadFactory threadFactory = new NamedThreadFactory(\"default-pool-\");\n\n        // 使用自定义拒绝策略，增强日志记录\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        // 核心线程数与最大线程数分离\n        executor = new ThreadPoolExecutor(\n                DEFAULT_CORE_POOL_SIZE,\n                DEFAULT_MAX_POOL_SIZE,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 允许核心线程超时关闭，在负载低时释放资源\n        executor.allowCoreThreadTimeOut(false);\n\n        logger.info(\"Default thread pool initialized. Core size: {}, Max size: {}, Queue capacity: {}\",\n                DEFAULT_CORE_POOL_SIZE, DEFAULT_MAX_POOL_SIZE, DEFAULT_QUEUE_SIZE);\n    }\n\n    /**\n     * 获取默认线程池实例\n     */\n    public static synchronized ExecutorService getExecutorService() {\n        if (isShutdown.get()) {\n            logger.warn(\"Thread pool has been shut down, creating new instance...\");\n            initDefaultExecutor();\n            isShutdown.set(false);\n        }\n        return executor;\n    }\n\n    /**\n     * 创建自定义线程池\n     */\n    public static ThreadPoolExecutor createExecutorService(int corePoolSize, int maxPoolSize, int queueSize) {\n        return createExecutorService(corePoolSize, maxPoolSize, queueSize, \"custom-pool-\");\n    }\n\n    /**\n     * 创建自定义线程池，指定线程名称前缀\n     */\n    public static ThreadPoolExecutor createExecutorService(\n            int corePoolSize, int maxPoolSize, int queueSize, String threadNamePrefix) {\n\n        if (corePoolSize < 0 || maxPoolSize <= 0 || maxPoolSize < corePoolSize || queueSize <= 0) {\n            throw new IllegalArgumentException(\"Invalid thread pool parameters\");\n        }\n\n        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(queueSize);\n        ThreadFactory threadFactory = new NamedThreadFactory(threadNamePrefix);\n        RejectedExecutionHandler rejectedHandler = new LoggingCallerRunsPolicy();\n\n        ThreadPoolExecutor executor = new ThreadPoolExecutor(\n                corePoolSize,\n                maxPoolSize,\n                KEEP_ALIVE_TIME,\n                KEEP_ALIVE_TIME_UNIT,\n                queue,\n                threadFactory,\n                rejectedHandler\n        );\n\n        // 注册关闭钩子\n        Runtime.getRuntime().addShutdownHook(new Thread(() -> {\n            logger.info(\"Shutting down custom thread pool: {}\", threadNamePrefix);\n            shutdownAndAwaitTermination(executor, 30, TimeUnit.SECONDS);\n        }));\n\n        logger.info(\"Custom thread pool created. Core size: {}, Max size: {}, Queue capacity: {}\",\n                corePoolSize, maxPoolSize, queueSize);\n\n        return executor;\n    }\n\n    /**\n     * 优雅关闭线程池\n     */\n    public static void shutdownExecutor(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null || executor.isTerminated()) {\n            return;\n        }\n\n        shutdownAndAwaitTermination(executor, timeout, unit);\n    }\n\n    /**\n     * 优雅关闭线程池并等待终止\n     */\n    private static void shutdownAndAwaitTermination(ExecutorService executor, long timeout, TimeUnit unit) {\n        if (executor == null) {\n            return;\n        }\n\n        try {\n            // 首先尝试优雅关闭\n            executor.shutdown();\n\n            // 等待指定时间让任务完成\n            if (!executor.awaitTermination(timeout, unit)) {\n                // 如果超时，强制关闭\n                logger.warn(\"Thread pool did not terminate in time, forcing shutdown...\");\n                executor.shutdownNow();\n\n                // 等待强制关闭完成\n                if (!executor.awaitTermination(timeout, unit)) {\n                    logger.error(\"Thread pool still did not terminate after forced shutdown\");\n                }\n            }\n        } catch (InterruptedException ie) {\n            // 恢复中断状态\n            executor.shutdownNow();\n            Thread.currentThread().interrupt();\n        } finally {\n            isShutdown.set(true);\n        }\n    }\n\n    /**\n     * 打印线程池当前状态\n     */\n    public static void printThreadPoolStatus(ThreadPoolExecutor executor, String poolName) {\n        if (executor == null) {\n            logger.warn(\"ThreadPoolExecutor is null, cannot print status\");\n            return;\n        }\n\n        StringBuilder status = new StringBuilder();\n        status.append(\"ThreadPool [\").append(poolName).append(\"] Status: \")\n                .append(\"CorePoolSize=\").append(executor.getCorePoolSize()).append(\", \")\n                .append(\"PoolSize=\").append(executor.getPoolSize()).append(\", \")\n                .append(\"ActiveCount=\").append(executor.getActiveCount()).append(\", \")\n                .append(\"LargestPoolSize=\").append(executor.getLargestPoolSize()).append(\", \")\n                .append(\"TaskCount=\").append(executor.getTaskCount()).append(\", \")\n                .append(\"CompletedTaskCount=\").append(executor.getCompletedTaskCount()).append(\", \")\n                .append(\"QueueSize=\").append(executor.getQueue().size()).append(\", \")\n                .append(\"QueueRemainingCapacity=\").append(executor.getQueue().remainingCapacity()).append(\", \")\n                .append(\"IsShutdown=\").append(executor.isShutdown()).append(\", \")\n                .append(\"IsTerminating=\").append(executor.isTerminating()).append(\", \")\n                .append(\"IsTerminated=\").append(executor.isTerminated());\n\n        logger.info(status.toString());\n    }\n\n    /**\n     * 打印默认线程池状态\n     */\n    public static void printDefaultThreadPoolStatus() {\n        printThreadPoolStatus(executor, \"DefaultThreadPool\");\n    }\n\n    /**\n     * 提交任务并捕获异常\n     */\n    public static <T> Future<T> submit(ExecutorService executor, Callable<T> task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        return executor.submit(() -> {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n                throw e; // 允许调用者处理异常\n            }\n        });\n    }\n\n    /**\n     * 提交Runnable任务并捕获异常\n     */\n    public static void execute(ExecutorService executor, Runnable task) {\n        if (executor == null || task == null) {\n            throw new IllegalArgumentException(\"Executor and task cannot be null\");\n        }\n\n        // 包装任务，添加异常处理\n        executor.execute(() -> {\n            try {\n                task.run();\n            } catch (Exception e) {\n                logger.error(\"Task execution failed\", e);\n            }\n        });\n    }\n\n    /**\n     * 自定义线程工厂，用于命名线程\n     */\n    private static class NamedThreadFactory implements ThreadFactory {\n        private final String prefix;\n        private final AtomicBoolean daemon;\n        private final ThreadGroup group;\n        private final AtomicInteger threadNumber = new AtomicInteger(1);\n\n        public NamedThreadFactory(String prefix) {\n            this(prefix, false);\n        }\n\n        public NamedThreadFactory(String prefix, boolean daemon) {\n            this.prefix = prefix;\n            this.daemon = new AtomicBoolean(daemon);\n            SecurityManager s = System.getSecurityManager();\n            this.group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();\n        }\n\n        @Override\n        public Thread newThread(Runnable r) {\n            // 包装Runnable，添加异常处理\n            Runnable wrappedRunnable = () -> {\n                try {\n                    r.run();\n                } catch (Exception e) {\n                    logger.error(\"Thread \" + Thread.currentThread().getName() + \" execution failed\", e);\n                }\n            };\n\n            Thread t = new Thread(group, wrappedRunnable,\n                    prefix + threadNumber.getAndIncrement(), 0);\n            t.setDaemon(daemon.get());\n            if (t.getPriority() != Thread.NORM_PRIORITY) {\n                t.setPriority(Thread.NORM_PRIORITY);\n            }\n            return t;\n        }\n    }\n\n    /**\n     * 带日志的拒绝策略\n     */\n    private static class LoggingCallerRunsPolicy extends CallerRunsPolicy {\n        @Override\n        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {\n            logger.warn(\"Task rejected. Thread pool is saturated. \" +\n                            \"Active threads: {}, Queue size: {}, Pool size: {}\",\n                    e.getActiveCount(), e.getQueue().size(), e.getPoolSize());\n\n            // 调用者运行策略，减缓提交速度\n            super.rejectedExecution(r, e);\n        }\n    }\n\n    // 防止实例化\n    private NewThreadPoolExecutorUtil() {\n        throw new AssertionError(\"Cannot instantiate ThreadPoolExecutorUtil\");\n    }\n}\n多个业务场景下使用线程池，有无bug,如果有风险给出解决方法",
+  "ctime": 1758088051620,
+  "utime": 1758089807976,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/"
+}

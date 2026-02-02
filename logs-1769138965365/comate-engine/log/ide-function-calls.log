@@ -1,0 +1,100 @@
+[LOG] [2026-01-23T03:29:19.743Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.745Z] _0x170eff.sendDataToWebview completed in 36ms {}
+[LOG] [2026-01-23T03:29:19.747Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"getGitStatus","time":"2026-01-23T03:29:19.747Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.747Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.759Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"getGitStatus","time":"2026-01-23T03:29:19.759Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.759Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.761Z] _0x170eff.sendDataToWebview completed in 18ms {}
+[LOG] [2026-01-23T03:29:19.779Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.779Z"}]}
+[LOG] [2026-01-23T03:29:19.779Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.792Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"workspaceStatusEvent","time":"2026-01-23T03:29:19.792Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.792Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.792Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"workspaceStatusEvent","time":"2026-01-23T03:29:19.792Z"}]}
+[LOG] [2026-01-23T03:29:19.792Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.792Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.792Z"}]}
+[LOG] [2026-01-23T03:29:19.792Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.792Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.792Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.792Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.792Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","extra":{"fromCommand":false,"activeEditor":{"relativePath":"quant_trading/auto_trader.py","name":"auto_trader.py","selection":[0,0],"id":"81fd3ab8-5485-4516-a54f-ae7a6e22bb51"}}}]}
+[LOG] [2026-01-23T03:29:19.792Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.792Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"previewEditorChangedEvent","time":"2026-01-23T03:29:19.792Z"}]}
+[LOG] [2026-01-23T03:29:19.792Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.793Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"figmaSelectEvent","time":"2026-01-23T03:29:19.792Z"}]}
+[LOG] [2026-01-23T03:29:19.793Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.794Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.794Z"}]}
+[LOG] [2026-01-23T03:29:19.794Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"workspaceStatusEvent","time":"2026-01-23T03:29:19.813Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"workspaceStatusEvent","time":"2026-01-23T03:29:19.813Z"}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.813Z"}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.813Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","extra":{"fromCommand":false,"activeEditor":{"relativePath":"quant_trading/auto_trader.py","name":"auto_trader.py","selection":[0,0],"id":"478360c9-4298-4a42-84a9-1f392a52cdd3"}}}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"previewEditorChangedEvent","time":"2026-01-23T03:29:19.813Z"}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.813Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"figmaSelectEvent","time":"2026-01-23T03:29:19.813Z"}]}
+[LOG] [2026-01-23T03:29:19.813Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.815Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.815Z"}]}
+[LOG] [2026-01-23T03:29:19.815Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.816Z] Calling _0x170eff.sendDataToWebview {"args":["ide_passthroughMessage_toWebview",{"type":"request","msgId":"mkqbnpvsbvf22c21jkm","event":"pt/kernel/quota/upgradeModel","data":{"exceeded":false,"autoModel":"","userActions":{}},"seqId":0}]}
+[LOG] [2026-01-23T03:29:19.816Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"ide_passthroughMessage_toWebview","extra":{"type":"request","msgId":"mkqbnpvsbvf22c21jkm","event":"pt/kernel/quota/upgradeModel","data":{"exceeded":false,"autoModel":"","userActions":{}},"seqId":0}}]}
+[LOG] [2026-01-23T03:29:19.816Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.829Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.828Z"}]}
+[LOG] [2026-01-23T03:29:19.829Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.829Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.829Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.829Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.829Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","extra":{"fromCommand":false,"activeEditor":{"relativePath":"quant_trading/auto_trader.py","name":"auto_trader.py","selection":[0,0],"id":"71859e88-ce9b-479d-ad07-9a1e0157ffc8"}}}]}
+[LOG] [2026-01-23T03:29:19.829Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.829Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"previewEditorChangedEvent","time":"2026-01-23T03:29:19.829Z"}]}
+[LOG] [2026-01-23T03:29:19.829Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.829Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"figmaSelectEvent","time":"2026-01-23T03:29:19.829Z"}]}
+[LOG] [2026-01-23T03:29:19.829Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.831Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.831Z"}]}
+[LOG] [2026-01-23T03:29:19.832Z] _0x26c5df.stopDebugLog completed in 1ms {}
+[LOG] [2026-01-23T03:29:19.846Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.846Z"}]}
+[LOG] [2026-01-23T03:29:19.846Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.863Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.863Z"}]}
+[LOG] [2026-01-23T03:29:19.863Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.863Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","time":"2026-01-23T03:29:19.863Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:19.863Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.863Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"editorChangedEvent","extra":{"fromCommand":false,"activeEditor":{"relativePath":"quant_trading/auto_trader.py","name":"auto_trader.py","selection":[0,0],"id":"063144da-fa48-442b-b841-4a473e899305"}}}]}
+[LOG] [2026-01-23T03:29:19.863Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.864Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"previewEditorChangedEvent","time":"2026-01-23T03:29:19.863Z"}]}
+[LOG] [2026-01-23T03:29:19.864Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.864Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"figmaSelectEvent","time":"2026-01-23T03:29:19.863Z"}]}
+[LOG] [2026-01-23T03:29:19.864Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.864Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"webview_passthroughMessage_toIde","time":"2026-01-23T03:29:19.863Z","extra":{"type":"response","msgId":"mkqbnpvsbvf22c21jkm","event":"pt/kernel/quota/upgradeModel","seqId":0,"end":true}}]}
+[LOG] [2026-01-23T03:29:19.864Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.864Z] Calling _0x24afbd.ptSend {"args":[{"type":"response","msgId":"mkqbnpvsbvf22c21jkm","event":"pt/kernel/quota/upgradeModel","seqId":0,"end":true}]}
+[LOG] [2026-01-23T03:29:19.864Z] _0x24afbd.ptSend completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.864Z] _0x170eff.sendDataToWebview completed in 48ms {}
+[LOG] [2026-01-23T03:29:19.867Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.866Z"}]}
+[LOG] [2026-01-23T03:29:19.867Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.881Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.881Z"}]}
+[LOG] [2026-01-23T03:29:19.881Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:19.895Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:19.895Z"}]}
+[LOG] [2026-01-23T03:29:19.895Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.012Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"agentConversationMessageUpdateEvent","extra":{"type":"partial-message-data","conversationInfo":{"id":"81ca34a1-6372-4ca2-864c-9cff1b213b6a","status":"Running","type":"E2EBotConversation","utime":1769138959587,"ctime":1768997468752},"messages":[{"id":"0f66dadd-450b-4fa3-8204-e95e76fd4d3e","discard":false,"userMessageId":"16847652","reportedId":"","agentInfo":{"avatar":"zulu","name":"Zulu"},"role":"assistant","status":"failed","content":{},"elements":[{"id":"797951cd-2c17-49e0-8277-796aaa9c6572","type":"TEXT","status":"success","content":"当前服务响应异常，您可以稍后重试。","composer":{"markdown":"","tasks":[]},"discard":false,"isErrorMessage":true,"parentMessageId":""}]}]}}]}
+[LOG] [2026-01-23T03:29:23.012Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.012Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"agentConversationMessageUpdateEvent","extra":{"type":"conversation-status","conversationInfo":{"id":"81ca34a1-6372-4ca2-864c-9cff1b213b6a","status":"Failed","type":"E2EBotConversation","utime":1769138959587,"ctime":1768997468752}}}]}
+[LOG] [2026-01-23T03:29:23.013Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.016Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:23.016Z"}]}
+[LOG] [2026-01-23T03:29:23.016Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.046Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"openPluginConfigPanelEvent","time":"2026-01-23T03:29:23.046Z"}]}
+[LOG] [2026-01-23T03:29:23.046Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.064Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"AgentIsRunning","time":"2026-01-23T03:29:23.064Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:23.064Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.064Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"agentConversationMessageUpdateEvent","time":"2026-01-23T03:29:23.064Z"}]}
+[LOG] [2026-01-23T03:29:23.064Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.064Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"CodelensAgentEvent","time":"2026-01-23T03:29:23.064Z"}]}
+[LOG] [2026-01-23T03:29:23.064Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:23.064Z] Calling _0x26c5df.stopDebugLog {"args":[{"event":"agentConversationDeletedFromIdeEvent","time":"2026-01-23T03:29:23.064Z"}]}
+[LOG] [2026-01-23T03:29:23.064Z] _0x26c5df.stopDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:25.183Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"SetChatFocusEvent","time":"2026-01-23T03:29:25.182Z","extra":{"isActive":true}}]}
+[LOG] [2026-01-23T03:29:25.183Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:25.362Z] Calling _0x26c5df.startDebugLog {"args":[{"event":"downloadLogEvent","time":"2026-01-23T03:29:25.361Z","extra":{}}]}
+[LOG] [2026-01-23T03:29:25.362Z] _0x26c5df.startDebugLog completed in 0ms {}
+[LOG] [2026-01-23T03:29:25.597Z] Calling _0x21d2e0.functionCalls {"args":[]}

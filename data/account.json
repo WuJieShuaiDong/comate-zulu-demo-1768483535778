@@ -1,0 +1,38 @@
+{
+  "cash": 45661.0,
+  "positions": {
+    "603633": {
+      "cost": 9.21,
+      "shares": 2100,
+      "name": "徕木股份"
+    },
+    "300438": {
+      "cost": 46.1,
+      "shares": 400,
+      "name": "鹏辉能源"
+    },
+    "301391": {
+      "cost": 75.17,
+      "shares": 200,
+      "name": "卡莱特"
+    }
+  },
+  "total_value": 101098.0,
+  "initial_capital": 100000.0,
+  "last_day_value": 101098.0,
+  "yesterday_pnl": 27.0,
+  "nav_history": [
+    {
+      "date": "2026-01-20",
+      "total_value": 101071.0,
+      "daily_pnl": 1071.0
+    },
+    {
+      "date": "2026-01-23",
+      "total_value": 101098.0,
+      "daily_pnl": 27.0
+    }
+  ],
+  "last_update_date": "2026-01-27",
+  "update_time": "2026-01-28 10:02:15"
+}

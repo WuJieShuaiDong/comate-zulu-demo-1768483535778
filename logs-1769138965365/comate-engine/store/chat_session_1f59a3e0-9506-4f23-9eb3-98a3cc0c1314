@@ -1,0 +1,63 @@
+{
+  "source": "TestBotConversation",
+  "sessionUuid": "1f59a3e0-9506-4f23-9eb3-98a3cc0c1314",
+  "messages": [
+    {
+      "id": "7aa2875f-589e-40f5-bc14-696ce69362da",
+      "role": "user",
+      "status": "success",
+      "content": "为当前函数生成单测",
+      "payload": {
+        "agentId": "ut-agent",
+        "params": {
+          "command": "method",
+          "startLine": 22,
+          "endLine": 42,
+          "workDir": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc",
+          "include": "pmc-basic-service/src/main/java/com/baidu/pmc/core/utils/AesUtils.java",
+          "languageVersion": "17",
+          "userName": "liumandong"
+        },
+        "entry": "enhance-generate",
+        "env": {
+          "PATH": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-17.0.16/Contents/Home/bin:/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+          "MAVEN_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "M2_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "JAVA_HOME": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-17.0.16/Contents/Home",
+          "HOME": "/Users/xiaoliu"
+        },
+        "query": "为当前函数生成单测",
+        "action": null,
+        "extra": null
+      }
+    },
+    {
+      "id": "661fd2b9-6519-4c93-b46f-e76c42ecc118",
+      "role": "assistant",
+      "status": "success",
+      "content": "{\"status\":\"success\",\"content\":\"\\n\\n\\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java\\n{\\\"content\\\":\\\"testEncryptWithValidInput\\\\ntestEncryptWithEmptyString\\\\ntestEncryptWithInvalidKey\\\\ntestEncryptWithNullInput\\\\ntestEncryptWithNullKey\\\\ntestEncryptWithSpecialCharacters\\\",\\\"type\\\":\\\"testbot\\\",\\\"filePath\\\":\\\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java\\\"}\\n```\\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\\n\\n\\n\\n\\n\\n\\n\\n环境检查失败\\n\",\"loadingMsg\":\"\",\"startIntroduction\":\"好的，已收到任务。我将为`encrypt`方法生成单元测试，并对其进行验证、优化，确保生成有效的单测代码，提升代码覆盖。\",\"testbotMapping\":{\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java\":{\"content\":\"testEncryptWithValidInput\\ntestEncryptWithEmptyString\\ntestEncryptWithInvalidKey\\ntestEncryptWithNullInput\\ntestEncryptWithNullKey\\ntestEncryptWithSpecialCharacters\",\"absolutePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java\",\"status\":\"success\"}}}",
+      "composer": {
+        "markdown": "\n\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java\n{\"content\":\"testEncryptWithValidInput\\ntestEncryptWithEmptyString\\ntestEncryptWithInvalidKey\\ntestEncryptWithNullInput\\ntestEncryptWithNullKey\\ntestEncryptWithSpecialCharacters\",\"type\":\"testbot\",\"filePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java\"}\n```\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\n\n\n\n\n\n环境检查失败\n",
+        "tasks": [
+          {
+            "action": "preview",
+            "accepted": 0,
+            "status": "running",
+            "filePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java",
+            "absolutePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/utils/AesUtilsTest.java",
+            "basename": "AesUtilsTest.java",
+            "originalContent": "",
+            "content": "",
+            "addLineCount": 0,
+            "removeLineCount": 0
+          }
+        ]
+      },
+      "elements": []
+    }
+  ],
+  "title": "为当前函数生成单测",
+  "ctime": 1756119470856,
+  "utime": 1756119485732,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

@@ -1,0 +1,785 @@
+[10189] [2026-01-23 01:00:58] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 01:00:58] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 01:00:58] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 01:00:58] [INFO] embedding(info): start buildIndex, files count: 9
+[10189] [2026-01-23 01:00:58] [INFO] embeddings(info): finish index 9 files
+[11011] [2026-01-23 01:00:58] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 01:00:58] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 01:00:58] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 01:00:58] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 01:00:58] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 01:00:58] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 01:00:58] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 01:00:58] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[62338] [2026-01-23 01:00:58] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 01:00:58] [INFO] embedding(info): start buildIndex, files count: 3120
+[10189] [2026-01-23 01:01:02] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 01:01:02] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[10189] [2026-01-23 01:01:02] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 01:01:02] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 01:01:02] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 01:01:02] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 01:01:02] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 01:01:02] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 01:01:02] [INFO] [ContextEngine] 上传打点: duration 0.637
+[62338] [2026-01-23 01:01:02] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 01:01:02] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 01:01:02] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[10189] [2026-01-23 02:00:58] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 02:00:58] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 02:00:58] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 02:00:58] [INFO] embedding(info): start buildIndex, files count: 9
+[10189] [2026-01-23 02:00:58] [INFO] embeddings(info): finish index 9 files
+[11011] [2026-01-23 02:00:58] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 02:00:58] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 02:00:58] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 02:00:58] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 02:00:58] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[62338] [2026-01-23 02:00:58] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 02:00:58] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 02:00:58] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 02:00:58] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 02:00:58] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[10189] [2026-01-23 02:00:58] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 02:00:58] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 02:00:58] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 02:00:58] [INFO] embedding(info): start buildIndex, files count: 3120
+[62338] [2026-01-23 02:00:58] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 02:00:59] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 02:00:59] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 02:00:59] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 02:00:59] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 02:00:59] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 02:00:59] [INFO] [ContextEngine] 上传打点: duration 0.623
+[62338] [2026-01-23 02:00:59] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[10189] [2026-01-23 03:08:24] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 03:08:24] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 03:08:24] [INFO] embeddings(info): start read workspace directories
+[62338] [2026-01-23 03:08:24] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 03:08:24] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 03:08:24] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 03:08:24] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 03:08:24] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 03:08:24] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 03:08:24] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 03:08:24] [INFO] embedding(info): start buildIndex, files count: 9
+[11011] [2026-01-23 03:08:24] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 03:08:24] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[62338] [2026-01-23 03:08:24] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 03:08:24] [INFO] embedding(info): start buildIndex, files count: 3120
+[10189] [2026-01-23 03:08:25] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 03:08:25] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[10189] [2026-01-23 03:08:25] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 03:08:25] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 03:08:25] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 03:08:26] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 03:08:26] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 03:08:26] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 03:08:26] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 03:08:26] [INFO] [ContextEngine] 上传打点: duration 0.676
+[62338] [2026-01-23 03:08:26] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 03:08:26] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 04:08:24] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 04:08:24] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 04:08:24] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 04:08:24] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 04:08:24] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 04:08:24] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 04:08:24] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 04:08:24] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 04:08:24] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 04:08:24] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 04:08:24] [INFO] embedding(info): start buildIndex, files count: 9
+[11011] [2026-01-23 04:08:24] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 04:08:24] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[10189] [2026-01-23 04:08:24] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 04:08:24] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[62338] [2026-01-23 04:08:24] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 04:08:24] [INFO] embedding(info): start buildIndex, files count: 3120
+[10189] [2026-01-23 04:08:24] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 04:08:24] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 04:08:24] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 04:08:25] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 04:08:25] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 04:08:25] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 04:08:25] [INFO] [ContextEngine] 上传打点: duration 0.648
+[62338] [2026-01-23 04:08:25] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 04:08:25] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 04:08:25] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 05:20:39] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 05:20:39] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 05:20:39] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 05:20:39] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 05:20:39] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 05:20:39] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 05:20:39] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 05:20:39] [INFO] embeddings(info): start read workspace directories
+[62338] [2026-01-23 05:20:39] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 05:20:39] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 05:20:39] [INFO] embedding(info): start buildIndex, files count: 9
+[11011] [2026-01-23 05:20:39] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 05:20:39] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[62338] [2026-01-23 05:20:39] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 05:20:39] [INFO] embedding(info): start buildIndex, files count: 3120
+[10189] [2026-01-23 05:20:41] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 05:20:41] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[10189] [2026-01-23 05:20:41] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 05:20:41] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 05:20:41] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 05:20:42] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 05:20:42] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 05:20:42] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 05:20:42] [INFO] [ContextEngine] 上传打点: duration 0.655
+[62338] [2026-01-23 05:20:42] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 05:20:42] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 05:20:42] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[10189] [2026-01-23 06:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 06:27:46] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 06:27:46] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 06:27:46] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 06:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 06:27:46] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 06:27:46] [INFO] embeddings(info): start read workspace directories
+[62338] [2026-01-23 06:27:46] [INFO] embeddings(info): start read workspace directories
+[62338] [2026-01-23 06:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 06:27:46] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 06:27:46] [INFO] embedding(info): start buildIndex, files count: 9
+[11011] [2026-01-23 06:27:46] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 06:27:46] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[62338] [2026-01-23 06:27:46] [INFO] embedding(info): start buildIndex, files count: 3120
+[62338] [2026-01-23 06:27:46] [INFO] embeddings(info): finish index 3120 files
+[10189] [2026-01-23 06:27:50] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[10189] [2026-01-23 06:27:50] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 06:27:50] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 06:27:50] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 06:27:50] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 06:27:51] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 06:27:51] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 06:27:51] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 06:27:51] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 06:27:51] [INFO] [ContextEngine] 上传打点: duration 0.655
+[62338] [2026-01-23 06:27:51] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 06:27:51] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[10189] [2026-01-23 07:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 07:27:46] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 07:27:46] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 07:27:46] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 07:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 07:27:46] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 07:27:46] [INFO] embedding(info): start buildIndex, files count: 9
+[10189] [2026-01-23 07:27:46] [INFO] embeddings(info): finish index 9 files
+[62338] [2026-01-23 07:27:46] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 07:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 07:27:46] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 07:27:46] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 07:27:46] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[11011] [2026-01-23 07:27:46] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 07:27:46] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[10189] [2026-01-23 07:27:46] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 07:27:46] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 07:27:46] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 07:27:46] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 07:27:46] [INFO] embedding(info): start buildIndex, files count: 3120
+[62338] [2026-01-23 07:27:47] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 07:27:47] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 07:27:47] [INFO] [ContextEngine] 上传打点: duration 0.645
+[62338] [2026-01-23 07:27:47] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 07:27:47] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 07:27:47] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 07:27:47] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[10189] [2026-01-23 08:27:46] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 08:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 08:27:46] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 08:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 08:27:46] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 08:27:46] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 08:27:46] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 08:27:46] [INFO] embedding(info): start buildIndex, files count: 9
+[62338] [2026-01-23 08:27:46] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 08:27:46] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 08:27:46] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 08:27:46] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 08:27:46] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[11011] [2026-01-23 08:27:46] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 08:27:46] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[10189] [2026-01-23 08:27:46] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 08:27:46] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 08:27:46] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 08:27:46] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 08:27:46] [INFO] embedding(info): start buildIndex, files count: 3120
+[62338] [2026-01-23 08:27:47] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 08:27:47] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 08:27:47] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 08:27:47] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 08:27:47] [INFO] [ContextEngine] 上传打点: duration 0.620
+[62338] [2026-01-23 08:27:47] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 08:27:47] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[10189] [2026-01-23 09:27:52] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 09:27:52] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 09:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 09:27:52] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 09:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 09:27:52] [INFO] embeddings(info): start read workspace directories
+[62338] [2026-01-23 09:27:52] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 09:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 09:27:52] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 09:27:52] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 09:27:52] [INFO] embedding(info): start buildIndex, files count: 9
+[11011] [2026-01-23 09:27:52] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 09:27:52] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[62338] [2026-01-23 09:27:52] [INFO] embeddings(info): finish index 3120 files
+[62338] [2026-01-23 09:27:52] [INFO] embedding(info): start buildIndex, files count: 3120
+[62338] [2026-01-23 09:27:55] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 09:27:55] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 09:27:55] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 09:27:55] [INFO] [ContextEngine] 上传打点: duration 0.644
+[62338] [2026-01-23 09:27:55] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 09:27:55] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 09:27:55] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[10189] [2026-01-23 09:27:55] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 09:27:55] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[10189] [2026-01-23 09:27:55] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 09:27:55] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 09:27:55] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[11011] [2026-01-23 10:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 10:27:52] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 10:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 10:27:52] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 10:27:52] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 10:27:52] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 10:27:52] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 10:27:52] [INFO] embedding(info): start buildIndex, files count: 9
+[62338] [2026-01-23 10:27:52] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 10:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 10:27:52] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 10:27:52] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 10:27:52] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[11011] [2026-01-23 10:27:52] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 10:27:52] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[62338] [2026-01-23 10:27:52] [INFO] embedding(info): start buildIndex, files count: 3120
+[62338] [2026-01-23 10:27:52] [INFO] embeddings(info): finish index 3120 files
+[10189] [2026-01-23 10:27:52] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 10:27:52] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 10:27:52] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 10:27:53] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 10:27:53] [INFO] [ContextEngine] 本地索引构建成功! 共 3120 个文件，处理 0 个，跳过 3120 个，删除旧文件 0 个，共 0 轮。最终 embeddings 数量: 383023，数据库大小: 2573 MB
+[62338] [2026-01-23 10:27:53] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 10:27:53] [INFO] [ContextEngine] 上传打点: fileCount 3120
+[62338] [2026-01-23 10:27:53] [INFO] [ContextEngine] 上传打点: duration 0.606
+[62338] [2026-01-23 10:27:53] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 10:27:53] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 10:29:51] [INFO] Zulu [CodeWrittenMetric] Switch branch from fea_fin_sup_260120 to fea_bcm_251225
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 10:55:44] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}],"rawMessage":"持仓详情 浮动盈亏和盈亏比例为0","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"持仓详情 浮动盈亏和盈亏比例为0"}
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 10:55:44] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 10:55:45] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 10:55:45] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 10:55:45] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 10:55:45] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 10:55:45] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 10:55:45] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 10:55:45] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 10:56:13] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 10:56:13] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 10:56:13] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 10:56:13] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 10:56:13] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 10:56:13] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:00:40] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:00:41] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}],"rawMessage":"你这成本价根本不对","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"你这成本价根本不对"}
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:00:41] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:00:41] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:01:02] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:01:02] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:01:02] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:01:02] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:01:02] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:01:02] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:20:35] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}],"rawMessage":"为什么你的成本价和最新价是一样的，我都不是这个时候卖的，你要拉取实时的最新价","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"为什么你的成本价和最新价是一样的，我都不是这个时候卖的，你要拉取实时的最新价"}
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:20:35] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:20:35] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:20:36] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:20:36] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:20:36] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:20:36] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:20:36] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:20:36] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:21:02] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:21:02] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:21:02] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:21:02] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:21:02] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:21:03] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:21:14] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:22:08] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:22:48] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}],"rawMessage":"不对你还是没有展示浮动盈亏和盈亏比例，成本价和最新价还是一样的，解决下这个问题","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"不对你还是没有展示浮动盈亏和盈亏比例，成本价和最新价还是一样的，解决下这个问题"}
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:22:48] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:22:48] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:23:04] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:23:04] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:23:04] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:23:04] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:23:04] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:23:04] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:24:06] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}],"rawMessage":"持仓代码: ['688115', '603633', '300438', '301391']\n\n获取行情数据：{}\n\n❌行情数据为空！请检查网络或API接口是否正常","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"持仓代码: ['688115', '603633', '300438', '301391']\n\n获取行情数据：{}\n\n❌行情数据为空！请检查网络或API接口是否正常"}
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:24:06] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:24:06] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:24:32] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:24:32] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:24:32] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:24:32] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:24:32] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:24:40] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:24:47] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:24:47] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:24:47] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:24:47] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:24:47] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:24:47] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:24:56] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:25:15] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:25:15] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:25:15] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:25:15] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:25:15] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:25:16] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:25:21] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:25:31] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:25:31] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:25:31] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:25:31] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:25:31] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:25:32] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:27:23] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:27:23] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}],"rawMessage":"买卖策略还要调整下，就是结合a股的情绪周期，主升的时候要大胆买，退潮的时候就空仓或者清仓，a股游资都是这样赚钱的","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"买卖策略还要调整下，就是结合a股的情绪周期，主升的时候要大胆买，退潮的时候就空仓或者清仓，a股游资都是这样赚钱的"}
+[10189] [2026-01-23 11:27:23] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:27:23] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:27:23] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:27:23] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/app.py","name":"app.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:27:23] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:27:24] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:27:24] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:27:50] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:27:50] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:27:50] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:27:50] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:27:50] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:27:50] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[10189] [2026-01-23 11:27:52] [INFO] [ContextEngine] 索引任务开始
+[10189] [2026-01-23 11:27:52] [INFO] embeddings(info): start read workspace directories
+[10189] [2026-01-23 11:27:52] [INFO] embeddings(info): finish index 9 files
+[10189] [2026-01-23 11:27:52] [INFO] embedding(info): start buildIndex, files count: 9
+[11011] [2026-01-23 11:27:52] [INFO] [ContextEngine] 索引任务开始
+[11011] [2026-01-23 11:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[11011] [2026-01-23 11:27:52] [INFO] embeddings(info): start read workspace directories
+[62338] [2026-01-23 11:27:52] [INFO] [ContextEngine] 索引任务开始
+[62338] [2026-01-23 11:27:52] [INFO] [ContextEngine] 上传打点: trigger 
+[62338] [2026-01-23 11:27:52] [INFO] embeddings(info): start read workspace directories
+[11011] [2026-01-23 11:27:52] [INFO] [ContextEngine] 上传打点: failed remote: EPERM: operation not permitted, scandir '/Library/Trial'
+[11011] [2026-01-23 11:27:52] [INFO] embedding(error): Embedding 失败：EPERM: operation not permitted, scandir '/Library/Trial'
+[10189] [2026-01-23 11:27:52] [INFO] [ContextEngine] 正在安装 better-sqlite3 二进制文件
+[10189] [2026-01-23 11:27:52] [INFO] [ContextEngine] 安装 better-sqlite3 二进制文件: https://vercel-static.bj.bcebos.com/stash/v1/dc8c989/frontend/92932cd/better-sqlite3/better-sqlite3-v12.4.1-electron-v136-darwin-arm64.tar.gz
+[62338] [2026-01-23 11:27:52] [INFO] embedding(info): start buildIndex, files count: 3125
+[62338] [2026-01-23 11:27:52] [INFO] embeddings(info): finish index 3125 files
+[10189] [2026-01-23 11:27:52] [INFO] [ContextEngine] 安装二进制文件失败：EACCES: permission denied, mkdir '/Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/.tmp'
+[10189] [2026-01-23 11:27:52] [INFO] [ContextEngine] 上传打点: failed remote: Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[10189] [2026-01-23 11:27:52] [INFO] embedding(error): Embedding 失败：Could not locate the bindings file. Tried:
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/compiled/22.19.0/darwin/arm64/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /Applications/Comate.app/Contents/Resources/app/extensions/baiducomate.comate/dist/comate-engine/node_modules/better-sqlite3/lib/binding/node-v136-darwin-arm64/better_sqlite3.node
+[62338] [2026-01-23 11:27:54] [INFO] [ContextEngine] 本地索引构建：第 1 轮已完成
+[62338] [2026-01-23 11:27:54] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 11:27:54] [INFO] [ContextEngine] 上传打点: dbSize 2573
+[62338] [2026-01-23 11:27:54] [INFO] [ContextEngine] 上传打点: duration 2.225
+[62338] [2026-01-23 11:27:55] [INFO] [ContextEngine] 上传打点: success 
+[62338] [2026-01-23 11:27:55] [INFO] embedding(info): job finished, repoId= 7f7b6134c1cc90cb8767a0f40766d1a89c2caac2
+[62338] [2026-01-23 11:27:54] [INFO] [ContextEngine] 上传打点: fileCount 3125
+[62338] [2026-01-23 11:27:54] [INFO] [ContextEngine] 本地索引构建成功! 共 3125 个文件，处理 18 个，跳过 3107 个，删除旧文件 4 个，共 1 轮。最终 embeddings 数量: 383111，数据库大小: 2573 MB
+[10189] [2026-01-23 11:28:12] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:28:12] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:28:12] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:28:12] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:28:12] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:28:13] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:28:56] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}],"rawMessage":"响应异常了重试下","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"响应异常了重试下"}
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:28:56] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:28:56] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:29:07] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}],"rawMessage":"响应异常了重试下\n\n","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"响应异常了重试下\n\n"}
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:29:07] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:29:07] [INFO] [Zulu] request chat response
+[10189] [2026-01-23 11:29:17] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] start analyze, traceId 81ca34a1-6372-4ca2-864c-9cff1b213b6a
+[10189] [2026-01-23 11:29:19] [INFO] [history] Saving latest history: {"agent":"Zulu","knowledgeList":[{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}],"rawMessage":"响应异常了重试下\n\n","repoName":"comate-zulu-demo-1768483535778","role":"zulu","slash":"","value":"响应异常了重试下\n\n"}
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] start read contexts in /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778: [{"id":"quant_trading/auto_trader.py","name":"auto_trader.py","type":"CURRENT_FILE"}]
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] start read workspace directories
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] start read current file context
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] start get system info
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] read workspace directories done
+[10189] [2026-01-23 11:29:19] [INFO] [ConversationTab] Saved 1 tabs for workspace: /Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778
+[10189] [2026-01-23 11:29:19] [INFO] [Zulu] start analyze, conversationId=1392517
+[10189] [2026-01-23 11:29:20] [INFO] [Zulu] start chat 
+[10189] [2026-01-23 11:29:20] [INFO] [Zulu] start collect command info
+[10189] [2026-01-23 11:29:20] [INFO] [Zulu] start collect rule info
+[10189] [2026-01-23 11:29:20] [INFO] [Zulu] start collect chat params
+[10189] [2026-01-23 11:29:20] [INFO] [Zulu] start collect share memory info
+[10189] [2026-01-23 11:29:20] [INFO] [Zulu] request chat response

@@ -1,0 +1,450 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "76bac8b5-9456-4ccb-bce3-f2b82ab9edbb",
+  "messages": [
+    {
+      "id": "11376649",
+      "summary": "AbcPayInstructServiceImpl函数拆分分析",
+      "role": "user",
+      "status": "success",
+      "content": "",
+      "discard": false,
+      "payload": {
+        "knowledgeList": [
+          {
+            "filePath": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcPayInstructServiceImpl.java",
+            "name": "AbcPayInstructServiceImpl.java",
+            "selection": [
+              415,
+              467
+            ],
+            "id": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcPayInstructServiceImpl.java#415-467",
+            "type": "CODE_SELECTION"
+          }
+        ],
+        "metrics": {
+          "path": "pmc-basic-abc/src/main/java/com/baidu/pmc/abc/core/service/impl/AbcPayInstructServiceImpl.java",
+          "model": "Zulu",
+          "function": "CODE_SPLIT"
+        },
+        "query": "",
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "model": {
+          "mode": "NORMAL",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE"
+        },
+        "isSpec": false,
+        "command": "函数拆分",
+        "selfDefineInstruction": "请帮我分析并拆分选中复杂函数，我提供的信息包括：\n<step>\n1. 首先判断该函数是否需要拆分\n2. 如果需要拆分，请按照如下要求：\n   - 不需要todo list进行规划\n   - 仅拆分当前函数内部的代码\n   - 每个子函数应该只完成一个清晰的任务\n   - 为每个子函数，生成准确规范的中文函数注释（包含参数、输出）\n   - 展示如何在原函数中调用这些子函数\n   - 确保拆分后的代码保持原有功能的完整性\n   - 使用工具直接将结果应用到源文件\n   \n3. 如果不需要拆分，输出代码原文。\n</step>\n\n<output_requirement>\n1. 禁止变更原始代码的换行、缩进\n2. 必须回复修改之后的代码全文，不要忽略或者省略任何代码，除此之外，不要输出其他任何内容\n</output_requirement>\n\n请尽可能保持原有代码的风格和命名约定，确保拆分后的代码易于维护和理解。"
+      },
+      "context": {
+        "taskId": 473838,
+        "conversationId": 1208494,
+        "userMessageId": 11376649
+      }
+    },
+    {
+      "id": "3ed60f17-b3c6-4203-bead-11fc29708320",
+      "userMessageId": "11376649",
+      "reportedId": "ee4fb1c6-bd18-4d84-b75e-2f5a97b733b2",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "cancelled",
+      "content": {},
+      "elements": [
+        {
+          "id": "5a09755f-bbbe-4875-ae5f-e06e6ce2ca3d",
+          "type": "TEXT",
+          "status": "cancelled",
+          "content": "我将分析并拆分这个函数。这个函数确实需要拆分，因为它包含了多个职责：校验付款方信息、校验收款方信息、错误处理等。按照单一职责原则，我将拆分出几个子函数。\n\n以下是拆分后的代码：\n\n```java\n    /**\n     * 校验付款单\n     *\n     * @param payChecksDTOS 付款单数据\n     * @return 校验通过的数据\n     */\n    private List<PayChecksDTO> verityPayChecks(List<PayChecksDTO> payChecksDTOS, Map<String,\n            List<PmcPayChecks>> errorMap) ",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "discard": false,
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "11376872",
+      "summary": "BankcommonServiceImpl代码逐行分析",
+      "role": "user",
+      "status": "success",
+      "content": " #BankcommonServiceImpl.java 136-173   ，帮我分析下这段代码，每一步都干了什么",
+      "discard": false,
+      "payload": {
+        "query": " #BankcommonServiceImpl.java 136-173   ，帮我分析下这段代码，每一步都干了什么",
+        "rawMessage": "$[BankcommonServiceImpl.java 136-173](CODE_SELECTION:pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankcommonServiceImpl.java:136-173||f6153add-c9cb-4d1f-88fc-42d7412371df)  ，帮我分析下这段代码，每一步都干了什么",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": [
+          {
+            "id": "CODE_SELECTION:pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankcommonServiceImpl.java:136-173",
+            "name": "BankcommonServiceImpl.java",
+            "type": "CODE_SELECTION",
+            "filePath": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankcommonServiceImpl.java",
+            "selection": [
+              136,
+              173
+            ]
+          }
+        ],
+        "isCurrentFileSelected": true
+      },
+      "context": {
+        "taskId": 473838,
+        "conversationId": 1208494,
+        "userMessageId": 11376872,
+        "sessionId": 11084142
+      }
+    },
+    {
+      "id": "1ff67ee2-fdc3-4a3a-9b96-700f6bc2be32",
+      "userMessageId": "11376872",
+      "reportedId": "4f159534-e951-465f-b40b-b4736edf4b0a",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "d3644385-ecf7-4007-bd70-1e14bb6c65ea",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我来分析这段代码的每一步功能：\n\n1. 获取分布式锁：\n```java\nredisLock = new RedisLock(\"bankcommonDirectBankPay\" + bankCode);\nif (!redisLock.lock(REDIS_LOCK_TIMEOUT, REDIS_LOCK_EXPIRE)) {\n    log.info(\"===========银行支付任务执行中，请稍后再试===========\");\n    throw new ServiceException(\"银行支付任务执行中，请稍后再试\");\n}\n```\n- 创建基于银行代码的分布式锁\n- 尝试获取锁，防止并发执行\n- 获取失败则抛出业务异常\n\n2. 查询待支付指令：\n```java\nList<String> status = new ArrayList<>();\nstatus.add(PayStatus.PAY_ORDER_GEN.name());\nstatus.add(PayStatus.ORDER_FAILED.name());\nBankcommonPayInstructQO bankcommonPayInstructQO = new BankcommonPayInstructQO();\nbankcommonPayInstructQO.setStatusList(status);\nList<Map<String, Object>> payInstructs = bankCommonPayInstructInterService.selectMapByCondition(bankcommonPayInstructQO, bankCode);\n```\n- 设置查询状态为\"已生成支付指令\"和\"指令失败\"\n- 构建查询条件对象\n- 调用服务层查询符合条件的支付指令\n\n3. 空结果检查：\n```java\nif (CollectionUtils.isEmpty(payInstructs)) {\n    log.info(\"没有待支付的付款指令 bankcommonDirectBankPay resultSize={}\", 0);\n    return 0;\n}\n```\n- 检查查询结果是否为空\n- 为空则直接返回0\n\n4. 更新指令状态：\n```java\npayInstructs.forEach(detail -> detail.put(\"status\", PayStatus.ORDER_SEND.name()));\nthis.batchUpdateBankcommonInstructAndHis(payInstructs);\n```\n- 将所有指令状态更新为\"发送中\"\n- 批量更新指令状态并插入历史记录\n\n5. 执行支付：\n```java\nList<Map<String, Object>> dtoList = this.batchPay(payInstructs, extentionParams);\ncount = dtoList.size();\n```\n- 调用批量支付方法\n- 获取成功支付的数量\n\n6. 释放锁：\n```java\nfinally {\n    if (null != redisLock) {\n        redisLock.unlock();\n    }\n}\n```\n- 确保锁最终被释放\n- 防止死锁\n\n7. 返回处理结果：\n```java\nreturn count;\n```\n- 返回成功处理的支付指令数量\n\n这段代码实现了银行支付的核心流程，包含并发控制、状态管理、批量操作等关键功能，符合项目规范中关于银行支付处理的要求。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "discard": false,
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "11377464",
+      "summary": "查询支付指令映射列表逻辑解析",
+      "role": "user",
+      "status": "success",
+      "content": "List<String> status = new ArrayList<>();\nstatus.add(PayStatus.PAY_ORDER_GEN.name());\nstatus.add(PayStatus.ORDER_FAILED.name());\nBankcommonPayInstructQO bankcommonPayInstructQO = new BankcommonPayInstructQO();\nbankcommonPayInstructQO.setStatusList(status);\nList<Map<String, Object>> payInstructs = bankCommonPayInstructInterService.selectMapByCondition(bankcommonPayInstructQO, bankCode);  这一步详细解释下",
+      "discard": false,
+      "payload": {
+        "query": "List<String> status = new ArrayList<>();\nstatus.add(PayStatus.PAY_ORDER_GEN.name());\nstatus.add(PayStatus.ORDER_FAILED.name());\nBankcommonPayInstructQO bankcommonPayInstructQO = new BankcommonPayInstructQO();\nbankcommonPayInstructQO.setStatusList(status);\nList<Map<String, Object>> payInstructs = bankCommonPayInstructInterService.selectMapByCondition(bankcommonPayInstructQO, bankCode);  这一步详细解释下",
+        "rawMessage": "List<String> status = new ArrayList<>();\nstatus.add(PayStatus.PAY_ORDER_GEN.name());\nstatus.add(PayStatus.ORDER_FAILED.name());\nBankcommonPayInstructQO bankcommonPayInstructQO = new BankcommonPayInstructQO();\nbankcommonPayInstructQO.setStatusList(status);\nList<Map<String, Object>> payInstructs = bankCommonPayInstructInterService.selectMapByCondition(bankcommonPayInstructQO, bankCode);  这一步详细解释下",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": [
+          {
+            "id": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankcommonServiceImpl.java",
+            "name": "BankcommonServiceImpl.java",
+            "type": "CURRENT_FILE",
+            "filePath": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankcommonServiceImpl.java",
+            "selection": [
+              136,
+              173
+            ]
+          }
+        ],
+        "isCurrentFileSelected": false
+      },
+      "context": {
+        "taskId": 473838,
+        "conversationId": 1208494,
+        "userMessageId": 11377464,
+        "sessionId": 11084142
+      }
+    },
+    {
+      "id": "92df6145-b362-4ce9-89eb-9704afac14dd",
+      "userMessageId": "11377464",
+      "reportedId": "18ff56d9-f5cd-4d0a-a6e9-5afd20f33f66",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "a887e3d8-740e-4e9c-a4e9-9c3f6d03f72d",
+          "type": "TEXT",
+          "status": "success",
+          "content": "这段代码是查询待支付的付款指令的核心逻辑，我来详细解释每一步：\n\n**状态集合构建**：\n```java\nList<String> status = new ArrayList<>();\nstatus.add(PayStatus.PAY_ORDER_GEN.name());   // \"PAY_ORDER_GEN\" - 支付指令已生成\nstatus.add(PayStatus.ORDER_FAILED.name());     // \"ORDER_FAILED\" - 指令失败需要重试\n```\n这里设置了要查询的两种状态：已生成但未发送的支付指令，以及之前发送失败的指令（需要重试）。\n\n**查询对象构建**：\n```java\nBankcommonPayInstructQO bankcommonPayInstructQO = new BankcommonPayInstructQO();\nbankcommonPayInstructQO.setStatusList(status);\n```\n创建查询条件对象，将状态列表设置到查询条件中。\n\n**执行查询**：\n```java\nList<Map<String, Object>> payInstructs = bankCommonPayInstructInterService.selectMapByCondition(bankcommonPayInstructQO, bankCode);\n```\n调用银行通用支付指令接口服务，根据指定银行代码查询符合条件的付款指令。返回的是Map列表，每个Map代表一条支付指令的详细信息。\n\n**业务逻辑解析**：\n1. **状态筛选策略**：只处理\"待发送\"和\"发送失败\"的指令，避免重复处理已成功的指令\n2. **重试机制**：包含ORDER_FAILED状态，实现了支付失败后的自动重试\n3. **银行隔离**：通过bankCode参数确保只查询指定银行的指令\n4. **数据封装**：使用Map<String, Object>灵活封装不同银行的指令数据结构\n\n这是银行支付流程中的关键数据准备环节，为后续的批量支付操作提供数据源。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "discard": false,
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "11378046",
+      "summary": "银行支付指令服务代码分析续",
+      "role": "user",
+      "status": "success",
+      "content": " #BankCommonPayInstructInterServiceImpl.java 156-176   这个接着分析",
+      "discard": false,
+      "payload": {
+        "query": " #BankCommonPayInstructInterServiceImpl.java 156-176   这个接着分析",
+        "rawMessage": "$[BankCommonPayInstructInterServiceImpl.java 156-176](CODE_SELECTION:pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java:156-176||62f6e56b-5677-4e93-a4f2-c8bb362e65de)  这个接着分析",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": [
+          {
+            "id": "CODE_SELECTION:pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java:156-176",
+            "name": "BankCommonPayInstructInterServiceImpl.java",
+            "type": "CODE_SELECTION",
+            "filePath": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java",
+            "selection": [
+              156,
+              176
+            ]
+          }
+        ],
+        "isCurrentFileSelected": true
+      },
+      "context": {
+        "taskId": 473838,
+        "conversationId": 1208494,
+        "userMessageId": 11378046,
+        "sessionId": 11084142
+      }
+    },
+    {
+      "id": "09e9610f-a44d-4bc7-ac1f-e419bf5c8066",
+      "userMessageId": "11378046",
+      "reportedId": "ef9de3fd-3474-4f0d-884d-c165d481ee02",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "62e4adef-8f33-40a0-8e66-840151e31574",
+          "type": "TEXT",
+          "status": "success",
+          "content": "这段代码是基于项目规范的**动态表查询实现**，我来详细分析：\n\n**1. 参数校验**\n```java\nif (StringUtils.isBlank(bankCode)) {\n    throw new IllegalArgumentException(\"bankCode is null\");\n}\n```\n- 校验银行代码不能为空，符合项目规范中的参数校验要求\n\n**2. 获取银行相关配置**\n```java\nString bankSuffix = pmcPayCommonBankColSetService.getBankSuffix(bankCode);\nList<String> instructCol = pmcPayCommonBankColSetService.getBankCommonInstructDynamic(bankCode);\n```\n- `bankSuffix`: 获取银行表后缀，实现**银行数据隔离**\n- `instructCol`: 获取银行特定的字段列配置，支持**动态字段映射**\n\n**3. 构建动态查询对象**\n```java\nDynamicTableDto dynamicTableDto = new DynamicTableDto();\ndynamicTableDto.setTableName(Constants.BANK_COMMON_INSTRUCT_TABLE.replaceAll(\"\\\\$\\\\{bankSuffix}\", bankSuffix));\ndynamicTableDto.setSelectColumns(instructCol);\n```\n- 通过模板替换生成实际表名（如：`pmc_bankcommon_instruct_abc`）\n- 设置查询字段列表，实现**字段级控制**\n\n**4. 构建查询条件**\n```java\nMap<String, List<String>> whereInColumns = new HashMap<>();\nwhereInColumns.put(\"status\", qo.getStatusList());\ndynamicTableDto.setWhereInColumns(whereInColumns);\n\nMap<String, String> whereEqualColumns = new HashMap<>();\nwhereEqualColumns.put(\"bank_code\", bankCode);\ndynamicTableDto.setWhereEqColumns(whereEqualColumns);\n```\n- `whereInColumns`: IN查询条件，筛选指定状态\n- `whereEqualColumns`: 等值查询，确保**银行数据隔离**\n\n**5. 执行查询**\n```java\nlog.info(\"selectMapByCondition->dynamicTableDto->{}\", JSONObject.toJSONString(dynamicTableDto));\nreturn dynamicSelect(dynamicTableDto);\n```\n- 记录查询参数日志，符合**操作日志规范**\n- 调用统一的动态查询方法\n\n**设计亮点**：\n1. **多租户隔离**: 通过表后缀和bank_code字段实现数据隔离\n2. **字段动态化**: 支持不同银行使用不同字段配置\n3. **条件构建**: 灵活支持等值和IN查询\n4. **统一查询入口**: 符合项目分层架构的Persistence层规范\n\n这是典型的**银行支付系统查询模式**，完美体现了项目的模块化和动态配置思想。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "discard": false,
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "11378830",
+      "summary": "银行通用支付指令查询示例",
+      "role": "user",
+      "status": "success",
+      "content": "帮我举个例子，查询了什么数据，最终返回了什么结果",
+      "discard": false,
+      "payload": {
+        "query": "帮我举个例子，查询了什么数据，最终返回了什么结果",
+        "rawMessage": "帮我举个例子，查询了什么数据，最终返回了什么结果",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": [
+          {
+            "id": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java",
+            "name": "BankCommonPayInstructInterServiceImpl.java",
+            "type": "CURRENT_FILE",
+            "filePath": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java",
+            "selection": [
+              156,
+              176
+            ]
+          }
+        ],
+        "isCurrentFileSelected": false
+      },
+      "context": {
+        "taskId": 473838,
+        "conversationId": 1208494,
+        "userMessageId": 11378830,
+        "sessionId": 11084142
+      }
+    },
+    {
+      "id": "f68fc198-0ee2-436f-8f5c-223544b27d8d",
+      "userMessageId": "11378830",
+      "reportedId": "3444c860-4c4a-4f5d-99cd-df7268025ac2",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "5646466b-d51a-41c3-92c6-521a59c54807",
+          "type": "TEXT",
+          "status": "success",
+          "content": "好的，我来举一个具体的例子说明查询过程。\n\n## 示例场景：查询农业银行（ABC）的待支付指令\n\n**假设条件**：\n- 银行代码：`ABC`（农业银行）\n- 查询状态：`PAY_ORDER_GEN`（支付指令已生成）、`ORDER_FAILED`（指令失败）\n- 动态表配置：`pmc_pay_common_bank_col_set`表中配置了ABC银行的字段\n\n### 1. 配置获取过程\n\n```java\n// 获取银行表后缀，假设返回 \"abc\"\nString bankSuffix = pmcPayCommonBankColSetService.getBankSuffix(\"ABC\"); \n\n// 获取ABC银行需要的字段列表，假设返回：\n// [\"check_id\", \"pay_check_num\", \"bank_code\", \"status\", \"amount\", \"payee_account\"]\nList<String> instructCol = pmcPayCommonBankColSetService.getBankCommonInstructDynamic(\"ABC\");\n```\n\n### 2. 动态SQL构建\n\n根据配置，生成的查询会类似这样：\n\n```sql\nSELECT \n    check_id,\n    pay_check_num,\n    bank_code,\n    status,\n    amount,\n    payee_account\nFROM pmc_bankcommon_instruct_abc  -- 替换后的表名\nWHERE \n    bank_code = 'ABC' \n    AND status IN ('PAY_ORDER_GEN', 'ORDER_FAILED')\n```\n\n### 3. 假设数据库中的原始数据\n\n`pmc_bankcommon_instruct_abc` 表数据：\n\n| check_id | pay_check_num | bank_code | status       | amount   | payee_account |\n|----------|---------------|-----------|--------------|----------|---------------|\n| 1001     | PAY2025001    | ABC       | PAY_ORDER_GEN| 10000.00 | 622848001...  |\n| 1002     | PAY2025002    | ABC       | PAY_ORDER_GEN| 5000.00  | 622848002...  |\n| 1003     | PAY2025003    | ABC       | ORDER_FAILED | 8000.00  | 622848003...  |\n| 1004     | PAY2025004    | CCB       | PAY_ORDER_GEN| 12000.00 | 622848004...  |\n\n### 4. 最终返回结果\n\n查询返回的 `List<Map<String, Object>>` 结构：\n\n```json\n[\n  {\n    \"check_id\": 1001,\n    \"pay_check_num\": \"PAY2025001\",\n    \"bank_code\": \"ABC\",\n    \"status\": \"PAY_ORDER_GEN\",\n    \"amount\": 10000.00,\n    \"payee_account\": \"622848001...\"\n  },\n  {\n    \"check_id\": 1002,\n    \"pay_check_num\": \"PAY2025002\",\n    \"bank_code\": \"ABC\",\n    \"status\": \"PAY_ORDER_GEN\",\n    \"amount\": 5000.00,\n    \"payee_account\": \"622848002...\"\n  },\n  {\n    \"check_id\": 1003,\n    \"pay_check_num\": \"PAY2025003\",\n    \"bank_code\": \"ABC\",\n    \"status\": \"ORDER_FAILED\",\n    \"amount\": 8000.00,\n    \"payee_account\": \"622848003...\"\n  }\n]\n```\n\n### 5. 关键特性说明\n\n**数据隔离**：通过 `bank_code = 'ABC'` 和表后缀 `_abc` 双重保险，确保只查询农业银行的数据\n\n**动态字段**：只返回ABC银行配置的字段，避免查询不需要的列\n\n**状态过滤**：只返回待处理（PAY_ORDER_GEN）和可重试（ORDER_FAILED）的指令，已成功的不会重复处理\n\n**灵活扩展**：当新增银行时，只需在配置表中添加对应记录，无需修改代码\n\n这样，上层业务拿到这个数据后，就可以进行后续的批量支付处理了。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "discard": false,
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "11391401",
+      "summary": "银行通用支付指令服务方法示例",
+      "role": "user",
+      "status": "success",
+      "content": " #BankCommonPayInstructInterServiceImpl.java 155-176   这个方法帮我举个例子输入，输出结果是什么",
+      "discard": false,
+      "payload": {
+        "query": " #BankCommonPayInstructInterServiceImpl.java 155-176   这个方法帮我举个例子输入，输出结果是什么",
+        "rawMessage": "$[BankCommonPayInstructInterServiceImpl.java 155-176](CODE_SELECTION:pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java:155-176||ff2b42fb-b2bf-4e8b-9d25-8fbdcb7b33c9)  这个方法帮我举个例子输入，输出结果是什么",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": [
+          {
+            "id": "CODE_SELECTION:pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java:155-176",
+            "name": "BankCommonPayInstructInterServiceImpl.java",
+            "type": "CODE_SELECTION",
+            "filePath": "pmc-basic-bankcommon/src/main/java/com/baidu/pmc/bankcommon/core/service/impl/BankCommonPayInstructInterServiceImpl.java",
+            "selection": [
+              155,
+              176
+            ]
+          }
+        ],
+        "isCurrentFileSelected": true
+      },
+      "context": {
+        "taskId": 473838,
+        "conversationId": 1208494,
+        "userMessageId": 11391401,
+        "sessionId": 11084142
+      }
+    },
+    {
+      "id": "ae76ecd2-15d6-49b9-8886-a5c6a4211ce3",
+      "userMessageId": "11391401",
+      "reportedId": "c2f598dc-5feb-4aab-816a-c5acbd39ca19",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "4feba356-6313-4ad2-a63f-1ef0bdf3c1cc",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我来为你详细举例说明这个方法的输入和输出。\n\n## 输入参数示例\n\n### BankcommonPayInstructQO 查询条件对象\n```java\nBankcommonPayInstructQO qo = new BankcommonPayInstructQO();\nqo.setStatusList(Arrays.asList(\"PAY_ORDER_GEN\", \"ORDER_FAILED\"));\n// 可能还包含其他查询条件，如创建时间范围等\n```\n\n### bankCode 银行代码\n```java\nString bankCode = \"ABC\"; // 农业银行\n```\n\n## 方法执行过程解析\n\n### 1. 参数校验通过\n`bankCode = \"ABC\"` -> 校验通过\n\n### 2. 获取银行配置\n- `bankSuffix = \"abc\"`（通过bankCode\"ABC\"获取表后缀）\n- `instructCol = [\"check_id\", \"pay_check_num\", \"bank_code\", \"status\", \"amount\"]`（ABC银行配置的查询字段）\n\n### 3. 构建动态SQL查询\n生成的查询条件：\n```sql\nSELECT check_id, pay_check_num, bank_code, status, amount \nFROM pmc_bankcommon_instruct_abc \nWHERE bank_code = 'ABC' \n  AND status IN ('PAY_ORDER_GEN', 'ORDER_FAILED')\n```\n\n## 输出结果示例\n\n假设数据库中有以下数据：\n\n| check_id | pay_check_num | bank_code | status       | amount   |\n|----------|---------------|-----------|--------------|----------|\n| 1001     | PAY2025001    | ABC       | PAY_ORDER_GEN| 10000.00 |\n| 1002     | PAY2025002    | ABC       | ORDER_FAILED | 5000.00  |\n| 1003     | PAY2025003    | CCB       | PAY_ORDER_GEN| 8000.00  |\n\n## 最终返回结果\n\n```java\nList<Map<String, Object>> result = [\n    {\n        \"check_id\": 1001,\n        \"pay_check_num\": \"PAY2025001\", \n        \"bank_code\": \"ABC\",\n        \"status\": \"PAY_ORDER_GEN\",\n        \"amount\": 10000.00\n    },\n    {\n        \"check_id\": 1002,\n        \"pay_check_num\": \"PAY2025002\",\n        \"bank_code\": \"ABC\", \n        \"status\": \"ORDER_FAILED\",\n        \"amount\": 5000.00\n    }\n]\n```\n\n**结果说明**：\n- 只返回了银行代码为\"ABC\"的记录\n- 只返回了状态为\"PAY_ORDER_GEN\"和\"ORDER_FAILED\"的记录\n- 只包含了ABC银行配置的字段列表\n- CCB银行的数据被正确过滤掉了\n\n这样的设计完美体现了项目的**多租户隔离**和**动态字段配置**特性。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "discard": false,
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "AbcPayInstructServiceImpl函数拆分分析",
+  "ctime": 1766664093870,
+  "utime": 1766667474567,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/",
+  "summary": "AbcPayInstructServiceImpl函数拆分分析",
+  "fileCache": []
+}

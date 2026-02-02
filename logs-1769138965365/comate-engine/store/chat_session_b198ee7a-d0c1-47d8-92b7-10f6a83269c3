@@ -1,0 +1,63 @@
+{
+  "source": "TestBotConversation",
+  "sessionUuid": "b198ee7a-d0c1-47d8-92b7-10f6a83269c3",
+  "messages": [
+    {
+      "id": "36f96184-2334-4e2c-911e-2910eea6193f",
+      "role": "user",
+      "status": "success",
+      "content": "为当前函数生成单测",
+      "payload": {
+        "agentId": "ut-agent",
+        "params": {
+          "command": "method",
+          "startLine": 29,
+          "endLine": 78,
+          "workDir": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc",
+          "include": "pmc-basic-service/src/main/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptor.java",
+          "languageVersion": "11",
+          "userName": "liumandong"
+        },
+        "entry": "enhance-generate",
+        "env": {
+          "PATH": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin:/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+          "MAVEN_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "M2_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "JAVA_HOME": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home",
+          "HOME": "/Users/xiaoliu"
+        },
+        "query": "为当前函数生成单测",
+        "action": null,
+        "extra": null
+      }
+    },
+    {
+      "id": "53ae23f5-3229-4d77-8055-cb3a658241f1",
+      "role": "assistant",
+      "status": "success",
+      "content": "{\"status\":\"success\",\"content\":\"\\n\\n\\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java\\n{\\\"content\\\":\\\"testPreHandleMissingAuthHeader\\\\ntestPreHandleEmptyAuthHeader\\\\ntestPreHandleDecryptionFailed\\\\ntestPreHandleBlankDecryptedAuth\\\\ntestPreHandleInvalidAuthFormat\\\\ntestPreHandleMissingSupId\\\\ntestPreHandleMissingLoginAccount\\\\ntestPreHandleSuccess\\\",\\\"type\\\":\\\"testbot\\\",\\\"filePath\\\":\\\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java\\\"}\\n```\\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\\n\\n\\n\\n\\n\\n\\n\\n环境检查失败\\n\",\"loadingMsg\":\"\",\"startIntroduction\":\"好的，已收到任务。我将为`preHandle`方法生成单元测试，并对其进行验证、优化，确保生成有效的单测代码，提升代码覆盖。\",\"testbotMapping\":{\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java\":{\"content\":\"testPreHandleMissingAuthHeader\\ntestPreHandleEmptyAuthHeader\\ntestPreHandleDecryptionFailed\\ntestPreHandleBlankDecryptedAuth\\ntestPreHandleInvalidAuthFormat\\ntestPreHandleMissingSupId\\ntestPreHandleMissingLoginAccount\\ntestPreHandleSuccess\",\"absolutePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java\",\"status\":\"success\"}}}",
+      "composer": {
+        "markdown": "\n\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java\n{\"content\":\"testPreHandleMissingAuthHeader\\ntestPreHandleEmptyAuthHeader\\ntestPreHandleDecryptionFailed\\ntestPreHandleBlankDecryptedAuth\\ntestPreHandleInvalidAuthFormat\\ntestPreHandleMissingSupId\\ntestPreHandleMissingLoginAccount\\ntestPreHandleSuccess\",\"type\":\"testbot\",\"filePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java\"}\n```\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\n\n\n\n\n\n环境检查失败\n",
+        "tasks": [
+          {
+            "action": "preview",
+            "accepted": 0,
+            "status": "running",
+            "filePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java",
+            "absolutePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptorTest.java",
+            "basename": "PmcPortalAuthInterceptorTest.java",
+            "originalContent": "",
+            "content": "",
+            "addLineCount": 0,
+            "removeLineCount": 0
+          }
+        ]
+      },
+      "elements": []
+    }
+  ],
+  "title": "为当前函数生成单测",
+  "ctime": 1756123857654,
+  "utime": 1756123885844,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

@@ -1,0 +1,74 @@
+{
+  "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/": {
+    "tabs": [
+      {
+        "id": "39d097db-e39e-40aa-97b4-6b2cff0a7711",
+        "title": "BosClient对象键为空异常分析",
+        "conversationId": "39d097db-e39e-40aa-97b4-6b2cff0a7711",
+        "isTemporary": false,
+        "isSpec": false,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "auto",
+          "enableMaxMode": false
+        }
+      },
+      {
+        "id": "70c61b51-6aaf-4cac-bf8c-ed2b875b9f4e",
+        "title": "解密异常：密文长度无效",
+        "conversationId": "70c61b51-6aaf-4cac-bf8c-ed2b875b9f4e",
+        "isTemporary": false,
+        "isSpec": false,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "auto",
+          "enableMaxMode": false
+        }
+      },
+      {
+        "id": "60592ed9-6a59-4359-bfa8-f12993482bf9",
+        "title": "60592ed9",
+        "conversationId": "60592ed9-6a59-4359-bfa8-f12993482bf9",
+        "isTemporary": false,
+        "isSpec": false,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "auto",
+          "enableMaxMode": false
+        }
+      },
+      {
+        "id": "097eafbf-0204-4fad-9d33-e179d760b89b",
+        "title": "我想要实现一个方法，将余额不足付款列表导出excel,具体的字段和查询一样 序号\n付款银行\n付款主体\n账户币种\n付款账号\n计划付款日期\n付款单编号\n申请付款币种\n金额\n收款人\n收款银行\n收款人银行账户\n用途\n摘要\n业务参考号\n单据状态\n银行反馈信息，但是要加个限制，如果超过20000条的话要限制生成的文件最多2万条，并且应答给个提示，超过20000条，分批次导出；具体导出excel逻辑可以参考其他控制器的，比如PmcSupplierAdmController的export方法，同时你要在service以及对应的服务类和clinet都加上逻辑，实现一下",
+        "conversationId": "097eafbf-0204-4fad-9d33-e179d760b89b",
+        "isTemporary": false,
+        "isSpec": false,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "auto",
+          "enableMaxMode": false
+        }
+      }
+    ],
+    "activeTabId": "097eafbf-0204-4fad-9d33-e179d760b89b",
+    "utime": 1768989732185
+  },
+  "/Users/xiaoliu/baidu/bpit-proc-apps/tms/": {
+    "tabs": [
+      {
+        "id": "977ec667-0cb2-40af-8a72-830f099162d2",
+        "title": "审批凭证服务性能优化分析",
+        "conversationId": "977ec667-0cb2-40af-8a72-830f099162d2",
+        "isTemporary": false,
+        "isSpec": false,
+        "agentId": 1,
+        "chatModelConfig": {
+          "modelId": "auto",
+          "enableMaxMode": false
+        }
+      }
+    ],
+    "activeTabId": "977ec667-0cb2-40af-8a72-830f099162d2",
+    "utime": 1768620775752
+  }
+}

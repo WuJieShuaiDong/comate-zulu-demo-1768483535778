@@ -1,0 +1,63 @@
+{
+  "source": "TestBotConversation",
+  "sessionUuid": "88732661-beed-4d78-9bff-3a00b4bc8ab9",
+  "messages": [
+    {
+      "id": "9c399c73-1d02-41c0-9004-432ba643e893",
+      "role": "user",
+      "status": "success",
+      "content": "为当前函数生成单测",
+      "payload": {
+        "agentId": "ut-agent",
+        "params": {
+          "command": "method",
+          "startLine": 37,
+          "endLine": 50,
+          "workDir": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc",
+          "include": "pmc-basic-service/src/main/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImpl.java",
+          "languageVersion": "11",
+          "userName": "liumandong"
+        },
+        "entry": "enhance-generate",
+        "env": {
+          "PATH": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin:使用 Maven 包装器/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+          "MAVEN_HOME": "使用 Maven 包装器",
+          "M2_HOME": "使用 Maven 包装器",
+          "JAVA_HOME": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home",
+          "HOME": "/Users/xiaoliu"
+        },
+        "query": "为当前函数生成单测",
+        "action": null,
+        "extra": null
+      }
+    },
+    {
+      "id": "fbfa8682-324c-4cc5-82fb-a2c4244582de",
+      "role": "assistant",
+      "status": "success",
+      "content": "{\"status\":\"success\",\"content\":\"\\n\\n\\n\\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\\n{\\\"content\\\":\\\"testFindByConditionAllWithPagination\\\\ntestFindByConditionAllWithoutPagination\\\\ntestFindByConditionAllEmptyResult\\\",\\\"type\\\":\\\"testbot\\\",\\\"filePath\\\":\\\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\\\"}\\n```\\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n环境检查失败\\n\",\"loadingMsg\":\"\",\"startIntroduction\":\"好的，已收到任务。我将为`findByConditionAll`方法生成单元测试，并对其进行验证、优化，确保生成有效的单测代码，提升代码覆盖。\",\"testbotMapping\":{\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\":{\"content\":\"testFindByConditionAllWithPagination\\ntestFindByConditionAllWithoutPagination\\ntestFindByConditionAllEmptyResult\",\"absolutePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\",\"status\":\"success\"}}}",
+      "composer": {
+        "markdown": "\n\n\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\n{\"content\":\"testFindByConditionAllWithPagination\\ntestFindByConditionAllWithoutPagination\\ntestFindByConditionAllEmptyResult\",\"type\":\"testbot\",\"filePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\"}\n```\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\n\n\n\n\n\n\n\n环境检查失败\n",
+        "tasks": [
+          {
+            "action": "preview",
+            "accepted": 0,
+            "status": "running",
+            "filePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java",
+            "absolutePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java",
+            "basename": "PmcPortalFinancingServiceImplTest.java",
+            "originalContent": "package com.baidu.pmc.core.service.impl;\n\nimport com.baidu.pmc.persistence.mapper.pmc.PmcFinanceSupplierApplyMapper;\nimport com.baidu.pmc.pojo.dto.PmcFinanceSupplierApplyDTO;\nimport com.baidu.pmc.pojo.qo.PmcFinanceSupplierApplyQO;\nimport com.baidu.pmc.pojo.vo.PageInfo;\nimport com.github.pagehelper.PageHelper;\nimport org.junit.Before;\nimport org.junit.Test;\nimport org.junit.runner.RunWith;\nimport org.mockito.InjectMocks;\nimport org.mockito.Mock;\nimport org.mockito.junit.MockitoJUnitRunner;\n\nimport java.util.Collections;\nimport java.util.List;\n\n\n\n@RunWith(MockitoJUnitRunner.class)\npublic class PmcPortalFinancingServiceImplTest {\n\n    @Mock\n    private PmcFinanceSupplierApplyMapper pmcFinanceSupplierApplyMapper;\n\n    @InjectMocks\n    private PmcPortalFinancingServiceImpl pmcPortalFinancingService;\n\n    private PmcFinanceSupplierApplyQO query;\n    private List<PmcFinanceSupplierApplyDTO> mockList;\n\n    @Before\n    public void setUp() {\n        query = new PmcFinanceSupplierApplyQO();\n        mockList = Collections.singletonList(new PmcFinanceSupplierApplyDTO());\n    }\n\n\n}",
+            "content": "",
+            "addLineCount": 0,
+            "removeLineCount": 0
+          }
+        ]
+      },
+      "elements": []
+    }
+  ],
+  "title": "为当前函数生成单测",
+  "ctime": 1756449964554,
+  "utime": 1756449983230,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

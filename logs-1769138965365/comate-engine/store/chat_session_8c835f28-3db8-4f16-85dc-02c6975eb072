@@ -1,0 +1,717 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "8c835f28-3db8-4f16-85dc-02c6975eb072",
+  "messages": [
+    {
+      "id": "7108286",
+      "summary": "为MySQL低版本生成日期字段SQL",
+      "role": "user",
+      "status": "success",
+      "content": "/**\n     * 融资银行开始时间\n     */\n    @Column(name = \"finance_bank_begin_date\")\n    private Date financeBankBeginDate;\n\n    /**\n     * 融资银行结束时间\n     */\n    @Column(name = \"finance_bank_end_date\")\n    private Date financeBankEndDate;   这两个字段帮我写下低版本mysql的sql语句",
+      "payload": {
+        "query": "/**\n     * 融资银行开始时间\n     */\n    @Column(name = \"finance_bank_begin_date\")\n    private Date financeBankBeginDate;\n\n    /**\n     * 融资银行结束时间\n     */\n    @Column(name = \"finance_bank_end_date\")\n    private Date financeBankEndDate;   这两个字段帮我写下低版本mysql的sql语句",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "taskId": 224741,
+        "conversationId": 943950,
+        "sessionId": 10082911
+      }
+    },
+    {
+      "id": "1d3025af-3af5-4203-a3f2-abe1e8fe989f",
+      "userMessageId": "7108286",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "b0f3c1b1-fe13-4f93-9da5-3581ae2376bb",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我将为您生成适用于低版本MySQL的SQL语句，用于创建这两个日期字段：\n\n```sql\n-- 创建融资银行开始时间字段\nALTER TABLE your_table_name ADD COLUMN finance_bank_begin_date DATETIME COMMENT '融资银行开始时间';\n\n-- 创建融资银行结束时间字段 \nALTER TABLE your_table_name ADD COLUMN finance_bank_end_date DATETIME COMMENT '融资银行结束时间';\n```\n\n注意事项：\n1. 请将 `your_table_name` 替换为您实际的表名\n2. 低版本MySQL使用DATETIME类型来存储日期时间\n3. 注释通过COMMENT关键字添加\n\n如果您需要创建包含这两个字段的新表，可以使用以下SQL：\n\n```sql\nCREATE TABLE your_table_name (\n    -- 其他字段...\n    finance_bank_begin_date DATETIME COMMENT '融资银行开始时间',\n    finance_bank_end_date DATETIME COMMENT '融资银行结束时间',\n    -- 其他字段...\n);\n```\n\n请确认这些SQL语句是否符合您的需求，或者您是否需要针对特定MySQL版本进行调整？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "7108826",
+      "summary": "合并PMC供应商表Alter操作",
+      "role": "user",
+      "status": "success",
+      "content": "表 'pmc_finance_supplier_apply' 的多个alter操作请合并成一个.",
+      "payload": {
+        "query": "表 'pmc_finance_supplier_apply' 的多个alter操作请合并成一个.",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "taskId": 224741,
+        "conversationId": 943950,
+        "sessionId": 10082911
+      }
+    },
+    {
+      "id": "9243f21b-c4d7-46e7-952c-6aef14d90176",
+      "userMessageId": "7108826",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "d9fe568e-61af-4038-b817-a4917df1fef8",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先找到包含 `pmc_finance_supplier_apply` 表定义的文件。根据项目结构，这很可能在 `pmc-basic-persistence` 或 `pmc-basic-service` 模块的资源目录下的 mapper XML 文件中。\n\n让我先搜索这个表名：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "a21cf8b0-1145-43b1-9589-db1cb0d2e04d",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/pmc/",
+            "regex": "pmc_finance_supplier_apply"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 1619,
+                "endLine": 1621
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 2403,
+                "endLine": 2405
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml",
+                "startLine": 2462,
+                "endLine": 2464
+              },
+              {
+                "path": "pmc-basic-cmb/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 59,
+                "endLine": 61
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml",
+                "startLine": 42,
+                "endLine": 44
+              },
+              {
+                "path": "pmc-basic-cmbc/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 58,
+                "endLine": 60
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 60,
+                "endLine": 62
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 99,
+                "endLine": 101
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 105,
+                "endLine": 107
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 110,
+                "endLine": 112
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 156,
+                "endLine": 158
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 166,
+                "endLine": 168
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 187,
+                "endLine": 189
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 198,
+                "endLine": 200
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 212,
+                "endLine": 214
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 233,
+                "endLine": 235
+              },
+              {
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml",
+                "startLine": 241,
+                "endLine": 243
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "        where tpc.status not in('PAYED','PAY_ORDER_GEN','BANK_PROCESSING')\n        and not exists (select 1 from pmc_finance_supplier_apply sa where sa.pay_check_num = tpc.pay_check_num)\n        <if test=\"sourceNum != null and sourceNum != ''\">\n",
+                "start_line": 1619,
+                "end_line": 1621,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "            </foreach>\n            and not exists (select 1 from pmc_finance_supplier_apply pfsa WHERE tpc.pay_check_num = pfsa.pay_check_num\n              and pfsa.status in\n",
+                "start_line": 2403,
+                "end_line": 2405,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "        a.apply_id,a.apply_number,a.pay_check_num,a.status,a.pay_amount,a.finance_amount,p.pay_group,a.source_num,a.currency\n        from pmc_finance_supplier_apply a left join pmc_pay_checks p\n        on a.pay_check_num = p.pay_check_num\n",
+                "start_line": 2462,
+                "end_line": 2464,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+              },
+              {
+                "match": "        COUNT(1) AS totalCount\n        FROM pmc_finance_supplier_apply\n        WHERE status IN\n",
+                "start_line": 59,
+                "end_line": 61,
+                "path": "pmc-basic-cmb/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        SELECT <include refid=\"Base_Column_List\" />\n        FROM pmc_finance_supplier_apply_his\n        WHERE apply_number = #{applyNumber,jdbcType=VARCHAR}\n",
+                "start_line": 42,
+                "end_line": 44,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+              },
+              {
+                "match": "        COUNT(1) AS totalCount\n        FROM pmc_finance_supplier_apply\n        WHERE status IN\n",
+                "start_line": 58,
+                "end_line": 60,
+                "path": "pmc-basic-cmbc/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        c.supplier_name\n        FROM pmc_finance_supplier_apply a\n        left join pmc_data_p2p_supplier c on c.supplier_code = a.supplier_code\n",
+                "start_line": 60,
+                "end_line": 62,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        c.supplier_name\n        FROM pmc_finance_supplier_apply a\n        LEFT JOIN (\n",
+                "start_line": 99,
+                "end_line": 101,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "                b1.operation_node\n            FROM pmc_finance_supplier_apply_his b1\n            INNER JOIN (\n",
+                "start_line": 105,
+                "end_line": 107,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "                    MAX(create_date) as max_create_date\n                FROM pmc_finance_supplier_apply_his\n                GROUP BY apply_number\n",
+                "start_line": 110,
+                "end_line": 112,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        c.supplier_name\n        FROM pmc_finance_supplier_apply a\n        LEFT JOIN pmc_data_p2p_supplier c ON c.supplier_code = a.supplier_code\n",
+                "start_line": 156,
+                "end_line": 158,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        COUNT(1) AS totalCount\n        FROM pmc_finance_supplier_apply\n        WHERE status IN\n",
+                "start_line": 166,
+                "end_line": 168,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        SELECT COALESCE(SUM(finance_amount), 0) AS monthAmount\n        FROM pmc_finance_supplier_apply\n        WHERE supplier_code = #{supplierCode, jdbcType=VARCHAR}\n",
+                "start_line": 187,
+                "end_line": 189,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        SELECT COALESCE(SUM(finance_amount), 0) AS yearAmount\n        FROM pmc_finance_supplier_apply\n        WHERE supplier_code = #{supplierCode, jdbcType=VARCHAR}\n",
+                "start_line": 198,
+                "end_line": 200,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "        c.pay_plan_date as patyPlanDate\n        from pmc_finance_supplier_apply a\n        left join pmc_pay_checks c on a.pay_check_num = c.pay_check_num\n",
+                "start_line": 212,
+                "end_line": 214,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "    <update id=\"updateStatusByApplyNumber\">\n        UPDATE pmc_finance_supplier_apply\n        SET status = #{status, jdbcType=VARCHAR},\n",
+                "start_line": 233,
+                "end_line": 235,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              },
+              {
+                "match": "    <update id=\"updateBankApplyNumberByApplyNumber\">\n        UPDATE pmc_finance_supplier_apply\n        SET bank_apply_number = #{bank_apply_number, jdbcType=VARCHAR},\n",
+                "start_line": 241,
+                "end_line": 243,
+                "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "pmc_finance_supplier_apply",
+                "file_pattern": "**/*.xml"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "        where tpc.status not in('PAYED','PAY_ORDER_GEN','BANK_PROCESSING')\n        and not exists (select 1 from pmc_finance_supplier_apply sa where sa.pay_check_num = tpc.pay_check_num)\n        <if test=\"sourceNum != null and sourceNum != ''\">\n",
+                  "start_line": 1619,
+                  "end_line": 1621,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "            </foreach>\n            and not exists (select 1 from pmc_finance_supplier_apply pfsa WHERE tpc.pay_check_num = pfsa.pay_check_num\n              and pfsa.status in\n",
+                  "start_line": 2403,
+                  "end_line": 2405,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "        a.apply_id,a.apply_number,a.pay_check_num,a.status,a.pay_amount,a.finance_amount,p.pay_group,a.source_num,a.currency\n        from pmc_finance_supplier_apply a left join pmc_pay_checks p\n        on a.pay_check_num = p.pay_check_num\n",
+                  "start_line": 2462,
+                  "end_line": 2464,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcPayChecksMapper.xml"
+                },
+                {
+                  "match": "        COUNT(1) AS totalCount\n        FROM pmc_finance_supplier_apply\n        WHERE status IN\n",
+                  "start_line": 59,
+                  "end_line": 61,
+                  "path": "pmc-basic-cmb/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        SELECT <include refid=\"Base_Column_List\" />\n        FROM pmc_finance_supplier_apply_his\n        WHERE apply_number = #{applyNumber,jdbcType=VARCHAR}\n",
+                  "start_line": 42,
+                  "end_line": 44,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyHisMapper.xml"
+                },
+                {
+                  "match": "        COUNT(1) AS totalCount\n        FROM pmc_finance_supplier_apply\n        WHERE status IN\n",
+                  "start_line": 58,
+                  "end_line": 60,
+                  "path": "pmc-basic-cmbc/src/main/resources/mapper/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        c.supplier_name\n        FROM pmc_finance_supplier_apply a\n        left join pmc_data_p2p_supplier c on c.supplier_code = a.supplier_code\n",
+                  "start_line": 60,
+                  "end_line": 62,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        c.supplier_name\n        FROM pmc_finance_supplier_apply a\n        LEFT JOIN (\n",
+                  "start_line": 99,
+                  "end_line": 101,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "                b1.operation_node\n            FROM pmc_finance_supplier_apply_his b1\n            INNER JOIN (\n",
+                  "start_line": 105,
+                  "end_line": 107,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "                    MAX(create_date) as max_create_date\n                FROM pmc_finance_supplier_apply_his\n                GROUP BY apply_number\n",
+                  "start_line": 110,
+                  "end_line": 112,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        c.supplier_name\n        FROM pmc_finance_supplier_apply a\n        LEFT JOIN pmc_data_p2p_supplier c ON c.supplier_code = a.supplier_code\n",
+                  "start_line": 156,
+                  "end_line": 158,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        COUNT(1) AS totalCount\n        FROM pmc_finance_supplier_apply\n        WHERE status IN\n",
+                  "start_line": 166,
+                  "end_line": 168,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        SELECT COALESCE(SUM(finance_amount), 0) AS monthAmount\n        FROM pmc_finance_supplier_apply\n        WHERE supplier_code = #{supplierCode, jdbcType=VARCHAR}\n",
+                  "start_line": 187,
+                  "end_line": 189,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        SELECT COALESCE(SUM(finance_amount), 0) AS yearAmount\n        FROM pmc_finance_supplier_apply\n        WHERE supplier_code = #{supplierCode, jdbcType=VARCHAR}\n",
+                  "start_line": 198,
+                  "end_line": 200,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "        c.pay_plan_date as patyPlanDate\n        from pmc_finance_supplier_apply a\n        left join pmc_pay_checks c on a.pay_check_num = c.pay_check_num\n",
+                  "start_line": 212,
+                  "end_line": 214,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "    <update id=\"updateStatusByApplyNumber\">\n        UPDATE pmc_finance_supplier_apply\n        SET status = #{status, jdbcType=VARCHAR},\n",
+                  "start_line": 233,
+                  "end_line": 235,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                },
+                {
+                  "match": "    <update id=\"updateBankApplyNumberByApplyNumber\">\n        UPDATE pmc_finance_supplier_apply\n        SET bank_apply_number = #{bank_apply_number, jdbcType=VARCHAR},\n",
+                  "start_line": 241,
+                  "end_line": 243,
+                  "path": "pmc-basic-persistence/src/main/resources/mapper/pmc/PmcFinanceSupplierApplyMapper.xml"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "pmc_finance_supplier_apply",
+            "file_pattern": "**/*.xml"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "ce157646-5d3f-464a-aa92-e33d19db48ae",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我看到搜索结果显示有 `PmcFinanceSupplierApplyMapper.xml` 文件，但这不是表结构定义文件。我需要找到数据库表结构定义，可能在SQL文件中。让我搜索包含表定义的文件：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "638d30f9-798a-41c9-8f58-8a7da96484dc",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/pmc/",
+            "regex": "CREATE TABLE.*pmc_finance_supplier_apply"
+          },
+          "displayResult": {
+            "searchFiles": []
+          },
+          "workflowSnapshot": {
+            "searchFiles": [],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "CREATE TABLE.*pmc_finance_supplier_apply",
+                "file_pattern": "**/*.sql"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": []
+            }
+          },
+          "params": {
+            "regex": "CREATE TABLE.*pmc_finance_supplier_apply",
+            "file_pattern": "**/*.sql"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "20367466-66c0-4af1-9b3d-2a3738a5fbda",
+          "type": "TEXT",
+          "status": "success",
+          "content": "根据搜索结果，我没有找到 `pmc_finance_supplier_apply` 表的创建SQL文件。不过，我可以为您提供一个合并的ALTER语句来添加这两个日期字段：\n\n```sql\nALTER TABLE pmc_finance_supplier_apply \nADD COLUMN finance_bank_begin_date DATETIME COMMENT '融资银行开始时间',\nADD COLUMN finance_bank_end_date DATETIME COMMENT '融资银行结束时间';\n```\n\n这个SQL语句：\n1. 使用单个ALTER语句添加两个字段\n2. 适用于低版本MySQL\n3. 为每个字段添加了注释\n4. 使用DATETIME类型存储日期时间\n\n如果您需要为这些字段添加索引或其他约束，也可以合并到同一个ALTER语句中。例如：\n\n```sql\nALTER TABLE pmc_finance_supplier_apply \nADD COLUMN finance_bank_begin_date DATETIME COMMENT '融资银行开始时间',\nADD COLUMN finance_bank_end_date DATETIME COMMENT '融资银行结束时间',\nADD INDEX idx_finance_bank_begin (finance_bank_begin_date),\nADD INDEX idx_finance_bank_end (finance_bank_end_date);\n```\n\n请确认这个SQL语句是否符合您的需求？或者您需要我进一步调整？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "7238014",
+      "summary": "Java BigDecimal除法异常分析",
+      "role": "user",
+      "status": "success",
+      "content": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin/java -Dvisualvm.id=1754422964392875 -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=60072 -Dfile.encoding=UTF-8 -classpath /Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-web/target/classes:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-zuul/1.3.0.RELEASE/spring-cloud-starter-zuul-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter/1.2.0.RELEASE/spring-cloud-starter-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-context/1.2.0.RELEASE/spring-cloud-context-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-rsa/1.0.3.RELEASE/spring-security-rsa-1.0.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.55/bcpkix-jdk15on-1.55.jar:/Users/xiaoliu/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.55/bcprov-jdk15on-1.55.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/1.5.3.RELEASE/spring-boot-starter-actuator-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-actuator/1.5.3.RELEASE/spring-boot-actuator-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-ribbon/1.3.0.RELEASE/spring-cloud-starter-ribbon-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon/2.2.2/ribbon-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-transport/2.2.2/ribbon-transport-2.2.2.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxnetty-contexts/0.4.9/rxnetty-contexts-0.4.9.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxnetty-servo/0.4.9/rxnetty-servo-0.4.9.jar:/Users/xiaoliu/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxnetty/0.4.9/rxnetty-0.4.9.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-codec-http/4.0.27.Final/netty-codec-http-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-codec/4.0.27.Final/netty-codec-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-handler/4.0.27.Final/netty-handler-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-transport-native-epoll/4.0.27.Final/netty-transport-native-epoll-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-common/4.0.27.Final/netty-common-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-buffer/4.0.27.Final/netty-buffer-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-transport/4.0.27.Final/netty-transport-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-core/2.2.2/ribbon-core-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-httpclient/2.2.2/ribbon-httpclient-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-loadbalancer/2.2.2/ribbon-loadbalancer-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-statistics/0.1.1/netflix-statistics-0.1.1.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxjava/1.1.10/rxjava-1.1.10.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-archaius/1.3.0.RELEASE/spring-cloud-starter-archaius-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/archaius/archaius-core/0.7.4/archaius-core-0.7.4.jar:/Users/xiaoliu/.m2/repository/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar:/Users/xiaoliu/.m2/repository/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar:/Users/xiaoliu/.m2/repository/com/netflix/zuul/zuul-core/1.3.0/zuul-core-1.3.0.jar:/Users/xiaoliu/.m2/repository/com/netflix/servo/servo-core/0.10.1/servo-core-0.10.1.jar:/Users/xiaoliu/.m2/repository/com/netflix/servo/servo-internal/0.10.1/servo-internal-0.10.1.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-commons-util/0.1.1/netflix-commons-util-0.1.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-aop/1.5.3.RELEASE/spring-boot-starter-aop-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter/1.5.3.RELEASE/spring-boot-starter-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.5.3.RELEASE/spring-boot-starter-logging-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar:/Users/xiaoliu/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-aop/4.3.8.RELEASE/spring-aop-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-beans/4.3.8.RELEASE/spring-beans-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.5.3.RELEASE/spring-boot-starter-web-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.5.3.RELEASE/spring-boot-starter-tomcat-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.14/tomcat-embed-core-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/8.5.14/tomcat-embed-el-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.14/tomcat-embed-websocket-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-web/4.3.8.RELEASE/spring-web-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-webmvc/4.3.8.RELEASE/spring-webmvc-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-expression/4.3.8.RELEASE/spring-expression-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-eureka/1.3.0.RELEASE/spring-cloud-starter-eureka-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-netflix-core/1.3.0.RELEASE/spring-cloud-netflix-core-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-netflix-eureka-client/1.3.0.RELEASE/spring-cloud-netflix-eureka-client-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/eureka/eureka-client/1.6.2/eureka-client-1.6.2.jar:/Users/xiaoliu/.m2/repository/org/codehaus/jettison/jettison/1.3.7/jettison-1.3.7.jar:/Users/xiaoliu/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-eventbus/0.3.0/netflix-eventbus-0.3.0.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-infix/0.3.0/netflix-infix-0.3.0.jar:/Users/xiaoliu/.m2/repository/commons-jxpath/commons-jxpath/1.3/commons-jxpath-1.3.jar:/Users/xiaoliu/.m2/repository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar:/Users/xiaoliu/.m2/repository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar:/Users/xiaoliu/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-math/2.2/commons-math-2.2.jar:/Users/xiaoliu/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/Users/xiaoliu/.m2/repository/com/sun/jersey/jersey-core/1.19.1/jersey-core-1.19.1.jar:/Users/xiaoliu/.m2/repository/com/sun/jersey/jersey-client/1.19.1/jersey-client-1.19.1.jar:/Users/xiaoliu/.m2/repository/com/sun/jersey/contribs/jersey-apache-client4/1.19.1/jersey-apache-client4-1.19.1.jar:/Users/xiaoliu/.m2/repository/com/google/inject/guice/4.1.0/guice-4.1.0.jar:/Users/xiaoliu/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/xiaoliu/.m2/repository/com/netflix/eureka/eureka-core/1.6.2/eureka-core-1.6.2.jar:/Users/xiaoliu/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar:/Users/xiaoliu/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/Users/xiaoliu/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-eureka/2.2.2/ribbon-eureka-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.jar:/Users/xiaoliu/.m2/repository/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar:/Users/xiaoliu/.m2/repository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-cache/1.5.3.RELEASE/spring-boot-starter-cache-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-context/4.3.8.RELEASE/spring-context-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-context-support/4.3.8.RELEASE/spring-context-support-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-feign/1.3.0.RELEASE/spring-cloud-starter-feign-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-commons/1.2.0.RELEASE/spring-cloud-commons-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-crypto/4.2.2.RELEASE/spring-security-crypto-4.2.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/io/github/openfeign/feign-core/9.4.0/feign-core-9.4.0.jar:/Users/xiaoliu/.m2/repository/org/jvnet/animal-sniffer-annotation/1.0/animal-sniffer-annotation-1.0.jar:/Users/xiaoliu/.m2/repository/io/github/openfeign/feign-slf4j/9.4.0/feign-slf4j-9.4.0.jar:/Users/xiaoliu/.m2/repository/io/github/openfeign/feign-hystrix/9.4.0/feign-hystrix-9.4.0.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-hystrix/1.3.0.RELEASE/spring-cloud-starter-hystrix-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-core/1.5.10/hystrix-core-1.5.10.jar:/Users/xiaoliu/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.10/hystrix-metrics-event-stream-1.5.10.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-serialization/1.5.10/hystrix-serialization-1.5.10.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.8.8/jackson-module-afterburner-2.8.8.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-javanica/1.5.10/hystrix-javanica-1.5.10.jar:/Users/xiaoliu/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/Users/xiaoliu/.m2/repository/org/springframework/retry/spring-retry/1.2.0.RELEASE/spring-retry-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-core/4.3.8.RELEASE/spring-core-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/h2database/h2/1.4.194/h2-1.4.194.jar:/Users/xiaoliu/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-pojo/target/classes:/Users/xiaoliu/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/Users/xiaoliu/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-common/target/classes:/Users/xiaoliu/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar:/Users/xiaoliu/.m2/repository/com/alibaba/fastjson/1.2.83/fastjson-1.2.83.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar:/Users/xiaoliu/.m2/repository/org/mybatis/mybatis/3.4.4/mybatis-3.4.4.jar:/Users/xiaoliu/.m2/repository/com/github/stuxuhai/jpinyin/1.1.8/jpinyin-1.1.8.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-jdbc/4.3.8.RELEASE/spring-jdbc-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-tx/4.3.8.RELEASE/spring-tx-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/cn/afterturn/easypoi-base/3.2.0/easypoi-base-3.2.0.jar:/Users/xiaoliu/.m2/repository/cn/afterturn/easypoi-annotation/3.2.0/easypoi-annotation-3.2.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/micro-lookup-client/0.0.8-SNAPSHOT/micro-lookup-client-0.0.8-20210519.033527-59.jar:/Users/xiaoliu/.m2/repository/org/ehcache/ehcache/3.2.2/ehcache-3.2.2.jar:/Users/xiaoliu/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-starter/1.3.0/mybatis-spring-boot-starter-1.3.0.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/1.5.3.RELEASE/spring-boot-starter-jdbc-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/tomcat-jdbc/8.5.14/tomcat-jdbc-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/tomcat-juli/8.5.14/tomcat-juli-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.3.0/mybatis-spring-boot-autoconfigure-1.3.0.jar:/Users/xiaoliu/.m2/repository/org/mybatis/mybatis-spring/1.3.1/mybatis-spring-1.3.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/data/spring-data-redis/1.8.3.RELEASE/spring-data-redis-1.8.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/data/spring-data-keyvalue/1.2.3.RELEASE/spring-data-keyvalue-1.2.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/data/spring-data-commons/1.13.3.RELEASE/spring-data-commons-1.13.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-oxm/4.3.8.RELEASE/spring-oxm-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/wk-client-starter/1.1.1-SNAPSHOT/wk-client-starter-1.1.1-20211111.123055-18.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.5.3.RELEASE/spring-boot-autoconfigure-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/wk-client-feign/1.1.1-SNAPSHOT/wk-client-feign-1.1.1-20211111.123038-18.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/wk-client-core/1.1.1-SNAPSHOT/wk-client-core-1.1.1-20211111.123037-18.jar:/Users/xiaoliu/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/Users/xiaoliu/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/javax/servlet/servlet-api/3.1/servlet-api-3.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-web/4.2.2.RELEASE/spring-security-web-4.2.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-swagger2/2.7.0/springfox-swagger2-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/swagger/swagger-annotations/1.5.13/swagger-annotations-1.5.13.jar:/Users/xiaoliu/.m2/repository/io/swagger/swagger-models/1.5.13/swagger-models-1.5.13.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-spi/2.7.0/springfox-spi-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-core/2.7.0/springfox-core-2.7.0.jar:/Users/xiaoliu/.m2/repository/net/bytebuddy/byte-buddy/1.6.14/byte-buddy-1.6.14.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-schema/2.7.0/springfox-schema-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-swagger-common/2.7.0/springfox-swagger-common-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-spring-web/2.7.0/springfox-spring-web-2.7.0.jar:/Users/xiaoliu/.m2/repository/org/reflections/reflections/0.9.11/reflections-0.9.11.jar:/Users/xiaoliu/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/classmate/1.3.3/classmate-1.3.3.jar:/Users/xiaoliu/.m2/repository/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/mapstruct/mapstruct/1.1.0.Final/mapstruct-1.1.0.Final.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-swagger-ui/2.7.0/springfox-swagger-ui-2.7.0.jar:/Users/xiaoliu/.m2/repository/org/apache/poi/poi/3.16/poi-3.16.jar:/Users/xiaoliu/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/xiaoliu/.m2/repository/org/apache/poi/poi-ooxml/3.16/poi-ooxml-3.16.jar:/Users/xiaoliu/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.16/poi-ooxml-schemas-3.16.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/Users/xiaoliu/.m2/repository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar:/Users/xiaoliu/.m2/repository/org/hibernate/hibernate-validator/5.3.5.Final/hibernate-validator-5.3.5.Final.jar:/Users/xiaoliu/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar:/Users/xiaoliu/.m2/repository/org/hibernate/hibernate-validator-annotation-processor/5.2.2.Final/hibernate-validator-annotation-processor-5.2.2.Final.jar:/Users/xiaoliu/.m2/repository/org/freemarker/freemarker/2.3.23/freemarker-2.3.23.jar:/Users/xiaoliu/.m2/repository/com/baidubce/bce-java-sdk/0.10.28/bce-java-sdk-0.10.28.jar:/Users/xiaoliu/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar:/Users/xiaoliu/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar:/Users/xiaoliu/.m2/repository/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.3/httpasyncclient-4.1.3.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.6/httpcore-nio-4.4.6.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar:/Users/xiaoliu/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar:/Users/xiaoliu/.m2/repository/com/baidu/bpit/inf/apigo/apigo-sdk-java/0.0.1-SNAPSHOT/apigo-sdk-java-0.0.1-20251015.120226-36.jar:/Users/xiaoliu/.m2/repository/com/auth0/java-jwt/3.8.2/java-jwt-3.8.2.jar:/Users/xiaoliu/.m2/repository/com/baidu/uuap/uuap-common/1.3.8-SNAPSHOT/uuap-common-1.3.8-20251111.104607-27.jar:/Users/xiaoliu/.m2/repository/com/alibaba/transmittable-thread-local/2.11.0/transmittable-thread-local-2.11.0.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1.jar:/Users/xiaoliu/.m2/repository/com/101tec/zkclient/0.10/zkclient-0.10.jar:/Users/xiaoliu/.m2/repository/org/apache/zookeeper/zookeeper/3.4.8/zookeeper-3.4.8.jar:/Users/xiaoliu/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/xiaoliu/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/Users/xiaoliu/.m2/repository/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar:/Users/xiaoliu/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/Users/xiaoliu/.m2/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar:/Users/xiaoliu/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.6/snappy-java-1.1.10.6.jar:/Users/xiaoliu/.m2/repository/org/aspectj/aspectjrt/1.8.10/aspectjrt-1.8.10.jar:/Users/xiaoliu/.m2/repository/com/esotericsoftware/reflectasm/1.11.7/reflectasm-1.11.7.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.8.8/jackson-jaxrs-json-provider-2.8.8.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.8.8/jackson-jaxrs-base-2.8.8.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.8/jackson-module-jaxb-annotations-2.8.8.jar:/Users/xiaoliu/.m2/repository/org/glassfish/jersey/core/jersey-common/2.14/jersey-common-2.14.jar:/Users/xiaoliu/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/Users/xiaoliu/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/Users/xiaoliu/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.14/jersey-guava-2.14.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/hk2-api/2.4.0-b06/hk2-api-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/hk2-utils/2.4.0-b06/hk2-utils-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b06/aopalliance-repackaged-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/external/javax.inject/2.4.0-b06/javax.inject-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/hk2-locator/2.4.0-b06/hk2-locator-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/Users/xiaoliu/.m2/repository/javax/mail/mail/1.4.7/mail-1.4.7.jar:/Users/xiaoliu/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/xiaoliu/.m2/repository/org/logback-extensions/logback-ext-spring/0.1.5/logback-ext-spring-0.1.5.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-spring-webmvc/5.6.3/brave-instrumentation-spring-webmvc-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-servlet/5.6.3/brave-instrumentation-servlet-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-mysql/5.6.3/brave-instrumentation-mysql-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-httpclient/5.6.3/brave-instrumentation-httpclient-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-http/5.6.3/brave-instrumentation-http-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-context-slf4j/5.6.3/brave-context-slf4j-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-spring-beans/5.6.3/brave-spring-beans-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/reporter2/zipkin-reporter-spring-beans/2.8.1/zipkin-reporter-spring-beans-2.8.1.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave/5.6.3/brave-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/zipkin2/zipkin/2.12.5/zipkin-2.12.5.jar:/Users/xiaoliu/.m2/repository/io/zipkin/reporter2/zipkin-reporter/2.8.1/zipkin-reporter-2.8.1.jar:/Users/xiaoliu/.m2/repository/io/zipkin/reporter2/zipkin-sender-okhttp3/2.8.1/zipkin-sender-okhttp3-2.8.1.jar:/Users/xiaoliu/.m2/repository/com/squareup/okhttp3/okhttp/3.6.0/okhttp-3.6.0.jar:/Users/xiaoliu/.m2/repository/com/squareup/okio/okio/1.11.0/okio-1.11.0.jar:/Users/xiaoliu/.m2/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar:/Users/xiaoliu/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar:/Users/xiaoliu/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/Users/xiaoliu/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/xiaoliu/.m2/repository/com/caucho/hessian/4.0.38/hessian-4.0.38.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/xiaoliu/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/Users/xiaoliu/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/Users/xiaoliu/.m2/repository/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar:/Users/xiaoliu/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/xiaoliu/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-test/4.3.7.RELEASE/spring-test-4.3.7.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-test/1.5.2.RELEASE/spring-boot-test-1.5.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot/1.5.3.RELEASE/spring-boot-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/Users/xiaoliu/.m2/repository/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.jar:/Users/xiaoliu/.m2/repository/net/minidev/json-smart/2.2.1/json-smart-2.2.1.jar:/Users/xiaoliu/.m2/repository/net/minidev/accessors-smart/1.1/accessors-smart-1.1.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.10/jackson-annotations-2.9.10.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.10.6/jackson-databind-2.9.10.6.jar:/Users/xiaoliu/.m2/repository/com/baidu/uuap/uuap-client/0.2.8-RELEASE/uuap-client-0.2.8-RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/xiaoliu/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/Users/xiaoliu/.m2/repository/org/jasig/cas/client/cas-client-core/3.3.3/cas-client-core-3.3.3.jar:/Users/xiaoliu/.m2/repository/org/opensaml/opensaml/2.5.1-1/opensaml-2.5.1-1.jar:/Users/xiaoliu/.m2/repository/org/opensaml/openws/1.4.2-1/openws-1.4.2-1.jar:/Users/xiaoliu/.m2/repository/org/opensaml/xmltooling/1.3.2-1/xmltooling-1.3.2-1.jar:/Users/xiaoliu/.m2/repository/org/bouncycastle/bcprov-jdk15/1.45/bcprov-jdk15-1.45.jar:/Users/xiaoliu/.m2/repository/org/apache/santuario/xmlsec/1.4.4/xmlsec-1.4.4.jar:/Users/xiaoliu/.m2/repository/ca/juliusdavies/not-yet-commons-ssl/0.3.9/not-yet-commons-ssl-0.3.9.jar:/Users/xiaoliu/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/xiaoliu/.m2/repository/velocity/velocity/1.5/velocity-1.5.jar:/Users/xiaoliu/.m2/repository/org/owasp/esapi/esapi/2.0GA/esapi-2.0GA.jar:/Users/xiaoliu/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/xiaoliu/.m2/repository/xerces/xercesImpl/2.10.0/xercesImpl-2.10.0.jar:/Users/xiaoliu/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar:/Users/xiaoliu/.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar:/Users/xiaoliu/.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar:/Users/xiaoliu/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/xiaoliu/.m2/repository/com/jcabi/jcabi-manifests/1.1/jcabi-manifests-1.1.jar:/Users/xiaoliu/.m2/repository/com/jcabi/jcabi-log/0.14/jcabi-log-0.14.jar:/Users/xiaoliu/.m2/repository/com/baidu/scan/safesdk-java/1.0.1-SNAPSHOT/safesdk-java-1.0.1-20240718.132327-29.jar:/Users/xiaoliu/.m2/repository/org/jsoup/jsoup/1.12.1/jsoup-1.12.1.jar:/Users/xiaoliu/.m2/repository/com/baidu/bpitsns/msgcenter-sdk/1.1.0-SNAPSHOT/msgcenter-sdk-1.1.0-20250506.070137-12.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/xiaoliu/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar:/Users/xiaoliu/.m2/repository/com/opencsv/opencsv/5.4/opencsv-5.4.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar:/Users/xiaoliu/.m2/repository/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/hsm-software-share/1.0.5/hsm-software-share-1.0.5.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/icbc-api-sdk-cop/1.0/icbc-api-sdk-cop-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/icbc-api-sdk-cop-io/1.0/icbc-api-sdk-cop-io-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/icbc-ca/1.0/icbc-ca-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/message/relay/message-relay-sdk/11.0.0-SNAPSHOT/message-relay-sdk-11.0.0-20250212.114106-14.jar:/Users/xiaoliu/.m2/repository/com/baidu/dumail/dumail-common/0.0.11-SNAPSHOT/dumail-common-0.0.11-20241024.063748-18.jar:/Users/xiaoliu/.m2/repository/cn/hutool/hutool-all/5.8.16/hutool-all-5.8.16.jar:/Users/xiaoliu/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.3.5/caffeine-2.3.5.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-examples/0.8.9/apache-mime4j-examples-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-dom/0.8.9/apache-mime4j-dom-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-core/0.8.9/apache-mime4j-core-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-mbox-iterator/0.8.9/apache-mime4j-mbox-iterator-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-storage/0.8.9/apache-mime4j-storage-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-full/2.2.10/ofdrw-full-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-gv/2.2.10/ofdrw-gv-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-core/2.2.10/ofdrw-core-2.2.10.jar:/Users/xiaoliu/.m2/repository/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar:/Users/xiaoliu/.m2/repository/org/dom4j/dom4j/2.1.4/dom4j-2.1.4.jar:/Users/xiaoliu/.m2/repository/org/jetbrains/annotations/21.0.1/annotations-21.0.1.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-layout/2.2.10/ofdrw-layout-2.2.10.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/imageio/imageio-tiff/3.5/imageio-tiff-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/imageio/imageio-core/3.5/imageio-core-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/imageio/imageio-metadata/3.5/imageio-metadata-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/common/common-lang/3.5/common-lang-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/common/common-io/3.5/common-io-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/common/common-image/3.5/common-image-3.5.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-pkg/2.2.10/ofdrw-pkg-2.2.10.jar:/Users/xiaoliu/.m2/repository/net/lingala/zip4j/zip4j/2.11.3/zip4j-2.11.3.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-font/2.2.10/ofdrw-font-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-reader/2.2.10/ofdrw-reader-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/apache/pdfbox/jbig2-imageio/3.0.3/jbig2-imageio-3.0.3.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-gm/2.2.10/ofdrw-gm-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-sign/2.2.10/ofdrw-sign-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-converter/2.2.10/ofdrw-converter-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ujmp/ujmp-core/0.3.0/ujmp-core-0.3.0.jar:/Users/xiaoliu/.m2/repository/org/json/json/20140107/json-20140107.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/kernel/7.1.13/kernel-7.1.13.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/io/7.1.13/io-7.1.13.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/layout/7.1.13/layout-7.1.13.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/font-asian/7.1.13/font-asian-7.1.13.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-transcoder/1.17/batik-transcoder-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-anim/1.17/batik-anim-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-css/1.17/batik-css-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-ext/1.17/batik-ext-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-parser/1.17/batik-parser-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-svg-dom/1.17/batik-svg-dom-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.17/batik-awt-util-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/xmlgraphics-commons/2.9/xmlgraphics-commons-2.9.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-bridge/1.17/batik-bridge-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-script/1.17/batik-script-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-dom/1.17/batik-dom-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-gvt/1.17/batik-gvt-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-shared-resources/1.17/batik-shared-resources-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.17/batik-svggen-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-util/1.17/batik-util-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-constants/1.17/batik-constants-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-i18n/1.17/batik-i18n-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-xml/1.17/batik-xml-1.17.jar:/Users/xiaoliu/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-tool/2.2.10/ofdrw-tool-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-graphics2d/2.2.10/ofdrw-graphics2d-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/apache/pdfbox/pdfbox/2.0.27/pdfbox-2.0.27.jar:/Users/xiaoliu/.m2/repository/org/apache/pdfbox/fontbox/2.0.27/fontbox-2.0.27.jar:/Users/xiaoliu/.m2/repository/com/baidu/uuap/uuap-cache-redis/2.0.9.3-SNAPSHOT/uuap-cache-redis-2.0.9.3-20250310.055840-27.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-core/1.6.2/protostuff-core-1.6.2.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-api/1.6.2/protostuff-api-1.6.2.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-runtime/1.6.2/protostuff-runtime-1.6.2.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-collectionschema/1.6.2/protostuff-collectionschema-1.6.2.jar:/Users/xiaoliu/.m2/repository/com/baidu/bdrp-client/1.1.25/bdrp-client-1.1.25.jar:/Users/xiaoliu/.m2/repository/com/baidu/bns-client-spring/1.4.6/bns-client-spring-1.4.6.jar:/Users/xiaoliu/.m2/repository/com/baidu/bns-core/1.4.6/bns-core-1.4.6.jar:/Users/xiaoliu/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/bpit/inf/message-center-sdk/1.0.0-SNAPSHOT/message-center-sdk-1.0.0-20240318.031338-11.jar com.baidu.pmc.web.service.financing.impl.PmcFinancingBankServiceImpl\nException in thread \"main\" java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.\n\tat java.base/java.math.BigDecimal.divide(BigDecimal.java:1736)\n\tat com.baidu.pmc.web.service.financing.impl.PmcFinancingBankServiceImpl.main(PmcFinancingBankServiceImpl.java:79)\n\n进程已结束，退出代码为 1\n",
+      "payload": {
+        "query": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin/java -Dvisualvm.id=1754422964392875 -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=60072 -Dfile.encoding=UTF-8 -classpath /Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-web/target/classes:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-zuul/1.3.0.RELEASE/spring-cloud-starter-zuul-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter/1.2.0.RELEASE/spring-cloud-starter-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-context/1.2.0.RELEASE/spring-cloud-context-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-rsa/1.0.3.RELEASE/spring-security-rsa-1.0.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.55/bcpkix-jdk15on-1.55.jar:/Users/xiaoliu/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.55/bcprov-jdk15on-1.55.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/1.5.3.RELEASE/spring-boot-starter-actuator-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-actuator/1.5.3.RELEASE/spring-boot-actuator-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-ribbon/1.3.0.RELEASE/spring-cloud-starter-ribbon-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon/2.2.2/ribbon-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-transport/2.2.2/ribbon-transport-2.2.2.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxnetty-contexts/0.4.9/rxnetty-contexts-0.4.9.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxnetty-servo/0.4.9/rxnetty-servo-0.4.9.jar:/Users/xiaoliu/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxnetty/0.4.9/rxnetty-0.4.9.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-codec-http/4.0.27.Final/netty-codec-http-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-codec/4.0.27.Final/netty-codec-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-handler/4.0.27.Final/netty-handler-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-transport-native-epoll/4.0.27.Final/netty-transport-native-epoll-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-common/4.0.27.Final/netty-common-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-buffer/4.0.27.Final/netty-buffer-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/io/netty/netty-transport/4.0.27.Final/netty-transport-4.0.27.Final.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-core/2.2.2/ribbon-core-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-httpclient/2.2.2/ribbon-httpclient-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-loadbalancer/2.2.2/ribbon-loadbalancer-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-statistics/0.1.1/netflix-statistics-0.1.1.jar:/Users/xiaoliu/.m2/repository/io/reactivex/rxjava/1.1.10/rxjava-1.1.10.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-archaius/1.3.0.RELEASE/spring-cloud-starter-archaius-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/archaius/archaius-core/0.7.4/archaius-core-0.7.4.jar:/Users/xiaoliu/.m2/repository/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar:/Users/xiaoliu/.m2/repository/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar:/Users/xiaoliu/.m2/repository/com/netflix/zuul/zuul-core/1.3.0/zuul-core-1.3.0.jar:/Users/xiaoliu/.m2/repository/com/netflix/servo/servo-core/0.10.1/servo-core-0.10.1.jar:/Users/xiaoliu/.m2/repository/com/netflix/servo/servo-internal/0.10.1/servo-internal-0.10.1.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-commons-util/0.1.1/netflix-commons-util-0.1.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-aop/1.5.3.RELEASE/spring-boot-starter-aop-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter/1.5.3.RELEASE/spring-boot-starter-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.5.3.RELEASE/spring-boot-starter-logging-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar:/Users/xiaoliu/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-aop/4.3.8.RELEASE/spring-aop-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-beans/4.3.8.RELEASE/spring-beans-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.5.3.RELEASE/spring-boot-starter-web-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.5.3.RELEASE/spring-boot-starter-tomcat-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.14/tomcat-embed-core-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/8.5.14/tomcat-embed-el-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.14/tomcat-embed-websocket-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-web/4.3.8.RELEASE/spring-web-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-webmvc/4.3.8.RELEASE/spring-webmvc-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-expression/4.3.8.RELEASE/spring-expression-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-eureka/1.3.0.RELEASE/spring-cloud-starter-eureka-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-netflix-core/1.3.0.RELEASE/spring-cloud-netflix-core-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-netflix-eureka-client/1.3.0.RELEASE/spring-cloud-netflix-eureka-client-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/eureka/eureka-client/1.6.2/eureka-client-1.6.2.jar:/Users/xiaoliu/.m2/repository/org/codehaus/jettison/jettison/1.3.7/jettison-1.3.7.jar:/Users/xiaoliu/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-eventbus/0.3.0/netflix-eventbus-0.3.0.jar:/Users/xiaoliu/.m2/repository/com/netflix/netflix-commons/netflix-infix/0.3.0/netflix-infix-0.3.0.jar:/Users/xiaoliu/.m2/repository/commons-jxpath/commons-jxpath/1.3/commons-jxpath-1.3.jar:/Users/xiaoliu/.m2/repository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar:/Users/xiaoliu/.m2/repository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar:/Users/xiaoliu/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-math/2.2/commons-math-2.2.jar:/Users/xiaoliu/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/Users/xiaoliu/.m2/repository/com/sun/jersey/jersey-core/1.19.1/jersey-core-1.19.1.jar:/Users/xiaoliu/.m2/repository/com/sun/jersey/jersey-client/1.19.1/jersey-client-1.19.1.jar:/Users/xiaoliu/.m2/repository/com/sun/jersey/contribs/jersey-apache-client4/1.19.1/jersey-apache-client4-1.19.1.jar:/Users/xiaoliu/.m2/repository/com/google/inject/guice/4.1.0/guice-4.1.0.jar:/Users/xiaoliu/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/xiaoliu/.m2/repository/com/netflix/eureka/eureka-core/1.6.2/eureka-core-1.6.2.jar:/Users/xiaoliu/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar:/Users/xiaoliu/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/Users/xiaoliu/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/Users/xiaoliu/.m2/repository/com/netflix/ribbon/ribbon-eureka/2.2.2/ribbon-eureka-2.2.2.jar:/Users/xiaoliu/.m2/repository/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.jar:/Users/xiaoliu/.m2/repository/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar:/Users/xiaoliu/.m2/repository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-cache/1.5.3.RELEASE/spring-boot-starter-cache-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-context/4.3.8.RELEASE/spring-context-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-context-support/4.3.8.RELEASE/spring-context-support-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-feign/1.3.0.RELEASE/spring-cloud-starter-feign-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-commons/1.2.0.RELEASE/spring-cloud-commons-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-crypto/4.2.2.RELEASE/spring-security-crypto-4.2.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/io/github/openfeign/feign-core/9.4.0/feign-core-9.4.0.jar:/Users/xiaoliu/.m2/repository/org/jvnet/animal-sniffer-annotation/1.0/animal-sniffer-annotation-1.0.jar:/Users/xiaoliu/.m2/repository/io/github/openfeign/feign-slf4j/9.4.0/feign-slf4j-9.4.0.jar:/Users/xiaoliu/.m2/repository/io/github/openfeign/feign-hystrix/9.4.0/feign-hystrix-9.4.0.jar:/Users/xiaoliu/.m2/repository/org/springframework/cloud/spring-cloud-starter-hystrix/1.3.0.RELEASE/spring-cloud-starter-hystrix-1.3.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-core/1.5.10/hystrix-core-1.5.10.jar:/Users/xiaoliu/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.10/hystrix-metrics-event-stream-1.5.10.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-serialization/1.5.10/hystrix-serialization-1.5.10.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.8.8/jackson-module-afterburner-2.8.8.jar:/Users/xiaoliu/.m2/repository/com/netflix/hystrix/hystrix-javanica/1.5.10/hystrix-javanica-1.5.10.jar:/Users/xiaoliu/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/Users/xiaoliu/.m2/repository/org/springframework/retry/spring-retry/1.2.0.RELEASE/spring-retry-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-core/4.3.8.RELEASE/spring-core-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/h2database/h2/1.4.194/h2-1.4.194.jar:/Users/xiaoliu/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-pojo/target/classes:/Users/xiaoliu/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/Users/xiaoliu/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-common/target/classes:/Users/xiaoliu/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar:/Users/xiaoliu/.m2/repository/com/alibaba/fastjson/1.2.83/fastjson-1.2.83.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar:/Users/xiaoliu/.m2/repository/org/mybatis/mybatis/3.4.4/mybatis-3.4.4.jar:/Users/xiaoliu/.m2/repository/com/github/stuxuhai/jpinyin/1.1.8/jpinyin-1.1.8.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-jdbc/4.3.8.RELEASE/spring-jdbc-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-tx/4.3.8.RELEASE/spring-tx-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/cn/afterturn/easypoi-base/3.2.0/easypoi-base-3.2.0.jar:/Users/xiaoliu/.m2/repository/cn/afterturn/easypoi-annotation/3.2.0/easypoi-annotation-3.2.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/micro-lookup-client/0.0.8-SNAPSHOT/micro-lookup-client-0.0.8-20210519.033527-59.jar:/Users/xiaoliu/.m2/repository/org/ehcache/ehcache/3.2.2/ehcache-3.2.2.jar:/Users/xiaoliu/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-starter/1.3.0/mybatis-spring-boot-starter-1.3.0.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/1.5.3.RELEASE/spring-boot-starter-jdbc-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/tomcat-jdbc/8.5.14/tomcat-jdbc-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/apache/tomcat/tomcat-juli/8.5.14/tomcat-juli-8.5.14.jar:/Users/xiaoliu/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.3.0/mybatis-spring-boot-autoconfigure-1.3.0.jar:/Users/xiaoliu/.m2/repository/org/mybatis/mybatis-spring/1.3.1/mybatis-spring-1.3.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/data/spring-data-redis/1.8.3.RELEASE/spring-data-redis-1.8.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/data/spring-data-keyvalue/1.2.3.RELEASE/spring-data-keyvalue-1.2.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/data/spring-data-commons/1.13.3.RELEASE/spring-data-commons-1.13.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-oxm/4.3.8.RELEASE/spring-oxm-4.3.8.RELEASE.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/wk-client-starter/1.1.1-SNAPSHOT/wk-client-starter-1.1.1-20211111.123055-18.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.5.3.RELEASE/spring-boot-autoconfigure-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/wk-client-feign/1.1.1-SNAPSHOT/wk-client-feign-1.1.1-20211111.123038-18.jar:/Users/xiaoliu/.m2/repository/com/baidu/hcm/wk-client-core/1.1.1-SNAPSHOT/wk-client-core-1.1.1-20211111.123037-18.jar:/Users/xiaoliu/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/Users/xiaoliu/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/javax/servlet/servlet-api/3.1/servlet-api-3.1.jar:/Users/xiaoliu/.m2/repository/org/springframework/security/spring-security-web/4.2.2.RELEASE/spring-security-web-4.2.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-swagger2/2.7.0/springfox-swagger2-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/swagger/swagger-annotations/1.5.13/swagger-annotations-1.5.13.jar:/Users/xiaoliu/.m2/repository/io/swagger/swagger-models/1.5.13/swagger-models-1.5.13.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-spi/2.7.0/springfox-spi-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-core/2.7.0/springfox-core-2.7.0.jar:/Users/xiaoliu/.m2/repository/net/bytebuddy/byte-buddy/1.6.14/byte-buddy-1.6.14.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-schema/2.7.0/springfox-schema-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-swagger-common/2.7.0/springfox-swagger-common-2.7.0.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-spring-web/2.7.0/springfox-spring-web-2.7.0.jar:/Users/xiaoliu/.m2/repository/org/reflections/reflections/0.9.11/reflections-0.9.11.jar:/Users/xiaoliu/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/classmate/1.3.3/classmate-1.3.3.jar:/Users/xiaoliu/.m2/repository/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/mapstruct/mapstruct/1.1.0.Final/mapstruct-1.1.0.Final.jar:/Users/xiaoliu/.m2/repository/io/springfox/springfox-swagger-ui/2.7.0/springfox-swagger-ui-2.7.0.jar:/Users/xiaoliu/.m2/repository/org/apache/poi/poi/3.16/poi-3.16.jar:/Users/xiaoliu/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/xiaoliu/.m2/repository/org/apache/poi/poi-ooxml/3.16/poi-ooxml-3.16.jar:/Users/xiaoliu/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.16/poi-ooxml-schemas-3.16.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/Users/xiaoliu/.m2/repository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar:/Users/xiaoliu/.m2/repository/org/hibernate/hibernate-validator/5.3.5.Final/hibernate-validator-5.3.5.Final.jar:/Users/xiaoliu/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar:/Users/xiaoliu/.m2/repository/org/hibernate/hibernate-validator-annotation-processor/5.2.2.Final/hibernate-validator-annotation-processor-5.2.2.Final.jar:/Users/xiaoliu/.m2/repository/org/freemarker/freemarker/2.3.23/freemarker-2.3.23.jar:/Users/xiaoliu/.m2/repository/com/baidubce/bce-java-sdk/0.10.28/bce-java-sdk-0.10.28.jar:/Users/xiaoliu/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar:/Users/xiaoliu/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar:/Users/xiaoliu/.m2/repository/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.3/httpasyncclient-4.1.3.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.6/httpcore-nio-4.4.6.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar:/Users/xiaoliu/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar:/Users/xiaoliu/.m2/repository/com/baidu/bpit/inf/apigo/apigo-sdk-java/0.0.1-SNAPSHOT/apigo-sdk-java-0.0.1-20251015.120226-36.jar:/Users/xiaoliu/.m2/repository/com/auth0/java-jwt/3.8.2/java-jwt-3.8.2.jar:/Users/xiaoliu/.m2/repository/com/baidu/uuap/uuap-common/1.3.8-SNAPSHOT/uuap-common-1.3.8-20251111.104607-27.jar:/Users/xiaoliu/.m2/repository/com/alibaba/transmittable-thread-local/2.11.0/transmittable-thread-local-2.11.0.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1.jar:/Users/xiaoliu/.m2/repository/com/101tec/zkclient/0.10/zkclient-0.10.jar:/Users/xiaoliu/.m2/repository/org/apache/zookeeper/zookeeper/3.4.8/zookeeper-3.4.8.jar:/Users/xiaoliu/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/xiaoliu/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/Users/xiaoliu/.m2/repository/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar:/Users/xiaoliu/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/Users/xiaoliu/.m2/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar:/Users/xiaoliu/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.6/snappy-java-1.1.10.6.jar:/Users/xiaoliu/.m2/repository/org/aspectj/aspectjrt/1.8.10/aspectjrt-1.8.10.jar:/Users/xiaoliu/.m2/repository/com/esotericsoftware/reflectasm/1.11.7/reflectasm-1.11.7.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.8.8/jackson-jaxrs-json-provider-2.8.8.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.8.8/jackson-jaxrs-base-2.8.8.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.8/jackson-module-jaxb-annotations-2.8.8.jar:/Users/xiaoliu/.m2/repository/org/glassfish/jersey/core/jersey-common/2.14/jersey-common-2.14.jar:/Users/xiaoliu/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/Users/xiaoliu/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/Users/xiaoliu/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.14/jersey-guava-2.14.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/hk2-api/2.4.0-b06/hk2-api-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/hk2-utils/2.4.0-b06/hk2-utils-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b06/aopalliance-repackaged-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/external/javax.inject/2.4.0-b06/javax.inject-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/hk2-locator/2.4.0-b06/hk2-locator-2.4.0-b06.jar:/Users/xiaoliu/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/Users/xiaoliu/.m2/repository/javax/mail/mail/1.4.7/mail-1.4.7.jar:/Users/xiaoliu/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/xiaoliu/.m2/repository/org/logback-extensions/logback-ext-spring/0.1.5/logback-ext-spring-0.1.5.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-spring-webmvc/5.6.3/brave-instrumentation-spring-webmvc-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-servlet/5.6.3/brave-instrumentation-servlet-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-mysql/5.6.3/brave-instrumentation-mysql-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-httpclient/5.6.3/brave-instrumentation-httpclient-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-instrumentation-http/5.6.3/brave-instrumentation-http-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-context-slf4j/5.6.3/brave-context-slf4j-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave-spring-beans/5.6.3/brave-spring-beans-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/reporter2/zipkin-reporter-spring-beans/2.8.1/zipkin-reporter-spring-beans-2.8.1.jar:/Users/xiaoliu/.m2/repository/io/zipkin/brave/brave/5.6.3/brave-5.6.3.jar:/Users/xiaoliu/.m2/repository/io/zipkin/zipkin2/zipkin/2.12.5/zipkin-2.12.5.jar:/Users/xiaoliu/.m2/repository/io/zipkin/reporter2/zipkin-reporter/2.8.1/zipkin-reporter-2.8.1.jar:/Users/xiaoliu/.m2/repository/io/zipkin/reporter2/zipkin-sender-okhttp3/2.8.1/zipkin-sender-okhttp3-2.8.1.jar:/Users/xiaoliu/.m2/repository/com/squareup/okhttp3/okhttp/3.6.0/okhttp-3.6.0.jar:/Users/xiaoliu/.m2/repository/com/squareup/okio/okio/1.11.0/okio-1.11.0.jar:/Users/xiaoliu/.m2/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar:/Users/xiaoliu/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar:/Users/xiaoliu/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/Users/xiaoliu/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/xiaoliu/.m2/repository/com/caucho/hessian/4.0.38/hessian-4.0.38.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/xiaoliu/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/Users/xiaoliu/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/Users/xiaoliu/.m2/repository/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar:/Users/xiaoliu/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/xiaoliu/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/xiaoliu/.m2/repository/org/springframework/spring-test/4.3.7.RELEASE/spring-test-4.3.7.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot-test/1.5.2.RELEASE/spring-boot-test-1.5.2.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/springframework/boot/spring-boot/1.5.3.RELEASE/spring-boot-1.5.3.RELEASE.jar:/Users/xiaoliu/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/Users/xiaoliu/.m2/repository/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.jar:/Users/xiaoliu/.m2/repository/net/minidev/json-smart/2.2.1/json-smart-2.2.1.jar:/Users/xiaoliu/.m2/repository/net/minidev/accessors-smart/1.1/accessors-smart-1.1.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.10/jackson-annotations-2.9.10.jar:/Users/xiaoliu/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.10.6/jackson-databind-2.9.10.6.jar:/Users/xiaoliu/.m2/repository/com/baidu/uuap/uuap-client/0.2.8-RELEASE/uuap-client-0.2.8-RELEASE.jar:/Users/xiaoliu/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/xiaoliu/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/Users/xiaoliu/.m2/repository/org/jasig/cas/client/cas-client-core/3.3.3/cas-client-core-3.3.3.jar:/Users/xiaoliu/.m2/repository/org/opensaml/opensaml/2.5.1-1/opensaml-2.5.1-1.jar:/Users/xiaoliu/.m2/repository/org/opensaml/openws/1.4.2-1/openws-1.4.2-1.jar:/Users/xiaoliu/.m2/repository/org/opensaml/xmltooling/1.3.2-1/xmltooling-1.3.2-1.jar:/Users/xiaoliu/.m2/repository/org/bouncycastle/bcprov-jdk15/1.45/bcprov-jdk15-1.45.jar:/Users/xiaoliu/.m2/repository/org/apache/santuario/xmlsec/1.4.4/xmlsec-1.4.4.jar:/Users/xiaoliu/.m2/repository/ca/juliusdavies/not-yet-commons-ssl/0.3.9/not-yet-commons-ssl-0.3.9.jar:/Users/xiaoliu/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/xiaoliu/.m2/repository/velocity/velocity/1.5/velocity-1.5.jar:/Users/xiaoliu/.m2/repository/org/owasp/esapi/esapi/2.0GA/esapi-2.0GA.jar:/Users/xiaoliu/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/xiaoliu/.m2/repository/xerces/xercesImpl/2.10.0/xercesImpl-2.10.0.jar:/Users/xiaoliu/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar:/Users/xiaoliu/.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar:/Users/xiaoliu/.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar:/Users/xiaoliu/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/xiaoliu/.m2/repository/com/jcabi/jcabi-manifests/1.1/jcabi-manifests-1.1.jar:/Users/xiaoliu/.m2/repository/com/jcabi/jcabi-log/0.14/jcabi-log-0.14.jar:/Users/xiaoliu/.m2/repository/com/baidu/scan/safesdk-java/1.0.1-SNAPSHOT/safesdk-java-1.0.1-20240718.132327-29.jar:/Users/xiaoliu/.m2/repository/org/jsoup/jsoup/1.12.1/jsoup-1.12.1.jar:/Users/xiaoliu/.m2/repository/com/baidu/bpitsns/msgcenter-sdk/1.1.0-SNAPSHOT/msgcenter-sdk-1.1.0-20250506.070137-12.jar:/Users/xiaoliu/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/xiaoliu/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar:/Users/xiaoliu/.m2/repository/com/opencsv/opencsv/5.4/opencsv-5.4.jar:/Users/xiaoliu/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar:/Users/xiaoliu/.m2/repository/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/hsm-software-share/1.0.5/hsm-software-share-1.0.5.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/icbc-api-sdk-cop/1.0/icbc-api-sdk-cop-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/icbc-api-sdk-cop-io/1.0/icbc-api-sdk-cop-io-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/pmc/icbc-ca/1.0/icbc-ca-1.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/message/relay/message-relay-sdk/11.0.0-SNAPSHOT/message-relay-sdk-11.0.0-20250212.114106-14.jar:/Users/xiaoliu/.m2/repository/com/baidu/dumail/dumail-common/0.0.11-SNAPSHOT/dumail-common-0.0.11-20241024.063748-18.jar:/Users/xiaoliu/.m2/repository/cn/hutool/hutool-all/5.8.16/hutool-all-5.8.16.jar:/Users/xiaoliu/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.3.5/caffeine-2.3.5.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-examples/0.8.9/apache-mime4j-examples-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-dom/0.8.9/apache-mime4j-dom-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-core/0.8.9/apache-mime4j-core-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-mbox-iterator/0.8.9/apache-mime4j-mbox-iterator-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/apache/james/apache-mime4j-storage/0.8.9/apache-mime4j-storage-0.8.9.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-full/2.2.10/ofdrw-full-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-gv/2.2.10/ofdrw-gv-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-core/2.2.10/ofdrw-core-2.2.10.jar:/Users/xiaoliu/.m2/repository/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar:/Users/xiaoliu/.m2/repository/org/dom4j/dom4j/2.1.4/dom4j-2.1.4.jar:/Users/xiaoliu/.m2/repository/org/jetbrains/annotations/21.0.1/annotations-21.0.1.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-layout/2.2.10/ofdrw-layout-2.2.10.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/imageio/imageio-tiff/3.5/imageio-tiff-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/imageio/imageio-core/3.5/imageio-core-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/imageio/imageio-metadata/3.5/imageio-metadata-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/common/common-lang/3.5/common-lang-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/common/common-io/3.5/common-io-3.5.jar:/Users/xiaoliu/.m2/repository/com/twelvemonkeys/common/common-image/3.5/common-image-3.5.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-pkg/2.2.10/ofdrw-pkg-2.2.10.jar:/Users/xiaoliu/.m2/repository/net/lingala/zip4j/zip4j/2.11.3/zip4j-2.11.3.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-font/2.2.10/ofdrw-font-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-reader/2.2.10/ofdrw-reader-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/apache/pdfbox/jbig2-imageio/3.0.3/jbig2-imageio-3.0.3.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-gm/2.2.10/ofdrw-gm-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-sign/2.2.10/ofdrw-sign-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-converter/2.2.10/ofdrw-converter-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ujmp/ujmp-core/0.3.0/ujmp-core-0.3.0.jar:/Users/xiaoliu/.m2/repository/org/json/json/20140107/json-20140107.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/kernel/7.1.13/kernel-7.1.13.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/io/7.1.13/io-7.1.13.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/layout/7.1.13/layout-7.1.13.jar:/Users/xiaoliu/.m2/repository/com/itextpdf/font-asian/7.1.13/font-asian-7.1.13.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-transcoder/1.17/batik-transcoder-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-anim/1.17/batik-anim-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-css/1.17/batik-css-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-ext/1.17/batik-ext-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-parser/1.17/batik-parser-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-svg-dom/1.17/batik-svg-dom-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.17/batik-awt-util-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/xmlgraphics-commons/2.9/xmlgraphics-commons-2.9.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-bridge/1.17/batik-bridge-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-script/1.17/batik-script-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-dom/1.17/batik-dom-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-gvt/1.17/batik-gvt-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-shared-resources/1.17/batik-shared-resources-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.17/batik-svggen-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-util/1.17/batik-util-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-constants/1.17/batik-constants-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-i18n/1.17/batik-i18n-1.17.jar:/Users/xiaoliu/.m2/repository/org/apache/xmlgraphics/batik-xml/1.17/batik-xml-1.17.jar:/Users/xiaoliu/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-tool/2.2.10/ofdrw-tool-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/ofdrw/ofdrw-graphics2d/2.2.10/ofdrw-graphics2d-2.2.10.jar:/Users/xiaoliu/.m2/repository/org/apache/pdfbox/pdfbox/2.0.27/pdfbox-2.0.27.jar:/Users/xiaoliu/.m2/repository/org/apache/pdfbox/fontbox/2.0.27/fontbox-2.0.27.jar:/Users/xiaoliu/.m2/repository/com/baidu/uuap/uuap-cache-redis/2.0.9.3-SNAPSHOT/uuap-cache-redis-2.0.9.3-20250310.055840-27.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-core/1.6.2/protostuff-core-1.6.2.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-api/1.6.2/protostuff-api-1.6.2.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-runtime/1.6.2/protostuff-runtime-1.6.2.jar:/Users/xiaoliu/.m2/repository/io/protostuff/protostuff-collectionschema/1.6.2/protostuff-collectionschema-1.6.2.jar:/Users/xiaoliu/.m2/repository/com/baidu/bdrp-client/1.1.25/bdrp-client-1.1.25.jar:/Users/xiaoliu/.m2/repository/com/baidu/bns-client-spring/1.4.6/bns-client-spring-1.4.6.jar:/Users/xiaoliu/.m2/repository/com/baidu/bns-core/1.4.6/bns-core-1.4.6.jar:/Users/xiaoliu/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/Users/xiaoliu/.m2/repository/com/baidu/bpit/inf/message-center-sdk/1.0.0-SNAPSHOT/message-center-sdk-1.0.0-20240318.031338-11.jar com.baidu.pmc.web.service.financing.impl.PmcFinancingBankServiceImpl\nException in thread \"main\" java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.\n\tat java.base/java.math.BigDecimal.divide(BigDecimal.java:1736)\n\tat com.baidu.pmc.web.service.financing.impl.PmcFinancingBankServiceImpl.main(PmcFinancingBankServiceImpl.java:79)\n\n进程已结束，退出代码为 1\n",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "taskId": 224741,
+        "conversationId": 943950
+      }
+    },
+    {
+      "id": "89c73ee9-0126-4761-a8f9-ef583567e97f",
+      "userMessageId": "7238014",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "cancelled",
+      "content": {},
+      "elements": []
+    },
+    {
+      "id": "7238044",
+      "summary": "Java BigDecimal除法异常处理",
+      "role": "user",
+      "status": "success",
+      "content": "Exception in thread \"main\" java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.\n\tat java.base/java.math.BigDecimal.divide(BigDecimal.java:1736)\n\tat com.baidu.pmc.web.service.financing.impl.PmcFinancingBankServiceImpl.main(PmcFinancingBankServiceImpl.java:79)",
+      "payload": {
+        "query": "Exception in thread \"main\" java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.\n\tat java.base/java.math.BigDecimal.divide(BigDecimal.java:1736)\n\tat com.baidu.pmc.web.service.financing.impl.PmcFinancingBankServiceImpl.main(PmcFinancingBankServiceImpl.java:79)",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "taskId": 224741,
+        "conversationId": 943950,
+        "sessionId": 10082911
+      }
+    },
+    {
+      "id": "6f844d9e-0bfa-4edf-b0cc-c3873612f1e2",
+      "userMessageId": "7238044",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "334b2a6f-860a-4942-9036-cb215c4491fa",
+          "type": "TEXT",
+          "status": "success",
+          "content": "这个错误是由于使用 `BigDecimal` 进行除法运算时，结果是一个无限循环小数(如1/3=0.333...)，但没有指定舍入模式导致的。要解决这个问题，我们需要查看 `PmcFinancingBankServiceImpl.java` 文件第79行附近的代码。\n\n让我先查看相关代码内容：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "958a54ad-74bf-44fd-bd39-9e5b50c02de3",
+          "type": "TOOL_CALL",
+          "status": "failed",
+          "toolName": "extract_content_blocks",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "failed",
+          "displayParams": {
+            "firstFilePath": "com/baidu/pmc/web/service/financing/impl/PmcFinancingBankServiceImpl.java"
+          },
+          "displayResult": {
+            "fileBlocks": []
+          },
+          "workflowSnapshot": {
+            "status": "failed",
+            "result": {
+              "name": "extract_content_blocks",
+              "type": "tool_use",
+              "params": {
+                "pathes": "com/baidu/pmc/web/service/financing/impl/PmcFinancingBankServiceImpl.java@LINE[75..85]\n"
+              },
+              "success": false,
+              "message": "Error reading file com/baidu/pmc/web/service/financing/impl/PmcFinancingBankServiceImpl.java: File not exist!",
+              "code": 1,
+              "result": null
+            }
+          },
+          "params": {
+            "pathes": "com/baidu/pmc/web/service/financing/impl/PmcFinancingBankServiceImpl.java@LINE[75..85]\n"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "65e574f6-a6c0-4f8e-8136-7316052171c3",
+          "type": "TEXT",
+          "status": "success",
+          "content": "根据错误信息和项目结构，我建议以下解决方案来处理 `BigDecimal` 除法运算的异常：\n\n1. 问题原因：\n- 当使用 `BigDecimal.divide()` 方法时，如果结果是无限循环小数且未指定舍入模式，就会抛出此异常\n- 例如：`BigDecimal.ONE.divide(new BigDecimal(\"3\"))` 会抛出此异常\n\n2. 解决方案：\n```java\n// 错误方式（会抛出异常）\nBigDecimal result = a.divide(b);\n\n// 正确方式（指定舍入模式）\nBigDecimal result = a.divide(b, RoundingMode.HALF_UP);  // 四舍五入\n// 或指定精度和舍入模式\nBigDecimal result = a.divide(b, 2, RoundingMode.HALF_UP);  // 保留2位小数\n```\n\n3. 常用舍入模式：\n- `RoundingMode.UP` - 远离零方向舍入\n- `RoundingMode.DOWN` - 向零方向舍入\n- `RoundingMode.CEILING` - 向正无限大方向舍入\n- `RoundingMode.FLOOR` - 向负无限大方向舍入\n- `RoundingMode.HALF_UP` - 四舍五入\n- `RoundingMode.HALF_DOWN` - 五舍六入\n- `RoundingMode.HALF_EVEN` - 银行家舍入法\n\n4. 建议修改步骤：\n1) 找到 `PmcFinancingBankServiceImpl.java` 文件\n2) 定位到第79行附近的除法运算\n3) 添加适当的舍入模式参数\n\n由于我无法直接访问该文件，您需要手动修改。您能提供更多关于该文件位置的线索吗？或者我可以帮助您搜索该项目中的相关文件。\n\n您希望我继续帮助查找这个文件的具体位置吗？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    },
+    {
+      "id": "7351080",
+      "summary": "Command+Z快捷键失效排查",
+      "role": "user",
+      "status": "success",
+      "content": "command + z失效",
+      "payload": {
+        "query": "command + z失效",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "agentId": 1,
+          "agentName": "Zulu",
+          "agentImage": "zulu"
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "taskId": 224741,
+        "conversationId": 943950,
+        "sessionId": 10082911
+      }
+    },
+    {
+      "id": "af3dce78-bcd2-4fa2-a44f-4da3502e9328",
+      "userMessageId": "7351080",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "dd5b8b0c-b4d3-4b12-8a2b-3f53153ad239",
+          "type": "TEXT",
+          "status": "success",
+          "content": "关于您提到的\"command + z失效\"问题，这通常是指IDE中的撤销功能无法正常工作。我可以提供一些排查建议：\n\n1. 首先检查是否是全局快捷键冲突：\n- 尝试在其他应用中测试Command+Z是否有效\n- 检查系统偏好设置中的键盘快捷键\n\n2. 针对IntelliJ IDEA的解决方案：\n```bash\n# 重置IDE快捷键设置\ndefaults delete com.jetbrains.intellij.ce ApplePressAndHoldEnabled\n```\n\n3. 其他可能原因：\n- 键盘硬件问题\n- 特定插件冲突\n- IDE设置被修改\n\n需要我帮您执行上述命令来重置快捷键设置吗？或者您更希望我提供其他方面的帮助？\n\n您也可以尝试以下手动操作：\n1. 打开IntelliJ IDEA\n2. 进入 Preferences > Keymap\n3. 搜索\"Undo\"操作\n4. 检查或重新设置快捷键绑定",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "为MySQL低版本生成日期字段SQL",
+  "ctime": 1764036171468,
+  "utime": 1764148218177,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

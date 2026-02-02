@@ -1,0 +1,74 @@
+[
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "52a50f5b-6617-407a-917d-4cc0e08e3993",
+    "title": "写一个马里奥计算器，布局合理，画面精美，带声效",
+    "ctime": 1754997480880,
+    "utime": 1754997652434,
+    "workspaceDirectory": "/Users/xiaoliu/comate-zulu-demo"
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "d43d7832-22b5-4c51-b3db-6071f6975a26",
+    "title": "启动开发环境",
+    "ctime": 1754997876761,
+    "utime": 1754997876766,
+    "workspaceDirectory": "/Users/xiaoliu/comate-zulu-demo"
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "dc6dbe34-dfb1-4e37-b0fb-825847426f9a",
+    "title": "帮我检查下当前分支提交的内容是否有bug",
+    "ctime": 1756454469292,
+    "utime": 1756454469302,
+    "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc"
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "7978aa7e-0c4a-426d-ba94-f11659e4b572",
+    "title": "百度首页功能复现与预览",
+    "ctime": 1764820539924,
+    "utime": 1764820539981,
+    "workspaceDirectory": "/Users/xiaoliu/comate-zulu-demo-1764820530621"
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "35afde63-dcf7-4851-86e7-c158e33f7980",
+    "specSessionId": "44b3497b-9aea-4b54-88fe-679a3ba86531",
+    "title": "启动前端项目并预览",
+    "ctime": 1764829248239,
+    "utime": 1764829248244,
+    "workspaceDirectory": "/Users/xiaoliu/comate-zulu-demo-1764820530621",
+    "summary": "启动前端项目并预览"
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "376e4e6e-e907-4b91-8318-054defae5e42",
+    "specSessionId": "476ccaa7-bdfb-47b8-b64b-c7d031e39db9",
+    "title": "我想要生成一个帮我自动开发的对接银企直连的功能",
+    "ctime": 1768482914181,
+    "utime": 1768482930472,
+    "workspaceDirectory": "/Users/xiaoliu/ComateProjects/comate-zulu-demo",
+    "summary": ""
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "586273fd-c7dd-4c60-9e4c-dbec9fa29bab",
+    "specSessionId": "fcb497f6-bc24-4238-ac0e-f109b138152c",
+    "title": "帮我生成一个系统，可选择数据库类型，版本，然后根据输入的表信息，输出对应的sql语句，可选择类型",
+    "ctime": 1768483541469,
+    "utime": 1768530466031,
+    "workspaceDirectory": "/Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778",
+    "summary": "帮我生成一个系统，可选择数据库类型，版本，然后根据输入的表信息，输出对应的sql语句，可选择类型"
+  },
+  {
+    "source": "E2EBotConversation",
+    "sessionUuid": "81ca34a1-6372-4ca2-864c-9cff1b213b6a",
+    "specSessionId": "bdef7925-6368-4c3c-8d7b-21d361e5db16",
+    "title": "New Task",
+    "ctime": 1768997468752,
+    "utime": 1769138959587,
+    "workspaceDirectory": "/Users/xiaoliu/ComateProjects/comate-zulu-demo-1768483535778",
+    "summary": "New Task"
+  }
+]

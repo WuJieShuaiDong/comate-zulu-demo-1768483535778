@@ -1,0 +1,933 @@
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:8503
+
+  For better performance, install the Watchdog module:
+
+  $ xcode-select --install
+  $ pip install watchdog
+            
+2026-01-28 11:19:03,531 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:19:24,849 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:20:25,728 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:25:20,512 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:25:38,199 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:28:27,306 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:30:51,738 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:31:07,339 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:47:58,224 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 11:48:13,691 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 12:00:17,249 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 14:25:49,021 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 14:29:23,368 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 14:31:38,735 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 14:31:50,397 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 14:31:56,900 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 14:32:28,600 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 15:20:07,132 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 15:32:50,739 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-28 16:00:53,738 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 09:38:17,400 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 09:38:27,000 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 09:48:10,756 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 10:15:18,136 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 13:45:58,508 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 16:27:45,207 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 20:24:05,538 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 20:24:21,934 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 20:24:24,252 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-29 21:14:07,907 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 09:35:57,424 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 09:59:35,720 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:12:04,125 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:12:04,491 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:12:04.493 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:12:04,595 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:12:04,595 - WARNING - ❌ 衰退期板块(回避): 家电行业, 印刷包装, 医疗器械
+2026-01-30 10:12:04,595 - WARNING - 未找到合适的热点板块
+2026-01-30 10:12:41,945 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:12:42,192 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:12:42.198 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:12:42,280 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:12:42,281 - WARNING - ❌ 衰退期板块(回避): 家电行业, 印刷包装, 医疗器械
+2026-01-30 10:12:42,281 - WARNING - 未找到合适的热点板块
+2026-01-30 10:17:51,851 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:17:52,073 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:17:52.077 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:17:52,157 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:17:52,159 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:17:52,159 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:06,794 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:06,982 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:06.986 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:07,379 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:07,381 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:07,381 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:07,430 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:07,607 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:07.611 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:07,727 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:07,729 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:07,729 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:11,043 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:11,245 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:11.250 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:11,360 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:11,362 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:11,362 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:11,406 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:11,587 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:11.591 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:11,708 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:11,710 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:11,710 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:20,405 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:20,589 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:20.595 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:20,674 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:20,675 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:20,675 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:20,719 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:20,900 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:20.903 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:20,996 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:20,997 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:20,997 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:22,205 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:22,410 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:22.414 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:22,514 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:22,515 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:22,516 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:22,561 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:22,788 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:22.792 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:22,924 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:22,925 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:22,925 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:24,857 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:25,050 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:25.054 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:25,142 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:25,144 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:25,144 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:25,183 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:25,396 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:25.399 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:25,485 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:25,492 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:25,492 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:46,407 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:46,669 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:46.672 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:46,754 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:46,755 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:46,755 - WARNING - 未找到合适的热点板块
+2026-01-30 10:18:46,836 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:18:47,032 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:47.036 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:18:47,117 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:18:47,118 - WARNING - ❌ 衰退期板块(回避): 开发区, 造纸行业, 纺织行业
+2026-01-30 10:18:47,118 - WARNING - 未找到合适的热点板块
+2026-01-30 10:38:28,899 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:38:29,146 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:38:29.151 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:38:29,238 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:38:29,241 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 造纸行业, 纺织行业
+2026-01-30 10:38:29,241 - WARNING - 未找到合适的热点板块
+2026-01-30 10:38:29,322 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:38:29,516 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:38:29.519 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:38:29,658 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:38:29,660 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 造纸行业, 纺织行业
+2026-01-30 10:38:29,660 - WARNING - 未找到合适的热点板块
+2026-01-30 10:38:31,578 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:38:31,757 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:38:31.761 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:38:31,868 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:38:31,868 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 造纸行业, 纺织行业
+2026-01-30 10:38:31,868 - WARNING - 未找到合适的热点板块
+2026-01-30 10:52:56,270 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:52:56,498 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:52:56.501 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:52:56,578 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:52:56,579 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:52:56,579 - WARNING - 未找到合适的热点板块
+2026-01-30 10:53:05,617 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:53:05,806 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:05.809 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:53:05,884 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:05,886 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:53:05,886 - WARNING - 未找到合适的热点板块
+2026-01-30 10:53:05,945 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:53:06,126 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:06.129 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:53:06,204 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:06,205 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:53:06,205 - WARNING - 未找到合适的热点板块
+2026-01-30 10:53:07,582 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:53:07,768 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:07.771 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:53:07,853 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:07,854 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:53:07,854 - WARNING - 未找到合适的热点板块
+2026-01-30 10:53:07,902 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:53:08,076 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:08.079 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:53:08,175 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:08,176 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:53:08,176 - WARNING - 未找到合适的热点板块
+2026-01-30 10:53:08,230 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:53:08,406 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:08.410 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:53:08,480 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:08,481 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:53:08,481 - WARNING - 未找到合适的热点板块
+2026-01-30 10:53:08,529 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 10:53:08,708 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:08.712 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 10:53:08,786 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 10:53:08,787 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 传媒娱乐, 交通运输
+2026-01-30 10:53:08,787 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:18,584 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:18,851 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:18.855 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:18,952 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:18,954 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:18,954 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:19,030 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:19,217 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:19.218 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:19,296 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:19,298 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:19,298 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:26,456 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:26,654 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:26.660 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:26,748 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:26,750 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:26,750 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:26,792 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:26,999 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:27.003 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:27,090 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:27,092 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:27,092 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:27,223 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:27,399 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:27.403 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:27,522 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:27,523 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:27,523 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:27,576 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:27,746 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:27.749 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:27,841 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:27,844 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:27,844 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:29,751 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:29,959 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:29.963 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:30,050 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:30,051 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:30,051 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:30,093 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:30,283 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:30.287 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:30,386 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:30,388 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:30,388 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:30,644 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:30,839 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:30.843 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:30,929 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:30,930 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:30,930 - WARNING - 未找到合适的热点板块
+2026-01-30 11:15:30,972 - INFO - ✅ 妖股基因库加载成功: 10 只股票
+2026-01-30 11:15:31,175 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:31.179 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:15:31,266 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:15:31,268 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 传媒娱乐
+2026-01-30 11:15:31,268 - WARNING - 未找到合适的热点板块
+2026-01-30 11:25:28,257 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:25:28,457 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:25:28.459 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:25:28,543 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:25:28,544 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 家电行业
+2026-01-30 11:25:28,544 - WARNING - 未找到合适的热点板块
+2026-01-30 11:25:51,841 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:25:52,052 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:25:52.055 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:25:52,134 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:25:52,136 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 家电行业
+2026-01-30 11:25:52,136 - WARNING - 未找到合适的热点板块
+2026-01-30 11:25:52,179 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:25:52,366 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:25:52.369 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:25:52,446 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:25:52,447 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 造纸行业, 家电行业
+2026-01-30 11:25:52,447 - WARNING - 未找到合适的热点板块
+2026-01-30 11:48:56,538 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:48:56,768 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:48:56.769 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:48:56,849 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:48:56,850 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 家电行业, 造纸行业
+2026-01-30 11:48:56,850 - WARNING - 未找到合适的热点板块
+2026-01-30 11:50:41,859 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:50:42,235 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:50:42.237 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:50:42,323 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:50:42,324 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 家电行业, 造纸行业
+2026-01-30 11:50:42,325 - WARNING - 未找到合适的热点板块
+2026-01-30 11:50:49,529 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:50:49,779 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:50:49.782 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:50:49,866 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:50:49,867 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 家电行业, 造纸行业
+2026-01-30 11:50:49,868 - WARNING - 未找到合适的热点板块
+2026-01-30 11:50:49,918 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 11:50:50,149 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:50:50.151 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 11:50:50,226 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 11:50:50,227 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 家电行业, 造纸行业
+2026-01-30 11:50:50,227 - WARNING - 未找到合适的热点板块
+2026-01-30 12:50:27,126 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 12:50:27,549 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 12:50:27.553 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 12:50:27,640 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 12:50:27,641 - WARNING - ❌ 衰退期板块(回避): 公路桥梁, 家电行业, 造纸行业
+2026-01-30 12:50:27,641 - WARNING - 未找到合适的热点板块
+2026-01-30 13:17:43,396 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 13:17:43,701 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:17:43.702 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 13:17:43,780 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:17:43,781 - WARNING - ❌ 衰退期板块(回避): 电子信息, 传媒娱乐, 印刷包装
+2026-01-30 13:17:43,781 - WARNING - 未找到合适的热点板块
+2026-01-30 13:28:33,824 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 13:28:34,211 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:28:34.215 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 13:28:34,305 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:28:34,307 - WARNING - ❌ 衰退期板块(回避): 电子信息, 传媒娱乐, 印刷包装
+2026-01-30 13:28:34,307 - WARNING - 未找到合适的热点板块
+2026-01-30 13:31:51,545 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 13:31:51,760 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:31:51.761 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 13:31:51,834 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:31:51,835 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐
+2026-01-30 13:31:51,835 - WARNING - 未找到合适的热点板块
+2026-01-30 13:32:06,216 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 13:32:06,468 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:32:06.472 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 13:32:06,551 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:32:06,552 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐
+2026-01-30 13:32:06,552 - WARNING - 未找到合适的热点板块
+2026-01-30 13:32:06,624 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 13:32:06,820 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:32:06.822 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 13:32:06,910 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:32:06,911 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐
+2026-01-30 13:32:06,912 - WARNING - 未找到合适的热点板块
+2026-01-30 13:32:40,700 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 13:32:40,900 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:32:40.902 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 13:32:40,977 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 13:32:40,978 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐
+2026-01-30 13:32:40,979 - WARNING - 未找到合适的热点板块
+2026-01-30 14:11:45,344 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:11:45,639 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:11:45.640 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:11:45,717 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:11:45,717 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:11:45,717 - WARNING - 未找到合适的热点板块
+2026-01-30 14:12:01,384 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:12:01,611 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:01.612 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:12:01,717 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:01,718 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:12:01,718 - WARNING - 未找到合适的热点板块
+2026-01-30 14:12:01,771 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:12:01,977 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:01.979 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:12:02,069 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:02,071 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:12:02,071 - WARNING - 未找到合适的热点板块
+2026-01-30 14:12:03,050 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:12:03,332 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:03.335 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:12:03,410 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:03,411 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:12:03,412 - WARNING - 未找到合适的热点板块
+2026-01-30 14:12:03,462 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:12:03,726 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:03.729 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:12:03,813 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:03,814 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:12:03,815 - WARNING - 未找到合适的热点板块
+2026-01-30 14:12:03,901 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:12:04,122 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:04.123 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:12:04,210 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:04,211 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:12:04,211 - WARNING - 未找到合适的热点板块
+2026-01-30 14:12:04,266 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:12:04,499 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:04.502 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:12:04,584 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:12:04,585 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:12:04,585 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:19,938 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:20,201 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:20.204 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:20,289 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:20,292 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:20,292 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:20,357 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:20,599 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:20.601 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:20,710 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:20,711 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:20,711 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:21,743 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:21,977 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:21.979 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:22,068 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:22,069 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:22,069 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:22,129 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:22,380 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:22.382 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:22,455 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:22,456 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:22,456 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:22,950 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:23,184 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:23.186 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:23,255 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:23,256 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:23,256 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:23,317 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:23,552 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:23.554 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:23,663 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:23,664 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:23,665 - WARNING - 未找到合适的热点板块
+2026-01-30 14:18:39,469 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 14:18:39,712 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:39.713 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 14:18:39,804 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 14:18:39,805 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 印刷包装
+2026-01-30 14:18:39,805 - WARNING - 未找到合适的热点板块
+2026-01-30 15:16:16,204 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 15:16:16,483 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 15:16:16.484 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 15:16:16,596 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 15:16:16,597 - WARNING - ❌ 衰退期板块(回避): 家电行业, 传媒娱乐, 印刷包装
+2026-01-30 15:16:16,598 - WARNING - 未找到合适的热点板块
+2026-01-30 15:17:06,492 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 15:17:06,753 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 15:17:06.755 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 15:17:06,847 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 15:17:06,848 - WARNING - ❌ 衰退期板块(回避): 家电行业, 传媒娱乐, 印刷包装
+2026-01-30 15:17:06,848 - WARNING - 未找到合适的热点板块
+2026-01-30 15:17:06,898 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 15:17:07,140 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 15:17:07.142 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 15:17:07,236 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 15:17:07,237 - WARNING - ❌ 衰退期板块(回避): 家电行业, 传媒娱乐, 印刷包装
+2026-01-30 15:17:07,237 - WARNING - 未找到合适的热点板块
+2026-01-30 17:32:56,457 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-01-30 17:32:56,779 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 17:32:56.781 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-01-30 17:32:56,887 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-01-30 17:32:56,888 - WARNING - ❌ 衰退期板块(回避): 家电行业, 传媒娱乐, 印刷包装
+2026-01-30 17:32:56,888 - WARNING - 未找到合适的热点板块
+2026-02-02 09:55:35,436 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 09:55:36,482 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 09:55:36.493 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 09:55:36,913 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 09:55:36,914 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 09:55:36,914 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 机械行业, 电子信息
+2026-02-02 09:55:39.781 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 09:56:08,739 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 09:56:09,014 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 09:56:09.017 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 09:56:09,126 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 09:56:09,128 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 09:56:09,128 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 机械行业, 电子信息
+2026-02-02 09:56:11.795 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 09:56:11,864 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 09:56:12,246 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 09:56:12.252 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 09:56:12,333 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 09:56:12,335 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 09:56:12,335 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 机械行业, 电子信息
+2026-02-02 09:56:14.984 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:02:20,642 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:02:21,000 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:02:21.004 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:02:21,384 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:02:21,386 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:02:21,387 - WARNING - ❌ 衰退期板块(回避): 交通运输, 传媒娱乐, 医疗器械
+2026-02-02 10:02:24.501 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:39:36,385 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:39:36,847 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:39:36.849 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:39:37,151 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:39:37,154 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:39:37,154 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 医疗器械, 交通运输
+2026-02-02 10:39:37,426 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:39:40.837 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:39:59,638 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:39:59,911 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:39:59.912 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:40:00,249 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:40:00,250 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:40:00,250 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 医疗器械, 交通运输
+2026-02-02 10:40:00,463 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:40:03.870 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:24,952 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:41:25,058 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:41:25,319 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:25.320 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:25,394 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:25,395 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:41:25,395 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 纺织行业, 医疗器械
+2026-02-02 10:41:25,675 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:41:26,006 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:41:26,273 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:26.276 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:26,644 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:26,646 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:41:26,647 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 纺织行业, 医疗器械
+2026-02-02 10:41:26,942 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:41:30.063 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:31.432 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:31,498 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:41:31,846 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:31.850 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:32,326 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:32,327 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:41:32,327 - WARNING - ❌ 衰退期板块(回避): 传媒娱乐, 纺织行业, 医疗器械
+2026-02-02 10:41:32,637 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:41:37.144 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:42,010 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:41:42,341 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:42.346 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:42,674 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:42,676 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:41:42,676 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 医疗器械, 交通运输
+2026-02-02 10:41:42,954 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:41:46,823 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:41:47,157 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:47.163 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:47.233 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:41:47,305 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:41:47,306 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:41:47,306 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 医疗器械, 交通运输
+2026-02-02 10:41:47,611 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:41:51.859 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:42:04,971 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:42:05,542 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:42:05.544 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:42:05,902 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:42:05,904 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:42:05,904 - WARNING - ❌ 衰退期板块(回避): 纺织行业, 医疗器械, 交通运输
+2026-02-02 10:42:06,219 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:42:10.480 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:47:42,090 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:47:42,387 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:47:42.390 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:47:42,500 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:47:42,502 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:47:42,502 - WARNING - ❌ 衰退期板块(回避): 医疗器械, 交通运输, 家电行业
+2026-02-02 10:47:42,911 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:47:47.198 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:47:47,292 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-02 10:47:47,493 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:47:47.495 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-02-02 10:47:47,571 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-02 10:47:47,571 - INFO - 📈 加速期板块(跟随): 酿酒行业
+2026-02-02 10:47:47,571 - WARNING - ❌ 衰退期板块(回避): 医疗器械, 交通运输, 家电行业
+2026-02-02 10:47:47,846 - INFO - ✅ 获取 酿酒行业 成分股(东财): 24 只
+2026-02-02 10:47:52.092 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  quant-trading:
+    build: 
+      context: ..
+      dockerfile: quant_trading/Dockerfile
+    container_name: quant-trading
+    restart: unless-stopped
+    ports:
+      - "8503:8503"
+    volumes:
+      - ./data:/app/quant_trading/data
+      - ./logs:/app/quant_trading/logs
+    environment:
+      - TZ=Asia/Shanghai
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8503/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+# 使用方法:
+# docker-compose up -d        # 启动
+# docker-compose logs -f      # 查看日志
+# docker-compose down         # 停止
+# docker-compose restart      # 重启

@@ -1,0 +1,50 @@
+{
+  "source": "TestBotConversation",
+  "sessionUuid": "58fe1678-960c-42c6-99c2-af0315767be7",
+  "messages": [
+    {
+      "id": "b06ee0e7-c2be-42f9-8483-209f8dc3afdd",
+      "role": "user",
+      "status": "success",
+      "content": "为当前函数生成单测",
+      "payload": {
+        "agentId": "ut-agent",
+        "params": {
+          "command": "method",
+          "startLine": 14,
+          "endLine": 85,
+          "workDir": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc",
+          "include": "pmc-basic-service/src/main/java/com/baidu/pmc/core/interceptor/PmcPortalAuthInterceptor.java",
+          "languageVersion": "11",
+          "userName": "liumandong"
+        },
+        "entry": "enhance-generate",
+        "env": {
+          "PATH": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin:/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+          "MAVEN_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "M2_HOME": "/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3",
+          "JAVA_HOME": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home",
+          "HOME": "/Users/xiaoliu"
+        },
+        "query": "为当前函数生成单测",
+        "action": null,
+        "extra": null
+      }
+    },
+    {
+      "id": "cca85ea2-7530-4b5d-b5df-4c30a330d22c",
+      "role": "assistant",
+      "status": "success",
+      "content": "{\"status\":\"success\",\"content\":\"已完成目标被测方法分析。接下来我将针对2个被测方法生成单测用例。\\n\\n\\n\\n\\n\\n\\n环境检查失败\\n\",\"fileListTitle\":\"被测方法列表\",\"loadingMsg\":\"\",\"startIntroduction\":\"好的，已收到任务。我将为`preHandle, afterCompletion`方法生成单元测试，并对其进行验证、优化，确保生成有效的单测代码，提升代码覆盖。\",\"analysisPanel\":{\"status\":\"success\",\"content\":[\"preHandle\",\"afterCompletion\"]},\"testbotMapping\":{}}",
+      "composer": {
+        "markdown": "已完成目标被测方法分析。接下来我将针对2个被测方法生成单测用例。\n\n\n\n\n环境检查失败\n",
+        "tasks": []
+      },
+      "elements": []
+    }
+  ],
+  "title": "为当前函数生成单测",
+  "ctime": 1756123381623,
+  "utime": 1756123388068,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

@@ -1,0 +1,43 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "71c5d082-b17f-4117-815c-7901f88f1a61",
+  "messages": [
+    {
+      "id": "934e1549-271b-42b6-86a0-2451cb93701f",
+      "summary": "",
+      "role": "user",
+      "status": "success",
+      "content": "介绍项目的业务目标、核心功能、整体架构、数据实体、业务流程",
+      "payload": {
+        "query": "介绍项目的业务目标、核心功能、整体架构、数据实体、业务流程",
+        "knowledgeList": []
+      },
+      "context": {}
+    },
+    {
+      "id": "884dfc73-fdf9-4581-b362-840513f7d58e",
+      "userMessageId": "934e1549-271b-42b6-86a0-2451cb93701f",
+      "role": "assistant",
+      "status": "failed",
+      "content": {},
+      "elements": [
+        {
+          "id": "d8d45ef9-c084-470e-9a29-88e5df948699",
+          "type": "TEXT",
+          "status": "success",
+          "content": "当前License信息无效，您可以[点击此处](https://comate.baidu.com/user)快速登录。",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": true,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "介绍项目的业务目标、核心功能、整体架构、数据实体、业务流程",
+  "ctime": 1760515800512,
+  "utime": 1760515800599,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}

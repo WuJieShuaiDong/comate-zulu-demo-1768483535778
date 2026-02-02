@@ -1,0 +1,522 @@
+{
+  "source": "E2EBotConversation",
+  "sessionUuid": "4074eed3-f1b1-4d25-bb56-f7f7bdcc541b",
+  "messages": [
+    {
+      "id": "6118379",
+      "summary": "SQL模糊查询代码漏洞排查",
+      "role": "user",
+      "status": "success",
+      "content": "            criteria.andApplyNumLike(\"%\".concat(dto.getApplyNum()).concat(\"%\"));\n这个有无bug",
+      "payload": {
+        "query": "            criteria.andApplyNumLike(\"%\".concat(dto.getApplyNum()).concat(\"%\"));\n这个有无bug",
+        "model": {
+          "displayName": "Auto",
+          "modelId": "auto",
+          "requestType": "COMATE_DEFAULT_MODE",
+          "mode": "NORMAL"
+        },
+        "agent": {
+          "name": "Zulu",
+          "avatar": "zulu",
+          "reportAgentName": "Zulu",
+          "agentId": 1,
+          "subAgentList": [
+            {
+              "name": "Zulu"
+            }
+          ]
+        },
+        "metrics": {
+          "model": "Zulu",
+          "function": ""
+        },
+        "knowledgeList": []
+      },
+      "context": {
+        "conversationId": 873208,
+        "sessionId": 9813967
+      }
+    },
+    {
+      "id": "01e17e1d-588a-4c2a-8341-b28fcef269b0",
+      "userMessageId": "6118379",
+      "agentInfo": {
+        "avatar": "zulu",
+        "name": "Zulu"
+      },
+      "role": "assistant",
+      "status": "completed",
+      "content": {},
+      "elements": [
+        {
+          "id": "21e8b688-477d-42bc-bfa5-6bf9717f2b0f",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我需要先找到包含这段代码的文件，然后分析其潜在问题。让我搜索一下这个代码片段。\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "7afd5450-c14a-4d29-bea9-54ef8c0f7668",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "criteria\\.andApplyNumLike.*%\\.concat.*%"
+          },
+          "displayResult": {
+            "searchFiles": []
+          },
+          "workflowSnapshot": {
+            "searchFiles": [],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "criteria\\.andApplyNumLike.*%\\.concat.*%"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": []
+            }
+          },
+          "params": {
+            "regex": "criteria\\.andApplyNumLike.*%\\.concat.*%"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "3c7411f9-cec9-410e-b7d7-a26373b90bd4",
+          "type": "TEXT",
+          "status": "success",
+          "content": "让我尝试更广泛的搜索来找到这段代码：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "e58b9c49-20e4-4424-af2f-796aef3f6c70",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "search_files",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "path": "~/baidu/bpit-proc-apps/tms/",
+            "regex": "andApplyNumLike"
+          },
+          "displayResult": {
+            "searchFiles": [
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/account/domain/TmsAccountOpenApplyExample.java",
+                "startLine": 324,
+                "endLine": 326
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationHeaderExample.java",
+                "startLine": 394,
+                "endLine": 396
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/account/domain/TmsAccountCloseApplyExample.java",
+                "startLine": 324,
+                "endLine": 326
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationLineExample.java",
+                "startLine": 385,
+                "endLine": 387
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationLineHisExample.java",
+                "startLine": 445,
+                "endLine": 447
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/pay/domain/TmsPayApplyHeaderExample.java",
+                "startLine": 325,
+                "endLine": 327
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/loan/domain/TmsLoanReqHisExample.java",
+                "startLine": 4795,
+                "endLine": 4797
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/loan/domain/TmsLoanReqExample.java",
+                "startLine": 4795,
+                "endLine": 4797
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/change/domain/ChangeInfoApplyExample.java",
+                "startLine": 384,
+                "endLine": 386
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/change/domain/ChangeInfoApplyHisExample.java",
+                "startLine": 444,
+                "endLine": 446
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsDealApplyHisExample.java",
+                "startLine": 384,
+                "endLine": 386
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsProductNetValueExample.java",
+                "startLine": 800,
+                "endLine": 802
+              },
+              {
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsDealApplyExample.java",
+                "startLine": 325,
+                "endLine": 327
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java",
+                "startLine": 427,
+                "endLine": 429
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java",
+                "startLine": 790,
+                "endLine": 792
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/loan/service/impl/LoanApplyServiceImpl.java",
+                "startLine": 297,
+                "endLine": 299
+              },
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/bill/service/impl/BillApplicationServiceImpl.java",
+                "startLine": 484,
+                "endLine": 486
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "searchFiles": [
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 324,
+                "end_line": 326,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/account/domain/TmsAccountOpenApplyExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 394,
+                "end_line": 396,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationHeaderExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 324,
+                "end_line": 326,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/account/domain/TmsAccountCloseApplyExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 385,
+                "end_line": 387,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationLineExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 445,
+                "end_line": 447,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationLineHisExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 325,
+                "end_line": 327,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/pay/domain/TmsPayApplyHeaderExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 4795,
+                "end_line": 4797,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/loan/domain/TmsLoanReqHisExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 4795,
+                "end_line": 4797,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/loan/domain/TmsLoanReqExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 384,
+                "end_line": 386,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/change/domain/ChangeInfoApplyExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 444,
+                "end_line": 446,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/change/domain/ChangeInfoApplyHisExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 384,
+                "end_line": 386,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsDealApplyHisExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 800,
+                "end_line": 802,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsProductNetValueExample.java"
+              },
+              {
+                "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                "start_line": 325,
+                "end_line": 327,
+                "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsDealApplyExample.java"
+              },
+              {
+                "match": "        if (StringUtils.isNotBlank(dto.getApplyNum())) {\n            criteria.andApplyNumLike(\"%\".concat(dto.getApplyNum()).concat(\"%\"));\n        }\n",
+                "start_line": 427,
+                "end_line": 429,
+                "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java"
+              },
+              {
+                "match": "            TmsDealApplyExample.Criteria criteria = example.createCriteria();\n            criteria.andApplyNumLike(prefix);\n            example.setOrderByClause(\"apply_num desc\");\n",
+                "start_line": 790,
+                "end_line": 792,
+                "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java"
+              },
+              {
+                "match": "            TmsDealApplyExample.Criteria criteria = example.createCriteria();\n            criteria.andApplyNumLike(prefix);\n            example.setOrderByClause(\"apply_num desc\");\n",
+                "start_line": 297,
+                "end_line": 299,
+                "path": "tms-web/src/main/java/com/baidu/tms/loan/service/impl/LoanApplyServiceImpl.java"
+              },
+              {
+                "match": "            TmsDealApplyExample.Criteria criteria = example.createCriteria();\n            criteria.andApplyNumLike(prefix);\n            example.setOrderByClause(\"apply_num desc\");\n",
+                "start_line": 484,
+                "end_line": 486,
+                "path": "tms-web/src/main/java/com/baidu/tms/bill/service/impl/BillApplicationServiceImpl.java"
+              }
+            ],
+            "status": "success",
+            "result": {
+              "name": "search_files",
+              "type": "tool_use",
+              "params": {
+                "regex": "andApplyNumLike"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 324,
+                  "end_line": 326,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/account/domain/TmsAccountOpenApplyExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 394,
+                  "end_line": 396,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationHeaderExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 324,
+                  "end_line": 326,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/account/domain/TmsAccountCloseApplyExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 385,
+                  "end_line": 387,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationLineExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 445,
+                  "end_line": 447,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/cash/domain/TmsFundReservationLineHisExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 325,
+                  "end_line": 327,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/pay/domain/TmsPayApplyHeaderExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 4795,
+                  "end_line": 4797,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/loan/domain/TmsLoanReqHisExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 4795,
+                  "end_line": 4797,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/loan/domain/TmsLoanReqExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 384,
+                  "end_line": 386,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/change/domain/ChangeInfoApplyExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 444,
+                  "end_line": 446,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/change/domain/ChangeInfoApplyHisExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 384,
+                  "end_line": 386,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsDealApplyHisExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 800,
+                  "end_line": 802,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsProductNetValueExample.java"
+                },
+                {
+                  "match": "\n        public Criteria andApplyNumLike(String value) {\n            addCriterion(\"apply_num like\", value, \"applyNum\");\n",
+                  "start_line": 325,
+                  "end_line": 327,
+                  "path": "tms-core/src/main/java/com/baidu/tms/persistent/deal/domain/TmsDealApplyExample.java"
+                },
+                {
+                  "match": "        if (StringUtils.isNotBlank(dto.getApplyNum())) {\n            criteria.andApplyNumLike(\"%\".concat(dto.getApplyNum()).concat(\"%\"));\n        }\n",
+                  "start_line": 427,
+                  "end_line": 429,
+                  "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java"
+                },
+                {
+                  "match": "            TmsDealApplyExample.Criteria criteria = example.createCriteria();\n            criteria.andApplyNumLike(prefix);\n            example.setOrderByClause(\"apply_num desc\");\n",
+                  "start_line": 790,
+                  "end_line": 792,
+                  "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java"
+                },
+                {
+                  "match": "            TmsDealApplyExample.Criteria criteria = example.createCriteria();\n            criteria.andApplyNumLike(prefix);\n            example.setOrderByClause(\"apply_num desc\");\n",
+                  "start_line": 297,
+                  "end_line": 299,
+                  "path": "tms-web/src/main/java/com/baidu/tms/loan/service/impl/LoanApplyServiceImpl.java"
+                },
+                {
+                  "match": "            TmsDealApplyExample.Criteria criteria = example.createCriteria();\n            criteria.andApplyNumLike(prefix);\n            example.setOrderByClause(\"apply_num desc\");\n",
+                  "start_line": 484,
+                  "end_line": 486,
+                  "path": "tms-web/src/main/java/com/baidu/tms/bill/service/impl/BillApplicationServiceImpl.java"
+                }
+              ]
+            }
+          },
+          "params": {
+            "regex": "andApplyNumLike"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "ce868f33-76cc-4a1d-8796-eb0c695a7a40",
+          "type": "TEXT",
+          "status": "success",
+          "content": "找到了！我看到了您提到的代码片段。让我查看具体的实现来分析潜在问题：\n\n",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        },
+        {
+          "id": "a311b572-b851-4899-a091-7cf940c059e8",
+          "type": "TOOL_CALL",
+          "status": "success",
+          "toolName": "extract_content_blocks",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "workflowStatus": "success",
+          "displayParams": {
+            "firstFilePath": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/tmsdealapplyserviceimpl.java"
+          },
+          "displayResult": {
+            "fileBlocks": [
+              {
+                "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java",
+                "startLine": 420,
+                "endLine": 440
+              }
+            ]
+          },
+          "workflowSnapshot": {
+            "status": "success",
+            "result": {
+              "name": "extract_content_blocks",
+              "type": "tool_use",
+              "params": {
+                "pathes": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java@LINE[420..440]\n"
+              },
+              "success": true,
+              "message": "",
+              "code": 0,
+              "result": [
+                {
+                  "path": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java",
+                  "content": "        if (StringUtils.equals(INTER_COMPANY_APPLY, dto.getApplyType())) {\n            List<String> applyTypes = Arrays.asList(INTER_COMPANY_APPLY, OUT_COMPANY_APPLY);\n            criteria.andApplyTypeIn(applyTypes);\n        }\n        if (StringUtils.isNotBlank(dto.getDealNum())) {\n            criteria.andDealNumLike(\"%\".concat(dto.getDealNum()).concat(\"%\"));\n        }\n        if (StringUtils.isNotBlank(dto.getApplyNum())) {\n            criteria.andApplyNumLike(\"%\".concat(dto.getApplyNum()).concat(\"%\"));\n        }\n        if (StringUtils.isNotBlank(dto.getApplyUser())) {\n            criteria.andApplyUserInfoLike(\"%\".concat(dto.getApplyUser()).concat(\"%\"));\n        }\n        List<TmsDealApply> tmsDealApplies = tmsDealApplyDAO.selectByExample(example);\n        List<TmsDealApplyDTO> dtoList = new ArrayList<>();\n        for (TmsDealApply apply : tmsDealApplies) {\n            TmsDealApplyDTO applyDTO = new TmsDealApplyDTO();\n            BeanUtils.copyProperties(apply, applyDTO);\n            dtoList.add(applyDTO);\n        }\n        return new PageInfo<>(dtoList).getList();",
+                  "start_line": 420,
+                  "end_line": 440,
+                  "line_count": 1695
+                }
+              ]
+            }
+          },
+          "params": {
+            "pathes": "tms-web/src/main/java/com/baidu/tms/deal/service/impl/TmsDealApplyServiceImpl.java@LINE[420..440]\n"
+          },
+          "parentMessageId": ""
+        },
+        {
+          "id": "d66ae1cf-1910-481b-a320-776f5af77d80",
+          "type": "TEXT",
+          "status": "success",
+          "content": "我已经找到了您提到的代码。让我分析一下这个代码片段是否存在潜在问题：\n\n```java\nif (StringUtils.isNotBlank(dto.getApplyNum())) {\n    criteria.andApplyNumLike(\"%\".concat(dto.getApplyNum()).concat(\"%\"));\n}\n```\n\n**潜在问题分析：**\n\n1. **空指针异常风险**：虽然使用了 `StringUtils.isNotBlank()` 检查，但如果 `dto` 本身为 null，仍然会抛出 NPE。\n\n2. **SQL 注入风险**：如果 `dto.getApplyNum()` 包含特殊字符（如 `%`、`_` 等），可能会影响 LIKE 查询的预期行为。\n\n3. **性能问题**：使用 `%value%` 模式会导致全表扫描，无法使用索引。\n\n4. **代码可读性**：使用 `concat` 方法不如直接使用字符串连接符 `+` 或 `String.format` 直观。\n\n**建议的改进方案：**\n\n```java\nif (dto != null && StringUtils.isNotBlank(dto.getApplyNum())) {\n    String applyNum = dto.getApplyNum().replace(\"%\", \"\\\\%\").replace(\"_\", \"\\\\_\");\n    criteria.andApplyNumLike(\"%\" + applyNum + \"%\");\n}\n```\n\n或者使用更简洁的方式：\n\n```java\nif (dto != null && StringUtils.isNotBlank(dto.getApplyNum())) {\n    criteria.andApplyNumLike(\"%\" + dto.getApplyNum() + \"%\");\n}\n```\n\n您希望我帮您修复这个问题吗？",
+          "composer": {
+            "markdown": "",
+            "tasks": []
+          },
+          "isErrorMessage": false,
+          "parentMessageId": ""
+        }
+      ]
+    }
+  ],
+  "title": "SQL模糊查询代码漏洞排查",
+  "ctime": 1762952432678,
+  "utime": 1762952432688,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/tms/"
+}

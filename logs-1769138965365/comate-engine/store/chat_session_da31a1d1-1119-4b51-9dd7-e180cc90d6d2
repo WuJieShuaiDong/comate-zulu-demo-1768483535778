@@ -1,0 +1,63 @@
+{
+  "source": "TestBotConversation",
+  "sessionUuid": "da31a1d1-1119-4b51-9dd7-e180cc90d6d2",
+  "messages": [
+    {
+      "id": "afdc343e-dc75-4da6-b8fb-b2363e2e41cb",
+      "role": "user",
+      "status": "success",
+      "content": "为当前函数生成单测",
+      "payload": {
+        "agentId": "ut-agent",
+        "params": {
+          "command": "method",
+          "startLine": 22,
+          "endLine": 35,
+          "workDir": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc",
+          "include": "pmc-basic-service/src/main/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImpl.java",
+          "languageVersion": "11",
+          "userName": "liumandong"
+        },
+        "entry": "enhance-generate",
+        "env": {
+          "PATH": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/bin:使用 Maven 包装器/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+          "MAVEN_HOME": "使用 Maven 包装器",
+          "M2_HOME": "使用 Maven 包装器",
+          "JAVA_HOME": "/Users/xiaoliu/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home",
+          "HOME": "/Users/xiaoliu"
+        },
+        "query": "为当前函数生成单测",
+        "action": null,
+        "extra": null
+      }
+    },
+    {
+      "id": "4d85d2ea-1086-4a0e-a50d-eb8ee8517b0a",
+      "role": "assistant",
+      "status": "success",
+      "content": "{\"status\":\"success\",\"content\":\"\\n\\n\\n\\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\\n{\\\"content\\\":\\\"testFindByConditionSupplierCodeWithPagination\\\\ntestFindByConditionSupplierCodeWithoutPagination\\\\ntestFindByConditionSupplierCodeEmptyResult\\\",\\\"type\\\":\\\"testbot\\\",\\\"filePath\\\":\\\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\\\"}\\n```\\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n环境检查失败\\n\",\"loadingMsg\":\"\",\"startIntroduction\":\"好的，已收到任务。我将为`findByConditionSupplierCode`方法生成单元测试，并对其进行验证、优化，确保生成有效的单测代码，提升代码覆盖。\",\"testbotMapping\":{\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\":{\"content\":\"testFindByConditionSupplierCodeWithPagination\\ntestFindByConditionSupplierCodeWithoutPagination\\ntestFindByConditionSupplierCodeEmptyResult\",\"absolutePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\",\"status\":\"success\"}}}",
+      "composer": {
+        "markdown": "\n\n\n```preview:running:0:/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\n{\"content\":\"testFindByConditionSupplierCodeWithPagination\\ntestFindByConditionSupplierCodeWithoutPagination\\ntestFindByConditionSupplierCodeEmptyResult\",\"type\":\"testbot\",\"filePath\":\"/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java\"}\n```\n已完成单测用例生成。接下来我将对生成的单测用例进行验证、优化，以确保单测用例可靠有效。\n\n\n\n\n\n\n\n环境检查失败\n",
+        "tasks": [
+          {
+            "action": "preview",
+            "accepted": 0,
+            "status": "running",
+            "filePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java",
+            "absolutePath": "/$/Users/xiaoliu/baidu/bpit-proc-apps/pmc/pmc-basic-service/src/test/java/com/baidu/pmc/core/service/impl/PmcPortalFinancingServiceImplTest.java",
+            "basename": "PmcPortalFinancingServiceImplTest.java",
+            "originalContent": "",
+            "content": "",
+            "addLineCount": 0,
+            "removeLineCount": 0
+          }
+        ]
+      },
+      "elements": []
+    }
+  ],
+  "title": "为当前函数生成单测",
+  "ctime": 1756450736276,
+  "utime": 1756450748986,
+  "workspaceDirectory": "/Users/xiaoliu/baidu/bpit-proc-apps/pmc/"
+}
