@@ -166,7 +166,7 @@ class VirtualTrader(BaseTrader):
         return self._positions
 
     def fetch_realtime_prices(self, symbols):
-        """使用腾讯接口批量获取实时行情 (稳定且快)"""
+        """使用腾讯接口批量获取实时行情 (稳定且快)，返回 {symbol: {'price': 最新价, 'last_close': 昨收价, 'change_pct': 涨跌幅}}"""
         if not symbols: return {}
         
         # 构造代码列表 (sh600519, sz000001)
@@ -186,18 +186,25 @@ class VirtualTrader(BaseTrader):
             resp = requests.get(url, timeout=3)
             price_map = {}
             if resp.status_code == 200:
-                # 格式: v_sh600519="1~贵州茅台~600519~1347.70~..."
+                # 格式: v_sh600519="1~贵州茅台~600519~当前价~昨收~..."
+                # 字段: 0:未知, 1:名称, 2:代码, 3:当前价, 4:昨收, ..., 32:涨跌幅(%)
                 for line in resp.text.splitlines():
                     if '="' in line:
                         var, val = line.split('="')
                         q_code = var.split('_')[-1]
                         data = val.strip('";').split('~')
-                        if len(data) > 3:
+                        if len(data) > 32:
                             try:
-                                price = float(data[3])
+                                current_price = float(data[3])
+                                last_close = float(data[4])
+                                change_pct = float(data[32])
                                 original_code = code_map.get(q_code)
                                 if original_code:
-                                    price_map[original_code] = price
+                                    price_map[original_code] = {
+                                        'price': current_price,
+                                        'last_close': last_close,
+                                        'change_pct': change_pct
+                                    }
                             except:
                                 pass
             return price_map
@@ -215,15 +222,31 @@ class VirtualTrader(BaseTrader):
             price_map = self.fetch_realtime_prices(symbols)
             
             holdings_value = 0.0
+            daily_position_pnl = 0.0  # 今日持仓浮动盈亏
+            
             for symbol, pos in self._positions.items():
                 # 优先使用实时价，获取失败或价格为0则用成本价兜底
-                current_price = price_map.get(symbol, 0)
+                price_info = price_map.get(symbol, {})
+                if isinstance(price_info, dict):
+                    current_price = price_info.get('price', 0)
+                    last_close = price_info.get('last_close', 0)
+                else:
+                    current_price = 0
+                    last_close = 0
+                
                 if current_price <= 0:
                     current_price = pos['cost']
-                    
-                holdings_value += current_price * pos['shares']
+                
+                shares = pos['shares']
+                holdings_value += current_price * shares
+                
+                # 计算今日盈亏 = 持仓数量 × (当前价 - 昨收价)
+                if last_close > 0:
+                    daily_pnl_per_stock = shares * (current_price - last_close)
+                    daily_position_pnl += daily_pnl_per_stock
                 
             self.total_value = self.cash + holdings_value
+            self.daily_pnl = daily_position_pnl  # 保存今日盈亏
             self.sync_assets()
             logging.info(f"模拟盘市值已更新: ￥{self.total_value:.2f}")
         except Exception as e:
@@ -233,10 +256,23 @@ class VirtualTrader(BaseTrader):
         today = datetime.date.today().strftime("%Y-%m-%d")
         if today != self.last_update_date:
             logging.info(f"执行日切: {self.last_update_date} -> {today}")
-            daily_pnl = self.total_value - self.last_day_value
-            self.yesterday_pnl = daily_pnl
-            self.nav_history.append({"date": self.last_update_date, "total_value": self.total_value, "daily_pnl": daily_pnl})
-            self.last_day_value = self.total_value
+            # 昨日盈亏 = 昨日最终净值 - 昨日初始净值（即前天收盘净值）
+            # 但我们只存了 last_day_value（前天收盘），所以：
+            # yesterday_pnl 应该是 当前加载的 total_value（昨天收盘时的值）- last_day_value（前天收盘）
+            # 注意：这里的 self.total_value 已经被 update_market_value 更新为今天的实时值了
+            # 我们需要在日切前先保存昨天的收盘净值
+            yesterday_close_value = self.total_value  # 这是昨天收盘时的净值（从文件加载）
+            self.yesterday_pnl = yesterday_close_value - self.last_day_value
+            
+            # 记录到历史
+            self.nav_history.append({
+                "date": self.last_update_date, 
+                "total_value": yesterday_close_value, 
+                "daily_pnl": self.yesterday_pnl
+            })
+            
+            # 更新基准：今天的起始净值 = 昨天的收盘净值
+            self.last_day_value = yesterday_close_value
             self.last_update_date = today
             self.sync_assets()
 
@@ -248,6 +284,7 @@ class VirtualTrader(BaseTrader):
             'initial_capital': getattr(self, 'initial_capital', 100000.0),
             'last_day_value': getattr(self, 'last_day_value', 100000.0),
             'yesterday_pnl': getattr(self, 'yesterday_pnl', 0.0),
+            'daily_pnl': getattr(self, 'daily_pnl', 0.0),  # 新增：今日持仓盈亏
             'nav_history': getattr(self, 'nav_history', []),
             'last_update_date': getattr(self, 'last_update_date', datetime.date.today().strftime("%Y-%m-%d")),
             'update_time': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -477,9 +514,9 @@ def calculate_signals(symbol):
 
 def check_market_sentiment_enhanced(tracker=None):
     """
-    升级版市场情绪判断 (集成赚钱效应追踪)
+    升级版市场情绪判断 (集成赚钱效应追踪) - 新增冰点识别
     返回: {
-        'sentiment': 'BULLISH'/'NEUTRAL'/'BEARISH',
+        'sentiment': 'BULLISH'/'NEUTRAL'/'BEARISH'/'FREEZING',  # 新增冰点期
         'score': 0-100分,
         'max_positions': 建议最大持仓数,
         'position_ratio': 建议单只仓位比例
@@ -492,21 +529,25 @@ def check_market_sentiment_enhanced(tracker=None):
             score = result['total_score']
             level = result['level']
             
-            # 映射到原有的三档情绪
+            # 【核心升级】映射到四档情绪：主升期、混沌期、退潮期、冰点期
             if level == 'STRONG':
-                sentiment = 'BULLISH'
-                max_pos = 6  # 强势市场可持有6只
+                sentiment = 'BULLISH'  # 主升期：重仓出击
+                max_pos = 6
                 pos_ratio = 1.0 / 6
             elif level == 'MODERATE':
-                sentiment = 'NEUTRAL'
-                max_pos = 3  # 震荡市场持有3只
-                pos_ratio = 1.0 / 3
-            else:  # WEAK
-                sentiment = 'BEARISH'
+                sentiment = 'NEUTRAL'  # 混沌期：轻仓试错
+                max_pos = 2  # 降低为2只，控制风险
+                pos_ratio = 1.0 / 4  # 单只仓位25%（轻仓）
+            elif score >= 20:
+                sentiment = 'BEARISH'  # 退潮期：观望为主
                 max_pos = 0
                 pos_ratio = 0.0
+            else:  # score < 20
+                sentiment = 'FREEZING'  # 冰点期：别人割肉我抄底
+                max_pos = 3
+                pos_ratio = 1.0 / 3
             
-            logging.info(f"?? 赚钱效应评分: {score:.1f}/100 ({level})")
+            logging.info(f"📊 赚钱效应评分: {score:.1f}/100 ({level}) → {sentiment}")
             return {
                 'sentiment': sentiment,
                 'score': score,
@@ -797,11 +838,16 @@ def run_bot():
                     log_msg = {
                         'BULLISH': "🔥 市场主升浪，开启激进买入模式 (仓位上限: {})",
                         'BEARISH': "❄️ 市场退潮期，禁止买入",
-                        'NEUTRAL': "🟡 市场震荡期，谨慎买入 (仓位上限: {})"
+                        'NEUTRAL': "🟡 市场震荡期，谨慎买入 (仓位上限: {})",
+                        'FREEZING': "❄️ 冰点期，抄底博反弹 (仓位上限: {})"
                     }[sentiment].format(max_pos)
                     logging.info(log_msg)
                     
                     if sentiment != 'BEARISH':
+                        # 【冰点期特殊策略】别人割肉，我们抄底
+                        if sentiment == 'FREEZING':
+                            logging.info("❄️ 冰点期策略启动：寻找超跌龙头抄底机会")
+                        
                         # 【核心升级】优先扫描龙头股 + 妖股基因增强
                         priority_symbols = []
                         enhanced_leaders = []
@@ -947,18 +993,24 @@ def run_bot():
                                         # 技术面验证
                                         signals = calculate_signals(symbol)
                                         if signals and signals['trend_up']:
+                                            # 【量价关系强化】无量股票坚决不碰
+                                            vol_ratio = signals.get('vol_ratio', 0)
+                                            if vol_ratio < 1.2:
+                                                logging.debug(f"跳过无量股: {name} (量比{vol_ratio:.2f})")
+                                                continue
+                                            
                                             # 启动期板块优先级更高
                                             if sector_cycle == 'LAUNCH':
-                                                logging.info(f"🚀 启动期机会: {name} | 板块:{sector} | 风险:{risk_level}")
+                                                logging.info(f"🚀 启动期机会: {name} | 板块:{sector} | 量比:{vol_ratio:.2f} | 风险:{risk_level}")
                                             else:
-                                                logging.info(f"?? 加速期机会: {name} | 板块:{sector} | 风险:{risk_level}")
+                                                logging.info(f"📈 加速期机会: {name} | 板块:{sector} | 量比:{vol_ratio:.2f} | 风险:{risk_level}")
                                             
                                             target_pos_cash = trader.total_value * sentiment_result['position_ratio']
                                             buy_price = signals['price']
                                             shares = int(target_pos_cash / buy_price / 100) * 100
                                             
                                             if shares >= 100:
-                                                reason = f"热点主线 ({sector}|{sector_cycle}期|风险{risk_level})"
+                                                reason = f"热点主线 ({sector}|{sector_cycle}期|量比{vol_ratio:.1f})"
                                                 if trader.buy(symbol, name, buy_price, shares, reason):
                                                     current_pos_count += 1
                                         

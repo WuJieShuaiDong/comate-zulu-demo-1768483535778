@@ -8,6 +8,9 @@ import json
 import logging
 import os
 import datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 # 配置文件路径
 CONFIG_FILE = os.path.join("data", "notification_config.json")
@@ -16,7 +19,7 @@ class NotificationManager:
     def __init__(self):
         self.config = self._load_config()
         self.webhook_url = self.config.get("webhook_url", "")
-        self.platform = self.config.get("platform", "dingtalk")  # dingtalk 或 wecom
+        self.platform = self.config.get("platform", "dingtalk")  # dingtalk, wecom, or pushplus
         self.enabled = self.config.get("enabled", False)
 
     def _load_config(self):
@@ -60,6 +63,10 @@ class NotificationManager:
                 return self._send_dingtalk(full_content)
             elif self.platform == "wecom":
                 return self._send_wecom(full_content)
+            elif self.platform == "pushplus":
+                return self._send_pushplus(content, "量化交易提醒")
+            elif self.platform == "email":
+                return self._send_email("量化交易提醒", content)
         except Exception as e:
             logging.error(f"发送通知失败: {e}")
             return False
@@ -75,6 +82,12 @@ class NotificationManager:
             elif self.platform == "wecom":
                 # 企业微信Markdown格式稍有不同，简单适配
                 return self._send_wecom_markdown(content)
+            elif self.platform == "pushplus":
+                return self._send_pushplus(content, title, "markdown")
+            elif self.platform == "email":
+                # 邮件不支持Markdown，转为纯文本或HTML
+                # 这里简单处理，直接发内容
+                return self._send_email(title, content)
         except Exception as e:
             logging.error(f"发送Markdown通知失败: {e}")
             return False
@@ -123,6 +136,63 @@ class NotificationManager:
         }
         resp = requests.post(self.webhook_url, headers=headers, json=data, timeout=5)
         return resp.json().get("errcode") == 0
+
+    def _send_pushplus(self, content, title="量化通知", template="html"):
+        """
+        PushPlus 发送接口
+        :param content: 消息内容
+        :param title: 消息标题
+        :param template: 模板类型 ('html', 'markdown', 'txt', 'json')
+        """
+        url = "http://www.pushplus.plus/send"
+        data = {
+            "token": self.webhook_url,  # PushPlus 的 token 直接填在 webhook_url 字段里
+            "title": title,
+            "content": content,
+            "template": template
+        }
+        resp = requests.post(url, json=data, timeout=5)
+        res_json = resp.json()
+        return res_json.get("code") == 200
+
+    def _send_email(self, title, content):
+        """
+        发送邮件通知 (QQ邮箱/163邮箱等)
+        webhook_url 格式: "smtp.qq.com|587|your_email@qq.com|auth_code|target_email@qq.com"
+        """
+        try:
+            # 解析配置
+            parts = self.webhook_url.split('|')
+            if len(parts) < 5:
+                logging.error("邮件配置格式错误，应为: host|port|user|pass|to")
+                return False
+                
+            smtp_host = parts[0]
+            smtp_port = int(parts[1])
+            smtp_user = parts[2]
+            smtp_pass = parts[3]
+            smtp_to = parts[4]
+            
+            # 构造邮件
+            message = MIMEText(content, 'plain', 'utf-8')
+            message['From'] = Header("量化交易机器人", 'utf-8')
+            message['To'] = Header("管理员", 'utf-8')
+            message['Subject'] = Header(title, 'utf-8')
+            
+            # 发送邮件
+            if smtp_port == 465:
+                server = smtplib.SMTP_SSL(smtp_host, smtp_port)
+            else:
+                server = smtplib.SMTP(smtp_host, smtp_port)
+                server.starttls()
+                
+            server.login(smtp_user, smtp_pass)
+            server.sendmail(smtp_user, [smtp_to], message.as_string())
+            server.quit()
+            return True
+        except Exception as e:
+            logging.error(f"邮件发送失败: {e}")
+            return False
 
     # === 业务场景快捷方法 ===
 

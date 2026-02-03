@@ -305,6 +305,108 @@
         "leader_pct": 0,
         "cycle": "DECAY"
       }
+    ],
+    "2026-02-03": [
+      {
+        "name": "次新股",
+        "change_pct": 1.668407079646,
+        "strength": 58.342035398229996,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "酿酒行业",
+        "change_pct": 0.9915625,
+        "strength": 54.9578125,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "飞机制造",
+        "change_pct": 0.685,
+        "strength": 53.425,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "电子器件",
+        "change_pct": 0.47986111111111,
+        "strength": 52.39930555555555,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "电子信息",
+        "change_pct": 0.41357466063348,
+        "strength": 52.0678733031674,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "机械行业",
+        "change_pct": 0.40046153846154,
+        "strength": 52.0023076923077,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "发电设备",
+        "change_pct": 0.33254237288136,
+        "strength": 51.6627118644068,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "玻璃行业",
+        "change_pct": 0.32,
+        "strength": 51.6,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "船舶制造",
+        "change_pct": 0.32,
+        "strength": 51.6,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "汽车制造",
+        "change_pct": 0.306875,
+        "strength": 51.534375,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      }
     ]
   },
   "sector_stats": {}

@@ -95,10 +95,28 @@ mode = st.sidebar.radio("选择功能模块", [
 # --- 侧边栏：实时通知配置 ---
 with st.sidebar.expander("🔔 实时通知配置"):
     notify_enable = st.checkbox("启用消息推送", value=notifier.enabled)
-    notify_platform = st.selectbox("推送平台", ["dingtalk", "wecom"], 
-                                 index=0 if notifier.platform=="dingtalk" else 1,
-                                 format_func=lambda x: "钉钉机器人" if x=="dingtalk" else "企业微信机器人")
-    notify_webhook = st.text_input("Webhook 地址", value=notifier.webhook_url, type="password")
+    notify_platform = st.selectbox("推送平台", ["dingtalk", "wecom", "pushplus", "email"], 
+                                 index=["dingtalk", "wecom", "pushplus", "email"].index(notifier.platform) if notifier.platform in ["dingtalk", "wecom", "pushplus", "email"] else 0,
+                                 format_func=lambda x: {
+                                     "dingtalk": "钉钉机器人", 
+                                     "wecom": "企业微信机器人",
+                                     "pushplus": "微信 (PushPlus)",
+                                     "email": "邮件推送 (QQ/163)"
+                                 }.get(x, x))
+    
+    if notify_platform == "email":
+        st.caption("📧 配置格式: `smtp服务器|端口|发件邮箱|授权码|收件邮箱`")
+        st.caption("示例: `smtp.qq.com|587|me@qq.com|abcd123|target@qq.com`")
+        label = "配置字符串"
+    elif notify_platform == "pushplus":
+        label = "Token"
+    else:
+        label = "Webhook 地址"
+        
+    notify_webhook = st.text_input(label, value=notifier.webhook_url, type="password")
+    
+    if notify_platform == "pushplus":
+        st.caption("👉 [点击获取 PushPlus Token](http://www.pushplus.plus/)")
     
     if st.button("💾 保存并测试通知"):
         if notifier.save_config(notify_enable, notify_platform, notify_webhook):
@@ -362,13 +380,18 @@ if mode == "🤖 自动化实盘监控 (AutoBot)":
             total_assets = cash + current_market_value
             initial_capital = float(acc.get('initial_capital', 1000000.0))
             last_day_value = float(acc.get('last_day_value', 1000000.0))
-            yesterday_pnl = float(acc.get('yesterday_pnl', 0.0)) 
+            yesterday_pnl = float(acc.get('yesterday_pnl', 0.0))
+            
+            # 【修复】今日盈亏：优先使用后端计算的 daily_pnl（基于昨收价）
+            daily_pnl = float(acc.get('daily_pnl', 0.0))
+            if daily_pnl == 0.0 and last_day_value > 0:
+                # 降级：如果后端未计算，用总资产差值估算
+                daily_pnl = total_assets - last_day_value
+            
+            daily_pnl_pct = (daily_pnl / last_day_value * 100) if last_day_value != 0 else 0.0
             
             total_pnl = total_assets - initial_capital
             total_pnl_pct = total_pnl / initial_capital * 100 if initial_capital != 0 else 0.0
-            
-            daily_pnl = total_assets - last_day_value
-            daily_pnl_pct = daily_pnl / last_day_value * 100 if last_day_value != 0 else 0.0
             
             total_float_pnl = 0.0
             for item in pos_data:
