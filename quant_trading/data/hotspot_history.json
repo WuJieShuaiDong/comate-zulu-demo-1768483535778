@@ -309,18 +309,18 @@
     "2026-02-03": [
       {
         "name": "次新股",
-        "change_pct": 1.668407079646,
-        "strength": 58.342035398229996,
+        "change_pct": 2.1338053097345,
+        "strength": 60.6690265486725,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
         "leader_pct": 0,
-        "cycle": "NORMAL"
+        "cycle": "SURGE"
       },
       {
         "name": "酿酒行业",
-        "change_pct": 0.9915625,
-        "strength": 54.9578125,
+        "change_pct": 1.4353125,
+        "strength": 57.1765625,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -329,8 +329,18 @@
       },
       {
         "name": "飞机制造",
-        "change_pct": 0.685,
-        "strength": 53.425,
+        "change_pct": 1.4242857142857,
+        "strength": 57.1214285714285,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "陶瓷行业",
+        "change_pct": 0.942,
+        "strength": 54.71,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -339,28 +349,8 @@
       },
       {
         "name": "电子器件",
-        "change_pct": 0.47986111111111,
-        "strength": 52.39930555555555,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "电子信息",
-        "change_pct": 0.41357466063348,
-        "strength": 52.0678733031674,
-        "up_count": 0,
-        "down_count": 0,
-        "leader": "",
-        "leader_pct": 0,
-        "cycle": "NORMAL"
-      },
-      {
-        "name": "机械行业",
-        "change_pct": 0.40046153846154,
-        "strength": 52.0023076923077,
+        "change_pct": 0.75583333333333,
+        "strength": 53.77916666666665,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -369,8 +359,8 @@
       },
       {
         "name": "发电设备",
-        "change_pct": 0.33254237288136,
-        "strength": 51.6627118644068,
+        "change_pct": 0.72254237288136,
+        "strength": 53.6127118644068,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -378,9 +368,19 @@
         "cycle": "NORMAL"
       },
       {
-        "name": "玻璃行业",
-        "change_pct": 0.32,
-        "strength": 51.6,
+        "name": "电子信息",
+        "change_pct": 0.71918552036199,
+        "strength": 53.59592760180995,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "有色金属",
+        "change_pct": 0.70092307692308,
+        "strength": 53.5046153846154,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -389,8 +389,8 @@
       },
       {
         "name": "船舶制造",
-        "change_pct": 0.32,
-        "strength": 51.6,
+        "change_pct": 0.69714285714286,
+        "strength": 53.4857142857143,
         "up_count": 0,
         "down_count": 0,
         "leader": "",
@@ -398,9 +398,9 @@
         "cycle": "NORMAL"
       },
       {
-        "name": "汽车制造",
-        "change_pct": 0.306875,
-        "strength": 51.534375,
+        "name": "玻璃行业",
+        "change_pct": 0.62263157894737,
+        "strength": 53.11315789473685,
         "up_count": 0,
         "down_count": 0,
         "leader": "",

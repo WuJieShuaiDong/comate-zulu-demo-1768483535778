@@ -229,21 +229,21 @@ class VirtualTrader(BaseTrader):
                 price_info = price_map.get(symbol, {})
                 if isinstance(price_info, dict):
                     current_price = price_info.get('price', 0)
-                    last_close = price_info.get('last_close', 0)
+                    change_pct = price_info.get('change_pct', 0) / 100.0  # 转换为小数（如 5% -> 0.05）
                 else:
                     current_price = 0
-                    last_close = 0
+                    change_pct = 0
                 
                 if current_price <= 0:
                     current_price = pos['cost']
                 
                 shares = pos['shares']
-                holdings_value += current_price * shares
+                position_value = current_price * shares
+                holdings_value += position_value
                 
-                # 计算今日盈亏 = 持仓数量 × (当前价 - 昨收价)
-                if last_close > 0:
-                    daily_pnl_per_stock = shares * (current_price - last_close)
-                    daily_position_pnl += daily_pnl_per_stock
+                # 【修正】今日盈亏 = 持仓市值 × 今日涨跌幅
+                daily_pnl_per_stock = position_value * change_pct
+                daily_position_pnl += daily_pnl_per_stock
                 
             self.total_value = self.cash + holdings_value
             self.daily_pnl = daily_position_pnl  # 保存今日盈亏
@@ -652,8 +652,15 @@ def get_dynamic_stop_profit(symbol, cost_price, current_price, sentiment_result,
     if DEMON_GENE_AVAILABLE and demon_tracker:
         try:
             gene_info = demon_tracker.get_gene_score(symbol)
-            if gene_info:
+            # get_gene_score 可能返回 int 或 dict，需要兼容处理
+            if isinstance(gene_info, dict):
                 gene_score = gene_info.get('gene_score', 0)
+            elif isinstance(gene_info, (int, float)):
+                gene_score = gene_info
+            else:
+                gene_score = 0
+                
+            if gene_score > 0:
                 
                 # 超级妖股: 不设止盈
                 if gene_score >= 80:
