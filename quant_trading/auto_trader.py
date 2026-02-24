@@ -51,6 +51,15 @@ except ImportError:
     HOTSPOT_AVAILABLE = False
     logging.warning("⚠️  hotspot_tracker.py 未找到，将不使用热点追踪增强")
 
+# 导入游资追踪模块
+try:
+    from trader_tracker import TraderTracker
+    TRADER_TRACKER_AVAILABLE = True
+    logging.info("✅ 游资龙虎榜追踪模块加载成功")
+except ImportError:
+    TRADER_TRACKER_AVAILABLE = False
+    logging.warning("⚠️  trader_tracker.py 未找到，将不使用游资跟随策略")
+
 # --- 尝试导入 QMT 库 (防报错处理) ---
 try:
     from xtquant import xtdata, xttrader
@@ -83,10 +92,16 @@ QMT_CONFIG = {
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
-# 策略参数 (游资风格)
-MAX_POSITIONS = 4        # 100万本金，分4只票，每只25万，集中火力
-STOP_LOSS_PCT = 0.08     # 游资容忍度稍高，8%止损
-TAKE_PROFIT_PCT = 0.30   # 捉妖股，不止盈，断板才走 (代码逻辑中会动态调整)
+# 策略参数 (冷酷短线收割策略)
+MAX_POSITIONS = 3        # 集中火力，最多3只
+STOP_LOSS_PCT = 0.05     # 5%立即止损，不犹豫
+TAKE_PROFIT_PCT = 0.30   # 短线止盈30%
+FORCE_CLEAR_HOUR = 14    # 14:00后开始清仓
+NO_OVERNIGHT = True      # 尾盘清空不确定性仓位
+
+# 情绪阈值
+MIN_SENTIMENT_BUY = 60   # 情绪>60分才买入
+SENTIMENT_EXIT = 40      # 情绪<40分立即清仓
 
 # 初始化日志
 logging.basicConfig(
@@ -514,89 +529,95 @@ def calculate_signals(symbol):
 
 def check_market_sentiment_enhanced(tracker=None):
     """
-    升级版市场情绪判断 (集成赚钱效应追踪) - 新增冰点识别
+    多维度市场情绪判断 (重写版)
+    
+    分析维度 (7个):
+    1. 涨跌停分析 (25%)
+    2. 北向资金 (15%)
+    3. 市场成交额 (15%)
+    4. 大盘指数 (15%)
+    5. 涨跌家数比 (15%)
+    6. 两融余额 (10%)
+    7. 新高新低 (5%)
+    
     返回: {
-        'sentiment': 'BULLISH'/'NEUTRAL'/'BEARISH'/'FREEZING',  # 新增冰点期
+        'sentiment': 'BULLISH'/'NEUTRAL'/'BEARISH'/'FREEZING',
         'score': 0-100分,
         'max_positions': 建议最大持仓数,
         'position_ratio': 建议单只仓位比例
     }
     """
-    if MONEY_EFFECT_AVAILABLE and tracker:
-        try:
-            # 使用赚钱效应追踪系统
-            result = tracker.get_money_effect_score()
-            score = result['total_score']
-            level = result['level']
-            
-            # 【核心升级】映射到四档情绪：主升期、混沌期、退潮期、冰点期
-            if level == 'STRONG':
-                sentiment = 'BULLISH'  # 主升期：重仓出击
-                max_pos = 6
-                pos_ratio = 1.0 / 6
-            elif level == 'MODERATE':
-                sentiment = 'NEUTRAL'  # 混沌期：轻仓试错
-                max_pos = 2  # 降低为2只，控制风险
-                pos_ratio = 1.0 / 4  # 单只仓位25%（轻仓）
-            elif score >= 20:
-                sentiment = 'BEARISH'  # 退潮期：观望为主
-                max_pos = 0
-                pos_ratio = 0.0
-            else:  # score < 20
-                sentiment = 'FREEZING'  # 冰点期：别人割肉我抄底
-                max_pos = 3
-                pos_ratio = 1.0 / 3
-            
-            logging.info(f"📊 赚钱效应评分: {score:.1f}/100 ({level}) → {sentiment}")
-            return {
-                'sentiment': sentiment,
-                'score': score,
-                'max_positions': max_pos,
-                'position_ratio': pos_ratio,
-                'details': result.get('details', {})
-            }
-        except Exception as e:
-            logging.error(f"赚钱效应追踪失败，降级为传统方法: {e}")
-    
-    # 降级方案: 使用原有简单逻辑
     try:
-        zt_df = ak.stock_zt_pool_em(date=datetime.date.today().strftime("%Y%m%d"))
-        dt_df = ak.stock_zt_pool_dtgc_em(date=datetime.date.today().strftime("%Y%m%d"))
+        # 使用新的多维度情绪分析系统
+        from market_sentiment import get_comprehensive_sentiment
         
-        zt_count = len(zt_df) if not zt_df.empty else 0
-        dt_count = len(dt_df) if not dt_df.empty else 0
+        result = get_comprehensive_sentiment()
         
-        logging.info(f"市场情绪(传统): 涨停 {zt_count} 只, 跌停 {dt_count} 只")
+        sentiment = result['sentiment']
+        max_pos = result['max_positions']
+        pos_ratio = result['position_ratio']
+        description = result['description']
         
-        if zt_count > dt_count * 2:
-            sentiment = 'BULLISH'
-            max_pos = 4
-            pos_ratio = 0.25
-        elif dt_count > zt_count:
-            sentiment = 'BEARISH'
-            max_pos = 0
-            pos_ratio = 0.0
-        else:
-            sentiment = 'NEUTRAL'
-            max_pos = 3
-            pos_ratio = 0.33
+        logging.info(f"📊 市场情绪: {sentiment} - {description}")
+        
+        # 映射评分 (用于通知系统)
+        score_map = {
+            'BULLISH': 80,
+            'NEUTRAL': 50,
+            'BEARISH': 25,
+            'FREEZING': 10
+        }
+        score = score_map.get(sentiment, 50)
         
         return {
             'sentiment': sentiment,
-            'score': 50,  # 默认中性分数
+            'score': score,
             'max_positions': max_pos,
             'position_ratio': pos_ratio,
-            'details': {}
+            'details': {'description': description}
         }
+        
     except Exception as e:
-        logging.error(f"情绪判断失败: {e}")
-        return {
-            'sentiment': 'NEUTRAL',
-            'score': 50,
-            'max_positions': 2,
-            'position_ratio': 0.5,
-            'details': {}
-        }
+        logging.error(f"多维度情绪判断失败，降级为传统方法: {e}")
+        
+        # 降级方案: 使用传统涨跌停判断
+        try:
+            today = datetime.date.today().strftime("%Y%m%d")
+            zt_df = ak.stock_zt_pool_em(date=today)
+            dt_df = ak.stock_zt_pool_dtgc_em(date=today)
+            
+            zt_count = len(zt_df) if not zt_df.empty else 0
+            dt_count = len(dt_df) if not dt_df.empty else 0
+            
+            if zt_count > dt_count * 2:
+                sentiment = 'BULLISH'
+                max_pos = 4
+                pos_ratio = 0.25
+            elif dt_count > zt_count:
+                sentiment = 'BEARISH'
+                max_pos = 0
+                pos_ratio = 0.0
+            else:
+                sentiment = 'NEUTRAL'
+                max_pos = 3
+                pos_ratio = 0.33
+            
+            return {
+                'sentiment': sentiment,
+                'score': 50,
+                'max_positions': max_pos,
+                'position_ratio': pos_ratio,
+                'details': {}
+            }
+        except Exception as e2:
+            logging.error(f"降级方案也失败: {e2}")
+            return {
+                'sentiment': 'NEUTRAL',
+                'score': 50,
+                'max_positions': 2,
+                'position_ratio': 0.5,
+                'details': {}
+            }
 
 def check_market_sentiment():
     """兼容旧接口"""
@@ -637,6 +658,130 @@ def dynamic_position_management(sentiment_result):
     参数: sentiment_result = check_market_sentiment_enhanced() 的返回值
     """
     return sentiment_result['max_positions']
+
+def evaluate_position_strength(symbol, pos, demon_tracker=None, sentiment_result=None):
+    """
+    评估持仓股票的强弱程度（用于调仓决策）
+    返回: score (0-100), reason (描述)
+    分数越低，越应该被调出
+    """
+    # 获取当前行情
+    res = calculate_signals(symbol)
+    if not res:
+        return 0, "行情获取失败"
+    
+    current_price = res['price']
+    cost_price = pos['cost']
+    pct_change = (current_price - cost_price) / cost_price if cost_price > 0 else 0
+    
+    score = 50  # 基础分
+    reasons = []
+    
+    # 1. 盈亏评分（30分权重）
+    if pct_change >= 0.1:
+        score += 15
+        reasons.append("盈利良好")
+    elif pct_change >= 0:
+        score += 5
+        reasons.append("小盈")
+    elif pct_change >= -0.05:
+        score -= 10
+        reasons.append("微亏")
+    elif pct_change >= -0.08:
+        score -= 20
+        reasons.append("亏损")
+    else:
+        score -= 30
+        reasons.append("深度亏损")
+    
+    # 2. 持仓天数评分（20分权重）
+    # 简化：这里无法获取持仓天数，用妖股基因代替
+    
+    # 3. 妖股基因评分（20分权重）
+    if DEMON_GENE_AVAILABLE and demon_tracker:
+        try:
+            gene_info = demon_tracker.get_gene_score(symbol)
+            gene_score = gene_info.get('gene_score', 0) if isinstance(gene_info, dict) else (gene_info if isinstance(gene_info, (int, float)) else 0)
+            
+            if gene_score >= 80:
+                score += 20
+                reasons.append(f"超级妖股({gene_score:.0f}分)")
+            elif gene_score >= 60:
+                score += 10
+                reasons.append(f"妖股基因({gene_score:.0f}分)")
+            else:
+                score -= 5
+                reasons.append("无妖股基因")
+        except:
+            pass
+    
+    # 4. 量比评分（15分权重）
+    vol_ratio = res.get('vol_ratio', 0)
+    if vol_ratio >= 2.0:
+        score += 15
+        reasons.append("放量")
+    elif vol_ratio >= 1.5:
+        score += 5
+        reasons.append("温和放量")
+    elif vol_ratio >= 1.0:
+        score -= 5
+        reasons.append("缩量")
+    else:
+        score -= 15
+        reasons.append("无量")
+    
+    # 5. 趋势评分（15分权重）
+    if res['trend_up']:
+        score += 10
+        reasons.append("趋势向上")
+    else:
+        score -= 10
+        reasons.append("趋势向下")
+    
+    return max(0, min(100, score)), ", ".join(reasons)
+
+def rotate_positions(trader, new_symbol, new_name, new_price, new_shares, new_reason, sentiment_result, demon_tracker=None, money_tracker=None):
+    """
+    卖弱买强：当持仓已满时，调仓买入新股票
+    返回: True if successfully rotated, False otherwise
+    """
+    positions = trader.positions
+    if len(positions) == 0:
+        return False
+    
+    # 评估所有持仓，找出最弱的
+    weakest = None
+    weakest_score = 1000  # 初始高分
+    
+    for symbol, pos in positions.items():
+        score, reason = evaluate_position_strength(symbol, pos, demon_tracker, sentiment_result)
+        logging.info(f"📊 评估持仓: {pos.get('name', symbol)}({symbol}) 得分:{score:.0f} - {reason}")
+        
+        if score < weakest_score:
+            weakest_score = score
+            weakest = (symbol, pos)
+    
+    if weakest and weakest_score < 40:
+        symbol_to_sell, pos_to_sell = weakest
+        sell_name = pos_to_sell.get('name', symbol_to_sell)
+        
+        # 获取卖出价格
+        res = calculate_signals(symbol_to_sell)
+        sell_price = res['price'] if res else pos_to_sell['cost']
+        
+        # 卖出最弱的
+        logging.info(f"🔄 调仓卖出: {sell_name}({symbol_to_sell}) 得分:{weakest_score:.0f} - 原因:表现最弱")
+        if trader.sell(symbol_to_sell, sell_price, f"调仓换股(得分{weakest_score:.0f})"):
+            # 卖出成功，买入新股票
+            if trader.buy(new_symbol, new_name, new_price, new_shares, new_reason):
+                logging.info(f"✅ 调仓完成: {sell_name} ➔ {new_name}")
+                return True
+            else:
+                # 买入失败，尝试买回（这里简化处理，不买回）
+                logging.warning(f"⚠️ 调仓失败: {new_name} 买入失败，{sell_name}已卖出")
+                return False
+    
+    return False
 
 def get_dynamic_stop_profit(symbol, cost_price, current_price, sentiment_result, tracker=None, demon_tracker=None):
     """
@@ -954,8 +1099,16 @@ def run_bot():
                                     
                                     if shares >= 100:
                                         reason = f"龙头跟随 (赚钱效应:{score:.1f}分)"
-                                        if trader.buy(symbol, name, buy_price, shares, reason):
-                                            current_pos_count += 1
+                                        if current_pos_count < max_pos:
+                                            if trader.buy(symbol, name, buy_price, shares, reason):
+                                                current_pos_count += 1
+                                        else:
+                                            # 【调仓】持仓已满，尝试卖弱买强
+                                            logging.info(f"🔄 持仓已满，尝试调仓买入龙头股: {name}")
+                                            rotate_positions(
+                                                trader, symbol, name, buy_price, shares, reason,
+                                                sentiment_result, demon_gene_tracker, money_tracker
+                                            )
                                             
                                 time.sleep(0.5)
                             except Exception as e:
@@ -976,10 +1129,44 @@ def run_bot():
                                         logging.info(f"  {cycle_emoji} {s['name']}: +{s['change_pct']:.2f}% ({s['cycle']}期)")
                                 
                                 # 获取最佳入场机会（已过滤高接盘风险）
-                                best_entries = hotspot_tracker.find_best_entry_stocks(max_count=10)
+                                best_entries = hotspot_tracker.find_best_entry_stocks(max_count=15)  # 扩大候选池
                                 
                                 if best_entries:
                                     logging.info(f"🎯 热点追踪器识别到 {len(best_entries)} 只低风险机会")
+                                    
+                                    # 【优化】多维度评分排序（资金流向优先）
+                                    for candidate in best_entries:
+                                        symbol = candidate['symbol']
+                                        name = candidate['name']
+                                        
+                                        # 获取更详细的资金流向数据
+                                        try:
+                                            spot_data = ak.stock_individual_info_em(symbol=symbol)
+                                            if not spot_data.empty:
+                                                # 资金净流入 (字段名可能是 '资金净流入' 或其他)
+                                                fund_inflow = spot_data.get('资金净流入', pd.Series([0])).iloc[0]
+                                                main_inflow = spot_data.get('主力净流入', pd.Series([0])).iloc[0]
+                                                
+                                                # 资金流向评分 (30分权重)
+                                                fund_score = 0
+                                                if fund_inflow > 1e8:  # > 1亿
+                                                    fund_score += 20
+                                                elif fund_inflow > 5e7:
+                                                    fund_score += 10
+                                                
+                                                if main_inflow > 5e7:  # 主力流入 > 5000万
+                                                    fund_score += 10
+                                                elif main_inflow > 0:
+                                                    fund_score += 5
+                                                
+                                                candidate['fund_score'] = fund_score
+                                                candidate['fund_inflow'] = fund_inflow
+                                        except:
+                                            candidate['fund_score'] = 0
+                                            candidate['fund_inflow'] = 0
+                                    
+                                    # 按综合得分排序（原得分 + 资金分）
+                                    best_entries.sort(key=lambda x: x['score'] + x.get('fund_score', 0), reverse=True)
                                     
                                     for candidate in best_entries:
                                         if current_pos_count >= max_pos:
@@ -990,6 +1177,7 @@ def run_bot():
                                         sector = candidate['sector']
                                         sector_cycle = candidate['sector_cycle']
                                         risk_level = candidate['risk_level']
+                                        fund_inflow = candidate.get('fund_inflow', 0)
                                         
                                         # 跳过已持仓和龙头列表中的股票
                                         if symbol in trader.positions:
@@ -1006,18 +1194,25 @@ def run_bot():
                                                 logging.debug(f"跳过无量股: {name} (量比{vol_ratio:.2f})")
                                                 continue
                                             
+                                            # 【新增】资金流向验证：资金流入才买入
+                                            if fund_inflow < 0:
+                                                logging.debug(f"跳过资金流出股: {name} (净流入{fund_inflow/1e8:.2f}亿)")
+                                                continue
+                                            
+                                            fund_str = f"资金{fund_inflow/1e8:.2f}亿" if fund_inflow > 0 else "资金持平"
+                                            
                                             # 启动期板块优先级更高
                                             if sector_cycle == 'LAUNCH':
-                                                logging.info(f"🚀 启动期机会: {name} | 板块:{sector} | 量比:{vol_ratio:.2f} | 风险:{risk_level}")
+                                                logging.info(f"🚀 启动期机会: {name} | 板块:{sector} | 量比:{vol_ratio:.2f} | {fund_str} | 风险:{risk_level}")
                                             else:
-                                                logging.info(f"📈 加速期机会: {name} | 板块:{sector} | 量比:{vol_ratio:.2f} | 风险:{risk_level}")
+                                                logging.info(f"📈 加速期机会: {name} | 板块:{sector} | 量比:{vol_ratio:.2f} | {fund_str} | 风险:{risk_level}")
                                             
                                             target_pos_cash = trader.total_value * sentiment_result['position_ratio']
                                             buy_price = signals['price']
                                             shares = int(target_pos_cash / buy_price / 100) * 100
                                             
                                             if shares >= 100:
-                                                reason = f"热点主线 ({sector}|{sector_cycle}期|量比{vol_ratio:.1f})"
+                                                reason = f"热点主线 ({sector}|{sector_cycle}期|量比{vol_ratio:.1f}|{fund_str})"
                                                 if trader.buy(symbol, name, buy_price, shares, reason):
                                                     current_pos_count += 1
                                         

@@ -145,14 +145,21 @@ class HotspotTracker:
             return []
     
     def _get_sectors_eastmoney(self):
-        """东方财富概念板块接口"""
+        """东方财富概念板块接口 - 升级版：加入成交额和资金流向分析"""
         try:
             url = "https://push2.eastmoney.com/api/qt/clist/get"
+            # 【新增字段】
+            # f104: 上涨家数
+            # f105: 下跌家数
+            # f128: 领涨股代码
+            # f140: 领涨股涨跌幅
+            # f62: 成交额 (单位: 元)
+            # f136: 资金净流入 (单位: 元)
             params = {
                 "pn": 1, "pz": 50, "po": 1, "np": 1,
-                "fltt": 2, "invt": 2, "fid": "f3",
+                "fltt": 2, "invt": 2, "fid": "f62",  # 按成交额排序
                 "fs": "m:90+t:3",
-                "fields": "f2,f3,f4,f8,f12,f14,f104,f105,f128,f140,f141"
+                "fields": "f2,f3,f4,f8,f12,f14,f104,f105,f128,f140,f62,f136"
             }
             headers = {
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
@@ -166,7 +173,10 @@ class HotspotTracker:
                 return []
             
             results = []
-            for item in data['data']['diff'][:30]:
+            # 获取所有板块的总成交额，用于计算占比
+            total_volume = sum(item.get('f62', 0) or 0 for item in data['data']['diff'])
+            
+            for item in data['data']['diff'][:50]:  # 扩大到50个候选
                 name = item.get('f14', '')
                 change_pct = float(item.get('f3', 0) or 0)
                 up_count = int(item.get('f104', 0) or 0)
@@ -174,8 +184,29 @@ class HotspotTracker:
                 leader = item.get('f128', '')
                 leader_pct = float(item.get('f140', 0) or 0)
                 
+                # 【新增】成交额数据
+                volume = float(item.get('f62', 0) or 0)  # 单位: 元
+                volume_yi = volume / 1e8  # 转换为亿元
+                
+                # 【新增】资金流向数据
+                net_inflow = float(item.get('f136', 0) or 0)  # 单位: 元
+                net_inflow_yi = net_inflow / 1e8  # 转换为亿元
+                
+                # 资金流入率
+                inflow_rate = (net_inflow / volume * 100) if volume > 0 else 0
+                
                 total = up_count + down_count
                 strength = (up_count / total * 100) if total > 0 else 50
+                
+                # 【新增】综合评分算法（更灵活）
+                # - 涨跌幅权重 30%
+                # - 成交额权重 40%
+                # - 资金流向权重 30%
+                volume_score = min(100, (volume_yi / 100) * 100) if volume_yi > 0 else 0  # 100亿=满分
+                fund_score = min(100, (inflow_rate + 10) * 5) if inflow_rate > -10 else 0  # 流入10%=满分
+                change_score = min(100, (change_pct + 5) * 10) if change_pct > -5 else 0  # 涨5%=满分
+                
+                composite_score = change_score * 0.3 + volume_score * 0.4 + fund_score * 0.3
                 
                 cycle = self._judge_sector_cycle(name, change_pct, strength)
                 
@@ -187,11 +218,16 @@ class HotspotTracker:
                     'down_count': down_count,
                     'leader': leader,
                     'leader_pct': leader_pct,
-                    'cycle': cycle
+                    'cycle': cycle,
+                    'volume_yi': volume_yi,  # 新增
+                    'net_inflow_yi': net_inflow_yi,  # 新增
+                    'inflow_rate': inflow_rate,  # 新增
+                    'composite_score': composite_score  # 新增
                 })
             
-            results.sort(key=lambda x: x['change_pct'], reverse=True)
-            return results
+            # 按综合评分排序（而不是仅按涨跌幅）
+            results.sort(key=lambda x: x['composite_score'], reverse=True)
+            return results[:30]
             
         except Exception as e:
             logging.debug(f"东财接口失败: {e}")

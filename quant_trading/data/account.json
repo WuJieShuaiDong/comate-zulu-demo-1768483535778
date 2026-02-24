@@ -17,11 +17,11 @@
       "name": "卡莱特"
     }
   },
-  "total_value": 98291.0,
+  "total_value": 98753.0,
   "initial_capital": 100000.0,
-  "last_day_value": 98077.0,
-  "yesterday_pnl": 101.0,
-  "daily_pnl": 1210.3690000000001,
+  "last_day_value": 98753.0,
+  "yesterday_pnl": 676.0,
+  "daily_pnl": -506.51239999999996,
   "nav_history": [
     {
       "date": "2026-01-28",
@@ -37,8 +37,13 @@
       "date": "2026-02-02",
       "total_value": 98077.0,
       "daily_pnl": 101.0
+    },
+    {
+      "date": "2026-02-03",
+      "total_value": 98753.0,
+      "daily_pnl": 676.0
     }
   ],
-  "last_update_date": "2026-02-03",
-  "update_time": "2026-02-03 15:04:20"
+  "last_update_date": "2026-02-24",
+  "update_time": "2026-02-24 17:40:24"
 }

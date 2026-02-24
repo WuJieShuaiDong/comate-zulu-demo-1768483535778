@@ -407,6 +407,312 @@
         "leader_pct": 0,
         "cycle": "NORMAL"
       }
+    ],
+    "2026-02-04": [
+      {
+        "name": "酿酒行业",
+        "change_pct": 2.31375,
+        "strength": 61.56875,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "PEAK"
+      },
+      {
+        "name": "煤炭行业",
+        "change_pct": 0.52897435897436,
+        "strength": 52.6448717948718,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "船舶制造",
+        "change_pct": 0.39285714285714,
+        "strength": 51.9642857142857,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "飞机制造",
+        "change_pct": 0.29357142857143,
+        "strength": 51.46785714285715,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "家具行业",
+        "change_pct": 0.28714285714286,
+        "strength": 51.4357142857143,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "玻璃行业",
+        "change_pct": 0.28263157894737,
+        "strength": 51.41315789473685,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "金融行业",
+        "change_pct": 0.20170212765957,
+        "strength": 51.00851063829785,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "汽车制造",
+        "change_pct": 0.185,
+        "strength": 50.925,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "石油行业",
+        "change_pct": 0.18333333333333,
+        "strength": 50.91666666666665,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "家电行业",
+        "change_pct": 0.1809375,
+        "strength": 50.9046875,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      }
+    ],
+    "2026-02-12": [
+      {
+        "name": "陶瓷行业",
+        "change_pct": 0.928,
+        "strength": 54.64,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "发电设备",
+        "change_pct": 0.59203389830508,
+        "strength": 52.9601694915254,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "开发区",
+        "change_pct": 0.472,
+        "strength": 52.36,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "有色金属",
+        "change_pct": 0.40246153846154,
+        "strength": 52.0123076923077,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "船舶制造",
+        "change_pct": 0.40142857142857,
+        "strength": 52.00714285714285,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "电器行业",
+        "change_pct": 0.39407407407407,
+        "strength": 51.97037037037035,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "电子信息",
+        "change_pct": 0.37140271493213,
+        "strength": 51.85701357466065,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "次新股",
+        "change_pct": 0.31247863247863,
+        "strength": 51.56239316239315,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "仪器仪表",
+        "change_pct": 0.27958333333333,
+        "strength": 51.39791666666665,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "电子器件",
+        "change_pct": 0.23527777777778,
+        "strength": 51.1763888888889,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      }
+    ],
+    "2026-02-24": [
+      {
+        "name": "石油行业",
+        "change_pct": 0.87761904761905,
+        "strength": 54.38809523809525,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "次新股",
+        "change_pct": 0.86949152542373,
+        "strength": 54.34745762711865,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "玻璃行业",
+        "change_pct": 0.82684210526316,
+        "strength": 54.1342105263158,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "农药化肥",
+        "change_pct": 0.75093023255814,
+        "strength": 53.7546511627907,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "有色金属",
+        "change_pct": 0.71723076923077,
+        "strength": 53.58615384615385,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "发电设备",
+        "change_pct": 0.68728813559322,
+        "strength": 53.4364406779661,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "PEAK"
+      },
+      {
+        "name": "船舶制造",
+        "change_pct": 0.62285714285714,
+        "strength": 53.1142857142857,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "PEAK"
+      },
+      {
+        "name": "电子器件",
+        "change_pct": 0.59916666666667,
+        "strength": 52.99583333333335,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "机械行业",
+        "change_pct": 0.46525773195876,
+        "strength": 52.3262886597938,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      },
+      {
+        "name": "化纤行业",
+        "change_pct": 0.45130434782609,
+        "strength": 52.25652173913045,
+        "up_count": 0,
+        "down_count": 0,
+        "leader": "",
+        "leader_pct": 0,
+        "cycle": "NORMAL"
+      }
     ]
   },
   "sector_stats": {}
