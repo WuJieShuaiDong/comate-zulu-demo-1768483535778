@@ -10,73 +10,13 @@
   $ xcode-select --install
   $ pip install watchdog
             
-2026-02-24 18:09:55,471 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:09:55,746 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:09:55.749 Please replace `use_container_width` with `width`.
+2026-02-24 18:38:12,892 - INFO - ✅ 妖股基因库加载成功: 13 只股票
+2026-02-24 18:38:13,175 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-24 18:38:13.178 Please replace `use_container_width` with `width`.
 
 `use_container_width` will be removed after 2025-12-31.
 
 For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:09:55,834 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:09:55,836 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:09:55,836 - WARNING - 未找到合适的热点板块
-2026-02-24 18:10:08,946 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:10:09,135 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:09.139 Please replace `use_container_width` with `width`.
-
-`use_container_width` will be removed after 2025-12-31.
-
-For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:10:09,217 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:09,219 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:10:09,219 - WARNING - 未找到合适的热点板块
-2026-02-24 18:10:09,277 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:10:09,453 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:09.455 Please replace `use_container_width` with `width`.
-
-`use_container_width` will be removed after 2025-12-31.
-
-For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:10:09,530 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:09,533 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:10:09,533 - WARNING - 未找到合适的热点板块
-2026-02-24 18:10:09,792 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:10:09,973 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:09.980 Please replace `use_container_width` with `width`.
-
-`use_container_width` will be removed after 2025-12-31.
-
-For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:10:10,053 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:10,055 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:10:10,055 - WARNING - 未找到合适的热点板块
-2026-02-24 18:10:10,099 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:10:10,267 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:10.269 Please replace `use_container_width` with `width`.
-
-`use_container_width` will be removed after 2025-12-31.
-
-For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:10:10,342 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:10,343 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:10:10,343 - WARNING - 未找到合适的热点板块
-2026-02-24 18:10:10,645 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:10:10,828 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:10.832 Please replace `use_container_width` with `width`.
-
-`use_container_width` will be removed after 2025-12-31.
-
-For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:10:10,905 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:10,908 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:10:10,908 - WARNING - 未找到合适的热点板块
-2026-02-24 18:10:10,952 - INFO - ✅ 妖股基因库加载成功: 13 只股票
-2026-02-24 18:10:11,126 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:11.128 Please replace `use_container_width` with `width`.
-
-`use_container_width` will be removed after 2025-12-31.
-
-For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
-2026-02-24 18:10:11,205 - INFO - ✅ 获取板块排名成功(新浪): 30 个
-2026-02-24 18:10:11,208 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
-2026-02-24 18:10:11,208 - WARNING - 未找到合适的热点板块
+2026-02-24 18:38:13,250 - INFO - ✅ 获取板块排名成功(新浪): 30 个
+2026-02-24 18:38:13,251 - WARNING - ⚠️ 高潮期板块(谨慎): 发电设备, 船舶制造
+2026-02-24 18:38:13,251 - WARNING - 未找到合适的热点板块

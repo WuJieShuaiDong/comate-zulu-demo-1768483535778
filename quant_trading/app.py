@@ -1,8 +1,16 @@
 import streamlit as st
 import pandas as pd
 import akshare as ak
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+
+# 尝试导入 plotly，如果失败则使用原生图表
+try:
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
+    st.warning("⚠️ plotly 库未安装，使用原生图表（功能受限，建议运行：pip install plotly）")
+
 import datetime
 import numpy as np
 import os
@@ -448,26 +456,34 @@ if mode == "🤖 自动化实盘监控 (AutoBot)":
                 }])
                 chart_df = pd.concat([hist_df, current_point], ignore_index=True)
                 
-                # 使用 Plotly 绘制专业图表
-                fig = go.Figure()
-                fig.add_trace(go.Scatter(
-                    x=chart_df['date'], 
-                    y=chart_df['total_value'],
-                    mode='lines+markers',
-                    name='总资产',
-                    line=dict(color='#ff4b4b', width=2),
-                    marker=dict(size=6)
-                ))
-                
-                fig.update_layout(
-                    margin=dict(l=20, r=20, t=30, b=20),
-                    height=350,
-                    hovermode="x unified",
-                    yaxis=dict(tickformat=",.0f", title="资产 (元)"),
-                    xaxis=dict(tickformat="%m-%d"),
-                    showlegend=False
-                )
-                st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+                # 根据是否可用 plotly 选择图表类型
+                if PLOTLY_AVAILABLE:
+                    # 使用 Plotly 绘制专业图表
+                    fig = go.Figure()
+                    fig.add_trace(go.Scatter(
+                        x=chart_df['date'], 
+                        y=chart_df['total_value'],
+                        mode='lines+markers',
+                        name='总资产',
+                        line=dict(color='#ff4b4b', width=2),
+                        marker=dict(size=6)
+                    ))
+                    
+                    fig.update_layout(
+                        margin=dict(l=20, r=20, t=30, b=20),
+                        height=350,
+                        hovermode="x unified",
+                        yaxis=dict(tickformat=",.0f", title="资产 (元)"),
+                        xaxis=dict(tickformat="%m-%d"),
+                        showlegend=False
+                    )
+                    st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+                else:
+                    # 降级：使用 Streamlit 原生 line_chart
+                    st.caption("（提示：安装 plotly 库可获得更美观的交互图表：`pip install plotly`）")
+                    chart_display = chart_df.copy()
+                    chart_display['date'] = chart_display['date'].dt.strftime('%Y-%m-%d')
+                    st.line_chart(chart_display.set_index('date')['total_value'])
 
             st.subheader("💼 持仓详情")
             if pos_data:
@@ -687,10 +703,17 @@ elif mode == "🔥 进阶波段策略 (回测)":
                 
                 df['portfolio_value'] = portfolio_history
                 
-                fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.7, 0.3])
-                fig.add_trace(go.Candlestick(x=df.index, open=df['open'], high=df['high'], low=df['low'], close=df['close'], name='K线'), row=1, col=1)
-                fig.add_trace(go.Scatter(x=df.index, y=df['portfolio_value'], line=dict(color='orange'), name='账户净值'), row=2, col=1)
-                st.plotly_chart(fig, use_container_width=True)
+                # 根据是否可用 plotly 选择图表类型
+                if PLOTLY_AVAILABLE:
+                    fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.7, 0.3])
+                    fig.add_trace(go.Candlestick(x=df.index, open=df['open'], high=df['high'], low=df['low'], close=df['close'], name='K线'), row=1, col=1)
+                    fig.add_trace(go.Scatter(x=df.index, y=df['portfolio_value'], line=dict(color='orange'), name='账户净值'), row=2, col=1)
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    # 降级：使用 Streamlit 原生图表
+                    st.caption("（提示：安装 plotly 库可获得更美观的K线图表：`pip install plotly`）")
+                    st.line_chart(df['portfolio_value'])
+                    st.caption("净值曲线")
 
 # ==============================================================================
 # 模式 2: 基础趋势回测
